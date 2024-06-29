@@ -1,0 +1,31 @@
+{
+  "${ModID}:WitherPower": {
+    "NAME": "Wither",
+    "DESCRIPTIONS": [
+      "At the start of it's turn, takes #b",
+      " damage."
+    ]
+  },
+  "${ModID}:RisingStormPower": {
+    "NAME": "Rising Storm",
+    "DESCRIPTIONS": [
+      "Whenever you played a #yBlessed card, gain #b",
+      " Strength."
+    ]
+  },
+  "${ModID}:EmptinessPower": {
+    "NAME": "Emptiness",
+    "DESCRIPTIONS": [
+      "Whenever a card is #yExhausted due to being #yEthereal, ALL enemies lose #b",
+      " HP."
+    ]
+  },
+  "${ModID}:TimeStopPower": {
+  "NAME": "Time Stop",
+  "DESCRIPTIONS": [
+    "You cannot take damage or lose HP this turn.",
+    "You cannot take damage or lose HP for the next #b",
+    " turns."
+  ]
+}
+}

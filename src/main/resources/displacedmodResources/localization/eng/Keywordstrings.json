@@ -1,0 +1,31 @@
+[
+  {
+    "PROPER_NAME": "Warp",
+    "NAMES": [
+      "warp"
+    ],
+    "DESCRIPTION": "Skip forward an amount of turns. ALL turn based effects trigger as though this many turns just passed."
+  },
+  {
+    "NAMES": [
+      "forget",
+      "forgotten"
+    ],
+    "DESCRIPTION": "Cards with #yForget effects are #yEthereal. Their #yForget effect triggers when they #yExhaust due to being #yEthereal."
+  },
+  {
+    "NAMES": [
+      "wither"
+    ],
+    "DESCRIPTION": "Takes damage at the start of it's turns."
+  },
+  {
+    "NAMES": [
+      "bless",
+      "blessing",
+      "blessed",
+      "blessings"
+    ],
+    "DESCRIPTION": "Additional card text that persists until the card is played. #yBlessings cannot be applied to Curses, Statuses, or any card with an identical #yBlessing ."
+  }
+]

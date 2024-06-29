@@ -1,0 +1,75 @@
+{
+  "${ModID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:ShootingStar": {
+    "NAME": "Shooting Star",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Draw !M! card{!M!|>1=s} next turn."
+  },
+  "${ModID}:FlashStep": {
+    "NAME": "Flash Step",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL displacedmod:Warp !M! turn{!M!|>1=s}."
+  },
+  "${ModID}:MoonlitRitual": {
+    "NAME": "Moonlit Ritual",
+    "DESCRIPTION": "displacedmod:Bless a random card in your draw pile: \"Gain [E] and move this displacedmod:Blessing to a random card in your draw pile.\" NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL displacedmod:Bless a random card in your draw pile: \"Gain [E] and move this displacedmod:Blessing to a random card in your draw pile.\" NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Moonlit",
+      "Gain [E] and move this #yBlessing to a random card in your draw pile."
+    ]
+  },
+  "${ModID}:BallOfLight": {
+    "NAME": "Ball Of Light",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL displacedmod:Forget: ALL enemies lose !${ModID}:m2! HP."
+  },
+  "${ModID}:RisingStorm": {
+    "NAME": "Rising Storm",
+    "DESCRIPTION": "Whenever you play a displacedmod:Blessed card, gain !M! Strength."
+  },
+  "${ModID}:Imprinting": {
+    "NAME": "Imprinting",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Blessings aren't removed from this card."
+  },
+  "${ModID}:Emptiness": {
+    "NAME": "Emptiness",
+    "DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, ALL enemies lose !M! HP."
+  },
+  "${ModID}:HollowGrasp": {
+    "NAME": "Hollow Grasp",
+    "DESCRIPTION": "Enemy loses !M! HP. NL Shuffle a Dazed into your draw pile."
+  },
+  "${ModID}:Exposure": {
+    "NAME": "Exposure",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! displacedmod:Wither."
+  },
+  "${ModID}:Salvation": {
+    "NAME": "Salvation",
+    "DESCRIPTION": "Gain !B! Block. NL Put a card from your hand on top of your draw pile."
+  },
+  "${ModID}:HesitantStrike": {
+    "NAME": "Hesitant Strike",
+    "DESCRIPTION": "Deal !D! damage. NL displacedmod:Forget: Gain !B! Block."
+  },
+  "${ModID}:ToothAndNail": {
+    "NAME": "Tooth And Nail",
+    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage to ALL enemies."
+  },
+  "${ModID}:RushPast": {
+    "NAME": "Rush Past",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Next turn, gain [E]."
+  },
+  "${ModID}:DesperateDodge": {
+    "NAME": "Desperate Dodge",
+    "DESCRIPTION": "Gain !B! Block and !M! Frail."
+  },
+  "${ModID}:TimeStop": {
+    "NAME": "Time Stop",
+    "DESCRIPTION": "You cannot take damage or lose HP this turn."
+  }
+}
