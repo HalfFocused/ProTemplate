@@ -1,6 +1,5 @@
-package code.cards.collectible.rare.power;
+package code.cards.collectible.uncommon.power;
 
-import code.actions.WarpAction;
 import code.cards.AbstractEasyCard;
 import code.powers.RisingStormPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -13,7 +12,7 @@ public class RisingStorm extends AbstractEasyCard {
     public final static String ID = makeID("RisingStorm");
 
     public RisingStorm() {
-        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
     }
 

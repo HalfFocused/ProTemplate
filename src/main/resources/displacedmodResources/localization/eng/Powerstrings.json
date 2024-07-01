@@ -2,8 +2,8 @@
   "${ModID}:WitherPower": {
     "NAME": "Wither",
     "DESCRIPTIONS": [
-      "At the start of it's turn, takes #b",
-      " damage."
+      "At the end of your turn, deal #b",
+      " damage to the enemy with the greatest HP. And lose #b1 Wither."
     ]
   },
   "${ModID}:RisingStormPower": {
@@ -26,6 +26,15 @@
     "You cannot take damage or lose HP this turn.",
     "You cannot take damage or lose HP for the next #b",
     " turns."
-  ]
-}
+    ]
+  },
+  "${ModID}:AuraPower": {
+    "NAME": "Aura",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain #b",
+      " #yBlock.",
+      "At the end of your next #b",
+      " turns, gain #b"
+    ]
+  }
 }

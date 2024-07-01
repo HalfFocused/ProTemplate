@@ -1,16 +1,8 @@
-package code.patches;
+package code.patches.warp;
 
-import code.util.charUtil.CardUtil;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.EndTurnAction;
-import com.megacrit.cardcrawl.actions.common.MonsterStartTurnAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
@@ -21,6 +13,7 @@ import javassist.expr.MethodCall;
 @SpirePatch2(clz= AbstractRoom.class, method = "endTurn")
 public class WarpStartOfTurnPatch {
 
+    /*
     @SpireInsertPatch(
             loc=520
     )
@@ -43,6 +36,7 @@ public class WarpStartOfTurnPatch {
 
         return SpireReturn.Continue();
     }
+    */
 
     @SpireInstrumentPatch
     public static ExprEditor SkipTurnOverride()
@@ -72,7 +66,7 @@ public class WarpStartOfTurnPatch {
                 if(m.getClassName().equals(GameActionManager.class.getName()) && m.getMethodName().equals("addToBottom")) {
                     index++;
 
-                    if (index == 2) {
+                    if (index == 1 || index == 2 || index == 3) {
                         m.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? new com.megacrit.cardcrawl.actions.utility.WaitAction(0f) : $proceed($$));}");
                     }
                 }

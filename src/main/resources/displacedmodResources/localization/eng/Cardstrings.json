@@ -46,7 +46,7 @@
   },
   "${ModID}:Exposure": {
     "NAME": "Exposure",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! displacedmod:Wither."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! displacedmod:Wither."
   },
   "${ModID}:Salvation": {
     "NAME": "Salvation",
@@ -58,7 +58,7 @@
   },
   "${ModID}:ToothAndNail": {
     "NAME": "Tooth And Nail",
-    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Deal !D! damage to ALL enemies."
   },
   "${ModID}:RushPast": {
     "NAME": "Rush Past",
@@ -71,5 +71,25 @@
   "${ModID}:TimeStop": {
     "NAME": "Time Stop",
     "DESCRIPTION": "You cannot take damage or lose HP this turn."
+  },
+  "${ModID}:PullForward": {
+    "NAME": "Pull Forward",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL displacedmod:Warp !M! turn{!M!|>1=s}."
+  },
+  "${ModID}:OppressiveAura": {
+    "NAME": "Oppressive Aura",
+    "DESCRIPTION": "At the end of your next !M! turns, gain !B! Block."
+  },
+  "${ModID}:NightTerrors": {
+    "NAME": "Night Terrors",
+    "DESCRIPTION": "Gain !${ModID}:m2! Vulnerable. NL At the end of your turn, gain !M! Strength."
+  },
+  "${ModID}:Savagery": {
+    "NAME": "Savagery",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage twice."
+  },
+  "${ModID}:Disarray": {
+    "NAME": "Disarray",
+    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
   }
 }

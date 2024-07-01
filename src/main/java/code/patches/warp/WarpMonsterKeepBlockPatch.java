@@ -1,19 +1,16 @@
-package code.patches;
+package code.patches.warp;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
-import javassist.expr.FieldAccess;
 import javassist.expr.MethodCall;
 
 
 @SpirePatch2(clz= MonsterGroup.class, method = "applyPreTurnLogic")
-public class MonsterBlockPatch {
+public class WarpMonsterKeepBlockPatch {
 
     @SpireInstrumentPatch
     public static ExprEditor LoseBlockOverride()

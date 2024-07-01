@@ -4,7 +4,7 @@
     "NAMES": [
       "warp"
     ],
-    "DESCRIPTION": "Skip forward an amount of turns. ALL turn based effects trigger as though this many turns just passed."
+    "DESCRIPTION": "Skip forward a number of turns. Your powers, relics, and cards trigger, but block and enemies are unchanged. You do not replenish Energy or discard/draw cards."
   },
   {
     "NAMES": [
@@ -17,7 +17,7 @@
     "NAMES": [
       "wither"
     ],
-    "DESCRIPTION": "Takes damage at the start of it's turns."
+    "DESCRIPTION": "At the end of your turn, deal damage to the enemy with the greatest HP and lose #b1 #yWither."
   },
   {
     "NAMES": [
@@ -27,5 +27,14 @@
       "blessings"
     ],
     "DESCRIPTION": "Additional card text that persists until the card is played. #yBlessings cannot be applied to Curses, Statuses, or any card with an identical #yBlessing ."
+  },
+  {
+    "PROPER_NAME": "Plated Armor",
+    "NAMES": [
+      "Plated Armor",
+      "plated",
+      "armor"
+    ],
+    "DESCRIPTION": "At the end of your turn, gain #yBlock. Receiving unblocked attack damage reduces #yPlated #yArmor by #b1."
   }
 ]

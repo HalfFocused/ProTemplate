@@ -50,8 +50,8 @@ public class TheDisplaced extends CustomPlayer {
     public TheDisplaced(String name, PlayerClass setClass) {
         super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null), new SpineAnimation(makeCharacterPath("mainChar/skeleton.atlas"), makeCharacterPath("mainChar/skeleton.json"), 1f));
         initializeClass(null,
-                SHOULDER1,
                 SHOULDER2,
+                SHOULDER1,
                 CORPSE,
                 getLoadout(), 20.0F, -10.0F, 166.0F, 327.0F, new EnergyManager(3));
 

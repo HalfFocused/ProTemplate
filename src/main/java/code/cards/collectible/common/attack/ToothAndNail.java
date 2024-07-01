@@ -23,6 +23,7 @@ public class ToothAndNail extends AbstractEasyCard {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 5;
         isMultiDamage = true;
+        isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -35,6 +36,6 @@ public class ToothAndNail extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(2);
+        upgradeDamage(3);
     }
 }

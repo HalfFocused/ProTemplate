@@ -12,5 +12,6 @@ public class RiotStartOfCombatPatch {
     public static void Prefix(AbstractPlayer __instance)
     {
         CardUtil.cardsPlayedLastTurn.clear(); //Even though Recurring Dream working across combats was cool
+        CardUtil.queuedWarps = 0; //In case the previous combat ends with warps queued.
     }
 }

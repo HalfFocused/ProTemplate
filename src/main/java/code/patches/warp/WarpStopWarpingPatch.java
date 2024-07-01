@@ -1,4 +1,4 @@
-package code.patches;
+package code.patches.warp;
 
 import code.actions.WarpAction;
 import code.util.charUtil.CardUtil;
@@ -20,11 +20,11 @@ public class WarpStopWarpingPatch {
     public static void Insert(GameActionManager __instance)
     {
         if(CardUtil.queuedWarps > 0) {
-            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+            AbstractDungeon.actionManager.addToTop(new AbstractGameAction() {
                 public void update() {
                     CardUtil.queuedWarps--;
                     if(CardUtil.queuedWarps !=0) {
-                        this.addToTop(new WarpAction(CardUtil.queuedWarps));
+                        this.addToBot(new WarpAction(CardUtil.queuedWarps));
                     }
                     this.isDone = true;
                 }

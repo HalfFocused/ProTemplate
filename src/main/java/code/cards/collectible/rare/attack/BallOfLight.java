@@ -18,9 +18,9 @@ public class BallOfLight extends AbstractEasyCard implements ForgetCard {
 
     public BallOfLight() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = 2;
-        baseMagicNumber = 6;
-        baseSecondMagic = 12;
+        baseDamage = damage = 2;
+        baseMagicNumber = magicNumber = 6;
+        baseSecondMagic = secondMagic = 12;
         isEthereal = true;
     }
 
