@@ -107,6 +107,6 @@
   },
   "${ModID}:TemporalStrike": {
     "NAME": "Temporal Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Deals 2 additional damage for each turn that has begun this combat."
+    "DESCRIPTION": "Deal !D! damage. NL Deals 2 additional damage for each turn that this combat."
   }
 }

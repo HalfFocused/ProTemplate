@@ -18,7 +18,7 @@ public class OppressiveAura extends AbstractEasyCard {
         //turns
         baseMagicNumber = magicNumber = 3;
         //block per turn
-        baseBlock = block = 3;
+        baseBlock = block = 4;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

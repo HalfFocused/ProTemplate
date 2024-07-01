@@ -13,7 +13,7 @@ public class BeforeYourEyes extends AbstractEasyCard {
     public final static String ID = makeID("BeforeYourEyes");
 
     public BeforeYourEyes() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
         isEthereal = true;
     }

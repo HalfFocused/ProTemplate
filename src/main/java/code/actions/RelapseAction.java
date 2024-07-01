@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RelapseAction extends AbstractGameAction {
     public RelapseAction(int amountIn) {
@@ -19,8 +20,9 @@ public class RelapseAction extends AbstractGameAction {
             int cardsPlayed = 0;
             AbstractDungeon.player.exhaustPile.shuffle();
             for(AbstractCard card : AbstractDungeon.player.exhaustPile.group){
-                if(card.isEthereal && !(card instanceof Relapse) && card.canUse(AbstractDungeon.player, AbstractDungeon.getRandomMonster())){
+                if(card.isEthereal && !(card instanceof Relapse) && card.cardPlayable(AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng))){
                     AbstractCard tmp = card.makeStatEquivalentCopy();
+                    tmp.applyPowers();
                     tmp.purgeOnUse = true;
                     this.addToBot(new NewQueueCardAction(tmp, true, false, true));
                     if(tmp instanceof ForgetCard){
