@@ -25,6 +25,7 @@ public class ForgetPatch {
         if(AbstractDungeon.player.hasPower(ModFile.makeID("ClingOnPower"))){
             return SpireReturn.Return();
         }
+
         if(__instance instanceof ForgetCard){
             CardUtil.forgetCard(__instance);
         }

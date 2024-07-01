@@ -17,7 +17,7 @@ public class Disarray extends AbstractEasyCard {
     public Disarray() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        baseSecondMagic = secondMagic = 2;
+        baseSecondMagic = secondMagic = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

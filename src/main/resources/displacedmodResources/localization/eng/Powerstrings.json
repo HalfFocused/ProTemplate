@@ -16,7 +16,7 @@
   "${ModID}:EmptinessPower": {
     "NAME": "Emptiness",
     "DESCRIPTIONS": [
-      "Whenever a card is #yExhausted due to being #yEthereal, ALL enemies lose #b",
+      "Whenever a card is #yExhausted, ALL enemies lose #b",
       " HP."
     ]
   },
@@ -35,6 +35,21 @@
       " #yBlock.",
       "At the end of your next #b",
       " turns, gain #b"
+    ]
+  },
+  "${ModID}:FleetingFortitudePower": {
+    "NAME": "Fleeting Fortitude",
+    "DESCRIPTIONS": [
+      "Whenever you draw an #yEthereal card, gain #b",
+      " #yBlock."
+    ]
+  },
+  "${ModID}:BeforeYourEyesPower": {
+    "NAME": "Before Your Eyes",
+    "DESCRIPTIONS": [
+      "Whenever a card is #yExhausted due to being #yEthereal, add a random card to your hand.",
+      "Whenever a card is #yExhausted due to being #yEthereal, add #b",
+      " random cards to your hand."
     ]
   }
 }

@@ -12,7 +12,7 @@ public class FlashStep extends AbstractEasyCard {
 
     public FlashStep() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 5;
+        baseBlock = block = 6;
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -24,6 +24,5 @@ public class FlashStep extends AbstractEasyCard {
     @Override
     public void upp() {
         upgradeBlock(3);
-        upgradeMagicNumber(1);
     }
 }

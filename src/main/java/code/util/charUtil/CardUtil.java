@@ -106,10 +106,7 @@ public class CardUtil {
 
     public static void forgetCard(AbstractCard card){
         card.applyPowers();
-        ((ForgetCard) card).onForget();
-        if(CardUtil.isDebilitated(card)){
-            ((ForgetCard) card).onForget();
-        }
+        //((ForgetCard) card).onForget();
         AbstractCard displayCard = card.makeStatEquivalentCopy();
         displayCard.current_x = card.current_x;
         displayCard.current_y = card.current_y;

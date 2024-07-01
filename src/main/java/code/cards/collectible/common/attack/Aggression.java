@@ -3,21 +3,20 @@ package code.cards.collectible.common.attack;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import code.util.charUtil.ForgetCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HesitantStrike extends AbstractEasyCard implements ForgetCard {
-    public final static String ID = makeID("HesitantStrike");
+public class Aggression extends AbstractEasyCard implements ForgetCard {
+    public final static String ID = makeID("Aggression");
 
-    public HesitantStrike() {
+    public Aggression() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         tags.add(CardTags.STRIKE);
         isEthereal = true;
-        baseDamage = 8;
+        baseDamage = 10;
         baseBlock = 4;
     }
 
@@ -33,5 +32,10 @@ public class HesitantStrike extends AbstractEasyCard implements ForgetCard {
     @Override
     public void onForget() {
         blck();
+    }
+
+    @Override
+    public void triggerOnExhaust(){
+        onForget();
     }
 }

@@ -2,6 +2,8 @@ package code.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,7 +26,7 @@ public class AllEnemiesLoseHPAction extends AbstractGameAction {
             // 37
             for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!mo.isDeadOrEscaped()) {
-                    this.addToTop(new LoseHPAction(mo, source, damage, AttackEffect.FIRE));
+                    mo.damage(new DamageInfo(this.source, damage, DamageInfo.DamageType.HP_LOSS));
                 }
             }
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {// 37

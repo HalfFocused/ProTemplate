@@ -24,9 +24,9 @@
       "Gain [E] and move this #yBlessing to a random card in your draw pile."
     ]
   },
-  "${ModID}:BallOfLight": {
-    "NAME": "Ball Of Light",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL displacedmod:Forget: ALL enemies lose !${ModID}:m2! HP."
+  "${ModID}:Relapse": {
+    "NAME": "Relapse",
+    "DESCRIPTION": "Play and trigger the displacedmod:Forget effects of up to !M! random Ethereal cards from your Exhaust pile. NL Exhaust."
   },
   "${ModID}:RisingStorm": {
     "NAME": "Rising Storm",
@@ -38,7 +38,7 @@
   },
   "${ModID}:Emptiness": {
     "NAME": "Emptiness",
-    "DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, ALL enemies lose !M! HP."
+    "DESCRIPTION": "Whenever a card is Exhausted, ALL enemies lose !M! HP."
   },
   "${ModID}:HollowGrasp": {
     "NAME": "Hollow Grasp",
@@ -52,9 +52,9 @@
     "NAME": "Salvation",
     "DESCRIPTION": "Gain !B! Block. NL Put a card from your hand on top of your draw pile."
   },
-  "${ModID}:HesitantStrike": {
-    "NAME": "Hesitant Strike",
-    "DESCRIPTION": "Deal !D! damage. NL displacedmod:Forget: Gain !B! Block."
+  "${ModID}:Aggression": {
+    "NAME": "Aggression",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL displacedmod:Forget: Gain !B! Block."
   },
   "${ModID}:ToothAndNail": {
     "NAME": "Tooth And Nail",
@@ -91,5 +91,22 @@
   "${ModID}:Disarray": {
     "NAME": "Disarray",
     "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL displacedmod:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
+  },
+  "${ModID}:HollowCognition": {
+    "NAME": "Hollow Cognition",
+    "DESCRIPTION": "Draw !M! cards. NL Shuffle 2 Dazed into your draw pile."
+  },
+  "${ModID}:FleetingFortitude": {
+    "NAME": "Fleeting Fortitude",
+    "DESCRIPTION": "Whenever you draw an Ethereal card, gain !M! Block."
+  },
+  "${ModID}:BeforeYourEyes": {
+    "NAME": "Before Your Eyes",
+    "DESCRIPTION": "Ethereal NL Whenever a card is Exhausted due to being Ethereal, add a random card to your hand.",
+    "UPGRADE_DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, add a random card to your hand."
+  },
+  "${ModID}:TemporalStrike": {
+    "NAME": "Temporal Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Deals 2 additional damage for each turn that has begun this combat."
   }
 }
