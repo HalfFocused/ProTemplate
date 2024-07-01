@@ -90,6 +90,6 @@
   },
   "${ModID}:Disarray": {
     "NAME": "Disarray",
-    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
+    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL displacedmod:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
   }
 }
