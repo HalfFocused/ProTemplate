@@ -104,14 +104,16 @@ public class CardUtil {
         return getRarityNumber(card) > getRarityNumber(originalVersion);
     }
 
-    public static void forgetCard(AbstractCard card){
-        card.applyPowers();
-        //((ForgetCard) card).onForget();
-        AbstractCard displayCard = card.makeStatEquivalentCopy();
-        displayCard.current_x = card.current_x;
-        displayCard.current_y = card.current_y;
-        AbstractDungeon.actionManager.addToTop(new UnlimboAction(displayCard));
-        AbstractDungeon.actionManager.addToTop(new DisplayCardAction(displayCard));
+    public static void forgetCard(ForgetCard card){
+        if(card instanceof AbstractCard) {
+            ((AbstractCard) card).applyPowers();
+            card.onForget();
+            AbstractCard displayCard = ((AbstractCard) card).makeStatEquivalentCopy();
+            displayCard.current_x = ((AbstractCard) card).current_x;
+            displayCard.current_y = ((AbstractCard) card).current_y;
+            AbstractDungeon.actionManager.addToTop(new UnlimboAction(displayCard));
+            AbstractDungeon.actionManager.addToTop(new DisplayCardAction(displayCard));
+        }
     }
 
     public static boolean canHaveRarityChanged(AbstractCard card){

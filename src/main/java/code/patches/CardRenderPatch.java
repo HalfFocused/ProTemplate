@@ -1,6 +1,7 @@
 package code.patches;
 
 import code.util.charUtil.CardUtil;
+import code.util.charUtil.ForgetCard;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -16,55 +17,14 @@ public class CardRenderPatch {
 
     @SpirePatch(
             clz= AbstractCard.class,
-            method="renderCard"
+            method="triggerOnExhaust"
     )
     static class BlessedCardPatch{
-        public static void Postfix(AbstractCard __instance)
+        public static void Prefix(AbstractCard __instance)
         {
-            if(CardUtil.isCardBlessed(__instance)){
-                if(MathUtils.random(1,6) == 1) {
-                    LightFlareParticleEffect effect = new LightFlareParticleEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height), Color.WHITE);
-                    effect.renderBehind = false;
-                    effect.duration *= 0.65;
-                    AbstractDungeon.topLevelEffects.add(effect);
-                }
+            if(__instance instanceof ForgetCard){
+                CardUtil.forgetCard((ForgetCard) __instance);
             }
         }
     }
-
-
-    @SpirePatch(
-            clz= AbstractCard.class,
-            method="renderCard"
-    )
-    static class MythicCardPatch{
-        public static void Postfix(AbstractCard __instance)
-        {
-            if(CardUtil.isMythic(__instance)){
-                if(MathUtils.random(1,6) == 1) {
-                    DarkOrbPassiveEffect effect = new DarkOrbPassiveEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height));
-                    effect.renderBehind = false;
-                    AbstractDungeon.topLevelEffects.add(effect);
-                }
-            }
-        }
-    }
-
-    @SpirePatch(
-            clz= AbstractCard.class,
-            method="renderCard"
-    )
-    static class DebilitatedCardPatch{
-        public static void Postfix(AbstractCard __instance)
-        {
-            if(CardUtil.isDebilitated(__instance)){
-                if(MathUtils.random(1,6) == 1) {
-                    AbstractGameEffect effect = new FallingDustEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height));
-                    effect.renderBehind = false;
-                    AbstractDungeon.topLevelEffects.add(effect);
-                }
-            }
-        }
-    }
-
 }

@@ -4,9 +4,12 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
+import code.util.charUtil.CardUtil;
 import code.util.charUtil.ForgetCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Aggression extends AbstractEasyCard implements ForgetCard {
@@ -14,7 +17,6 @@ public class Aggression extends AbstractEasyCard implements ForgetCard {
 
     public Aggression() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        tags.add(CardTags.STRIKE);
         isEthereal = true;
         baseDamage = 10;
         baseBlock = 4;
@@ -31,11 +33,6 @@ public class Aggression extends AbstractEasyCard implements ForgetCard {
 
     @Override
     public void onForget() {
-        blck();
-    }
-
-    @Override
-    public void triggerOnExhaust(){
-        onForget();
+        this.addToTop(new GainBlockAction(AbstractDungeon.player,AbstractDungeon.player,block));
     }
 }

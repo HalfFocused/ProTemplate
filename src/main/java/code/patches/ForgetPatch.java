@@ -1,6 +1,7 @@
 package code.patches;
 
 import code.ModFile;
+import code.powers.BeforeYourEyesPower;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.EtherealExhaustHook;
 import code.util.charUtil.ForgetCard;
@@ -25,11 +26,6 @@ public class ForgetPatch {
         if(AbstractDungeon.player.hasPower(ModFile.makeID("ClingOnPower"))){
             return SpireReturn.Return();
         }
-
-        if(__instance instanceof ForgetCard){
-            CardUtil.forgetCard(__instance);
-        }
-
 
         for(AbstractPower power : AbstractDungeon.player.powers){
             if(power instanceof EtherealExhaustHook){

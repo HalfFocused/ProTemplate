@@ -107,6 +107,20 @@
   },
   "${ModID}:TemporalStrike": {
     "NAME": "Temporal Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Deals 2 additional damage for each turn that this combat."
+    "DESCRIPTION": "Deal !D! damage. NL Deals 2 additional damage for each turn this combat."
+  },
+  "${ModID}:FalteringGuard": {
+    "NAME": "Faltering Guard",
+    "DESCRIPTION": "Gain !B! Block. NL This becomes Ethereal.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block."
+    ]
+  },
+  "${ModID}:Dread": {
+    "NAME": "Dread",
+    "DESCRIPTION": "Deal !D! damage. NL Can only be played if there is an Ethereal card in your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "I don't have an Ethereal card in my hand."
+    ]
   }
 }
