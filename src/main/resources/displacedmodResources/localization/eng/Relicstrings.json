@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "At the start of turn #b3, draw #b3 cards."
     ]
+  },
+  "${ModID}:AmberMedallion": {
+    "NAME": "Amber Medallion",
+    "FLAVOR": "A slightly damaged gemstone hanging from a chain. It reminds you of her.",
+    "DESCRIPTIONS": [
+      "Whenever a #yDazed would be created, create a random card instead. It becomes #yEthereal."
+    ]
   }
 }
