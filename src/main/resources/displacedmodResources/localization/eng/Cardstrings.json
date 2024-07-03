@@ -122,13 +122,5 @@
     "EXTENDED_DESCRIPTION": [
       "I don't have an Ethereal card in my hand."
     ]
-  },
-  "${ModID}:Patience": {
-    "NAME": "Patience",
-    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: Apply !M! Vulnerable to ALL enemies."
-  },
-  "${ModID}:Confidence": {
-    "NAME": "Confidence",
-    "DESCRIPTION": "Ethereal. NL Deal !D! Damage to ALL enemies. NL ${ModID}:Forget: ALL enemies lose !M! Strength this turn."
   }
 }
