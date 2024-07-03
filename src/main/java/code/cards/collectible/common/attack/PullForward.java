@@ -11,11 +11,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class PullForward extends AbstractEasyCard {
-    public final static String ID = makeID("PullForward");
+    public final static String ID = makeID(PullForward.class.getSimpleName());
 
     public PullForward() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 7;
+        baseDamage = damage = 9;
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -25,7 +25,6 @@ public class PullForward extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(3);
-        upgradeMagicNumber(1);
+        upgradeDamage(4);
     }
 }

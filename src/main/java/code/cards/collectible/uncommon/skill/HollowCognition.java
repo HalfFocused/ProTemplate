@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HollowCognition extends AbstractEasyCard {
-    public final static String ID = makeID("HollowCognition");
+    public final static String ID = makeID(HollowCognition.class.getSimpleName());
 
     public HollowCognition() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);

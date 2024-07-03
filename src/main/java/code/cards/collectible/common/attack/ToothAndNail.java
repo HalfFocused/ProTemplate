@@ -17,11 +17,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class ToothAndNail extends AbstractEasyCard {
-    public final static String ID = makeID("ToothAndNail");
+    public final static String ID = makeID(ToothAndNail.class.getSimpleName());
 
     public ToothAndNail() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 5;
+        baseDamage = damage = 5;
         isMultiDamage = true;
         isEthereal = true;
     }

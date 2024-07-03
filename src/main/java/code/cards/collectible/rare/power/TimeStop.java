@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TimeStop extends AbstractEasyCard {
-    public final static String ID = makeID("TimeStop");
+    public final static String ID = makeID(TimeStop.class.getSimpleName());
 
     public TimeStop() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);

@@ -13,12 +13,12 @@
   },
   "${ModID}:FlashStep": {
     "NAME": "Flash Step",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL displacedmod:Warp !M! turn{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL ${ModID}:Warp !M! turn{!M!|>1=s}."
   },
   "${ModID}:MoonlitRitual": {
     "NAME": "Moonlit Ritual",
-    "DESCRIPTION": "displacedmod:Bless a random card in your draw pile: \"Gain [E] and move this displacedmod:Blessing to a random card in your draw pile.\" NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL displacedmod:Bless a random card in your draw pile: \"Gain [E] and move this displacedmod:Blessing to a random card in your draw pile.\" NL Exhaust.",
+    "DESCRIPTION": "${ModID}:Bless a random card in your draw pile: \"Gain [E] and move this ${ModID}:Blessing to a random card in your draw pile.\" NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL ${ModID}:Bless a random card in your draw pile: \"Gain [E] and move this ${ModID}:Blessing to a random card in your draw pile.\" NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Moonlit",
       "Gain [E] and move this #yBlessing to a random card in your draw pile."
@@ -26,11 +26,11 @@
   },
   "${ModID}:Relapse": {
     "NAME": "Relapse",
-    "DESCRIPTION": "Play and trigger the displacedmod:Forget effects of up to !M! random Ethereal cards from your Exhaust pile. NL Exhaust."
+    "DESCRIPTION": "Play and trigger the ${ModID}:Forget effects of up to !M! random Ethereal cards from your Exhaust pile. NL Exhaust."
   },
   "${ModID}:RisingStorm": {
     "NAME": "Rising Storm",
-    "DESCRIPTION": "Whenever you play a displacedmod:Blessed card, gain !M! Strength."
+    "DESCRIPTION": "Whenever you play a ${ModID}:Blessed card, gain !M! Strength."
   },
   "${ModID}:Imprinting": {
     "NAME": "Imprinting",
@@ -46,7 +46,7 @@
   },
   "${ModID}:Exposure": {
     "NAME": "Exposure",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! displacedmod:Wither."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! ${ModID}:Wither."
   },
   "${ModID}:Salvation": {
     "NAME": "Salvation",
@@ -54,7 +54,7 @@
   },
   "${ModID}:Aggression": {
     "NAME": "Aggression",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL displacedmod:Forget: Gain !B! Block."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL ${ModID}:Forget: Gain !B! Block."
   },
   "${ModID}:ToothAndNail": {
     "NAME": "Tooth And Nail",
@@ -74,7 +74,7 @@
   },
   "${ModID}:PullForward": {
     "NAME": "Pull Forward",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL displacedmod:Warp !M! turn{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL ${ModID}:Warp !M! turn{!M!|>1=s}."
   },
   "${ModID}:OppressiveAura": {
     "NAME": "Oppressive Aura",
@@ -90,7 +90,7 @@
   },
   "${ModID}:Disarray": {
     "NAME": "Disarray",
-    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL displacedmod:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
+    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
   },
   "${ModID}:HollowCognition": {
     "NAME": "Hollow Cognition",
@@ -122,5 +122,13 @@
     "EXTENDED_DESCRIPTION": [
       "I don't have an Ethereal card in my hand."
     ]
+  },
+  "${ModID}:Patience": {
+    "NAME": "Patience",
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: Apply !M! Vulnerable to ALL enemies."
+  },
+  "${ModID}:Confidence": {
+    "NAME": "Confidence",
+    "DESCRIPTION": "Ethereal. NL Deal !D! Damage to ALL enemies. NL ${ModID}:Forget: ALL enemies lose !M! Strength this turn."
   }
 }

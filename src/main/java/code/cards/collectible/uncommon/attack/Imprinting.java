@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Imprinting extends AbstractEasyCard {
-    public final static String ID = makeID("Imprinting");
+    public final static String ID = makeID(Imprinting.class.getSimpleName());
 
     public Imprinting() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static code.ModFile.makeID;
 
 public class FleetingFortitude extends AbstractEasyCard {
-    public final static String ID = makeID("FleetingFortitude");
+    public final static String ID = makeID(FleetingFortitude.class.getSimpleName());
 
     public FleetingFortitude() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);

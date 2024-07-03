@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class NightTerrors extends AbstractEasyCard {
-    public final static String ID = makeID("NightTerrors");
+    public final static String ID = makeID(NightTerrors.class.getSimpleName());
 
     public NightTerrors() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);

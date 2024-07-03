@@ -11,11 +11,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Exposure extends AbstractEasyCard {
-    public final static String ID = makeID("Exposure");
+    public final static String ID = makeID(Exposure.class.getSimpleName());
 
     public Exposure() {
         super(ID, 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        baseDamage = 8;
+        baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 4;
     }
 

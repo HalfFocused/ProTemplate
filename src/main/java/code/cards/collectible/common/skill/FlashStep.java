@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static code.ModFile.makeID;
 
 public class FlashStep extends AbstractEasyCard {
-    public final static String ID = makeID("FlashStep");
+    public final static String ID = makeID(FlashStep.class.getSimpleName());
 
     public FlashStep() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);

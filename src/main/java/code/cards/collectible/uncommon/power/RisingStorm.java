@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static code.ModFile.makeID;
 
 public class RisingStorm extends AbstractEasyCard {
-    public final static String ID = makeID("RisingStorm");
+    public final static String ID = makeID(RisingStorm.class.getSimpleName());
 
     public RisingStorm() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);

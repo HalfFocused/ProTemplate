@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Salvation extends AbstractEasyCard {
-    public final static String ID = makeID("Salvation");
+    public final static String ID = makeID(Salvation.class.getSimpleName());
 
     public Salvation() {
         super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        baseBlock = 8;
+        baseBlock = block = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

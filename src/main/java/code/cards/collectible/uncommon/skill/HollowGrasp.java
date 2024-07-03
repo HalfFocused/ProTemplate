@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HollowGrasp extends AbstractEasyCard {
-    public final static String ID = makeID("HollowGrasp");
+    public final static String ID = makeID(HollowGrasp.class.getSimpleName());
 
     public HollowGrasp() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 
 public class DesperateDodge extends AbstractEasyCard {
-    public final static String ID = makeID("DesperateDodge");
+    public final static String ID = makeID(DesperateDodge.class.getSimpleName());
 
     public DesperateDodge() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);

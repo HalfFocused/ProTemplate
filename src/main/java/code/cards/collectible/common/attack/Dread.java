@@ -17,12 +17,12 @@ import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 import java.util.Iterator;
 
 public class Dread extends AbstractEasyCard {
-    public final static String ID = makeID("Dread");
+    public final static String ID = makeID(Dread.class.getSimpleName());
     // intellij stuff attack, enemy, common, 14, 4, , , , 
 
     public Dread() {
         super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 14;
+        baseDamage = damage = 14;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

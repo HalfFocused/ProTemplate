@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import static code.ModFile.makeID;
 
 public class ShootingStar extends AbstractEasyCard {
-    public final static String ID = makeID("ShootingStar");
+    public final static String ID = makeID(ShootingStar.class.getSimpleName());
 
     public ShootingStar() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);

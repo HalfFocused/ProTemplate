@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static code.ModFile.makeID;
 
 public class MoonlitRitual extends AbstractEasyCard {
-    public final static String ID = makeID("MoonlitRitual");
+    public final static String ID = makeID(MoonlitRitual.class.getSimpleName());
     // intellij stuff SKILL, SELF, RARE, , , , , 1, 
 
     public MoonlitRitual() {

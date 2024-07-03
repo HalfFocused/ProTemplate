@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static code.ModFile.makeID;
 
 public class Relapse extends AbstractEasyCard {
-    public final static String ID = makeID("Relapse");
+    public final static String ID = makeID(Relapse.class.getSimpleName());
 
     public Relapse() {
         super(ID, 3, CardType.SKILL, CardRarity.RARE, CardTarget.ALL);

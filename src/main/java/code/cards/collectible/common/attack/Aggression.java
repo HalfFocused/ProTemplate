@@ -13,13 +13,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Aggression extends AbstractEasyCard implements ForgetCard {
-    public final static String ID = makeID("Aggression");
+    public final static String ID = makeID(Aggression.class.getSimpleName());
 
     public Aggression() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         isEthereal = true;
-        baseDamage = 10;
-        baseBlock = 4;
+        baseDamage = damage = 10;
+        baseBlock = block = 4;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

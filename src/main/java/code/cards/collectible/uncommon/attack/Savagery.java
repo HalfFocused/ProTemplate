@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 
 public class Savagery extends AbstractEasyCard {
-    public final static String ID = makeID("Savagery");
+    public final static String ID = makeID(Savagery.class.getSimpleName());
 
     public Savagery() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TemporalStrike extends AbstractEasyCard {
-    public final static String ID = makeID("TemporalStrike");
+    public final static String ID = makeID(TemporalStrike.class.getSimpleName());
     // intellij stuff attack, enemy, rare, 10, 4, , , , 
 
     public TemporalStrike() {

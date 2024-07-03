@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import static code.ModFile.makeID;
 
 public class OppressiveAura extends AbstractEasyCard {
-    public final static String ID = makeID("OppressiveAura");
+    public final static String ID = makeID(OppressiveAura.class.getSimpleName());
 
     public OppressiveAura() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);

@@ -14,13 +14,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+import com.megacrit.cardcrawl.vfx.stance.CalmParticleEffect;
 
 public class RushPast extends AbstractEasyCard {
-    public final static String ID = makeID("RushPast");
+    public final static String ID = makeID(RushPast.class.getSimpleName());
 
     public RushPast() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
-        baseDamage = 6;
+        baseDamage = damage = 6;
         baseMagicNumber = magicNumber = 1;
         isMultiDamage = true;
     }

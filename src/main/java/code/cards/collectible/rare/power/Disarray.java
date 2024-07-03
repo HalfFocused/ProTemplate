@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MayhemPower;
 
 public class Disarray extends AbstractEasyCard {
-    public final static String ID = makeID("Disarray");
+    public final static String ID = makeID(Disarray.class.getSimpleName());
 
     public Disarray() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
