@@ -36,21 +36,21 @@ public class BlessingModifier extends AbstractCardModifier {
         onAppliedActions = onAppliedActionsIn;
         onRemoveActions = onRemovedActionsIn;
     }
-    /*
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + " NL " + "thestargazer:" + blessingName + ".";
-    }
-
-     */
 
         @Override
     public AbstractCardModifier makeCopy() {
         return new BlessingModifier(blessingId, blessingName, blessingDescription, onPlayActions, onAppliedActions, onRemoveActions);
     }
 
+
     public List<TooltipInfo> additionalTooltips(AbstractCard card) {
         return Collections.singletonList(new TooltipInfo(blessingName, blessingDescription));
     }
+
+    public String modifyName(String cardName, AbstractCard card) {
+        return blessingName + " " + cardName;
+    }
+
 
 
     @Override

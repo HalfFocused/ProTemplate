@@ -29,6 +29,6 @@ public class Relapse extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(1);
     }
 }

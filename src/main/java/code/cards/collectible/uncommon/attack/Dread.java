@@ -1,27 +1,25 @@
-package code.cards.collectible.common.attack;
+package code.cards.collectible.uncommon.attack;
 
+import code.TheDisplaced;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
+import code.util.charUtil.CardUtil;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
-
-import java.util.Iterator;
 
 public class Dread extends AbstractEasyCard {
     public final static String ID = makeID(Dread.class.getSimpleName());
     // intellij stuff attack, enemy, common, 14, 4, , , , 
 
     public Dread() {
-        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = damage = 14;
     }
 
@@ -38,14 +36,16 @@ public class Dread extends AbstractEasyCard {
         if (!canUse) {
             return false;
         } else {
-            for(AbstractCard c : p.hand.group){
-                if (c.isEthereal) {
-                    return true;
+            if(!CardUtil.hasEtherealCardInHand(p)) {
+                if(AbstractDungeon.player instanceof TheDisplaced){
+                    this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[MathUtils.random(0, cardStrings.EXTENDED_DESCRIPTION.length - 1)];
+                }else{
+                    this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
                 }
+                return false;
             }
-            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-            return false;
         }
+        return true;
     }
     public void upp() {
         upgradeDamage(4);

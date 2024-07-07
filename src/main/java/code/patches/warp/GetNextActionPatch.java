@@ -11,7 +11,7 @@ import javassist.expr.MethodCall;
 
 
 @SpirePatch2(clz= GameActionManager.class, method = "getNextAction")
-public class WarpGameActionManagerPatches {
+public class GetNextActionPatch {
 
     @SpireInstrumentPatch
     public static ExprEditor CardDrawInstrumentPatch()
@@ -56,6 +56,22 @@ public class WarpGameActionManagerPatches {
             {
                 if(m.getClassName().equals(AbstractPlayer.class.getName()) && m.getMethodName().equals("loseBlock")) {
                     m.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? $proceed(0, false) : $proceed($$));}");
+                }
+            }
+        };
+    }
+
+    @SpireInstrumentPatch
+    public static ExprEditor NoRelicOverride()
+    {
+        return new ExprEditor() {
+            public void edit(MethodCall m)
+                    throws CannotCompileException
+            {
+                if(m.getClassName().equals(AbstractPlayer.class.getName()) && m.getMethodName().equals("applyStartOfTurnRelics")) {
+                    m.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? \"\" : $proceed($$));}");
+                }else if(m.getClassName().equals(AbstractPlayer.class.getName()) && m.getMethodName().equals("applyStartOfTurnPostDrawRelics")){
+                    m.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? \"\" : $proceed($$));}");
                 }
             }
         };

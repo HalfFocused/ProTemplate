@@ -46,7 +46,7 @@
   },
   "${ModID}:Exposure": {
     "NAME": "Exposure",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! ${ModID}:Wither."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Wither."
   },
   "${ModID}:Salvation": {
     "NAME": "Salvation",
@@ -62,7 +62,7 @@
   },
   "${ModID}:RushPast": {
     "NAME": "Rush Past",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Next turn, gain [E]."
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies. NL Next turn, gain {!M!|repeat=[E] }."
   },
   "${ModID}:DesperateDodge": {
     "NAME": "Desperate Dodge",
@@ -102,8 +102,7 @@
   },
   "${ModID}:BeforeYourEyes": {
     "NAME": "Before Your Eyes",
-    "DESCRIPTION": "Ethereal NL Whenever a card is Exhausted due to being Ethereal, add a random card to your hand.",
-    "UPGRADE_DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, add a random card to your hand."
+    "DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, add a random card to your hand."
   },
   "${ModID}:TemporalStrike": {
     "NAME": "Temporal Strike",
@@ -120,7 +119,30 @@
     "NAME": "Dread",
     "DESCRIPTION": "Deal !D! damage. NL Can only be played if there is an Ethereal card in your hand.",
     "EXTENDED_DESCRIPTION": [
-      "I don't have an Ethereal card in my hand."
+      "I don't have an Ethereal card in my hand.",
+      "I ~will~ ~not~ have an Ethereal card in my hand?",
+      "I... ~didn't?~ have an Ethereal card in my hand."
     ]
+  },
+  "${ModID}:ObscuringHaze": {
+    "NAME": "Obscuring Haze",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL If you have an Ethereal card in your hand, gain {!M!|repeat=[E] }."
+  },
+  "${ModID}:Reverie": {
+    "NAME": "Reverie",
+    "DESCRIPTION": "At the start of your turn, draw a card, then shuffle a Dazed into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw a card, then shuffle a Dazed into your draw pile."
+  },
+  "${ModID}:DeadFlesh": {
+    "NAME": "Dead Flesh",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${ModID}:Wither to ALL enemies."
+  },
+  "${ModID}:Affliction": {
+    "NAME": "Affliction",
+    "DESCRIPTION": "Deal !D! damage. NL Apply ${ModID}:Wither equal to unblocked damage dealt."
+  },
+  "${ModID}:Distort": {
+    "NAME": "Distort",
+    "DESCRIPTION": "{@@}Apply !M! Weak and Vulnerable. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}."
   }
 }
