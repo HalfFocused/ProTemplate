@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -126,5 +127,14 @@ public class CardUtil {
 
     public static boolean canBeExalted(AbstractCard card){
         return canHaveRarityChanged(card) && !(isMythic(card));
+    }
+
+    public static boolean hasEtherealCardInHand(AbstractPlayer p){
+        for(AbstractCard c : p.hand.group){
+            if (c.isEthereal) {
+                return true;
+            }
+        }
+        return false;
     }
 }

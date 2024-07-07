@@ -22,7 +22,6 @@ public class BeforeYourEyes extends AbstractEasyCard {
     public BeforeYourEyes() {
         super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -40,7 +39,6 @@ public class BeforeYourEyes extends AbstractEasyCard {
     }
 
     public void upp() {
-        isEthereal = false;
-        rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        upgradeBaseCost(0);
     }
 }

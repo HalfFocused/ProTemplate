@@ -3,7 +3,7 @@
     "NAME": "Astronomical Clock",
     "FLAVOR": "Once remarkably precise, the clock's movements are erratic and confused.",
     "DESCRIPTIONS": [
-      "At the start of turn #b3, draw #b2 cards and gain [E]."
+      "At the start of turn #b3, draw #b2 cards and gain [E] ."
     ]
   },
   "${ModID}:AmberMedallion": {

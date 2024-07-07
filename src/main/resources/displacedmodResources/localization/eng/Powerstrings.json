@@ -2,8 +2,8 @@
   "${ModID}:WitherPower": {
     "NAME": "Wither",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal #b",
-      " damage to the enemy with the greatest HP. And lose #b1 Wither."
+      "At the start of it's turn and after a #yWarp, loses #b",
+      " HP and #b2 #yWither."
     ]
   },
   "${ModID}:RisingStormPower": {
@@ -50,6 +50,15 @@
       "Whenever a card is #yExhausted due to being #yEthereal, add a random card to your hand.",
       "Whenever a card is #yExhausted due to being #yEthereal, add #b",
       " random cards to your hand."
+    ]
+  },
+  "${ModID}:ReveriePower": {
+    "NAME": "Reverie",
+    "DESCRIPTIONS": [
+      "At the start of your turn, shuffle a #yDazed into your draw pile, then draw a card.",
+      "At the start of your turn, shuffle #b",
+      " #yDazed into your draw pile, then draw #b",
+      " cards."
     ]
   }
 }

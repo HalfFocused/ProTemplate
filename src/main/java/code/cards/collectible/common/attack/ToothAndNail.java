@@ -27,9 +27,7 @@ public class ToothAndNail extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        isMultiDamage = false;
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        isMultiDamage = true;
         this.addToBot(new SFXAction("ATTACK_HEAVY"));// 36
         this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));// 37
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
@@ -37,5 +35,13 @@ public class ToothAndNail extends AbstractEasyCard {
 
     public void upp() {
         upgradeDamage(3);
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo){
+        super.calculateCardDamage(mo);
+        isMultiDamage = false;
+        super.calculateCardDamage(mo);
+        isMultiDamage = true;
     }
 }
