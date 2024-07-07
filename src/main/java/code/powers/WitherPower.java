@@ -43,7 +43,7 @@ public class WitherPower extends AbstractEasyPower implements WarpHook, HealthBa
     private void tick(){
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
-            this.addToBot(new DamageAction(this.owner, new DamageInfo(this.source, this.amount, DamageInfo.DamageType.HP_LOSS)));
+            this.addToBot(new DamageAction(this.owner, new DamageInfo(AbstractDungeon.player, this.amount, DamageInfo.DamageType.HP_LOSS)));
             this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 2));
         }
     }

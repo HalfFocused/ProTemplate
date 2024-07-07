@@ -102,7 +102,7 @@
   },
   "${ModID}:BeforeYourEyes": {
     "NAME": "Before Your Eyes",
-    "DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, add a random card to your hand.",
+    "DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, add a random card to your hand."
   },
   "${ModID}:TemporalStrike": {
     "NAME": "Temporal Strike",
@@ -144,5 +144,14 @@
   "${ModID}:Distort": {
     "NAME": "Distort",
     "DESCRIPTION": "{@@}Apply !M! Weak and Vulnerable. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}."
+  },
+  "${ModID}:LostInThought": {
+    "NAME": "Lost In Thought",
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
+  },
+  "${ModID}:Accelerate": {
+    "NAME": "Accelerate",
+    "DESCRIPTION": "{@@}${ModID}:Warp !M! turn{!M!|>1=s}. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "{@@}Retain. NL ${ModID}:Warp !M! turn{!M!|>1=s}. NL Exhaust."
   }
 }
