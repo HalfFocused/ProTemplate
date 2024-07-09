@@ -12,5 +12,12 @@
     "DESCRIPTIONS": [
       "Whenever a #yDazed would be created, create a random card instead. It becomes #yEthereal."
     ]
+  },
+  "${ModID}:WindUpButterfly": {
+    "NAME": "Wind-Up Butterfly",
+    "FLAVOR": "Trying not to cry- It's the first time I say goodbye.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, if a card was #yExhausted last turn, draw an additional card."
+    ]
   }
 }

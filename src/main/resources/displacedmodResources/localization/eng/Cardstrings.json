@@ -153,5 +153,18 @@
     "NAME": "Accelerate",
     "DESCRIPTION": "{@@}${ModID}:Warp !M! turn{!M!|>1=s}. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "{@@}Retain. NL ${ModID}:Warp !M! turn{!M!|>1=s}. NL Exhaust."
+  },
+  "${ModID}:BorrowedTime": {
+    "NAME": "Borrowed Time",
+    "DESCRIPTION": "{@@}Gain {!M!|repeat=[E] }. NL At the start of your next turn, lose {!${ModID}:m2!|repeat=[E] }. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "{@@}Gain {!M!|repeat=[E] }. NL At the start of your next turn, lose {!${ModID}:m2!|repeat=[E] }."
+  },
+  "${ModID}:Accumulate": {
+    "NAME": "Accumulate",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Strength. NL At the end of this turn, lose !M! Strength."
+  },
+  "${ModID}:Apathy": {
+    "NAME": "Apathy",
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: ALL enemies lose !M! Strength."
   }
 }

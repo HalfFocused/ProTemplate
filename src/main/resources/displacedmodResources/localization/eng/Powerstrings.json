@@ -60,5 +60,12 @@
       " #yDazed into your draw pile, then draw #b",
       " cards."
     ]
+  },
+  "${ModID}:OverloadPower": {
+    "NAME": "Overload",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, lose #b",
+      " [E] ."
+    ]
   }
 }
