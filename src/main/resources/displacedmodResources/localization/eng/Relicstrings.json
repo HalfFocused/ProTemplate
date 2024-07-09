@@ -19,5 +19,12 @@
     "DESCRIPTIONS": [
       "At the start of your turn, if a card was #yExhausted last turn, draw an additional card."
     ]
+  },
+  "${ModID}:Raincoat": {
+    "NAME": "Raincoat",
+    "FLAVOR": "I never believed in moral dilemmas- But I guess you're an exception.",
+    "DESCRIPTIONS": [
+      "Every time you play 5 #yEthereal cards, gain [E] ."
+    ]
   }
 }

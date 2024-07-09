@@ -27,6 +27,7 @@ public class WindUpButterfly extends AbstractEasyRelic {
     public void atTurnStart() {
         if (this.drawCardNext) {
             this.flash();
+            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             this.addToBot(new DrawCardAction(1));
         }
         this.pulse = false;
