@@ -8,12 +8,14 @@ import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class CardUtil {
 
@@ -136,5 +138,11 @@ public class CardUtil {
             }
         }
         return false;
+    }
+
+    public static CardGroup filteredRandomCard(Predicate<AbstractCard> filter) {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        CardLibrary.getAllCards().stream().filter(filter).forEach(c -> retVal.addToTop(c.makeCopy()));
+        return retVal;
     }
 }
