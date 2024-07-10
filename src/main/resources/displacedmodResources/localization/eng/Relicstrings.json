@@ -26,5 +26,12 @@
     "DESCRIPTIONS": [
       "Every time you play 5 #yEthereal cards, gain [E] ."
     ]
+  },
+  "${ModID}:Everything": {
+    "NAME": "Everything",
+    "FLAVOR": "You slammed the book shut mere moments after opening it, the information contained inside overwhelming. However, in that brief moment, you learned everything you needed.",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose a card to obtain."
+    ]
   }
 }
