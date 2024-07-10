@@ -1,19 +1,23 @@
 {
   "${ModID}:Strike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage.",
+    "FLAVOR": "Things are always the same, in the beginning."
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block.",
+    "FLAVOR": "Things are always the same, in the beginning."
   },
   "${ModID}:ShootingStar": {
     "NAME": "Shooting Star",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Draw !M! card{!M!|>1=s} next turn."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Draw !M! card{!M!|>1=s} next turn.",
+    "FLAVOR": "Make a wish."
   },
   "${ModID}:FlashStep": {
     "NAME": "Flash Step",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL ${ModID}:Warp !M! turn{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL ${ModID}:Warp !M! turn{!M!|>1=s}.",
+    "FLAVOR": "You don't just have to wait around."
   },
   "${ModID}:MoonlitRitual": {
     "NAME": "Moonlit Ritual",
@@ -22,98 +26,121 @@
     "EXTENDED_DESCRIPTION": [
       "Moonlit",
       "Gain [E] and move this #yBlessing to a random card in your draw pile."
-    ]
+    ],
+    "FLAVOR": "When stars smile at moon, wonder how it looks in your eyes."
   },
   "${ModID}:Relapse": {
     "NAME": "Relapse",
-    "DESCRIPTION": "Play and trigger the ${ModID}:Forget effects of up to !M! random Ethereal cards from your Exhaust pile. NL Exhaust."
+    "DESCRIPTION": "Play and trigger the ${ModID}:Forget effects of up to !M! random Ethereal cards from your Exhaust pile. NL Exhaust.",
+    "FLAVOR": "The memories burn, but without them, you am nothing."
   },
   "${ModID}:RisingStorm": {
     "NAME": "Rising Storm",
-    "DESCRIPTION": "Whenever you play a ${ModID}:Blessed card, gain !M! Strength."
+    "DESCRIPTION": "Whenever you play a ${ModID}:Blessed card, gain !M! Strength.",
+    "FLAVOR": "From the droplet, a ripple."
   },
   "${ModID}:Imprinting": {
     "NAME": "Imprinting",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Blessings aren't removed from this card."
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Blessings aren't removed from this card.",
+    "FLAVOR": "Remember. Please, remember."
   },
   "${ModID}:Emptiness": {
     "NAME": "Emptiness",
-    "DESCRIPTION": "Whenever a card is Exhausted, ALL enemies lose !M! HP."
+    "DESCRIPTION": "Whenever a card is Exhausted, ALL enemies lose !M! HP.",
+    "FLAVOR": "Rage, rage against the dying of the light."
   },
   "${ModID}:HollowGrasp": {
     "NAME": "Hollow Grasp",
-    "DESCRIPTION": "Enemy loses !M! HP. NL Shuffle a Dazed into your draw pile."
+    "DESCRIPTION": "Enemy loses !M! HP. NL Shuffle a Dazed into your draw pile.",
+    "FLAVOR": "Loop #147: Your hand reaches out, a moment too late and a inch too far."
   },
   "${ModID}:Exposure": {
     "NAME": "Exposure",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Wither."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Wither.",
+    "FLAVOR": "Things are always the same, in the beginning."
   },
   "${ModID}:Salvation": {
     "NAME": "Salvation",
-    "DESCRIPTION": "Gain !B! Block. NL Put a card from your hand on top of your draw pile."
+    "DESCRIPTION": "Gain !B! Block. NL Put a card from your hand on top of your draw pile.",
+    "FLAVOR": "Things are always the same, in the beginning."
   },
   "${ModID}:Aggression": {
     "NAME": "Aggression",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL ${ModID}:Forget: Gain !B! Block."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL ${ModID}:Forget: Gain !B! Block.",
+    "FLAVOR": "How much more grievous are the consequences of anger than the causes of it?"
   },
   "${ModID}:ToothAndNail": {
     "NAME": "Tooth And Nail",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Deal !D! damage to ALL enemies.",
+    "FLAVOR": "Leave no stone unturned."
   },
   "${ModID}:RushPast": {
     "NAME": "Rush Past",
-    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies. NL Next turn, gain {!M!|repeat=[E] }."
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies. NL Next turn, gain {!M!|repeat=[E] }.",
+    "FLAVOR": "They seem so... slow."
   },
   "${ModID}:DesperateDodge": {
     "NAME": "Desperate Dodge",
-    "DESCRIPTION": "Gain !B! Block and !M! Frail."
+    "DESCRIPTION": "Gain !B! Block and !M! Frail.",
+    "FLAVOR": "Loop #268: You hesitated, and the world went black."
   },
   "${ModID}:TimeStop": {
     "NAME": "Time Stop",
-    "DESCRIPTION": "You cannot take damage or lose HP this turn."
+    "DESCRIPTION": "You cannot take damage or lose HP this turn.",
+    "FLAVOR": "I wish this moment could last forever."
   },
   "${ModID}:PullForward": {
     "NAME": "Pull Forward",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL ${ModID}:Warp !M! turn{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL ${ModID}:Warp !M! turn{!M!|>1=s}.",
+    "FLAVOR": "\"You're coming with me\""
   },
   "${ModID}:OppressiveAura": {
     "NAME": "Oppressive Aura",
-    "DESCRIPTION": "At the end of your next !M! turns, gain !B! Block."
+    "DESCRIPTION": "At the end of your next !M! turns, gain !B! Block.",
+    "FLAVOR": "Until my life is exhausted."
   },
   "${ModID}:NightTerrors": {
     "NAME": "Night Terrors",
-    "DESCRIPTION": "Gain !${ModID}:m2! Vulnerable. NL At the end of your turn, gain !M! Strength."
+    "DESCRIPTION": "Gain !${ModID}:m2! Vulnerable. NL At the end of your turn, gain !M! Strength.",
+    "FLAVOR": "Loop #24: You wake up in a cold sweat. This nightmare never ends."
   },
   "${ModID}:Savagery": {
     "NAME": "Savagery",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage twice."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage twice.",
+    "FLAVOR": "Show me fear."
   },
   "${ModID}:Disarray": {
     "NAME": "Disarray",
-    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
+    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
+    "FLAVOR": "To cosmic madness laws submit, though stalwart minds entreat."
   },
   "${ModID}:HollowCognition": {
     "NAME": "Hollow Cognition",
-    "DESCRIPTION": "Draw !M! cards. NL Shuffle 2 Dazed into your draw pile."
+    "DESCRIPTION": "Draw !M! cards. NL Shuffle 2 Dazed into your draw pile.",
+    "FLAVOR": "Loop #2: You've seen this all before... you know you have... but when?"
   },
   "${ModID}:FleetingFortitude": {
     "NAME": "Fleeting Fortitude",
-    "DESCRIPTION": "Whenever you draw an Ethereal card, gain !M! Block."
+    "DESCRIPTION": "Whenever you draw an Ethereal card, gain !M! Block.",
+    "FLAVOR": "A moment's peace belies the danger of the battle."
   },
   "${ModID}:BeforeYourEyes": {
     "NAME": "Before Your Eyes",
-    "DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, add a random card to your hand."
+    "DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, add a random card to your hand.",
+    "FLAVOR": "Infinite possibilities appear before you. Every subtle variation, every decision..."
   },
   "${ModID}:TemporalStrike": {
     "NAME": "Temporal Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Deals 2 additional damage for each turn this combat."
+    "DESCRIPTION": "Deal !D! damage. NL Deals 2 additional damage for each turn this combat.",
+    "FLAVOR": "It's about time."
   },
   "${ModID}:FalteringGuard": {
     "NAME": "Faltering Guard",
     "DESCRIPTION": "Gain !B! Block. NL This becomes Ethereal.",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block."
-    ]
+    ],
+    "FLAVOR": "The first time is always the easiest."
   },
   "${ModID}:Dread": {
     "NAME": "Dread",
@@ -122,49 +149,60 @@
       "I don't have an Ethereal card in my hand.",
       "I ~will~ ~not~ have an Ethereal card in my hand?",
       "I... ~didn't?~ have an Ethereal card in my hand."
-    ]
+    ],
+    "FLAVOR": "Nothing lasts forever."
   },
   "${ModID}:ObscuringHaze": {
     "NAME": "Obscuring Haze",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL If you have an Ethereal card in your hand, gain {!M!|repeat=[E] }."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL If you have an Ethereal card in your hand, gain {!M!|repeat=[E] }.",
+    "FLAVOR": "Effortless."
   },
   "${ModID}:Reverie": {
     "NAME": "Reverie",
     "DESCRIPTION": "At the start of your turn, draw a card, then shuffle a Dazed into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw a card, then shuffle a Dazed into your draw pile."
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw a card, then shuffle a Dazed into your draw pile.",
+    "FLAVOR": "Forget your head, and lean into your heart."
   },
   "${ModID}:DeadFlesh": {
     "NAME": "Dead Flesh",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${ModID}:Wither to ALL enemies."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${ModID}:Wither to ALL enemies.",
+    "FLAVOR": "No life to be taken away."
   },
   "${ModID}:Affliction": {
     "NAME": "Affliction",
-    "DESCRIPTION": "Deal !D! damage. NL Apply ${ModID}:Wither equal to unblocked damage dealt."
+    "DESCRIPTION": "Deal !D! damage. NL Apply ${ModID}:Wither equal to unblocked damage dealt.",
+    "FLAVOR": "Empathy. A weakness you can't shake."
   },
   "${ModID}:Distort": {
     "NAME": "Distort",
-    "DESCRIPTION": "{@@}Apply !M! Weak and Vulnerable. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}."
+    "DESCRIPTION": "{@@}Apply !M! Weak and Vulnerable. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}.",
+    "FLAVOR": "With their final breath they look to the moon, and are gone."
   },
   "${ModID}:LostInThought": {
     "NAME": "Lost In Thought",
-    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
+    "FLAVOR": "Time passes you by."
   },
   "${ModID}:Accelerate": {
     "NAME": "Accelerate",
     "DESCRIPTION": "{@@}${ModID}:Warp !M! turn{!M!|>1=s}. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "{@@}Retain. NL ${ModID}:Warp !M! turn{!M!|>1=s}. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "{@@}Retain. NL ${ModID}:Warp !M! turn{!M!|>1=s}. NL Exhaust.",
+    "FLAVOR": "Ashes to ashes, dust to dust."
   },
   "${ModID}:BorrowedTime": {
     "NAME": "Borrowed Time",
     "DESCRIPTION": "{@@}Gain {!M!|repeat=[E] }. NL At the start of your next turn, lose {!${ModID}:m2!|repeat=[E] }. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "{@@}Gain {!M!|repeat=[E] }. NL At the start of your next turn, lose {!${ModID}:m2!|repeat=[E] }."
+    "UPGRADE_DESCRIPTION": "{@@}Gain {!M!|repeat=[E] }. NL At the start of your next turn, lose {!${ModID}:m2!|repeat=[E] }.",
+    "FLAVOR": "Time passes you by."
   },
   "${ModID}:Accumulate": {
     "NAME": "Accumulate",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Strength. NL At the end of this turn, lose !M! Strength."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Strength. NL At the end of this turn, lose !M! Strength.",
+    "FLAVOR": "Oh, it's never enough."
   },
   "${ModID}:Apathy": {
     "NAME": "Apathy",
-    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: ALL enemies lose !M! Strength."
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: ALL enemies lose !M! Strength.",
+    "FLAVOR": "To cosmic forms from tangent planes, we end as we began."
   }
 }
