@@ -20,11 +20,11 @@ public class Raincoat extends AbstractEasyRelic  {
     public void onPlayCard(AbstractCard drawnCard) {
         if(drawnCard.isEthereal){
             counter++;
-            if (this.counter % NUM_CARDS == 0) {// 38
+            if (this.counter % NUM_CARDS == 0) {
                 this.counter = 0;
                 this.flash();
-                this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 41
-                this.addToBot(new GainEnergyAction(1));// 42
+                this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                this.addToBot(new GainEnergyAction(1));
             }
         }
     }

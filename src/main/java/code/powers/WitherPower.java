@@ -44,7 +44,7 @@ public class WitherPower extends AbstractEasyPower implements WarpHook, HealthBa
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             this.addToBot(new DamageAction(this.owner, new DamageInfo(AbstractDungeon.player, this.amount, DamageInfo.DamageType.HP_LOSS)));
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 2));
+            //this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 2));
         }
     }
 
@@ -57,4 +57,5 @@ public class WitherPower extends AbstractEasyPower implements WarpHook, HealthBa
     public Color getColor() {
         return Color.DARK_GRAY.cpy();
     }
+
 }

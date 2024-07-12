@@ -3,7 +3,9 @@ package code.cards;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -49,6 +51,9 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     private boolean needsArtRefresh = false;
 
+    static final Color FLAVOR_BOX_COLOR = new Color(0.4f,0.4f,0.4f,1f);
+    static final Color FLAVOR_TEXT_COLOR = new Color(1f,1f,1f,1f);
+
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, TheDisplaced.Enums.DISPLACED_COLOR);
     }
@@ -59,6 +64,10 @@ public abstract class AbstractEasyCard extends CustomCard {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);
         rawDescription = cardStrings.DESCRIPTION;
         name = originalName = cardStrings.NAME;
+
+        FlavorText.AbstractCardFlavorFields.boxColor.set(this, FLAVOR_BOX_COLOR);
+        FlavorText.AbstractCardFlavorFields.textColor.set(this, FLAVOR_TEXT_COLOR);
+
         initializeTitle();
         initializeDescription();
 

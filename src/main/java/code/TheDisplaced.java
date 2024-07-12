@@ -47,10 +47,6 @@ public class TheDisplaced extends CustomPlayer {
         return characterStrings.TEXT[3];
     }
 
-    Color FLAVOR_BOX_COLOR = new Color(0.4f,0.4f,0.4f,1f);
-    Color FLAVOR_TEXT_COLOR = new Color(1f,1f,1f,1f);
-
-
     public TheDisplaced(String name, PlayerClass setClass) {
         super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null), new SpineAnimation(makeCharacterPath("mainChar/skeleton.atlas"), makeCharacterPath("mainChar/skeleton.json"), 1f));
         initializeClass(null,
@@ -67,9 +63,6 @@ public class TheDisplaced extends CustomPlayer {
 
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 240.0F * Settings.scale);
-
-        FlavorText.AbstractCardFlavorFields.boxColor.set(this, FLAVOR_BOX_COLOR);
-        FlavorText.AbstractCardFlavorFields.textColor.set(this, FLAVOR_TEXT_COLOR);
     }
 
     @Override

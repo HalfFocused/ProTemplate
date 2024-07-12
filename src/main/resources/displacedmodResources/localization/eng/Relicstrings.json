@@ -6,9 +6,9 @@
       "At the start of turn #b3, draw #b2 cards and gain [E] ."
     ]
   },
-  "${ModID}:AmberMedallion": {
-    "NAME": "Amber Medallion",
-    "FLAVOR": "A slightly damaged gemstone hanging from a chain. It reminds you of her.",
+  "${ModID}:ContinuityRune": {
+    "NAME": "Continuity Rune",
+    "FLAVOR": "A smooth gem with the glyph of Continuity engraved on it. There is no endings nor beginnings.",
     "DESCRIPTIONS": [
       "Whenever a #yDazed would be created, create a random card instead. It becomes #yEthereal."
     ]
@@ -29,9 +29,45 @@
   },
   "${ModID}:Everything": {
     "NAME": "Everything",
-    "FLAVOR": "You slammed the book shut mere moments after opening it, the information contained inside overwhelming. However, in that brief moment, you learned everything you needed.",
+    "FLAVOR": "You slammed the book shut mere moments after opening it, the information contained inside overwhelming.",
     "DESCRIPTIONS": [
       "Upon pickup, choose a card to obtain."
+    ]
+  },
+  "${ModID}:InvertedHourglass": {
+    "NAME": "Inverted Hourglass",
+    "FLAVOR": "The sand in this hourglass trickles backwards through time, appearing to travel against gravity. What has the sand seen?",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the start of combat, shuffle #b3 #yDazed into your draw pile."
+    ]
+  },
+  "${ModID}:Locket": {
+    "NAME": "Locket",
+    "FLAVOR": "The pictures in here hold no meaning, and yet, some significance.",
+    "DESCRIPTIONS": [
+      "At the start of combat, add a random #yEthereal card it your hand."
+    ]
+  },
+  "${ModID}:GiantBow": {
+    "NAME": "Giant Bow",
+    "FLAVOR": "The bow wraps around your waist, and feels a little ridiculous. However, it seems to slip through time effortlessly.",
+    "DESCRIPTIONS": [
+      "The first time you #yWarp each combat, #yWarp 1 additional turn."
+    ]
+  },
+  "${ModID}:PairOfGears": {
+    "NAME": "Pair of Gears",
+    "FLAVOR": "The gears are inexplicably linked to each other. They spin at unpredictable yet comforting times.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if there is an #yEthereal card in your hand, you may shuffle a card from your hand into your draw pile.",
+      "Choose a card to shuffle into your draw pile."
+    ]
+  },
+  "${ModID}:TheClockworkUniverse": {
+    "NAME": "The Clockwork Universe",
+    "FLAVOR": "The timelines are clear to you now. You fear you will look into this device and see your own death.",
+    "DESCRIPTIONS": [
+      "Replaces #Astronomical #yClock. At the start of your first 3 turns, draw #b2 cards and gain [E] ."
     ]
   }
 }

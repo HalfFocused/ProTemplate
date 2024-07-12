@@ -21,7 +21,6 @@ public class WindUpButterfly extends AbstractEasyRelic {
 
     public void atPreBattle() {
         drawCardNext = false;
-        this.flash();
     }
 
     public void atTurnStart() {

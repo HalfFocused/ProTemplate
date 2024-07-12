@@ -32,7 +32,7 @@
   "${ModID}:Relapse": {
     "NAME": "Relapse",
     "DESCRIPTION": "Play and trigger the ${ModID}:Forget effects of up to !M! random Ethereal cards from your Exhaust pile. NL Exhaust.",
-    "FLAVOR": "The memories burn, but without them, you am nothing."
+    "FLAVOR": "The memories burn, but without them, you are nothing."
   },
   "${ModID}:RisingStorm": {
     "NAME": "Rising Storm",
@@ -47,7 +47,7 @@
   "${ModID}:Emptiness": {
     "NAME": "Emptiness",
     "DESCRIPTION": "Whenever a card is Exhausted, ALL enemies lose !M! HP.",
-    "FLAVOR": "Rage, rage against the dying of the light."
+    "FLAVOR": "\"I am nothing\""
   },
   "${ModID}:HollowGrasp": {
     "NAME": "Hollow Grasp",
@@ -112,7 +112,7 @@
   "${ModID}:Disarray": {
     "NAME": "Disarray",
     "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
-    "FLAVOR": "To cosmic madness laws submit, though stalwart minds entreat."
+    "FLAVOR": "\"Welcome to my life.\""
   },
   "${ModID}:HollowCognition": {
     "NAME": "Hollow Cognition",
@@ -122,12 +122,12 @@
   "${ModID}:FleetingFortitude": {
     "NAME": "Fleeting Fortitude",
     "DESCRIPTION": "Whenever you draw an Ethereal card, gain !M! Block.",
-    "FLAVOR": "A moment's peace belies the danger of the battle."
+    "FLAVOR": "A moment's peace belies the danger of battle."
   },
   "${ModID}:BeforeYourEyes": {
     "NAME": "Before Your Eyes",
     "DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, add a random card to your hand.",
-    "FLAVOR": "Infinite possibilities appear before you. Every subtle variation, every decision..."
+    "FLAVOR": "Infinite possibilities appear before you."
   },
   "${ModID}:TemporalStrike": {
     "NAME": "Temporal Strike",
@@ -161,12 +161,12 @@
     "NAME": "Reverie",
     "DESCRIPTION": "At the start of your turn, draw a card, then shuffle a Dazed into your draw pile.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw a card, then shuffle a Dazed into your draw pile.",
-    "FLAVOR": "Forget your head, and lean into your heart."
+    "FLAVOR": "Lean into your heart."
   },
   "${ModID}:DeadFlesh": {
     "NAME": "Dead Flesh",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${ModID}:Wither to ALL enemies.",
-    "FLAVOR": "No life to be taken away."
+    "FLAVOR": "Didn't even feel it."
   },
   "${ModID}:Affliction": {
     "NAME": "Affliction",
@@ -203,6 +203,6 @@
   "${ModID}:Apathy": {
     "NAME": "Apathy",
     "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: ALL enemies lose !M! Strength.",
-    "FLAVOR": "To cosmic forms from tangent planes, we end as we began."
+    "FLAVOR": "We end as we began."
   }
 }
