@@ -69,5 +69,12 @@
     "DESCRIPTIONS": [
       "Replaces #Astronomical #yClock. At the start of your first 3 turns, draw #b2 cards and gain [E] ."
     ]
+  },
+  "${ModID}:ShatteredGlass": {
+    "NAME": "Shattered Glass",
+    "FLAVOR": "In the reflections of the glass, you see slightly different versions of yourself.",
+    "DESCRIPTIONS": [
+      "Relics rewards from chests and Elite encounters have two choices of equal rarity."
+    ]
   }
 }
