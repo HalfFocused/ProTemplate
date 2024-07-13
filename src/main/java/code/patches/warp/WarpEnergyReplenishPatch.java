@@ -20,7 +20,7 @@ public class WarpEnergyReplenishPatch {
                     throws CannotCompileException
             {
                 if(m.getClassName().equals(EnergyManager.class.getName()) && m.getMethodName().equals("recharge")) {
-                        m.replace("{if (!(code.util.charUtil.CardUtil.queuedWarps > 0)) $proceed($$);}");
+                    m.replace("{if (!(code.util.charUtil.CardUtil.queuedWarps > 0)) $proceed($$);}");
                 }
             }
         };

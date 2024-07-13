@@ -62,6 +62,7 @@ public class WarpStartOfTurnPatch {
             public void edit(MethodCall m)
                     throws CannotCompileException
             {
+                //target any attempt to access the value AbstractRoom's skipMonsterTurn value
                 if(m.getClassName().equals(GameActionManager.class.getName()) && m.getMethodName().equals("addToBottom")) {
                     index++;
 

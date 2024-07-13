@@ -23,7 +23,7 @@ public class WarpStopWarpingPatch {
             AbstractDungeon.actionManager.addToTop(new AbstractGameAction() {
                 public void update() {
                     CardUtil.queuedWarps--;
-                    if(CardUtil.queuedWarps !=0) {
+                    if(CardUtil.queuedWarps != 0) {
                         this.addToBot(new WarpAction(CardUtil.queuedWarps));
                     }
                     this.isDone = true;
