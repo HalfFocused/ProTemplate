@@ -4,8 +4,10 @@ import code.TheDisplaced;
 import code.util.charUtil.LinkedRewardItem;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import org.lwjgl.Sys;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +24,15 @@ public class ShatteredGlass extends AbstractEasyRelic  {
     @Override
     public void onTrigger()
     {
+        System.out.println("Too many!!");
         int indexOfSapphire = -1;
         LinkedRewardItem sapphireKeyReward = null;
         List<RewardItem> relicRewards = new ArrayList<>();
+        List<RewardItem> potionRewards = new ArrayList<>();
         for (RewardItem reward : AbstractDungeon.getCurrRoom().rewards) {
-            if (reward.type == RewardItem.RewardType.RELIC) {
+            if(reward.type == RewardItem.RewardType.POTION){
+                potionRewards.add(reward);
+            } else if (reward.type == RewardItem.RewardType.RELIC) {
                 relicRewards.add(reward);
             } else if (reward.type == RewardItem.RewardType.SAPPHIRE_KEY) {
                 indexOfSapphire = AbstractDungeon.getCurrRoom().rewards.indexOf(reward);
@@ -40,6 +46,25 @@ public class ShatteredGlass extends AbstractEasyRelic  {
         }
 
         boolean doFlash = false;
+
+        for (RewardItem reward : potionRewards) {
+            AbstractPotion.PotionRarity rarity = reward.potion.rarity;
+            if (rarity != AbstractPotion.PotionRarity.PLACEHOLDER) {
+                AbstractPotion newPotion = reward.potion.makeCopy();
+                do {
+                    newPotion = AbstractDungeon.returnRandomPotion(rarity, false).makeCopy();
+                } while ((newPotion.ID.equals(reward.potion.ID)));
+                if (newPotion != null) {
+                    doFlash = true;
+                    LinkedRewardItem replaceReward = new LinkedRewardItem(reward);
+                    LinkedRewardItem newReward = new LinkedRewardItem(replaceReward, newPotion);
+                    int indexOf = AbstractDungeon.getCurrRoom().rewards.indexOf(reward);
+                    AbstractDungeon.getCurrRoom().rewards.add(indexOf + 1, newReward);
+                    AbstractDungeon.getCurrRoom().rewards.set(indexOf, replaceReward);
+                }
+            }
+        }
+
         for (RewardItem reward : relicRewards) {
             RelicTier tier = reward.relic.tier;
             if (tier != RelicTier.SPECIAL && tier != RelicTier.DEPRECATED && tier != RelicTier.STARTER) {
@@ -48,16 +73,13 @@ public class ShatteredGlass extends AbstractEasyRelic  {
                     doFlash = true;
                     LinkedRewardItem replaceReward = new LinkedRewardItem(reward);
                     LinkedRewardItem newReward = new LinkedRewardItem(replaceReward, newRelic);
-                    // Link with sapphire key
                     boolean linkedWithSapphire = reward.relicLink != null && reward.relicLink.type == RewardItem.RewardType.SAPPHIRE_KEY;
                     if (sapphireKeyReward != null && linkedWithSapphire) {
-                        sapphireKeyReward.addRelicLink(replaceReward);
-                        sapphireKeyReward.addRelicLink(newReward);
+                        sapphireKeyReward.addRewardLink(replaceReward);
+                        sapphireKeyReward.addRewardLink(newReward);
                     }
                     int indexOf = AbstractDungeon.getCurrRoom().rewards.indexOf(reward);
-                    // Insert after existing reward
                     AbstractDungeon.getCurrRoom().rewards.add(indexOf + 1, newReward);
-                    // Replace original
                     AbstractDungeon.getCurrRoom().rewards.set(indexOf, replaceReward);
                 }
             }

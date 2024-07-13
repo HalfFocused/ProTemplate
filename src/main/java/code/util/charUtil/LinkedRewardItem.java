@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.ObtainKeyEffect;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class LinkedRewardItem extends RewardItem
 {
-    public List<RewardItem> relicLinks = new ArrayList<>();
+    public List<RewardItem> rewardLinks = new ArrayList<>();
 
     public LinkedRewardItem(RewardItem original)
     {
@@ -46,20 +47,27 @@ public class LinkedRewardItem extends RewardItem
         redText = original.redText;
     }
 
-    public LinkedRewardItem(LinkedRewardItem setRelicLink, AbstractRelic relic)
+    public LinkedRewardItem(LinkedRewardItem setRewardLink, AbstractRelic relic)
     {
         super(relic);
 
-        addRelicLink(setRelicLink);
+        addRewardLink(setRewardLink);
     }
 
-    public void addRelicLink(LinkedRewardItem setRelicLink)
+    public LinkedRewardItem(LinkedRewardItem setRewardLink, AbstractPotion potion)
     {
-        if (!relicLinks.contains(setRelicLink)) {
-            relicLinks.add(setRelicLink);
+        super(potion);
+
+        addRewardLink(setRewardLink);
+    }
+
+    public void addRewardLink(LinkedRewardItem setRewardLink)
+    {
+        if (!rewardLinks.contains(setRewardLink)) {
+            rewardLinks.add(setRewardLink);
         }
-        if (!setRelicLink.relicLinks.contains(this)) {
-            setRelicLink.relicLinks.add(this);
+        if (!setRewardLink.rewardLinks.contains(this)) {
+            setRewardLink.rewardLinks.add(this);
         }
     }
 
@@ -67,7 +75,7 @@ public class LinkedRewardItem extends RewardItem
     {
         //if (AbstractDungeon.getCurrRoom().rewards.indexOf(this) > AbstractDungeon.getCurrRoom().rewards.indexOf(relicLink)) {
         int thisIndexOf = AbstractDungeon.getCurrRoom().rewards.indexOf(this);
-        for (RewardItem link : relicLinks) {
+        for (RewardItem link : rewardLinks) {
             if (AbstractDungeon.getCurrRoom().rewards.indexOf(link) < thisIndexOf) {
                 return false;
             }
@@ -88,7 +96,7 @@ public class LinkedRewardItem extends RewardItem
             ret = super.claimReward();
         }
         if (ret) {
-            for (RewardItem link : relicLinks) {
+            for (RewardItem link : rewardLinks) {
                 link.isDone = true;
                 link.ignoreReward = true;
             }
@@ -103,13 +111,13 @@ public class LinkedRewardItem extends RewardItem
 
         if (isFirst()) {
             redText = false;
-            for (RewardItem link : relicLinks) {
+            for (RewardItem link : rewardLinks) {
                 link.redText = false;
             }
         }
 
         if (hb.hovered) {
-            for (RewardItem link : relicLinks) {
+            for (RewardItem link : rewardLinks) {
                 link.redText = hb.hovered;
             }
         }
@@ -120,7 +128,7 @@ public class LinkedRewardItem extends RewardItem
     {
         super.render(sb);
 
-        if (!relicLinks.isEmpty() && type != RewardType.SAPPHIRE_KEY) {
+        if (!rewardLinks.isEmpty() && type != RewardType.SAPPHIRE_KEY) {
             if (hb.hovered) {
                 // Make TipHelper think we haven't tried to render a tip this frame
                 try {
@@ -132,12 +140,18 @@ public class LinkedRewardItem extends RewardItem
                 }
 
                 ArrayList<PowerTip> tips = new ArrayList<>();
-                tips.add(new PowerTip(relic.name, relic.description));
-                for (RewardItem link : relicLinks) {
+                if(type == RewardType.RELIC){
+                    tips.add(new PowerTip(relic.name, relic.description));
+                }else if(type == RewardType.POTION){
+                    tips.add(new PowerTip(potion.name, potion.description));
+                }
+                for (RewardItem link : rewardLinks) {
                     if (link.type == RewardType.SAPPHIRE_KEY) {
                         tips.add(new PowerTip(TEXT[7], TEXT[8] + FontHelper.colorString(TEXT[6] + TEXT[9], "y")));
-                    } else if (link.relic != null) {
+                    } else if (link.type == RewardType.RELIC && link.relic != null) {
                         tips.add(new PowerTip(TEXT[7], TEXT[8] + FontHelper.colorString(link.relic.name, "y") + TEXT[9]));
+                    } else if(link.type == RewardType.POTION && link.potion != null){
+                        tips.add(new PowerTip(TEXT[7], TEXT[8] + FontHelper.colorString(link.potion.name, "y") + TEXT[9]));
                     }
                 }
                 TipHelper.queuePowerTips(360.0f * Settings.scale, InputHelper.mY + 50.0f * Settings.scale, tips);
@@ -146,11 +160,15 @@ public class LinkedRewardItem extends RewardItem
             if (!isFirst()) {
                 renderRelicLink(sb);
             }
-        } else if (!relicLinks.isEmpty() && type == RewardType.SAPPHIRE_KEY) {
+        } else if (!rewardLinks.isEmpty() && type == RewardType.SAPPHIRE_KEY) {
             if (hb.hovered) {
                 ArrayList<PowerTip> tips = new ArrayList<>();
-                for (RewardItem link : relicLinks) {
-                    tips.add(new PowerTip(TEXT[7], TEXT[8] + FontHelper.colorString(link.relic.name + TEXT[9], "y")));
+                for (RewardItem link : rewardLinks) {
+                    if(link.type == RewardType.RELIC){
+                        tips.add(new PowerTip(TEXT[7], TEXT[8] + FontHelper.colorString(link.relic.name + TEXT[9], "y")));
+                    }else if (link.type == RewardType.POTION){
+                        tips.add(new PowerTip(TEXT[7], TEXT[8] + FontHelper.colorString(link.potion.name + TEXT[9], "y")));
+                    }
                 }
                 TipHelper.queuePowerTips(360.0f * Settings.scale, InputHelper.mY + 50.0f * Settings.scale, tips);
             }
