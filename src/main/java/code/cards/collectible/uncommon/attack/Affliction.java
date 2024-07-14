@@ -17,7 +17,8 @@ public class Affliction extends AbstractEasyCard {
 
     public Affliction() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 7;
+        baseDamage = damage = 8;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

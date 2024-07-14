@@ -86,7 +86,7 @@
   },
   "${ModID}:TimeStop": {
     "NAME": "Time Stop",
-    "DESCRIPTION": "You cannot take damage or lose HP this turn.",
+    "DESCRIPTION": "You cannot take damage, lose HP, or gain debuffs this turn.",
     "FLAVOR": "I wish this moment could last forever."
   },
   "${ModID}:PullForward": {
@@ -170,7 +170,7 @@
   },
   "${ModID}:Affliction": {
     "NAME": "Affliction",
-    "DESCRIPTION": "Deal !D! damage. NL Apply ${ModID}:Wither equal to unblocked damage dealt.",
+    "DESCRIPTION": "Deal !D! damage. NL Apply ${ModID}:Wither equal to unblocked damage dealt. NL Exhaust.",
     "FLAVOR": "Empathy. A weakness you can't shake."
   },
   "${ModID}:Distort": {

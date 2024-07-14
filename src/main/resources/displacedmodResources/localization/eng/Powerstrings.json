@@ -23,8 +23,8 @@
   "${ModID}:TimeStopPower": {
   "NAME": "Time Stop",
   "DESCRIPTIONS": [
-    "You cannot take damage or lose HP this turn.",
-    "You cannot take damage or lose HP for the next #b",
+    "You cannot take damage, lose HP, or gain debuffs this turn.",
+    "You cannot take damage, lose HP, or gain debuffs for the next #b",
     " turns."
     ]
   },

@@ -14,7 +14,6 @@ import org.lwjgl.Sys;
 )
 public class ShatteredGlassPatch
 {
-    /*
     @SpireInsertPatch(
             locator=Locator.class
     )
@@ -37,6 +36,4 @@ public class ShatteredGlassPatch
             return new int[]{found[found.length - 1]};
         }
     }
-
-     */
 }
