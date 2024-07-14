@@ -3,10 +3,12 @@ package code.relics;
 import code.TheDisplaced;
 import code.util.charUtil.LinkedRewardItem;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 import org.lwjgl.Sys;
 
 import java.util.ArrayList;
@@ -97,5 +99,9 @@ public class ShatteredGlass extends AbstractEasyRelic  {
         if (!bossChest) {
             onTrigger();
         }
+    }
+
+    public boolean canSpawn() {
+        return Settings.isEndless || AbstractDungeon.floorNum <= 34;
     }
 }
