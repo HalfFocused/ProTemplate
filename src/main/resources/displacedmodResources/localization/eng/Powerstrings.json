@@ -67,5 +67,13 @@
       "At the start of your next turn, lose #b",
       " [E] ."
     ]
+  },
+  "${ModID}:DisarrayPower": {
+    "NAME": "Disarray",
+    "DESCRIPTIONS": [
+      "At the start of your turn, play the top card of your draw pile and #yExhaust it.",
+      "At the start of your turn, play the top #b",
+      " cards of your draw pile and #yExhaust them."
+    ]
   }
 }

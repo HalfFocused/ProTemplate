@@ -26,7 +26,6 @@ public class ShatteredGlass extends AbstractEasyRelic  {
     @Override
     public void onTrigger()
     {
-        System.out.println("Too many!!");
         int indexOfSapphire = -1;
         LinkedRewardItem sapphireKeyReward = null;
         List<RewardItem> relicRewards = new ArrayList<>();
@@ -43,7 +42,6 @@ public class ShatteredGlass extends AbstractEasyRelic  {
         }
 
         if (sapphireKeyReward != null) {
-            // Replace original
             AbstractDungeon.getCurrRoom().rewards.set(indexOfSapphire, sapphireKeyReward);
         }
 
@@ -56,14 +54,12 @@ public class ShatteredGlass extends AbstractEasyRelic  {
                 do {
                     newPotion = AbstractDungeon.returnRandomPotion(rarity, false).makeCopy();
                 } while ((newPotion.ID.equals(reward.potion.ID)));
-                if (newPotion != null) {
-                    doFlash = true;
-                    LinkedRewardItem replaceReward = new LinkedRewardItem(reward);
-                    LinkedRewardItem newReward = new LinkedRewardItem(replaceReward, newPotion);
-                    int indexOf = AbstractDungeon.getCurrRoom().rewards.indexOf(reward);
-                    AbstractDungeon.getCurrRoom().rewards.add(indexOf + 1, newReward);
-                    AbstractDungeon.getCurrRoom().rewards.set(indexOf, replaceReward);
-                }
+                doFlash = true;
+                LinkedRewardItem replaceReward = new LinkedRewardItem(reward);
+                LinkedRewardItem newReward = new LinkedRewardItem(replaceReward, newPotion);
+                int indexOf = AbstractDungeon.getCurrRoom().rewards.indexOf(reward);
+                AbstractDungeon.getCurrRoom().rewards.add(indexOf + 1, newReward);
+                AbstractDungeon.getCurrRoom().rewards.set(indexOf, replaceReward);
             }
         }
 

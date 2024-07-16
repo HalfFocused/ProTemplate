@@ -111,7 +111,7 @@
   },
   "${ModID}:Disarray": {
     "NAME": "Disarray",
-    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
+    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile and Exhaust it. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
     "FLAVOR": "\"Welcome to my life.\""
   },
   "${ModID}:HollowCognition": {
@@ -176,7 +176,7 @@
   "${ModID}:Distort": {
     "NAME": "Distort",
     "DESCRIPTION": "{@@}Apply !M! Weak and Vulnerable. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}.",
-    "FLAVOR": "With their final breath they look to the moon, and are gone."
+    "FLAVOR": "Should have stayed back."
   },
   "${ModID}:LostInThought": {
     "NAME": "Lost In Thought",
@@ -193,7 +193,7 @@
     "NAME": "Borrowed Time",
     "DESCRIPTION": "{@@}Gain {!M!|repeat=[E] }. NL At the start of your next turn, lose {!${ModID}:m2!|repeat=[E] }. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "{@@}Gain {!M!|repeat=[E] }. NL At the start of your next turn, lose {!${ModID}:m2!|repeat=[E] }.",
-    "FLAVOR": "Time passes you by."
+    "FLAVOR": "I need it now."
   },
   "${ModID}:Accumulate": {
     "NAME": "Accumulate",
@@ -204,5 +204,10 @@
     "NAME": "Apathy",
     "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: ALL enemies lose !M! Strength.",
     "FLAVOR": "We end as we began."
+  },
+  "${ModID}:Decimate": {
+    "NAME": "Decimate",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage.",
+    "FLAVOR": "With their final breath they look to the moon, and are gone."
   }
 }
