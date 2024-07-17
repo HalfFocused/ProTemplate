@@ -2,6 +2,7 @@ package code.relics;
 
 import code.TheDisplaced;
 import code.actions.WarpAction;
+import code.util.charUtil.CardUtil;
 import code.util.charUtil.WarpHook;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -33,7 +34,7 @@ public class GiantBow extends AbstractEasyRelic implements WarpHook {
         if(!usedThisCombat){
             this.flash();
             this.pulse = false;
-            this.addToBot(new WarpAction(1));
+            CardUtil.queuedWarps++; //cursed beyond all belief. don't do this
             this.grayscale = true;
             usedThisCombat = true;
         }

@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 public class WarpAction extends AbstractGameAction {
@@ -40,6 +41,11 @@ public class WarpAction extends AbstractGameAction {
                     addToTop(new AbstractGameAction() {
                         @Override
                         public void update() {
+                            for(AbstractRelic relic : AbstractDungeon.player.relics){
+                                if(relic instanceof WarpHook){
+                                    ((WarpHook) relic).onWarp();
+                                }
+                            }
                             for(AbstractPower power : AbstractDungeon.player.powers){
                                 if(power instanceof WarpHook){
                                     ((WarpHook) power).onWarp();
