@@ -39,9 +39,9 @@
     "DESCRIPTION": "Whenever you play a ${ModID}:Blessed card, gain !M! Strength.",
     "FLAVOR": "From the droplet, a ripple."
   },
-  "${ModID}:Imprinting": {
-    "NAME": "Imprinting",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Blessings aren't removed from this card.",
+  "${ModID}:ClingOn": {
+    "NAME": "Cling On",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Ethereal cards don't Exhaust at the end of this turn.",
     "FLAVOR": "Remember. Please, remember."
   },
   "${ModID}:Emptiness": {

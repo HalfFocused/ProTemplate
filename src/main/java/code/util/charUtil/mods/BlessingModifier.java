@@ -5,8 +5,7 @@ import basemod.helpers.TooltipInfo;
 import code.ModFile;
 import code.actions.BlessRandomCardsInDrawPileAction;
 import code.cards.collectible.rare.skill.MoonlitRitual;
-import code.cards.collectible.uncommon.attack.Imprinting;
-import code.util.charUtil.CardUtil;
+import code.cards.collectible.uncommon.attack.ClingOn;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -90,7 +89,7 @@ public class BlessingModifier extends AbstractCardModifier {
 
     @Override
     public boolean removeOnCardPlayed(AbstractCard card){
-        return !(card instanceof Imprinting) || identifier(card).equals("MoonlitRitualBlessing");
+        return !(card instanceof ClingOn) || identifier(card).equals("MoonlitRitualBlessing");
     }
 
     public boolean removeAtEndOfTurn(AbstractCard card) {

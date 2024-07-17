@@ -75,5 +75,13 @@
       "At the start of your turn, play the top #b",
       " cards of your draw pile and #yExhaust them."
     ]
+  },
+  "${ModID}:ClingOnPower": {
+    "NAME": "Cling On",
+    "DESCRIPTIONS": [
+      "#yEthereal cards don't #yExhaust at the end of this turn.",
+      "#yEthereal cards don't #yExhaust at the end of your next #b",
+      " turns."
+    ]
   }
 }
