@@ -52,7 +52,7 @@
   "${ModID}:HollowGrasp": {
     "NAME": "Hollow Grasp",
     "DESCRIPTION": "Enemy loses !M! HP. NL Shuffle a Dazed into your draw pile.",
-    "FLAVOR": "Loop #147: Your hand reaches out, a moment too late and a inch too far."
+    "FLAVOR": "Loop #147: Your hand reaches out, a moment too late and a inch too short."
   },
   "${ModID}:Exposure": {
     "NAME": "Exposure",
@@ -209,5 +209,10 @@
     "NAME": "Decimate",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage.",
     "FLAVOR": "With their final breath they look to the moon, and are gone."
+  },
+  "${ModID}:HollowFlesh": {
+    "NAME": "Hollow Flesh",
+    "DESCRIPTION": "Gain !B! Block X times. Shuffle 2 Dazed into your draw pile.",
+    "FLAVOR": "Loop #8: You notice a numbness in the tips of your fingers."
   }
 }

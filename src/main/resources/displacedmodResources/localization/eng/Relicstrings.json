@@ -45,7 +45,7 @@
     "NAME": "Locket",
     "FLAVOR": "The pictures in here hold no meaning, and yet, some significance.",
     "DESCRIPTIONS": [
-      "At the start of combat, add a random #yEthereal card it your hand."
+      "At the start of combat, add a random #yEthereal card to your hand."
     ]
   },
   "${ModID}:GiantBow": {
