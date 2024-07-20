@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class DreamModifier extends AbstractCardModifier {
 
+    public static final String ID = ModFile.makeID("Dream");
     private int counter;
 
     public DreamModifier(int ephemeralCounterIn){
@@ -17,7 +18,7 @@ public class DreamModifier extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return ModFile.modID + ":Dream " + counter + ". NL " + rawDescription;
+        return ID + " " + counter + ". NL " + rawDescription;
     }
 
     @Override
@@ -27,7 +28,7 @@ public class DreamModifier extends AbstractCardModifier {
 
     @Override
     public String identifier(AbstractCard card) {
-        return "dream";
+        return ID;
     }
 
     public boolean isInherent(AbstractCard card) {
