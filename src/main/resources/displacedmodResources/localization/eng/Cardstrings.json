@@ -224,5 +224,10 @@
     "NAME": "Dream Blade",
     "DESCRIPTION": "Deal !D! damage.",
     "FLAVOR": "...and it was so."
+  },
+  "${ModID}:RecurringDream": {
+    "NAME": "Recurring Dream",
+    "DESCRIPTION": "Deal !D! damage. NL Costs 0 if you played a *Recurring *Dream last turn.",
+    "FLAVOR": "Your memories are most clear when you are asleep."
   }
 }
