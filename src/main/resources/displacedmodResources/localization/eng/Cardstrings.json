@@ -214,5 +214,15 @@
     "NAME": "Hollow Flesh",
     "DESCRIPTION": "Gain !B! Block X times. Shuffle 2 Dazed into your draw pile.",
     "FLAVOR": "Loop #8: You notice a numbness in the tips of your fingers."
+  },
+  "${ModID}:Fantasize": {
+    "NAME": "Fantasize",
+    "DESCRIPTION": "Put a *Dream *Blade on top of your draw pile.",
+    "FLAVOR": "\"That'd be nice...\""
+  },
+  "${ModID}:DreamBlade": {
+    "NAME": "Dream Blade",
+    "DESCRIPTION": "Deal !D! damage.",
+    "FLAVOR": "...and it was so."
   }
 }

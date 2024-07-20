@@ -20,23 +20,15 @@ public class RiotEndOfTurnPatch {
         CardUtil.cardsPlayedLastTurn.clear();
         CardUtil.cardsPlayedLastTurn.addAll(__instance.cardsPlayedThisTurn);
 
-
+        /*
         Iterator var1 = AbstractDungeon.player.discardPile.group.iterator();
 
         AbstractCard c;
         while(var1.hasNext()) {
             c = (AbstractCard)var1.next();
             if (CardModifierManager.hasModifier(c, "ephemeral")) {
-                AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.discardPile));
+                CardModifierManager.
             }
-            /*
-            if(CardUtil.isMythic(c)){
-                AbstractDungeon.actionManager.addToTop(new DenounceAction(c));
-            }
-            if(CardUtil.isDebilitated(c)){
-                AbstractDungeon.actionManager.addToTop(new ExaltAction(c));
-            }
-             */
         }
 
         var1 = AbstractDungeon.player.drawPile.group.iterator();
@@ -44,16 +36,7 @@ public class RiotEndOfTurnPatch {
         while(var1.hasNext()) {
             c = (AbstractCard)var1.next();
             if (CardModifierManager.hasModifier(c, "ephemeral")) {
-                AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.drawPile));
             }
-            /*
-            if(CardUtil.isMythic(c)){
-                AbstractDungeon.actionManager.addToTop(new DenounceAction(c));
-            }
-            if(CardUtil.isDebilitated(c)){
-                AbstractDungeon.actionManager.addToTop(new ExaltAction(c));
-            }
-             */
         }
 
         var1 = AbstractDungeon.player.hand.group.iterator();
@@ -61,13 +44,14 @@ public class RiotEndOfTurnPatch {
         while(var1.hasNext()) {
             c = (AbstractCard)var1.next();
             if (CardModifierManager.hasModifier(c, "ephemeral")) {
-                AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
             }
-            //Mythic and debilitated cards in the hand are handled in ForgetPatch
         }
+         */
     }
 
     public static void Postfix(GameActionManager __instance){
 
     }
+
+
 }

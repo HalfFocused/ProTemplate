@@ -27,5 +27,11 @@
       "blessings"
     ],
     "DESCRIPTION": "Additional card text that persists until the card is played. #yBlessings cannot be applied to Curses, Statuses, or any card with an identical #yBlessing ."
+  },
+  {
+    "NAMES": [
+      "dream"
+    ],
+    "DESCRIPTION": "Counter goes down at end of turn. When it reaches 0, it #yExhuasts, wherever it is."
   }
 ]
