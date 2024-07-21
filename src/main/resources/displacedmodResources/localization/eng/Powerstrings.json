@@ -90,5 +90,11 @@
       "Attacks deal #b",
       "00% additional damage for each turn in a row you've played a card with that name."
     ]
+  },
+  "${ModID}:LikeClockworkPower": {
+    "NAME": "Like Clockwork",
+    "DESCRIPTIONS": [
+      "You've played #yLike #yClockwork once."
+    ]
   }
 }
