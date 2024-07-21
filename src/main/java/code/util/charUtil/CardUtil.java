@@ -13,8 +13,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.function.Predicate;
 
 public class CardUtil {
@@ -24,6 +26,8 @@ public class CardUtil {
     public static boolean isCardBlessed(AbstractCard cardIn){
         return CardModifierManager.modifiers(cardIn).stream().anyMatch(mod -> mod instanceof BlessingModifier);
     }
+
+    public static ArrayList<CardStreak> cardStreaks = new ArrayList<>();
 
     public static int queuedWarps  = 0;
 
@@ -87,26 +91,6 @@ public class CardUtil {
         return -1;
     }
 
-    public static int distanceFromOriginalRarity(AbstractCard card){
-        AbstractCard originalVersion = CardLibrary.getCard(card.cardID).makeCopy();
-        return Math.abs(getRarityNumber(card) - getRarityNumber(originalVersion));
-    }
-
-    public static AbstractCard.CardRarity defaultRarity(AbstractCard card){
-        AbstractCard originalVersion = CardLibrary.getCard(card.cardID).makeCopy();
-        return originalVersion.rarity;
-    }
-
-    public static boolean isNewRarity(AbstractCard card){
-        AbstractCard originalVersion = CardLibrary.getCard(card.cardID).makeCopy();
-        return getAdjustedRarity(originalVersion) != getAdjustedRarity(card);
-    }
-
-    public static boolean isHigherRarity(AbstractCard card){
-        AbstractCard originalVersion = CardLibrary.getCard(card.cardID).makeCopy();
-        return getRarityNumber(card) > getRarityNumber(originalVersion);
-    }
-
     public static void forgetCard(ForgetCard card){
         if(card instanceof AbstractCard) {
             ((AbstractCard) card).applyPowers();
@@ -117,18 +101,6 @@ public class CardUtil {
             AbstractDungeon.actionManager.addToTop(new UnlimboAction(displayCard));
             AbstractDungeon.actionManager.addToTop(new DisplayCardAction(displayCard));
         }
-    }
-
-    public static boolean canHaveRarityChanged(AbstractCard card){
-        return card.type != AbstractCard.CardType.CURSE && card.type != AbstractCard.CardType.STATUS;
-    }
-
-    public static boolean canBeDenounced(AbstractCard card){
-        return canHaveRarityChanged(card) && !(isDebilitated(card));
-    }
-
-    public static boolean canBeExalted(AbstractCard card){
-        return canHaveRarityChanged(card) && !(isMythic(card));
     }
 
     public static boolean hasEtherealCardInHand(AbstractPlayer p){
@@ -144,5 +116,15 @@ public class CardUtil {
         CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         CardLibrary.getAllCards().stream().filter(filter).forEach(c -> retVal.addToTop(c.makeCopy()));
         return retVal;
+    }
+
+
+    public static class CardStreak{
+        public String name;
+        public int streak;
+        public CardStreak(String nameIn, int streakIn){
+            name = nameIn;
+            streak = streakIn;
+        }
     }
 }

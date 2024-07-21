@@ -2,6 +2,7 @@ package code.util.charUtil.mods;
 
 import basemod.abstracts.AbstractCardModifier;
 import code.ModFile;
+import code.util.charUtil.CardUtil;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -36,10 +37,12 @@ public class DreamModifier extends AbstractCardModifier {
     }
 
     public void atEndOfTurn(AbstractCard card, CardGroup group) {
-        counter--;
-        card.initializeDescription();
-        if(counter <= 0){
-            this.addToTop(new ExhaustSpecificCardAction(card, group, false));
+        if(CardUtil.queuedWarps == 0) {
+            counter--;
+            card.initializeDescription();
+            if (counter <= 0) {
+                this.addToTop(new ExhaustSpecificCardAction(card, group, false));
+            }
         }
     }
 

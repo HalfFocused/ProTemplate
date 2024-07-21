@@ -218,6 +218,7 @@
   "${ModID}:Fantasize": {
     "NAME": "Fantasize",
     "DESCRIPTION": "Put a *Dream *Blade on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "{@@}Put a *Dream *Blade on top of your draw pile. NL Draw !M! card{!M!|>1=s} next turn.",
     "FLAVOR": "\"That'd be nice...\""
   },
   "${ModID}:DreamBlade": {
@@ -240,5 +241,10 @@
     "DESCRIPTION": "Retain. NL Put a card from your discard pile into your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Put a card from your discard pile into your hand.",
     "FLAVOR": "\"Never. Go. Back.\""
+  },
+  "${ModID}:OverAndOver": {
+    "NAME": "Over and Over",
+    "DESCRIPTION": "Attacks deal 100% additional damage for each turn in a row you've played a card with that name.",
+    "FLAVOR": "Again!"
   }
 }
