@@ -217,7 +217,7 @@
   },
   "${ModID}:Fantasize": {
     "NAME": "Fantasize",
-    "DESCRIPTION": "Put a *Dream *Blade on top of your draw pile.",
+    "DESCRIPTION": "{@@}Put a *Dream *Blade on top of your draw pile.",
     "UPGRADE_DESCRIPTION": "{@@}Put a *Dream *Blade on top of your draw pile. NL Draw !M! card{!M!|>1=s} next turn.",
     "FLAVOR": "\"That'd be nice...\""
   },

@@ -15,7 +15,7 @@ public class DesperateDodge extends AbstractEasyCard {
 
     public DesperateDodge() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = block = 10;
+        baseBlock = block = 14;
         baseMagicNumber = magicNumber = 2;
     }
 
@@ -25,6 +25,6 @@ public class DesperateDodge extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeBlock(4);
     }
 }

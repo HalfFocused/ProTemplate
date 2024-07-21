@@ -4,6 +4,7 @@ import code.ModFile;
 import code.actions.AllEnemiesLoseHPAction;
 import code.util.charUtil.EtherealExhaustHook;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.BetterOnApplyPowerPower;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class TimeStopPower extends AbstractEasyPower implements BetterOnApplyPowerPower {
+public class TimeStopPower extends AbstractEasyPower implements OnReceivePowerPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = ModFile.makeID("TimeStopPower");
@@ -47,7 +48,7 @@ public class TimeStopPower extends AbstractEasyPower implements BetterOnApplyPow
     }
 
     @Override
-    public boolean betterOnApplyPower(AbstractPower abstractPower, AbstractCreature target, AbstractCreature source) {
-        return abstractPower.type != PowerType.DEBUFF;
+    public boolean onReceivePower(AbstractPower abstractPower, AbstractCreature target, AbstractCreature source) {
+        return !(target.equals(owner)) || abstractPower.type != PowerType.DEBUFF;
     }
 }

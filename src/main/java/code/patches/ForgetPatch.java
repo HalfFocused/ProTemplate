@@ -2,6 +2,7 @@ package code.patches;
 
 import code.ModFile;
 import code.powers.BeforeYourEyesPower;
+import code.powers.ClingOnPower;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.EtherealExhaustHook;
 import code.util.charUtil.ForgetCard;
@@ -23,7 +24,7 @@ public class ForgetPatch {
     )
     public static SpireReturn<Void> Insert(AbstractCard __instance)
     {
-        if(AbstractDungeon.player.hasPower(ModFile.makeID("ClingOnPower"))){
+        if(AbstractDungeon.player.hasPower(ClingOnPower.POWER_ID)){
             return SpireReturn.Return();
         }
 
