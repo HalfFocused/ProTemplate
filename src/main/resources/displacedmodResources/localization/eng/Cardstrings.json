@@ -247,9 +247,10 @@
     "DESCRIPTION": "Attacks deal 100% additional damage for each turn in a row you've played a card with that name.",
     "FLAVOR": "Again!"
   },
-  "${ModID}:LikeClockwork": {
-    "NAME": "Like Clockwork",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you play a *Like *Clockwork twice, gain {!${ModID}:m2!|repeat=[E] } and draw !M! card{!M!|>1=s}.",
-    "FLAVOR": "Predictability."
+  "${ModID}:MomentOfTruth": {
+    "NAME": "Moment Of Truth",
+    "DESCRIPTION": "Ethereal. NL Every second time you play a *Moment *Of *Truth, reduce the cost of all cards in your hand to 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Every second time you play a *Moment *Of *Truth, reduce the cost of all cards in your hand to 0 this turn.",
+    "FLAVOR": ""
   }
 }

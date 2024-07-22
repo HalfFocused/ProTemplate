@@ -91,10 +91,10 @@
       "00% additional damage for each turn in a row you've played a card with that name."
     ]
   },
-  "${ModID}:LikeClockworkPower": {
-    "NAME": "Like Clockwork",
+  "${ModID}:MomentOfTruthPower": {
+    "NAME": "Moment Of Truth",
     "DESCRIPTIONS": [
-      "You've played #yLike #yClockwork once."
+      "You've played #yMoment #yOf #yTruth once."
     ]
   }
 }
