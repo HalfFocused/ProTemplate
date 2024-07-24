@@ -2,7 +2,6 @@ package code.cards.collectible.uncommon.power;
 
 import code.cards.AbstractEasyCard;
 import code.powers.EmptinessPower;
-import code.powers.RisingStormPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

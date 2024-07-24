@@ -3,7 +3,6 @@ package code.actions;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import code.util.charUtil.CardBlessedHook;
-import code.util.charUtil.mods.BlessingModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,14 +20,5 @@ public class ApplyCardModAction extends AbstractGameAction {
 
     public void update() {
         CardModifierManager.addModifier(card, cardModifier);
-        if(cardModifier instanceof BlessingModifier) {
-            for (AbstractPower power : AbstractDungeon.player.powers) {
-                if (power instanceof CardBlessedHook) {
-                    ((CardBlessedHook) power).onCardBlessed(card);
-                }
-            }
-        }
-
-        isDone = true;
     }
 }

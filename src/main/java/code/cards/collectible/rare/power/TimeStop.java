@@ -3,9 +3,7 @@ package code.cards.collectible.rare.power;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
-import code.powers.RisingStormPower;
 import code.powers.TimeStopPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
