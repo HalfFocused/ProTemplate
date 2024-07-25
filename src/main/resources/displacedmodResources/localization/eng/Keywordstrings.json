@@ -32,6 +32,6 @@
     "NAMES": [
       "dream"
     ],
-    "DESCRIPTION": "Counter goes down at end of turn. When it reaches 0, it #yExhuasts, wherever it is."
+    "DESCRIPTION": "This card starts with Dream Counters. Counter is reduced by 1 at the end of turn, wherever it is. When the last counter is removed, #yExhaust."
   }
 ]

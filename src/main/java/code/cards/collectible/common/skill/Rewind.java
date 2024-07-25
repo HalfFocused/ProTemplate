@@ -13,8 +13,7 @@ public class Rewind extends AbstractEasyCard {
     public final static String ID = makeID(Rewind.class.getSimpleName());
 
     public Rewind() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseDamage = damage = 5;
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         selfRetain = true;
         exhaust = true;
     }

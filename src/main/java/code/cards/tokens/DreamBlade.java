@@ -17,7 +17,7 @@ public class DreamBlade extends AbstractEasyCard {
     public DreamBlade() {
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
         baseDamage = damage = 12;
-        CardModifierManager.addModifier(this, new DreamModifier(3));
+        CardModifierManager.addModifier(this, new DreamModifier(true,3));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

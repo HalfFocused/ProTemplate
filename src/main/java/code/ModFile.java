@@ -105,6 +105,11 @@ public class ModFile implements
         return modID + "Resources/images/char/" + resourcePath;
     }
 
+    public static String makeUIPath(String resourcePath)
+    {
+        return modID + "Resources/images/ui/" + resourcePath;
+    }
+
     public static String makeCardPath(String resourcePath) {
         return modID + "Resources/images/cards/" + resourcePath;
     }
