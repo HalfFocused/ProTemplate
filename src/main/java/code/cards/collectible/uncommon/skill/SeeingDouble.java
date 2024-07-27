@@ -14,7 +14,7 @@ public class SeeingDouble extends AbstractEasyCard {
     public final static String ID = makeID(SeeingDouble.class.getSimpleName());
 
     public SeeingDouble() {
-        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

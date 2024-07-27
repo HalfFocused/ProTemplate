@@ -2,6 +2,7 @@ package code.actions;
 
 import basemod.ReflectionHacks;
 import code.util.charUtil.CardUtil;
+import code.util.charUtil.OnWarpCard;
 import code.util.charUtil.WarpHook;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -38,7 +40,7 @@ public class WarpAction extends AbstractGameAction {
                     AbstractDungeon.actionManager.turnHasEnded = true;
                     ReflectionHacks.privateMethod(GameActionManager.class, "getNextAction").invoke(AbstractDungeon.actionManager);
                     ReflectionHacks.privateMethod(GameActionManager.class, "callEndOfTurnActions").invoke(AbstractDungeon.actionManager);
-                    addToTop(new AbstractGameAction() {
+                    addToTop(new AbstractGameAction() { //All the warp hooks LMAO
                         @Override
                         public void update() {
                             for(AbstractRelic relic : AbstractDungeon.player.relics){
@@ -56,6 +58,21 @@ public class WarpAction extends AbstractGameAction {
                                     if(power instanceof WarpHook){
                                         ((WarpHook) power).onWarp();
                                     }
+                                }
+                            }
+                            for(AbstractCard card : AbstractDungeon.player.drawPile.group){
+                                if(card instanceof OnWarpCard){
+                                    ((OnWarpCard) card).onWarp(AbstractDungeon.player.drawPile);
+                                }
+                            }
+                            for(AbstractCard card : AbstractDungeon.player.hand.group){
+                                if(card instanceof OnWarpCard){
+                                    ((OnWarpCard) card).onWarp(AbstractDungeon.player.hand);
+                                }
+                            }
+                            for(AbstractCard card : AbstractDungeon.player.discardPile.group){
+                                if(card instanceof OnWarpCard){
+                                    ((OnWarpCard) card).onWarp(AbstractDungeon.player.discardPile);
                                 }
                             }
                             this.isDone = true;

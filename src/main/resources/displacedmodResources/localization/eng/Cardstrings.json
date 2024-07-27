@@ -216,5 +216,9 @@
   "${ModID}:TimeSpiral": {
     "NAME": "Time Spiral",
     "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Forget: Add a copy of this to your hand with 2 less Block."
+  },
+  "${ModID}:Flashback": {
+    "NAME": "Flashback",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Whenever you ${ModID}:Warp, return this from your discard pile to your hand."
   }
 }

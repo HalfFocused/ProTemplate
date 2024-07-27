@@ -39,6 +39,11 @@ public class TimeStopPower extends AbstractEasyPower implements OnReceivePowerPo
         return 0;
     }
 
+    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+        return 0;
+    }
+
+
     public void atEndOfRound() {
         if (this.amount == 0) {
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
