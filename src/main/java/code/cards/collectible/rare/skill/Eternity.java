@@ -31,7 +31,7 @@ public class Eternity extends AbstractEasyCard {
     public final static String ID = makeID(Eternity.class.getSimpleName());
     // intellij stuff skill, self, rare, , , , , ,
     public Eternity() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -56,7 +56,7 @@ public class Eternity extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(0);
+        upgradeBaseCost(1);
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {

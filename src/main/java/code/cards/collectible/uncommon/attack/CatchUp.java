@@ -26,7 +26,6 @@ public class CatchUp extends AbstractEasyCard implements OnWarpCard {
 
     public void upp() {
         upgradeDamage(4);
-        upgradeBaseCost(4);
     }
 
     @Override

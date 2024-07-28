@@ -104,5 +104,14 @@
       "At the start of your next #b",
       " turns, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime into your hand."
     ]
+  },
+  "${ModID}:EtchedInBloodPower": {
+    "NAME": "Etched In Blood",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, add a ",
+      "At the start of your next #b",
+      " turns, add a ",
+      " to your hand."
+    ]
   }
 }
