@@ -32,8 +32,7 @@ public class Dread extends AbstractEasyCard {
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) {
+        if (!super.canUse(p, m)) {
             return false;
         } else {
             if(!CardUtil.hasEtherealCardInHand(p)) {

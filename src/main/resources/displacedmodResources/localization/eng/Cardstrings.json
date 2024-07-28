@@ -220,5 +220,19 @@
   "${ModID}:Flashback": {
     "NAME": "Flashback",
     "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Whenever you ${ModID}:Warp, return this from your discard pile to your hand."
+  },
+  "${ModID}:CatchUp": {
+    "NAME": "Catch Up",
+    "DESCRIPTION": "Costs 1 less [E] for each time you ${ModID}:Warp this combat. NL Deal !D! damage to ALL enemies."
+  },
+  "${ModID}:Eternity": {
+    "NAME": "Eternity",
+    "DESCRIPTION": "Play a copy of the last card you played this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Plays: NL ",
+      "I haven't played a card yet this combat.",
+      "I ~will~ ~not~ have played a card by then...",
+      "I ~hadn't~ played a card yet?"
+    ]
   }
 }
