@@ -22,10 +22,6 @@ public class ShallowAction extends AbstractGameAction {
             if(!c.isEthereal) {
                 CardModifierManager.addModifier(c, new EtherealMod());
             }
-            if(c.costForTurn >= 1){
-                c.costForTurn -= 1;
-                c.isCostModifiedForTurn = true;
-            }
         }
 
         this.isDone = true;

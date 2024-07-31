@@ -237,7 +237,7 @@
   },
   "${ModID}:EtchedInBlood": {
     "NAME": "Etched In Blood",
-    "DESCRIPTION": "Exhaust a card. NL Add a copy of it to your hand at the start of your next !M! turns. NL Exhaust.",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust a card. NL Next turn, add a copy of that card to your hand.",
     "EXTENDED_DESCRIPTION": [
       "Choose a card to Exhaust:"
     ]

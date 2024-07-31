@@ -23,23 +23,23 @@ public class EtchedInBlood extends AbstractEasyCard {
     // intellij stuff power, self, uncommon, , , , , 3, 1
 
     public EtchedInBlood() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 3;
-        exhaust = true;
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseBlock = block = 7;
     }
 
     private Consumer<List<AbstractCard>> exhaustAndApplyPower = cards -> {
         for(AbstractCard card : cards){
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EtchedInBloodPower(AbstractDungeon.player, card, magicNumber)));
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EtchedInBloodPower(AbstractDungeon.player, card)));
             this.addToBot(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
         }
     };
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        blck();
         this.addToBot(new SelectCardsInHandAction(1, cardStrings.EXTENDED_DESCRIPTION[0], exhaustAndApplyPower));
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeBlock(3);
     }
 }

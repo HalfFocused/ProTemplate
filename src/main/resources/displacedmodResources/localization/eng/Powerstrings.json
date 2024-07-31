@@ -108,9 +108,7 @@
   "${ModID}:EtchedInBloodPower": {
     "NAME": "Etched In Blood",
     "DESCRIPTIONS": [
-      "At the start of your next turn, add a ",
-      "At the start of your next #b",
-      " turns, add a ",
+      "At the start of your next turn, add #b1 ",
       " to your hand."
     ]
   }
