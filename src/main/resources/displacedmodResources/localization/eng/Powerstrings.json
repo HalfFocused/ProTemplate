@@ -111,5 +111,11 @@
       "At the start of your next turn, add #b1 ",
       " to your hand."
     ]
+  },
+  "${ModID}:ForsakePower": {
+    "NAME": "Forsake",
+    "DESCRIPTIONS": [
+      "You can only play cards that were drawn by #yForsake this turn."
+    ]
   }
 }

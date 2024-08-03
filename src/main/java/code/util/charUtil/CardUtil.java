@@ -17,6 +17,9 @@ public class CardUtil {
 
     public static ArrayList<AbstractCard> cardsPlayedLastTurn = new ArrayList<>();
 
+    public static ArrayList<AbstractCard> cardsDrawnWithForsakeThisTurn = new ArrayList<>();
+
+
     public static ArrayList<CardStreak> cardStreaks = new ArrayList<>();
 
     public static int queuedWarps  = 0;

@@ -50,6 +50,7 @@ public class RiotEndOfTurnPatch {
             }
         }
         CardUtil.cardsPlayedLastTurn.clear();
+        CardUtil.cardsDrawnWithForsakeThisTurn.clear();
         CardUtil.cardsPlayedLastTurn.addAll(__instance.cardsPlayedThisTurn);
 
     }

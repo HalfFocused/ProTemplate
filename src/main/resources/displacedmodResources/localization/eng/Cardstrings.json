@@ -241,5 +241,15 @@
     "EXTENDED_DESCRIPTION": [
       "Choose a card to Exhaust:"
     ]
+  },
+  "${ModID}:Forsake": {
+    "NAME": "Forsake",
+    "DESCRIPTION": "Ethereal. NL Draw !M! cards. NL You can only play cards drawn by *Forsake this turn.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL You can only play cards drawn by *Forsake this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "I did not draw this card with Forsake.",
+      "I ~will~ ~not~ draw that card with Forsake...",
+      "I ~hadn't~ drawn that card with Forsake?"
+    ]
   }
 }
