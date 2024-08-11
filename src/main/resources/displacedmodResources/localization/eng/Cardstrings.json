@@ -223,7 +223,7 @@
   },
   "${ModID}:CatchUp": {
     "NAME": "Catch Up",
-    "DESCRIPTION": "Costs 1 less [E] for each time you ${ModID}:Warp this combat. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Costs 1 less [E] for each time you ${ModID}:Warp this combat. NL Deal !D! damage."
   },
   "${ModID}:Eternity": {
     "NAME": "Eternity",
@@ -251,5 +251,9 @@
       "I ~will~ ~not~ draw that card with Forsake...",
       "I ~hadn't~ drawn that card with Forsake?"
     ]
+  },
+  "${ModID}:OverAndOver": {
+    "NAME": "Over And Over",
+    "DESCRIPTION": "Put the first card you play each turn on top of your draw pile."
   }
 }

@@ -20,5 +20,6 @@ public class ApplyCardModAction extends AbstractGameAction {
 
     public void update() {
         CardModifierManager.addModifier(card, cardModifier);
+        isDone = true;
     }
 }

@@ -21,7 +21,7 @@ public class CatchUp extends AbstractEasyCard implements OnWarpCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        allDmg(AbstractGameAction.AttackEffect.SLASH_HEAVY);
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_HEAVY);
     }
 
     public void upp() {
