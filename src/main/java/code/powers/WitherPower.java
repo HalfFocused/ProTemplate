@@ -4,6 +4,7 @@ import code.ModFile;
 import code.util.charUtil.WarpHook;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.mod.stslib.patches.ColoredDamagePatch;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -24,9 +25,9 @@ public class WitherPower extends AbstractEasyPower implements WarpHook, HealthBa
     public WitherPower(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.DEBUFF, false, owner, amount);
     }
-
-    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
+    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
+
     public void updateDescription() {
         description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
@@ -43,7 +44,9 @@ public class WitherPower extends AbstractEasyPower implements WarpHook, HealthBa
     private void tick(){
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
-            this.addToBot(new DamageAction(this.owner, new DamageInfo(AbstractDungeon.player, this.amount, DamageInfo.DamageType.HP_LOSS)));
+            DamageAction action = new DamageAction(this.owner, new DamageInfo(AbstractDungeon.player, this.amount, DamageInfo.DamageType.HP_LOSS));
+            ColoredDamagePatch.DamageActionColorField.damageColor.set(action, Color.BLACK.cpy());
+            this.addToBot(action);
             //this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 2));
         }
     }

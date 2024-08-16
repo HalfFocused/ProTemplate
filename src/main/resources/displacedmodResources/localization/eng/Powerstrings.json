@@ -68,8 +68,8 @@
       " [E] ."
     ]
   },
-  "${ModID}:DisarrayPower": {
-    "NAME": "Disarray",
+  "${ModID}:EntropyPower": {
+    "NAME": "Entropy",
     "DESCRIPTIONS": [
       "At the start of your turn, play the top card of your draw pile and #yExhaust it.",
       "At the start of your turn, play the top #b",

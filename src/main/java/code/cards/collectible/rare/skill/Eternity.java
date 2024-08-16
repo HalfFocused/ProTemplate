@@ -81,7 +81,9 @@ public class Eternity extends AbstractEasyCard {
             AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1);
             this.target = lastCard.target;
             this.cardsToPreview = lastCard.makeStatEquivalentCopy();
-            this.cardsToPreview.applyPowers();
+            if(!(lastCard instanceof Eternity)) { //Without this, you crash with multiple Eternities in hand.
+                this.cardsToPreview.applyPowers();
+            }
         }else{
             this.target = CardTarget.SELF;
         }

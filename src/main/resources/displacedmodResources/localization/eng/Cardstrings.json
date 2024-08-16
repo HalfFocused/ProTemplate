@@ -77,10 +77,10 @@
     "NAME": "Savagery",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage twice."
   },
-  "${ModID}:Disarray": {
-    "NAME": "Disarray",
+  "${ModID}:Entropy": {
+    "NAME": "Entropy",
     "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile and Exhaust it. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
-    "FLAVOR": "\"Welcome to my life.\""
+    "FLAVOR": "At the end of everything, there is nothing."
   },
   "${ModID}:HollowCognition": {
     "NAME": "Hollow Cognition",
@@ -247,7 +247,7 @@
     "DESCRIPTION": "Ethereal. NL Draw !M! cards. NL You can only play cards drawn by *Forsake this turn.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. NL You can only play cards drawn by *Forsake this turn.",
     "EXTENDED_DESCRIPTION": [
-      "I did not draw this card with Forsake.",
+      "I did not draw that card with Forsake.",
       "I ~will~ ~not~ draw that card with Forsake...",
       "I ~hadn't~ drawn that card with Forsake?"
     ]
@@ -255,5 +255,14 @@
   "${ModID}:OverAndOver": {
     "NAME": "Over And Over",
     "DESCRIPTION": "Put the first card you play each turn on top of your draw pile."
+  },
+  "${ModID}:Overwhelm": {
+    "NAME": "Overwhelm",
+    "DESCRIPTION": "Deal !D! damage. NL Double this card's damage this combat.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Triple this card's damage this combat."
+  },
+  "${ModID}:BranchTimeline": {
+    "NAME": "Branch Timeline",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage twice. NL ${ModID}:Forget: Add a random Attack and Skill to your hand."
   }
 }
