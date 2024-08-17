@@ -24,9 +24,6 @@ public class DisplayCardAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.6f) {
-
-            AbstractDungeon.player.hand.group.remove(card);
-            AbstractDungeon.getCurrRoom().souls.remove(card);
             AbstractDungeon.player.limbo.group.add(card);
             card.target_x = ((float)Settings.WIDTH / 2.0F) + (toTheSide ? (150 * Settings.xScale) : 0);
             card.target_y = (float)Settings.HEIGHT / 2.0F;

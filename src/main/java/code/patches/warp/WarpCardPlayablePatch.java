@@ -20,7 +20,7 @@ public class WarpCardPlayablePatch {
                     throws CannotCompileException
             {
                 if(f.getFieldName().equals("turnHasEnded")) {
-                    f.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? false : $proceed($$));}");
+                    f.replace("{$_=(((code.util.charUtil.CardUtil.queuedWarps > 0) || (basemod.helpers.CardModifierManager.hasModifier(this, code.ModFile.makeID(\"PlayableOutOfTurn\")))) ? false : $proceed($$));}");
                 }
             }
         };

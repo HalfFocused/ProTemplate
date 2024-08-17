@@ -118,5 +118,11 @@
     "DESCRIPTIONS": [
       "You can only play cards that were drawn by #yForsake this turn."
     ]
+  },
+  "${ModID}:TheSecondDreamPower": {
+    "NAME": "The Second Dream",
+    "DESCRIPTIONS": [
+      "Whenever you #yExhaust a card, play a random card of the same cost."
+    ]
   }
 }
