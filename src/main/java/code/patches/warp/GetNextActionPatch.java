@@ -9,6 +9,8 @@ import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
 import javassist.expr.MethodCall;
 
+import java.util.ArrayList;
+
 
 @SpirePatch2(clz= GameActionManager.class, method = "getNextAction")
 public class GetNextActionPatch {
@@ -72,6 +74,24 @@ public class GetNextActionPatch {
                     m.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? \"\" : $proceed($$));}");
                 }else if(m.getClassName().equals(AbstractPlayer.class.getName()) && m.getMethodName().equals("applyStartOfTurnPostDrawRelics")){
                     m.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? \"\" : $proceed($$));}");
+                }
+            }
+        };
+    }
+    static int index1 = 0;
+    @SpireInstrumentPatch
+    public static ExprEditor OutOfTurnCardOverride()
+    {
+        return new ExprEditor() {
+            public void edit(MethodCall m)
+                    throws CannotCompileException
+            {
+                if(m.getClassName().equals(ArrayList.class.getName()) && m.getMethodName().equals("isEmpty")) {
+                    index1++;
+
+                    if (index1 == 1 || index1 == 2) {
+                        m.replace("{$_=((code.util.charUtil.CardUtil.theSecondDream) ? true : $proceed($$));}");
+                    }
                 }
             }
         };

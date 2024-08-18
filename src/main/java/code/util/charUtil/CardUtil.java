@@ -2,6 +2,7 @@ package code.util.charUtil;
 
 import basemod.helpers.CardModifierManager;
 import code.actions.DisplayCardAction;
+import code.powers.TheSecondDreamPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,6 +24,7 @@ public class CardUtil {
     public static ArrayList<CardStreak> cardStreaks = new ArrayList<>();
 
     public static int queuedWarps  = 0;
+    public static boolean theSecondDream = false;
 
     @SpireEnum
     public static AbstractCard.CardRarity MYTHIC;
@@ -92,7 +94,7 @@ public class CardUtil {
             displayCard.current_x = ((AbstractCard) card).current_x;
             displayCard.current_y = ((AbstractCard) card).current_y;
             AbstractDungeon.actionManager.addToTop(new UnlimboAction(displayCard));
-            AbstractDungeon.actionManager.addToTop(new DisplayCardAction(displayCard));
+            AbstractDungeon.actionManager.addToTop(new DisplayCardAction(displayCard, AbstractDungeon.player.hasPower(TheSecondDreamPower.POWER_ID)));
         }
     }
 

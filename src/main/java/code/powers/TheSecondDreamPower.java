@@ -78,8 +78,27 @@ public class TheSecondDreamPower extends AbstractEasyPower {
                 }
 
             });
+            /*
+            this.addToTop(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    CardUtil.theSecondDream = false;
+                    isDone = true;
+                }
+            });
 
+            */
+            this.addToTop(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    CardUtil.theSecondDream = true;
+                    ReflectionHacks.privateMethod(GameActionManager.class, "getNextAction").invoke(AbstractDungeon.actionManager);
+                    CardUtil.theSecondDream = false;
+                    isDone = true;
+                }
+            });
             this.addToTop(new NewQueueCardAction(card, true, true, true));
+
         }
     }
 }

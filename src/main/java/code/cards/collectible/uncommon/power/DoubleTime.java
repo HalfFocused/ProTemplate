@@ -14,11 +14,11 @@ public class DoubleTime extends AbstractEasyCard {
 
     public DoubleTime() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new DoubleTimePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DoubleTimePower(p, magicNumber, upgraded)));
     }
 
     @Override

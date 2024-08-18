@@ -102,8 +102,10 @@
     "NAME": "Double Time",
     "DESCRIPTIONS": [
       "At the start of your next turn, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime into your hand.",
+      "At the start of your next turn, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime+ into your hand.",
       "At the start of your next #b",
-      " turns, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime into your hand."
+      " turns, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime into your hand.",
+      " turns, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime+ into your hand."
     ]
   },
   "${ModID}:EtchedInBloodPower": {
