@@ -239,9 +239,9 @@
   },
   "${ModID}:EtchedInBlood": {
     "NAME": "Etched In Blood",
-    "DESCRIPTION": "Gain !B! Block. NL Exhaust a card. NL Next turn, add a copy of that card to your hand.",
+    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Lapse 1 card.",
     "EXTENDED_DESCRIPTION": [
-      "Choose a card to Exhaust:"
+      "Lapse"
     ]
   },
   "${ModID}:Forsake": {
@@ -275,5 +275,9 @@
     "NAME": "The Second Dream",
     "DESCRIPTION": "Ethereal. NL Whenever you Exhaust a card, play a random card with the same cost.",
     "UPGRADE_DESCRIPTION": "Whenever you Exhaust a card, play a random card with the same cost."
+  },
+  "${ModID}:Manifest": {
+    "NAME": "Manifest",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL ${ModID}:Lapse the top {!M!|>1=!M! cards|@=card} of your draw pile."
   }
 }

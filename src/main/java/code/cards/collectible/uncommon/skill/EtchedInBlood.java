@@ -1,14 +1,13 @@
 package code.cards.collectible.uncommon.skill;
 
+import code.actions.LapseCardAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
-import code.powers.EtchedInBloodPower;
+import code.powers.LapsePower;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -24,13 +23,12 @@ public class EtchedInBlood extends AbstractEasyCard {
 
     public EtchedInBlood() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = block = 7;
+        baseBlock = block = 8;
     }
 
     private Consumer<List<AbstractCard>> exhaustAndApplyPower = cards -> {
         for(AbstractCard card : cards){
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EtchedInBloodPower(AbstractDungeon.player, card)));
-            this.addToBot(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
+            this.addToBot(new LapseCardAction(card, AbstractDungeon.player.hand));
         }
     };
 

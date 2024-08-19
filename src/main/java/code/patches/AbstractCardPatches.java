@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.sun.org.apache.xpath.internal.operations.Bool;
@@ -78,7 +79,7 @@ public class AbstractCardPatches {
     static class BlessedCardPatch{
         public static void Postfix(AbstractCard __instance)
         {
-            if(CardModifierManager.hasModifier(__instance, DreamModifier.ID)){
+            if(AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && CardModifierManager.hasModifier(__instance, DreamModifier.ID)){
                 if(MathUtils.random(1,5) == 1) {
                     AbstractGameEffect effect = new DarkOrbPassiveEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height));
                     effect.renderBehind = false;

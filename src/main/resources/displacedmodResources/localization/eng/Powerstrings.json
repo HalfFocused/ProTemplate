@@ -108,8 +108,8 @@
       " turns, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime+ into your hand."
     ]
   },
-  "${ModID}:EtchedInBloodPower": {
-    "NAME": "Etched In Blood",
+  "${ModID}:LapsePower": {
+    "NAME": "Lapse",
     "DESCRIPTIONS": [
       "At the start of your next turn, add #b1 ",
       " to your hand."
