@@ -13,6 +13,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EquilibriumPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+
+import java.util.Iterator;
 
 public class Ruckus extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID("Ruckus");
@@ -21,22 +24,24 @@ public class Ruckus extends AbstractEasyCard implements ForgetCard {
     public Ruckus() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         baseDamage = 7;
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 1;
         isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for(int i = 0; i < this.magicNumber; ++i) {// 34
+        for(int i = 0; i < 3; ++i) {
             dmgRandom(AbstractGameAction.AttackEffect.BLUNT_HEAVY);
         }
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeDamage(2);
     }
 
     @Override
     public void onForget() {
-        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EquilibriumPower(AbstractDungeon.player, 1), 1));
+        for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
+            this.addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        }
     }
 }

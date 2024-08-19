@@ -21,7 +21,7 @@ public class Savagery extends AbstractEasyCard {
 
     public Savagery() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 9;
+        baseDamage = damage = 10;
         isEthereal = true;
     }
 

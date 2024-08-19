@@ -191,8 +191,11 @@
   },
   "${ModID}:Rewind": {
     "NAME": "Rewind",
-    "DESCRIPTION": "Retain. NL Put a card from your discard pile into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Put a card from your discard pile into your hand."
+    "DESCRIPTION": "Retain. NL ${ModID}:Lapse a card in your discard pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL ${ModID}:Lapse a card in your discard pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Lapse"
+    ]
   },
   "${ModID}:MomentOfTruth": {
     "NAME": "Moment Of Truth",
@@ -269,7 +272,7 @@
   },
   "${ModID}:Ruckus": {
     "NAME": "Ruckus",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage to a random enemy !M! times. NL ${ModID}:Forget: Retain your hand this turn."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage to a random enemy 3 times. NL ${ModID}:Forget: Apply !M! Weak to ALL enemies."
   },
   "${ModID}:TheSecondDream": {
     "NAME": "The Second Dream",

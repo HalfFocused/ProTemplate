@@ -26,15 +26,13 @@ public class EtchedInBlood extends AbstractEasyCard {
         baseBlock = block = 8;
     }
 
-    private Consumer<List<AbstractCard>> exhaustAndApplyPower = cards -> {
-        for(AbstractCard card : cards){
-            this.addToBot(new LapseCardAction(card, AbstractDungeon.player.hand));
-        }
-    };
-
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        this.addToBot(new SelectCardsInHandAction(1, cardStrings.EXTENDED_DESCRIPTION[0], exhaustAndApplyPower));
+        this.addToBot(new SelectCardsInHandAction(1, cardStrings.EXTENDED_DESCRIPTION[0], cards -> {
+            for(AbstractCard card : cards){
+                this.addToBot(new LapseCardAction(card, AbstractDungeon.player.hand));
+            }
+        }));
     }
 
     public void upp() {

@@ -23,7 +23,7 @@ public class LapseCardAction extends AbstractGameAction {
 
     public void update() {
         if(group.type != CardGroup.CardGroupType.HAND){
-            card.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;// 60
+            card.target_x = (float) Settings.WIDTH / 2.0F + (300.0F * ((card.current_x < Settings.WIDTH / 2.0F) ? -1f : 1f)) * Settings.scale;
             card.target_y = (float) Settings.HEIGHT / 2.0F;
             card.targetDrawScale = 0.5f;
         }
