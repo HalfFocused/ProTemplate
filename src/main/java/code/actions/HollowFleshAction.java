@@ -43,13 +43,13 @@ public class HollowFleshAction extends AbstractGameAction {
             for(int i = 0; i < effect; ++i) {
                 this.addToBot(new GainBlockAction(this.p, this.p, this.amount));
             }
-            this.addToBot(new MakeTempCardInDrawPileAction(new Dazed(), 2, true, true));
-
 
             if (!this.freeToPlayOnce) {
                 this.p.energy.use(EnergyPanel.totalCount);
             }
         }
+        this.addToBot(new MakeTempCardInDrawPileAction(new Dazed(), 2, true, true));
+
 
         this.isDone = true;
     }

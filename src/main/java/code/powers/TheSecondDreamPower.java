@@ -31,7 +31,6 @@ public class TheSecondDreamPower extends AbstractEasyPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public ArrayList<UUID> cardsCaughtEarlier = new ArrayList<>();
 
     public TheSecondDreamPower(AbstractCreature owner) {
         super(POWER_ID, NAME, PowerType.BUFF, false, owner, -1);
@@ -47,9 +46,8 @@ public class TheSecondDreamPower extends AbstractEasyPower {
     @Override
     public void onExhaust(AbstractCard exhausted) {
         this.flash();
-        CardGroup cards = CardUtil.filteredRandomCard(find->(find.color == TheDisplaced.Enums.DISPLACED_COLOR && find.cost == exhausted.cost));
-        if(!cards.isEmpty()) {
-            AbstractCard card = cards.getRandomCard(AbstractDungeon.cardRandomRng);
+        if(exhausted.cost != -2) {
+            AbstractCard card = exhausted.makeStatEquivalentCopy();
             card.purgeOnUse = true;
             card.current_x = exhausted.current_x;
             card.current_y = exhausted.current_y;
@@ -68,6 +66,11 @@ public class TheSecondDreamPower extends AbstractEasyPower {
                 }
 
                 @Override
+                public boolean isInherent(AbstractCard card){
+                    return true;
+                }
+
+                @Override
                 public String identifier(AbstractCard card) {
                     return ModFile.makeID("PlayableOutOfTurn");
                 }
@@ -78,16 +81,7 @@ public class TheSecondDreamPower extends AbstractEasyPower {
                 }
 
             });
-            /*
-            this.addToTop(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    CardUtil.theSecondDream = false;
-                    isDone = true;
-                }
-            });
 
-            */
             this.addToTop(new AbstractGameAction() {
                 @Override
                 public void update() {

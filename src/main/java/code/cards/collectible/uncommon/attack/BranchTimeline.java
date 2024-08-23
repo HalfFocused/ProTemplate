@@ -31,12 +31,12 @@ public class BranchTimeline extends AbstractEasyCard implements ForgetCard {
     }
 
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(2);
     }
 
     @Override
     public void onForget() {
-        this.addToBot(new MakeTempCardInHandAction(CardUtil.filteredRandomCard(card->(card.color == TheDisplaced.Enums.DISPLACED_COLOR && card.type == CardType.ATTACK)).getRandomCard(AbstractDungeon.cardRandomRng)));
-        this.addToBot(new MakeTempCardInHandAction(CardUtil.filteredRandomCard(card->(card.color == TheDisplaced.Enums.DISPLACED_COLOR && card.type == CardType.SKILL)).getRandomCard(AbstractDungeon.cardRandomRng)));
+        this.addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK)));
+        this.addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.SKILL)));
     }
 }

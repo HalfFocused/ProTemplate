@@ -276,11 +276,19 @@
   },
   "${ModID}:TheSecondDream": {
     "NAME": "The Second Dream",
-    "DESCRIPTION": "Ethereal. NL Whenever you Exhaust a card, play a random card with the same cost.",
-    "UPGRADE_DESCRIPTION": "Whenever you Exhaust a card, play a random card with the same cost."
+    "DESCRIPTION": "Ethereal. NL Whenever you Exhaust a card, play it.",
+    "UPGRADE_DESCRIPTION": "Whenever you Exhaust a card, play it."
   },
   "${ModID}:Manifest": {
     "NAME": "Manifest",
     "DESCRIPTION": "{@@}Deal !D! damage. NL ${ModID}:Lapse the top {!M!|>1=!M! cards|@=card} of your draw pile."
+  },
+  "${ModID}:Unburdened": {
+    "NAME": "Unburdened",
+    "DESCRIPTION": "The first time a card is Exhausted each turn, gain !M! Strength."
+  },
+  "${ModID}:ImpendingDoom": {
+    "NAME": "Impending Doom",
+    "DESCRIPTION": "At the start of your turn, apply !M! ${ModID}:Wither to ALL enemies."
   }
 }

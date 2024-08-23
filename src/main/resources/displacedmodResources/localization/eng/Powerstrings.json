@@ -126,5 +126,19 @@
     "DESCRIPTIONS": [
       "Whenever you #yExhaust a card, play a random card of the same cost."
     ]
+  },
+  "${ModID}:UnburdenedPower": {
+    "NAME": "Unburdened",
+    "DESCRIPTIONS": [
+      "The first time a card is #yExhausted each turn, gain #b",
+      " #yStrength."
+    ]
+  },
+  "${ModID}:ImpendingDoomPower": {
+    "NAME": "Impending Doom",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #b",
+      " #yWither to ALL enemies."
+    ]
   }
 }
