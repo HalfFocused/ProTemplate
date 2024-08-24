@@ -75,6 +75,7 @@ public class WarpAction extends AbstractGameAction {
                                     ((OnWarpCard) card).onWarp(AbstractDungeon.player.discardPile);
                                 }
                             }
+                            CardUtil.warpsThisCombat++;
                             this.isDone = true;
                         }
                     });

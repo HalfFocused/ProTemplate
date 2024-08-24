@@ -22,6 +22,7 @@ public class DoubleTimePower extends AbstractEasyPower implements NonStackablePo
     public DoubleTimePower(AbstractCreature owner, int amount, boolean upgraded) {
         super(POWER_ID, NAME, PowerType.BUFF, true, owner, amount);
         createUpgraded = upgraded;
+        updateDescription();
     }
 
     @Override
@@ -43,7 +44,7 @@ public class DoubleTimePower extends AbstractEasyPower implements NonStackablePo
 
     @Override
     public void updateDescription() {
-        description = (amount == 1) ? (createUpgraded ? DESCRIPTIONS[1] : DESCRIPTIONS[0]) : DESCRIPTIONS[1] + amount + (createUpgraded ? DESCRIPTIONS[3] : DESCRIPTIONS[2]);
+        description = (amount == 1) ? (createUpgraded ? DESCRIPTIONS[1] : DESCRIPTIONS[0]) : DESCRIPTIONS[2] + amount + (createUpgraded ? DESCRIPTIONS[4] : DESCRIPTIONS[3]);
     }
 
 

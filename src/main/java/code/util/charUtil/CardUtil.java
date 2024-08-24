@@ -20,7 +20,7 @@ public class CardUtil {
 
     public static ArrayList<AbstractCard> cardsDrawnWithForsakeThisTurn = new ArrayList<>();
 
-
+    public static int warpsThisCombat = 0;
     public static ArrayList<CardStreak> cardStreaks = new ArrayList<>();
 
     public static int queuedWarps  = 0;
