@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static code.ModFile.makeID;
 
@@ -17,8 +18,8 @@ public class Raincoat extends AbstractEasyRelic  {
         this.counter = 0;
     }
 
-    public void onPlayCard(AbstractCard drawnCard) {
-        if(drawnCard.isEthereal){
+    public void onPlayCard(AbstractCard c, AbstractMonster m) {
+        if(c.isEthereal){
             counter++;
             if (this.counter % NUM_CARDS == 0) {
                 this.counter = 0;

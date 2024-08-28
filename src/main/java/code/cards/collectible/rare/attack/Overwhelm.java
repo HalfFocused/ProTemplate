@@ -16,14 +16,15 @@ public class Overwhelm extends AbstractEasyCard {
 
     public Overwhelm() {
         super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = damage = 3;
+        baseDamage = damage = 5;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-        this.addToBot(new ModifyDamageAction(this.uuid, this.baseDamage * (upgraded ? 2 : 1)));
+        this.addToBot(new ModifyDamageAction(this.uuid, this.baseDamage));
     }
 
     public void upp() {
+        upgradeDamage(2);
     }
 }

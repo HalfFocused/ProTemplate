@@ -5,13 +5,18 @@ import basemod.BaseMod;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import code.util.charUtil.CardUtil;
+import code.util.charUtil.ForgetCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Vector2;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.OrbStrings;
@@ -20,13 +25,17 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import code.cards.AbstractEasyCard;
 import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.potions.AbstractEasyPotion;
 import code.relics.AbstractEasyRelic;
 import code.util.ProAudio;
+import org.lwjgl.Sys;
+
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -36,7 +45,10 @@ public class ModFile implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        AddAudioSubscriber {
+        AddAudioSubscriber,
+        OnPlayerTurnStartSubscriber,
+        OnStartBattleSubscriber,
+        PostExhaustSubscriber{
 
     public static final String modID = "displacedmod";
 
@@ -189,6 +201,27 @@ public class ModFile implements
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
+        }
+    }
+
+    @Override
+    public void receiveOnPlayerTurnStart() {
+        CardUtil.cardExhaustedThisTurn = false;
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        CardUtil.cardStreaks.clear();
+        CardUtil.cardsPlayedLastTurn.clear(); //Even though Recurring Dream working across combats was cool
+        CardUtil.queuedWarps = 0; //In case the previous combat ends with warps queued (cursed)
+        CardUtil.warpsThisCombat = 0;
+    }
+
+    @Override
+    public void receivePostExhaust(AbstractCard abstractCard) {
+        CardUtil.cardExhaustedThisTurn = true;
+        if(abstractCard instanceof ForgetCard){
+            CardUtil.forgetCard((ForgetCard) abstractCard);
         }
     }
 }

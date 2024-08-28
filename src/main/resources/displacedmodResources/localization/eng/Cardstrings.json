@@ -15,11 +15,6 @@
     "NAME": "Flash Step",
     "DESCRIPTION": "{@@}Gain !B! Block. NL ${ModID}:Warp !M! turn{!M!|>1=s}."
   },
-  "${ModID}:Relapse": {
-    "NAME": "Relapse",
-    "DESCRIPTION": "Play and trigger the ${ModID}:Forget effects of up to !M! random Ethereal cards from your Exhaust pile. NL Exhaust.",
-    "FLAVOR": "Each loop is more prone to relapse than the last."
-  },
   "${ModID}:ClingOn": {
     "NAME": "Cling On",
     "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Ethereal cards don't Exhaust at the end of this turn."
@@ -238,7 +233,8 @@
       "I haven't played a card yet this combat.",
       "I ~will~ ~not~ have played a card by then...",
       "I ~hadn't~ played a card yet?"
-    ]
+    ],
+    "FLAVOR": "Things were easier before. When yesterday was gone, and tomorrow unknown."
   },
   "${ModID}:EtchedInBlood": {
     "NAME": "Etched In Blood",
@@ -264,7 +260,7 @@
   "${ModID}:Overwhelm": {
     "NAME": "Overwhelm",
     "DESCRIPTION": "Deal !D! damage. NL Double this card's damage this combat.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Triple this card's damage this combat."
+    "FLAVOR": ""
   },
   "${ModID}:BranchTimeline": {
     "NAME": "Branch Timeline",
@@ -290,5 +286,22 @@
   "${ModID}:ImpendingDoom": {
     "NAME": "Impending Doom",
     "DESCRIPTION": "At the start of your turn, apply !M! ${ModID}:Wither to ALL enemies."
+  },
+  "${ModID}:Restraint": {
+    "NAME": "Restraint",
+    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL ${ModID}:Forget: Add a *Release to your hand."
+  },
+  "${ModID}:Release": {
+    "NAME": "Release",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! time{@@}{!M!|>1=s}. NL Exhaust."
+  },
+  "${ModID}:SplitSecond": {
+    "NAME": "Split Second",
+    "DESCRIPTION": "Deal !D! damage. NL If a card was Exhausted this turn, draw !M! card{@@}{!M!|>1=s}."
+  },
+  "${ModID}:BeautyRains": {
+    "NAME": "Beauty Rains",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${ModID}:Lapse your hand.",
+    "FLAVOR": "I'm on my way, coming back home again."
   }
 }

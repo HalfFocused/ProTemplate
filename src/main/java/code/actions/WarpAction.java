@@ -1,6 +1,7 @@
 package code.actions;
 
 import basemod.ReflectionHacks;
+import code.effects.WarpEffect;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.OnWarpCard;
 import code.util.charUtil.WarpHook;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.combat.HeartMegaDebuffEffect;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 public class WarpAction extends AbstractGameAction {
@@ -84,13 +86,15 @@ public class WarpAction extends AbstractGameAction {
                     this.isDone = true;
                 }
             });
+
             if(firstOne) {
                 addToTop(new SFXAction("POWER_TIME_WARP", 0.05F));
+                //AbstractDungeon.actionManager.addToTop(new VFXAction(new WarpEffect(CardUtil.queuedWarps)));
             }
             addToTop(new VFXAction(new WhirlwindEffect(), 0.0F));
 
-            if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {// 37
-                AbstractDungeon.actionManager.clearPostCombatActions();// 38
+            if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
+                AbstractDungeon.actionManager.clearPostCombatActions();
             }
         }
 

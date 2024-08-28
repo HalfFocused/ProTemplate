@@ -28,19 +28,6 @@ import java.util.Iterator;
 
 public class AbstractCardPatches {
 
-    @SpirePatch(
-            clz= AbstractCard.class,
-            method="triggerOnExhaust"
-    )
-    static class ForgetCardPatch{
-        public static void Prefix(AbstractCard __instance)
-        {
-            if(__instance instanceof ForgetCard){
-                CardUtil.forgetCard((ForgetCard) __instance);
-            }
-        }
-    }
-
     private static CardStrings forsakeCardStrings = CardCrawlGame.languagePack.getCardStrings(Forsake.ID);
 
 

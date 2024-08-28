@@ -63,21 +63,6 @@ public class GetNextActionPatch {
         };
     }
 
-    @SpireInstrumentPatch
-    public static ExprEditor NoRelicOverride()
-    {
-        return new ExprEditor() {
-            public void edit(MethodCall m)
-                    throws CannotCompileException
-            {
-                if(m.getClassName().equals(AbstractPlayer.class.getName()) && m.getMethodName().equals("applyStartOfTurnRelics")) {
-                    m.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? \"\" : $proceed($$));}");
-                }else if(m.getClassName().equals(AbstractPlayer.class.getName()) && m.getMethodName().equals("applyStartOfTurnPostDrawRelics")){
-                    m.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? \"\" : $proceed($$));}");
-                }
-            }
-        };
-    }
     static int index1 = 0;
     @SpireInstrumentPatch
     public static ExprEditor OutOfTurnCardOverride()

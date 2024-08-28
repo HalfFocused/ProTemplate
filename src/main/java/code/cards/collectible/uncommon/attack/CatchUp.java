@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class CatchUp extends AbstractEasyCard implements OnWarpCard {
     public final static String ID = makeID(CatchUp.class.getSimpleName());
-    // intellij stuff attack, all_enemy, uncommon, 18, 6, , , , 
+    // intellij stuff attack, all_enemy, uncommon, 1    8, 6, , , ,
 
     public CatchUp() {
         super(ID, 5, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);

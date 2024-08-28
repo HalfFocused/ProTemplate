@@ -12,20 +12,19 @@ import java.util.ArrayList;
         method="callEndOfTurnActions"
 )
 public class RiotEndOfTurnPatch {
-    public static void Prefix(GameActionManager __instance)
-    {
+    public static void Prefix(GameActionManager __instance) {
         /*
             Reset the streaks of any cards with a streak that were not played this turn.
          */
-        for(CardUtil.CardStreak pairing : CardUtil.cardStreaks){
+        for (CardUtil.CardStreak pairing : CardUtil.cardStreaks) {
             boolean playedThisTurn = false;
-            for(AbstractCard cardPlayedThisTurn : __instance.cardsPlayedThisTurn){
+            for (AbstractCard cardPlayedThisTurn : __instance.cardsPlayedThisTurn) {
                 if (pairing.name.equals(cardPlayedThisTurn.name)) {
                     playedThisTurn = true;
                     break;
                 }
             }
-            if(!playedThisTurn){
+            if (!playedThisTurn) {
                 pairing.streak = 0;
             }
         }
@@ -33,8 +32,8 @@ public class RiotEndOfTurnPatch {
            For each card played this turn, increment the streak with that name or create a streak for that name.
          */
         ArrayList<String> cardsAlreadyIncremented = new ArrayList<>();
-        for(AbstractCard card : __instance.cardsPlayedThisTurn){
-            if(!cardsAlreadyIncremented.contains(card.name)) {
+        for (AbstractCard card : __instance.cardsPlayedThisTurn) {
+            if (!cardsAlreadyIncremented.contains(card.name)) {
                 CardUtil.CardStreak streak = null;
                 for (CardUtil.CardStreak streakIterator : CardUtil.cardStreaks) {
                     if (card.name.equals(streakIterator.name)) {
@@ -52,12 +51,5 @@ public class RiotEndOfTurnPatch {
         CardUtil.cardsPlayedLastTurn.clear();
         CardUtil.cardsDrawnWithForsakeThisTurn.clear();
         CardUtil.cardsPlayedLastTurn.addAll(__instance.cardsPlayedThisTurn);
-
     }
-
-    public static void Postfix(GameActionManager __instance){
-
-    }
-
-
 }
