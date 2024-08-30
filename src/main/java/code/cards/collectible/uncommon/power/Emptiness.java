@@ -13,7 +13,7 @@ public class Emptiness extends AbstractEasyCard {
 
     public Emptiness() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -22,6 +22,6 @@ public class Emptiness extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(1);
     }
 }

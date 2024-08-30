@@ -1,12 +1,10 @@
-package code.cards.collectible.uncommon.attack;
+package code.cards.collectible.rare.attack;
 
 import code.actions.AfflictionAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
-import com.megacrit.cardcrawl.actions.watcher.WallopAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,8 +14,8 @@ public class Affliction extends AbstractEasyCard {
     // intellij stuff attack, enemy, uncommon, 10, 3, , , , 
 
     public Affliction() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 8;
+        super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        baseDamage = damage = 10;
         exhaust = true;
     }
 
@@ -26,6 +24,6 @@ public class Affliction extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(2);
     }
 }

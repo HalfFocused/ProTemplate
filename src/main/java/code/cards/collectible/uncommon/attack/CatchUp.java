@@ -41,8 +41,10 @@ public class CatchUp extends AbstractEasyCard implements OnWarpCard {
     @Override
     public AbstractCard makeCopy() {
         AbstractCard tmp = new CatchUp();
-        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            tmp.updateCost(-CardUtil.warpsThisCombat);
+        if(AbstractDungeon.currMapNode != null){
+            if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                tmp.updateCost(-CardUtil.warpsThisCombat);
+            }
         }
 
         return tmp;

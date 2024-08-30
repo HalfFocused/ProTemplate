@@ -15,7 +15,7 @@ public class Persist extends AbstractEasyCard {
 
     public Persist() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 7;
+        baseBlock = block = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -24,6 +24,6 @@ public class Persist extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBlock(4);
+        upgradeBlock(3);
     }
 }

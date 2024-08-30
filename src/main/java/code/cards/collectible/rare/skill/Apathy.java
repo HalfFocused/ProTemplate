@@ -1,4 +1,4 @@
-package code.cards.collectible.uncommon.skill;
+package code.cards.collectible.rare.skill;
 
 import code.cards.AbstractEasyCard;
 
@@ -19,7 +19,7 @@ public class Apathy extends AbstractEasyCard implements ForgetCard {
     public Apathy() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         baseBlock = block = 16;
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
         isEthereal = true;
     }
 
@@ -29,7 +29,7 @@ public class Apathy extends AbstractEasyCard implements ForgetCard {
 
     public void upp() {
         upgradeBlock(4);
-        upgradeMagicNumber(1);
+        //upgradeMagicNumber(1);
     }
 
     @Override

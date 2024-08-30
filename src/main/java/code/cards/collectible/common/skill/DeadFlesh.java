@@ -29,7 +29,7 @@ public class DeadFlesh extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeBlock(2);
         upgradeMagicNumber(1);
     }
 }

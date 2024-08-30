@@ -34,6 +34,6 @@ public class EmptinessPower extends AbstractEasyPower {
     @Override
     public void onExhaust(AbstractCard card) {
         this.flash();
-        this.addToTop(new AllEnemiesLoseHPAction(owner, amount));
+        this.addToBot(new AllEnemiesLoseHPAction(owner, amount));
     }
 }

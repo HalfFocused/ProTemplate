@@ -84,7 +84,7 @@
   },
   "${ModID}:FleetingFortitude": {
     "NAME": "Fleeting Fortitude",
-    "DESCRIPTION": "Whenever you draw an Ethereal card, gain !M! Block."
+    "DESCRIPTION": "Whenever an Ethereal card is drawn or Exhausted, gain !M! Block."
   },
   "${ModID}:BeforeYourEyes": {
     "NAME": "Before Your Eyes",
@@ -128,7 +128,8 @@
   },
   "${ModID}:Affliction": {
     "NAME": "Affliction",
-    "DESCRIPTION": "Deal !D! damage. NL Apply ${ModID}:Wither equal to unblocked damage dealt. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply ${ModID}:Wither equal to unblocked damage dealt. NL Exhaust.",
+    "FLAVOR": "You warned them to stay back. It's all you could have done."
   },
   "${ModID}:Distort": {
     "NAME": "Distort",
@@ -285,7 +286,8 @@
   },
   "${ModID}:ImpendingDoom": {
     "NAME": "Impending Doom",
-    "DESCRIPTION": "At the start of your turn, apply !M! ${ModID}:Wither to ALL enemies."
+    "DESCRIPTION": "At the start of your turn, apply X ${ModID}:Wither to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, apply X+1 ${ModID}:Wither to ALL enemies."
   },
   "${ModID}:Restraint": {
     "NAME": "Restraint",
@@ -303,5 +305,13 @@
     "NAME": "Beauty Rains",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${ModID}:Lapse your hand.",
     "FLAVOR": "I'm on my way, coming back home again."
+  },
+  "${ModID}:Decay": {
+    "NAME": "Decay",
+    "DESCRIPTION": "Apply !M! ${ModID}:Wither."
+  },
+  "${ModID}:Twist": {
+    "NAME": "Twist",
+    "DESCRIPTION": "Deal !D! damage. NL If this is the first card you played this turn, apply !M! Weak."
   }
 }

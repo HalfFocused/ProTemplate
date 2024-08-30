@@ -3,14 +3,7 @@
     "NAME": "Wither",
     "DESCRIPTIONS": [
       "At the start of it's turn and after a #yWarp, loses #b",
-      " HP."
-    ]
-  },
-  "${ModID}:RisingStormPower": {
-    "NAME": "Rising Storm",
-    "DESCRIPTIONS": [
-      "Whenever you played a #yBlessed card, gain #b",
-      " Strength."
+      " HP and 2 #yWither."
     ]
   },
   "${ModID}:EmptinessPower": {
@@ -40,7 +33,7 @@
   "${ModID}:FleetingFortitudePower": {
     "NAME": "Fleeting Fortitude",
     "DESCRIPTIONS": [
-      "Whenever you draw an #yEthereal card, gain #b",
+      "Whenever you an #yEthereal card is drawn or #yExhausted, gain #b",
       " #yBlock."
     ]
   },
