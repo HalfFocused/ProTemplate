@@ -14,8 +14,12 @@ import javassist.expr.MethodCall;
 @SpirePatch2(clz= GameActionManager.class, method = "callEndOfTurnActions")
 public class EndOfTurnActionsPatch {
 
+    /*
+        Warp is designed to not effect relics.
+        This patch replaces that pesky "applyEndOfTurnRelics" call with nothing if there is a warp queued. not bad.
+     */
     @SpireInstrumentPatch
-    public static ExprEditor LoseBlockOverride()
+    public static ExprEditor EndOfTurnRelicsOverride()
     {
         return new ExprEditor() {
             public void edit(MethodCall m)

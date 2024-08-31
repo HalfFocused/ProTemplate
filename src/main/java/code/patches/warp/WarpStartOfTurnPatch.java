@@ -14,45 +14,14 @@ import javassist.expr.MethodCall;
 public class WarpStartOfTurnPatch {
 
     /*
-    @SpireInsertPatch(
-            loc=520
-    )
-    public static SpireReturn<Void> Insert(AbstractRoom __instance)
-    {
-        if(CardUtil.queuedWarps > 0) {
-            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                public void update() {
-                    this.addToBot(new EndTurnAction());
-                    this.addToBot(new WaitAction(1.2F));
-                    this.addToBot(new MonsterStartTurnAction());
+        none of the actions queued in this method are good for us. let's just not!
+        in all seriousness, this patch removes:
 
-                    AbstractDungeon.actionManager.monsterAttacksQueued = false;
-                    this.isDone = true;
-                }
-            });
-            AbstractDungeon.player.isEndingTurn = false;
-            return SpireReturn.Return();
-        }
-
-        return SpireReturn.Continue();
-    }
-    */
-
-    @SpireInstrumentPatch
-    public static ExprEditor SkipTurnOverride()
-    {
-        return new ExprEditor() {
-            public void edit(FieldAccess f)
-                    throws CannotCompileException
-            {
-                //target any attempt to access the value AbstractRoom's skipMonsterTurn value
-                if(f.getClassName().equals(AbstractRoom.class.getName()) && f.getFieldName().equals("skipMonsterTurn"))
-                    //code to replace the field access with
-                    f.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? false : $proceed($$));}");
-            }
-        };
-    }
-
+        -end of turn discard
+        -clearing the card queue
+        -the end turn action (the monster turn banner)
+        -an annoying 1.2 second pause
+     */
     static int index = 0;
 
     @SpireInstrumentPatch
@@ -62,7 +31,6 @@ public class WarpStartOfTurnPatch {
             public void edit(MethodCall m)
                     throws CannotCompileException
             {
-                //target any attempt to access the value AbstractRoom's skipMonsterTurn value
                 if(m.getClassName().equals(GameActionManager.class.getName()) && m.getMethodName().equals("addToBottom")) {
                     index++;
 

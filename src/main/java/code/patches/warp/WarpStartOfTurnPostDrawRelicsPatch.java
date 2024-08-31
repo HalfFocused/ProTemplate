@@ -10,6 +10,12 @@ import javassist.expr.MethodCall;
 
 @SpirePatch2(clz= AbstractPlayer.class, method = "applyStartOfTurnPostDrawRelics")
 public class WarpStartOfTurnPostDrawRelicsPatch {
+    /*
+        Why do I let this method even get called instead of patching out where 'applyStartOfTurnPostDrawRelics' is called?
+        So glad you asked!
+        This is where the BaseMod hook for start of turn post draw is, that's why.
+        patching it this way is necessary to support modded hooks.
+     */
     @SpireInstrumentPatch
     public static ExprEditor NoRelicOverride()
     {

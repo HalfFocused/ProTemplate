@@ -14,6 +14,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 )
 public class WarpStopWarpingPatch {
 
+    /*
+        I don't know where. but somewhere in the crazy mess of StS turn code is a point where the action queue clears,
+        making queuing multiple warps unreliable. doing things with an internal queued warp counter and adding another
+        queue after the end of the Warp is *a* way to circumvent this (as for if it's the best way? no clue)
+     */
     @SpireInsertPatch(
             loc=471
     )

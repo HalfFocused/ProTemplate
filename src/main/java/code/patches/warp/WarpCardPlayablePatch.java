@@ -11,6 +11,10 @@ import javassist.expr.FieldAccess;
 @SpirePatch2(clz= AbstractCard.class, method = "hasEnoughEnergy")
 public class WarpCardPlayablePatch {
 
+    /*
+        Make sure cards can be played and queued during warps by replacing any attempt
+         to access turnHasEnded with false when a warp is queued. important for Entropy (rare power).
+     */
     @SpireInstrumentPatch
     public static ExprEditor MonsterEndOfTurnOverride()
     {
@@ -19,8 +23,8 @@ public class WarpCardPlayablePatch {
             public void edit(FieldAccess f)
                     throws CannotCompileException
             {
-                if(f.getFieldName().equals("turnHasEnded")) {
-                    f.replace("{$_=(((code.util.charUtil.CardUtil.queuedWarps > 0) || (basemod.helpers.CardModifierManager.hasModifier(this, code.ModFile.makeID(\"PlayableOutOfTurn\")))) ? false : $proceed($$));}");
+                if(f.getFieldName().equals("turnHasEnded") && f.isReader()) {
+                    f.replace("{$_=((code.util.charUtil.CardUtil.queuedWarps > 0) ? false : $proceed($$));}");
                 }
             }
         };

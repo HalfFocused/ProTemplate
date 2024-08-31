@@ -14,6 +14,12 @@ import java.util.ArrayList;
 
 @SpirePatch2(clz= AbstractPlayer.class, method = "applyStartOfTurnRelics")
 public class WarpStartOfTurnRelicsPatch {
+    /*
+        Why do I let this method even get called instead of patching out where 'applyStartOfTurnRelics' is called?
+        So glad you asked!
+        This is where the BaseMod hook for start of turn is, that's why.
+        patching it this way is necessary to support modded hooks.
+    */
     @SpireInstrumentPatch
     public static ExprEditor NoRelicOverride()
     {

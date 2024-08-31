@@ -12,6 +12,13 @@ import javassist.expr.MethodCall;
 @SpirePatch2(clz= PlayerTurnEffect.class, method = SpirePatch.CONSTRUCTOR)
 public class WarpEnergyReplenishPatch {
 
+    /*
+        Did you know energy replenishing happens in the PLAYER TURN BANNER VISUAL EFFECT??!?!???!
+        I HATE IT HERE
+        HATE. HATE.
+        Anyway, if we're warping we don't want to replenish energy, so I instrument patch occurrences of the
+        recharge method with a little if statement around it.
+     */
     @SpireInstrumentPatch
     public static ExprEditor EnergyReplenishOverride()
     {

@@ -313,5 +313,9 @@
   "${ModID}:Twist": {
     "NAME": "Twist",
     "DESCRIPTION": "Deal !D! damage. NL If this is the first card you played this turn, apply !M! Weak."
+  },
+  "${ModID}:HighGround": {
+    "NAME": "High Ground",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable."
   }
 }

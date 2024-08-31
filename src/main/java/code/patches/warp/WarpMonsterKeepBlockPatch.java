@@ -12,6 +12,10 @@ import javassist.expr.MethodCall;
 @SpirePatch2(clz= MonsterGroup.class, method = "applyPreTurnLogic")
 public class WarpMonsterKeepBlockPatch {
 
+    /*
+        Monsters shouldn't lose block during a warp, so I perform a very similar patch to the player one here.
+        If there is a warp queued, lose 0 block instead. cool.
+     */
     @SpireInstrumentPatch
     public static ExprEditor LoseBlockOverride()
     {
