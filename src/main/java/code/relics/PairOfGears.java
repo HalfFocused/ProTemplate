@@ -22,14 +22,4 @@ public class PairOfGears extends AbstractEasyRelic  {
     public PairOfGears() {
         super(ID, RelicTier.UNCOMMON, LandingSound.FLAT, TheDisplaced.Enums.DISPLACED_COLOR);
     }
-
-    public void onPlayerEndTurn() {
-        if (CardUtil.hasEtherealCardInHand(AbstractDungeon.player)) {
-            this.addToBot(new SelectCardsInHandAction(1, DESCRIPTIONS[1], true, true, abstractCard -> true, abstractCards -> {
-                for(AbstractCard card : abstractCards){
-                    AbstractDungeon.player.hand.moveToDeck(card, true);
-                }
-            }));
-        }
-    }
 }

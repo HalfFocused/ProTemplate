@@ -133,5 +133,13 @@
       "At the start of your turn, apply #b",
       " #yWither to ALL enemies."
     ]
+  },
+  "${ModID}:PrecognitionPower": {
+    "NAME": "Precognition",
+    "DESCRIPTIONS": [
+      "The next time a card is #yExhausted, draw #b1 card.",
+      "The next #b",
+      " times a card is #yExhausted, draw #b1 card."
+    ]
   }
 }

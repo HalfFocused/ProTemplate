@@ -4,7 +4,6 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
-import code.cards.collectible.rare.power.TheSecondDream;
 import code.powers.UnburdenedPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

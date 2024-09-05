@@ -59,8 +59,7 @@
     "NAME": "Pair of Gears",
     "FLAVOR": "The gears are inexplicably linked to each other. They spin at unpredictable yet comforting times.",
     "DESCRIPTIONS": [
-      "At the end of your turn, if there is an #yEthereal card in your hand, you may shuffle a card from your hand into your draw pile.",
-      "Choose a card to shuffle into your draw pile."
+      "Whenever you #yPredict, don't discard Powers drawn that way."
     ]
   },
   "${ModID}:TheClockworkUniverse": {

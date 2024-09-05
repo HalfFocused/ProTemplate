@@ -30,5 +30,11 @@
       "lapse"
     ],
     "DESCRIPTION": "#yExhaust the card, and add a copy of the #yExhausted card to your hand at the start of your next turn."
+  },
+  {
+    "NAMES": [
+      "predict"
+    ],
+    "DESCRIPTION": "Draw an amount of cards, then discard each card drawn this way that doesn't meet the specified quality."
   }
 ]

@@ -66,7 +66,7 @@ public class AbstractCardPatches {
     static class BlessedCardPatch{
         public static void Postfix(AbstractCard __instance)
         {
-            if(AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && CardModifierManager.hasModifier(__instance, DreamModifier.ID)){
+            if(AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && CardModifierManager.hasModifier(__instance, DreamModifier.ID)){
                 if(MathUtils.random(1,5) == 1) {
                     AbstractGameEffect effect = new DarkOrbPassiveEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height));
                     effect.renderBehind = false;

@@ -1,5 +1,6 @@
 package code.cards.collectible.common.skill;
 
+import code.actions.PredictAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
@@ -16,16 +17,16 @@ public class HighGround extends AbstractEasyCard {
 
     public HighGround() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
-        baseBlock = 4;
         baseMagicNumber = magicNumber = 1;
+        baseSecondMagic = secondMagic = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
         addToBot(new ApplyPowerAction(m,p,new VulnerablePower(m, magicNumber, false)));
+        addToBot(new PredictAction(secondMagic, card -> card.type == CardType.ATTACK));
     }
 
     public void upp() {
-        upgradeBlock(2);
+        upgradeMagicNumber(1);
     }
 }

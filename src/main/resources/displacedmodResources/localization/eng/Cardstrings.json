@@ -301,10 +301,10 @@
     "NAME": "Split Second",
     "DESCRIPTION": "Deal !D! damage. NL If a card was Exhausted this turn, draw !M! card{@@}{!M!|>1=s}."
   },
-  "${ModID}:BeautyRains": {
-    "NAME": "Beauty Rains",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${ModID}:Lapse your hand.",
-    "FLAVOR": "I'm on my way, coming back home again."
+  "${ModID}:Her": {
+    "NAME": "Her",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL ${ModID}:Forget: Gain !M! Weak.",
+    "FLAVOR": "\"Don't go back for me.\""
   },
   "${ModID}:Decay": {
     "NAME": "Decay",
@@ -316,6 +316,27 @@
   },
   "${ModID}:HighGround": {
     "NAME": "High Ground",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "Apply !M! Vulnerable. NL ${ModID}:Predict !${ModID}:m2! for Attacks."
+  },
+  "${ModID}:Precognition": {
+    "NAME": "Precognition",
+    "DESCRIPTION": "The next !M! time{@@}{!M!|>1=s} a card is Exhausted, draw 1 card."
+  },
+  "${ModID}:CardTrick": {
+    "NAME": "Card Trick",
+    "DESCRIPTION": "Draw 1 card. NL Gain [E] equal to it's cost. NL Exhaust."
+  },
+  "${ModID}:RhythmicSteps": {
+    "NAME": "Rhythmic Steps",
+    "DESCRIPTION": "Deal !D! damage. NL Draw cards until you draw an Attack and a Skill. NL Exhaust."
+  },
+  "${ModID}:SawItComing": {
+    "NAME": "Saw It Coming",
+    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Predict !M! for cards with Block."
+  },
+  "${ModID}:BeautyRains": {
+    "NAME": "Beauty Rains",
+    "DESCRIPTION": "${ModID}:Predict !M! for Ethereal cards.",
+    "FLAVOR": "I'm on my way, coming back home again."
   }
 }

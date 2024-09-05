@@ -18,7 +18,7 @@ public class DeadFlesh extends AbstractEasyCard {
     public DeadFlesh() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseBlock = block = 7;
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -30,6 +30,6 @@ public class DeadFlesh extends AbstractEasyCard {
 
     public void upp() {
         upgradeBlock(2);
-        upgradeMagicNumber(1);
+        upgradeMagicNumber(2);
     }
 }
