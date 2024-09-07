@@ -48,10 +48,10 @@
   "${ModID}:ReveriePower": {
     "NAME": "Reverie",
     "DESCRIPTIONS": [
-      "At the start of your turn, shuffle a #yDazed into your draw pile, then draw a card.",
-      "At the start of your turn, shuffle #b",
-      " #yDazed into your draw pile, then draw #b",
-      " cards."
+      "At the start of your turn, draw a card, then shuffle a #yDazed into your draw pile.",
+      "At the start of your turn, draw #b",
+      " cards, then shuffle #b",
+      " #yDazed into your draw pile."
     ]
   },
   "${ModID}:OverloadPower": {
@@ -132,14 +132,6 @@
     "DESCRIPTIONS": [
       "At the start of your turn, apply #b",
       " #yWither to ALL enemies."
-    ]
-  },
-  "${ModID}:PrecognitionPower": {
-    "NAME": "Precognition",
-    "DESCRIPTIONS": [
-      "The next time a card is #yExhausted, draw #b1 card.",
-      "The next #b",
-      " times a card is #yExhausted, draw #b1 card."
     ]
   }
 }

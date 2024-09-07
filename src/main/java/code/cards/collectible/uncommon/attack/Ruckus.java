@@ -23,7 +23,7 @@ public class Ruckus extends AbstractEasyCard implements ForgetCard {
 
     public Ruckus() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseDamage = 7;
+        baseDamage = damage =  7;
         baseMagicNumber = magicNumber = 1;
         isEthereal = true;
     }
@@ -35,7 +35,7 @@ public class Ruckus extends AbstractEasyCard implements ForgetCard {
     }
 
     public void upp() {
-        upgradeDamage(2);
+        upgradeDamage(1);
     }
 
     @Override

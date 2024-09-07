@@ -58,22 +58,4 @@ public class AbstractCardPatches {
             return SpireReturn.Continue();
         }
     }
-
-    @SpirePatch(
-            clz= AbstractCard.class,
-            method="renderCard"
-    )
-    static class BlessedCardPatch{
-        public static void Postfix(AbstractCard __instance)
-        {
-            if(AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && CardModifierManager.hasModifier(__instance, DreamModifier.ID)){
-                if(MathUtils.random(1,5) == 1) {
-                    AbstractGameEffect effect = new DarkOrbPassiveEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height));
-                    effect.renderBehind = false;
-                    effect.duration *= 0.55f;
-                    AbstractDungeon.topLevelEffects.add(effect);
-                }
-            }
-        }
-    }
 }

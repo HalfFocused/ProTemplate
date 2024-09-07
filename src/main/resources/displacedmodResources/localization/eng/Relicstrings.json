@@ -57,9 +57,9 @@
   },
   "${ModID}:PairOfGears": {
     "NAME": "Pair of Gears",
-    "FLAVOR": "The gears are inexplicably linked to each other. They spin at unpredictable yet comforting times.",
+    "FLAVOR": "The gears spin around each other slowly. Despite your efforts, you cannot stop them, nor speed them up.",
     "DESCRIPTIONS": [
-      "Whenever you #yPredict, don't discard Powers drawn that way."
+      "At the start of your turn, if there is a #yPower in your draw pile, #yPredict #b1 #yPower."
     ]
   },
   "${ModID}:TheClockworkUniverse": {

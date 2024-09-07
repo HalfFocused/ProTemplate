@@ -8,7 +8,9 @@ import static code.ModFile.makeID;
 import code.util.charUtil.ForgetCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,10 +27,11 @@ public class Her extends AbstractEasyCard implements ForgetCard {
         baseMagicNumber = magicNumber = 3;
         isMultiDamage = true;
         isEthereal = true;
+        this.cardsToPreview = new VoidCard();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        allDmg(AbstractGameAction.AttackEffect.NONE);
+        allDmg(AbstractGameAction.AttackEffect.SMASH);
     }
 
     public void upp() {
@@ -37,6 +40,6 @@ public class Her extends AbstractEasyCard implements ForgetCard {
 
     @Override
     public void onForget() {
-        this.addToTop(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new WeakPower(AbstractDungeon.player, magicNumber, false)));
+        this.addToTop(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true));
     }
 }

@@ -1,8 +1,10 @@
 package code.relics;
 
 import code.TheDisplaced;
+import code.actions.PredictAction;
 import code.util.charUtil.CardUtil;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -21,5 +23,19 @@ public class PairOfGears extends AbstractEasyRelic  {
 
     public PairOfGears() {
         super(ID, RelicTier.UNCOMMON, LandingSound.FLAT, TheDisplaced.Enums.DISPLACED_COLOR);
+    }
+
+    @Override
+    public void atTurnStartPostDraw() {
+        this.addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if(AbstractDungeon.player.drawPile.group.stream().anyMatch(card -> card.type == AbstractCard.CardType.POWER)){
+                    flash();
+                    addToTop(new PredictAction(1, card -> card.type == AbstractCard.CardType.POWER));
+                }
+                isDone = true;
+            }
+        });
     }
 }

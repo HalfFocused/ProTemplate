@@ -3,17 +3,16 @@ package code.cards.collectible.common.skill;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import code.powers.WitherPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Decay extends AbstractEasyCard {
-    public final static String ID = makeID("Decay");
+public class Erase extends AbstractEasyCard {
+    public final static String ID = makeID("Erase");
 
-    public Decay() {
+    public Erase() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 6;
     }

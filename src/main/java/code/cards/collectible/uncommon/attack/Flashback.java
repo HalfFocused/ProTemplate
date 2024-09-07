@@ -18,8 +18,8 @@ public class Flashback extends AbstractEasyCard implements OnWarpCard {
 
     public Flashback() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 3;
-        baseBlock = block = 3;
+        baseDamage = damage = 2;
+        baseBlock = block = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

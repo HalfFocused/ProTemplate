@@ -7,6 +7,7 @@ import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -15,9 +16,9 @@ public class SawItComing extends AbstractEasyCard {
     // intellij stuff skill, self, uncommon, , , 8, 3, 2, 1
 
     public SawItComing() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 10;
-        baseMagicNumber = magicNumber = 2;
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = damage = 9;
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

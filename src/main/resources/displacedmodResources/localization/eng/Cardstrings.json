@@ -235,7 +235,7 @@
       "I ~will~ ~not~ have played a card by then...",
       "I ~hadn't~ played a card yet?"
     ],
-    "FLAVOR": "Things were easier before. When yesterday was gone, and tomorrow unknown."
+    "FLAVOR": "\"If you start looking forwards, there will be no more dumb luck. No spontaneous wonder. No pleasant surprises.\""
   },
   "${ModID}:EtchedInBlood": {
     "NAME": "Etched In Blood",
@@ -303,11 +303,11 @@
   },
   "${ModID}:Her": {
     "NAME": "Her",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL ${ModID}:Forget: Gain !M! Weak.",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL ${ModID}:Forget: Shuffle a Void into your draw pile.",
     "FLAVOR": "\"Don't go back for me.\""
   },
-  "${ModID}:Decay": {
-    "NAME": "Decay",
+  "${ModID}:Erase": {
+    "NAME": "Erase",
     "DESCRIPTION": "Apply !M! ${ModID}:Wither."
   },
   "${ModID}:Twist": {
@@ -316,11 +316,7 @@
   },
   "${ModID}:HighGround": {
     "NAME": "High Ground",
-    "DESCRIPTION": "Apply !M! Vulnerable. NL ${ModID}:Predict !${ModID}:m2! for Attacks."
-  },
-  "${ModID}:Precognition": {
-    "NAME": "Precognition",
-    "DESCRIPTION": "The next !M! time{@@}{!M!|>1=s} a card is Exhausted, draw 1 card."
+    "DESCRIPTION": "Apply !M! Vulnerable. NL ${ModID}:Predict !${ModID}:m2! Attack{@@}{!${ModID}:m2!|>1=s}. NL Exhaust."
   },
   "${ModID}:CardTrick": {
     "NAME": "Card Trick",
@@ -332,11 +328,23 @@
   },
   "${ModID}:SawItComing": {
     "NAME": "Saw It Coming",
-    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Predict !M! for cards with Block."
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Predict !M! card{@@}{!M!|>1=s} with Block."
   },
   "${ModID}:BeautyRains": {
     "NAME": "Beauty Rains",
-    "DESCRIPTION": "${ModID}:Predict !M! for Ethereal cards.",
+    "DESCRIPTION": "${ModID}:Predict !M! cards that do not share a type with a card in your hand.",
     "FLAVOR": "I'm on my way, coming back home again."
+  },
+  "${ModID}:Flicker": {
+    "NAME": "Flicker",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage."
+  },
+  "${ModID}:Recall": {
+    "NAME": "Recall",
+    "DESCRIPTION": "Deal !D! damage. Return !M! card{@@}{!M!|>1=s} from your discard pile to your hand."
+  },
+  "${ModID}:BattleTempo": {
+    "NAME": "Battle Tempo",
+    "DESCRIPTION": "Gain !B! Block. NL Reduce the cost of a random card in your hand to 0 this combat."
   }
 }
