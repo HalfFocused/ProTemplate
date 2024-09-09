@@ -4,9 +4,7 @@ import basemod.helpers.CardModifierManager;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
-import code.cards.tokens.DreamBlade;
 import code.util.charUtil.ForgetCard;
 import code.util.charUtil.mods.DreamModifier;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;

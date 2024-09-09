@@ -17,7 +17,7 @@ public class ObscuringHaze extends AbstractEasyCard {
 
     public ObscuringHaze() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = block = 10;
+        baseBlock = block = 9;
         baseMagicNumber = magicNumber = 2;
     }
 

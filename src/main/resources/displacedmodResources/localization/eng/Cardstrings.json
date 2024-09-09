@@ -168,14 +168,15 @@
     "NAME": "Hollow Flesh",
     "DESCRIPTION": "Gain !B! Block X times. Shuffle 2 Dazed into your draw pile."
   },
-  "${ModID}:Fantasize": {
-    "NAME": "Fantasize",
-    "DESCRIPTION": "{@@}Put a *Dream *Blade on top of your draw pile.",
-    "UPGRADE_DESCRIPTION": "{@@}Put a *Dream *Blade on top of your draw pile. NL Draw !M! card{!M!|>1=s} next turn."
+  "${ModID}:Daydream": {
+    "NAME": "Daydream",
+    "DESCRIPTION": "{@@}Put a *Vision on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "{@@}Put a *Vision on top of your draw pile. NL Draw !M! card{!M!|>1=s} next turn."
   },
-  "${ModID}:DreamBlade": {
-    "NAME": "Dream Blade",
-    "DESCRIPTION": "Deal !D! damage."
+  "${ModID}:Vision": {
+    "NAME": "Vision",
+    "DESCRIPTION": "Deal !D! damage.",
+    "FLAVOR": "For a few brief moments, everything was as you foresaw."
   },
   "${ModID}:RecurringDream": {
     "NAME": "Recurring Dream",
@@ -235,7 +236,7 @@
       "I ~will~ ~not~ have played a card by then...",
       "I ~hadn't~ played a card yet?"
     ],
-    "FLAVOR": "\"If you start looking forwards, there will be no more dumb luck. No spontaneous wonder. No pleasant surprises.\""
+    "FLAVOR": "\"What is a few tragic moments in the face of eternity?\""
   },
   "${ModID}:EtchedInBlood": {
     "NAME": "Etched In Blood",
@@ -271,11 +272,6 @@
     "NAME": "Ruckus",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage to a random enemy 3 times. NL ${ModID}:Forget: Apply !M! Weak to ALL enemies."
   },
-  "${ModID}:TheSecondDream": {
-    "NAME": "The Second Dream",
-    "DESCRIPTION": "Ethereal. NL Whenever you Exhaust a card, play it.",
-    "UPGRADE_DESCRIPTION": "Whenever you Exhaust a card, play it."
-  },
   "${ModID}:Manifest": {
     "NAME": "Manifest",
     "DESCRIPTION": "{@@}Deal !D! damage. NL ${ModID}:Lapse the top {!M!|>1=!M! cards|@=card} of your draw pile."
@@ -291,15 +287,11 @@
   },
   "${ModID}:Restraint": {
     "NAME": "Restraint",
-    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL ${ModID}:Forget: Add a *Release to your hand."
-  },
-  "${ModID}:Release": {
-    "NAME": "Release",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! time{@@}{!M!|>1=s}. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL ${ModID}:Forget: Add a *Vision to your hand."
   },
   "${ModID}:SplitSecond": {
     "NAME": "Split Second",
-    "DESCRIPTION": "Deal !D! damage. NL If a card was Exhausted this turn, draw !M! card{@@}{!M!|>1=s}."
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Predict !M! cards that cost 0."
   },
   "${ModID}:Her": {
     "NAME": "Her",
@@ -320,7 +312,7 @@
   },
   "${ModID}:CardTrick": {
     "NAME": "Card Trick",
-    "DESCRIPTION": "Draw 1 card. NL Gain [E] equal to it's cost. NL Exhaust."
+    "DESCRIPTION": "Draw 1 card. NL Gain [E]  equal to it's cost. NL Exhaust."
   },
   "${ModID}:RhythmicSteps": {
     "NAME": "Rhythmic Steps",
@@ -335,16 +327,41 @@
     "DESCRIPTION": "${ModID}:Predict !M! cards that do not share a type with a card in your hand.",
     "FLAVOR": "I'm on my way, coming back home again."
   },
-  "${ModID}:Flicker": {
-    "NAME": "Flicker",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage."
+  "${ModID}:Glimpse": {
+    "NAME": "Glimpse",
+    "DESCRIPTION": "Deal !D! damage. NL Add a *Vision to your discard pile."
   },
   "${ModID}:Recall": {
     "NAME": "Recall",
-    "DESCRIPTION": "Deal !D! damage. Return !M! card{@@}{!M!|>1=s} from your discard pile to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Return !M! card{@@}{!M!|>1=s} from your discard pile to your hand."
   },
   "${ModID}:BattleTempo": {
     "NAME": "Battle Tempo",
-    "DESCRIPTION": "Gain !B! Block. NL Reduce the cost of a random card in your hand to 0 this combat."
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you draw a card this turn, gain !M! Block.",
+    "FLAVOR": "In heated moments, you can hear the Song."
+  },
+  "${ModID}:Resonance": {
+    "NAME": "Resonance",
+    "DESCRIPTION": "Ethereal. NL Whenever you play your first Attack each turn, ${ModID}:Predict 1 Attack and play it.",
+    "UPGRADE_DESCRIPTION": "Whenever you play your first Attack each turn, ${ModID}:Predict 1 Attack and play it.",
+    "FLAVOR": "\"The echo. Can you hear it?\""
+  },
+  "${ModID}:LossAversion": {
+    "NAME": "Loss Aversion",
+    "DESCRIPTION": "Gain {@@}{!M!|repeat=[E] }. NL If a card was Exhausted this turn, gain [E] . NL Exhaust."
+  },
+  "${ModID}:Fathom": {
+    "NAME": "Fathom",
+    "DESCRIPTION": "Draw !M! card{@@}{!M!|>1=s}. NL They become Ethereal."
+  },
+  "${ModID}:ChronoForm": {
+    "NAME": "Chrono Form",
+    "DESCRIPTION": "Ethereal. NL Whenever you Exhaust 12 cards, take an additional turn after this one.",
+    "UPGRADE_DESCRIPTION": "Whenever you Exhaust 12 cards, take an additional turn after this one.",
+    "FLAVOR": "In every moment, there is two moments. And in those two moments, four."
+  },
+  "${ModID}:SlashDash": {
+    "NAME": "Slash Dash",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Exhaust."
   }
 }

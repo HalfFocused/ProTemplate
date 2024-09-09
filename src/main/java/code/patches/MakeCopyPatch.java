@@ -1,6 +1,6 @@
 package code.patches;
 
-import basemod.cardmods.EtherealMod;
+import code.util.charUtil.mods.EtherealModifier;
 import basemod.helpers.CardModifierManager;
 import code.relics.ContinuityRune;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -19,7 +19,7 @@ public class MakeCopyPatch {
         if(__instance.cardID.equals(Dazed.ID) && AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(ContinuityRune.ID) && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
             AbstractCard newCard = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
             if(!newCard.isEthereal){
-                CardModifierManager.addModifier(newCard, new EtherealMod());
+                CardModifierManager.addModifier(newCard, new EtherealModifier());
             }
             AbstractDungeon.player.getRelic(ContinuityRune.ID).flash();
             return SpireReturn.Return(newCard);

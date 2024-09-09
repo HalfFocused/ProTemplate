@@ -5,7 +5,7 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
-import code.cards.tokens.Release;
+import code.cards.tokens.Vision;
 import code.util.charUtil.ForgetCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -21,7 +21,7 @@ public class Restraint extends AbstractEasyCard implements ForgetCard {
     public Restraint() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 2;
-        this.cardsToPreview = new Release();
+        this.cardsToPreview = new Vision();
         this.isEthereal = true;
     }
 
@@ -35,6 +35,6 @@ public class Restraint extends AbstractEasyCard implements ForgetCard {
 
     @Override
     public void onForget() {
-        this.addToBot(new MakeTempCardInHandAction(new Release()));
+        this.addToBot(new MakeTempCardInHandAction(new Vision()));
     }
 }

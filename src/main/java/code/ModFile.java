@@ -25,6 +25,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.TimeEater;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import code.cards.AbstractEasyCard;
@@ -34,8 +36,10 @@ import code.relics.AbstractEasyRelic;
 import code.util.ProAudio;
 import org.lwjgl.Sys;
 
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -48,7 +52,8 @@ public class ModFile implements
         AddAudioSubscriber,
         OnPlayerTurnStartSubscriber,
         OnStartBattleSubscriber,
-        PostExhaustSubscriber{
+        PostExhaustSubscriber,
+        PostDeathSubscriber{
 
     public static final String modID = "displacedmod";
 
@@ -222,6 +227,16 @@ public class ModFile implements
         CardUtil.cardExhaustedThisTurn = true;
         if(abstractCard instanceof ForgetCard){
             CardUtil.forgetCard((ForgetCard) abstractCard);
+        }
+    }
+    public static final String RECORD_FILE = modID + "/saveable/displacedSavable.txt";
+
+    @Override
+    public void receivePostDeath() {
+        if(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
+            if(AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(mon -> mon instanceof TimeEater)){
+
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ public class NeowGreetingPatch {
     static int index = 0;
 
     @SpireInstrumentPatch
-    public static ExprEditor DiscardOverride()
+    public static ExprEditor NeowTalkOverride()
     {
         return new ExprEditor() {
             public void edit(MethodCall m)

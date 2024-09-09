@@ -1,9 +1,16 @@
 {
-    "${ModID}:DemoPotion": {
-        "NAME": "Awesome Demo Potion",
+    "${ModID}:WitherPotion": {
+        "NAME": "Wither Potion",
         "DESCRIPTIONS": [
-            "Gain #b",
-            " #yStrength."
+            "Apply #b",
+            " #yWither."
+        ]
+    },
+    "${ModID}:Adrenaline": {
+        "NAME": "Adrenaline",
+        "DESCRIPTIONS": [
+            "#yWarp #b",
+            " turns."
         ]
     }
 }

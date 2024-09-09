@@ -3,27 +3,29 @@ package code.cards.collectible.common.attack;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
+import code.cards.tokens.Vision;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Flicker extends AbstractEasyCard {
-    public final static String ID = makeID("Flicker");
+public class Glimpse extends AbstractEasyCard {
+    public final static String ID = makeID("Glimpse");
     // intellij stuff attack, enemy, common, 12, 4, , , , 
 
-    public Flicker() {
+    public Glimpse() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 13;
-        isEthereal = true;
+        baseDamage = damage = 8;
+        this.cardsToPreview = new Vision();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        this.addToBot(new MakeTempCardInDiscardAction(new Vision(), 1));
     }
 
     public void upp() {
-        upgradeDamage(4);
+        upgradeDamage(3);
     }
 }

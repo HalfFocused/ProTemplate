@@ -17,7 +17,7 @@
     "NAMES": [
       "wither"
     ],
-    "DESCRIPTION": "At the start of its turn and after a #yWarp, loses HP."
+    "DESCRIPTION": "At the start of its turn and after a #yWarp, loses HP and #b1 #yWither."
   },
   {
     "NAMES": [

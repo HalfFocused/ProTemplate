@@ -1,5 +1,6 @@
 package code.cards.collectible.uncommon.attack;
 
+import code.actions.PredictAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
@@ -18,32 +19,17 @@ public class SplitSecond extends AbstractEasyCard {
     // intellij stuff attack, enemy, uncommon, 4, 3, , , 1, 
 
     public SplitSecond() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 3;
+        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = damage = 16;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-        this.addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                if(CardUtil.cardExhaustedThisTurn){
-                    addToTop(new DrawCardAction(magicNumber));
-                }
-                isDone = true;
-            }
-        });
-    }
-
-    public void triggerOnGlowCheck() {
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if(CardUtil.cardExhaustedThisTurn){
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        }
+        this.addToBot(new PredictAction(magicNumber, card -> card.cost == 0));
     }
 
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(4);
     }
 }

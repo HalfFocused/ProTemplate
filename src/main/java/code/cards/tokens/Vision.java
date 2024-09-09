@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DreamBlade extends AbstractEasyCard {
-    public final static String ID = makeID(DreamBlade.class.getSimpleName());
+public class Vision extends AbstractEasyCard {
+    public final static String ID = makeID(Vision.class.getSimpleName());
     // intellij stuff attack, enemy, special, 12, 4, , , , 
 
-    public DreamBlade() {
+    public Vision() {
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
         baseDamage = damage = 12;
         CardModifierManager.addModifier(this, new DreamModifier(true,3));
