@@ -84,8 +84,8 @@ public class PredictAction extends AbstractGameAction {
                     foundCards = 0;
                     resultingCards = new ArrayList<>(cardsAcceptedSoFar);
                     if(followUpAction != null){
-                        this.addToBot(new ForceWaitAction(0.35f));
-                        this.addToBot(followUpAction);
+                        this.addToTop(followUpAction);
+                        this.addToTop(new ForceWaitAction(0.35f));
                     }
                     cardsAcceptedSoFar.clear();
                     this.addToTop(new DrawCardAction(num));
@@ -119,8 +119,8 @@ public class PredictAction extends AbstractGameAction {
         } else {
             foundCards = 0;
             cardsAcceptedSoFar.clear();
-            if(followUpAction != null){
-                this.addToBot(followUpAction);
+            if(followUpAction != null && !resultingCards.isEmpty()){
+                this.addToTop(followUpAction);
             }
         }
         if (!keep) {

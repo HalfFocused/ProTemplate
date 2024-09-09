@@ -26,7 +26,6 @@ public class BattleTempo extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBlock(2);
         upgradeMagicNumber(1);
     }
 }

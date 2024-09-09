@@ -46,20 +46,22 @@ public class ResonancePower extends AbstractEasyPower {
                 addToBot(new PredictAction(1, card1 -> card1.type == AbstractCard.CardType.ATTACK, new AbstractGameAction() {
                     @Override
                     public void update() {
+                        System.out.println("callback");
                     for(AbstractCard c : PredictAction.resultingCards){
-                        AbstractDungeon.player.hand.group.remove(card);
-                        AbstractDungeon.getCurrRoom().souls.remove(card);
-                        AbstractDungeon.player.limbo.group.add(card);
-                        card.current_y = -200.0F * Settings.scale;
-                        card.target_x = (float)Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
-                        card.target_y = (float)Settings.HEIGHT / 2.0F;
-                        card.targetAngle = 0.0F;
-                        card.lighten(false);
-                        card.drawScale = 0.12F;
-                        card.targetDrawScale = 0.75F;
-                        card.applyPowers();
+                        System.out.println("name " + c.name);
+                        AbstractDungeon.player.hand.group.remove(c);
+                        AbstractDungeon.getCurrRoom().souls.remove(c);
+                        AbstractDungeon.player.limbo.group.add(c);
+                        c.current_y = -200.0F * Settings.scale;
+                        c.target_x = (float)Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
+                        c.target_y = (float)Settings.HEIGHT / 2.0F;
+                        c.targetAngle = 0.0F;
+                        c.lighten(false);
+                        c.drawScale = 0.12F;
+                        c.targetDrawScale = 0.75F;
+                        c.applyPowers();
                         this.addToTop(new NewQueueCardAction(c, action.target, false, true));
-                        this.addToTop(new UnlimboAction(card));
+                        this.addToTop(new UnlimboAction(c));
                     }
                     isDone = true;
                     }
