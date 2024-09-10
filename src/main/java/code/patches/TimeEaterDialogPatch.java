@@ -1,6 +1,7 @@
 package code.patches;
 
 import code.ModFile;
+import code.cards.collectible.rare.power.ChronoForm;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -8,6 +9,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.beyond.TimeEater;
 import com.megacrit.cardcrawl.neow.NeowEvent;
 import javassist.CannotCompileException;
@@ -43,17 +45,21 @@ public class TimeEaterDialogPatch {
         };
     }
 
-    public static String getTimeEaterDialog(){
-        switch (MathUtils.random(4)){
-            case 1:
-                return "~A~ NL ~shallow~ NL @imitation...@";
-            case 2:
-                return "~Reckless.~";
-            case 3:
-                return "~You~ ~can't~ NL ~save~ ~her...~";
-            case 4:
-                return "~Not~ NL ~this~ ~time~";
+    public static String getTimeEaterDialog() {
+        if (AbstractDungeon.player.masterDeck.group.stream().anyMatch(card -> card instanceof ChronoForm)) {
+            return "~A~ NL ~shallow~ NL @imitation...@";
+        } else {
+            switch (MathUtils.random(4)) {
+                case 1:
+                    return "~You~ NL ~again...~";
+                case 2:
+                    return "~Reckless.~";
+                case 3:
+                    return "~You~ ~can't~ NL ~save~ ~her...~";
+                case 4:
+                    return "~Not~ NL ~this~ ~time~";
+            }
+            return "~Not~ NL ~this~ ~time~";
         }
-        return "~Not~ NL ~this~ ~time~";
     }
 }
