@@ -34,7 +34,7 @@ public class ToothAndNail extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(2);
     }
 
     @Override

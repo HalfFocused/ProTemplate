@@ -33,7 +33,7 @@
   },
   "${ModID}:Salvation": {
     "NAME": "Salvation",
-    "DESCRIPTION": "Gain !B! Block. NL Put a card from your hand on top of your draw pile."
+    "DESCRIPTION": "Gain !B! Block. NL Put a card from your discard pile on top of your draw pile."
   },
   "${ModID}:Aggression": {
     "NAME": "Aggression",
@@ -170,12 +170,12 @@
   },
   "${ModID}:Daydream": {
     "NAME": "Daydream",
-    "DESCRIPTION": "{@@}Put a *Vision on top of your draw pile.",
-    "UPGRADE_DESCRIPTION": "{@@}Put a *Vision on top of your draw pile. NL Draw !M! card{!M!|>1=s} next turn."
+    "DESCRIPTION": "{@@}Put a ${ModID}:Vision on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "{@@}Put a ${ModID}:Vision on top of your draw pile. NL Draw !M! card{!M!|>1=s} next turn."
   },
   "${ModID}:Vision": {
     "NAME": "Vision",
-    "DESCRIPTION": "Deal !D! damage.",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{@@}{!M!|>1=s}.",
     "FLAVOR": "For a few brief moments, everything was as you foresaw."
   },
   "${ModID}:RecurringDream": {
@@ -262,7 +262,7 @@
   "${ModID}:Overwhelm": {
     "NAME": "Overwhelm",
     "DESCRIPTION": "Deal !D! damage. NL Double this card's damage this combat.",
-    "FLAVOR": ""
+    "FLAVOR": "They'll know no peace."
   },
   "${ModID}:BranchTimeline": {
     "NAME": "Branch Timeline",
@@ -278,7 +278,8 @@
   },
   "${ModID}:Unburdened": {
     "NAME": "Unburdened",
-    "DESCRIPTION": "The first time a card is Exhausted each turn, gain !M! Strength."
+    "DESCRIPTION": "Ethereal. The first time a card is Exhausted each turn, gain !M! Strength.",
+    "UPGRADE_DESCRIPTION": "The first time a card is Exhausted each turn, gain !M! Strength."
   },
   "${ModID}:ImpendingDoom": {
     "NAME": "Impending Doom",
@@ -287,11 +288,11 @@
   },
   "${ModID}:Restraint": {
     "NAME": "Restraint",
-    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL ${ModID}:Forget: Add a *Vision to your hand."
+    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL ${ModID}:Forget: Add a ${ModID}:Vision to your hand."
   },
   "${ModID}:SplitSecond": {
     "NAME": "Split Second",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Predict !M! cards that cost 0."
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle a ${ModID}:Vision into your draw pile and discard pile."
   },
   "${ModID}:Her": {
     "NAME": "Her",
@@ -329,7 +330,8 @@
   },
   "${ModID}:Glimpse": {
     "NAME": "Glimpse",
-    "DESCRIPTION": "Deal !D! damage. NL Add a *Vision to your discard pile."
+    "DESCRIPTION": "Deal !D! damage. NL Add a ${ModID}:Vision to your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add an ${ModID}:Vision+ to your discard pile."
   },
   "${ModID}:Recall": {
     "NAME": "Recall",

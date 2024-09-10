@@ -6,7 +6,13 @@
     <artifactId>TheDisplaced</artifactId>
     <version>0.0.1</version>
     <name>The Displaced</name>
-    <description>Mod Description!</description>
+    <description>
+        Adds The Displaced, a chaotic time-traveler desperate to escape the spire!
+
+        Thanks for trying my first public release! :3
+
+        And uh, please report all the bugs/inconsistencies/issues you find. I know there's gonna be a lot.
+    </description>
     <!-- Change the above for mod information. -->
 
     <properties>

@@ -36,7 +36,9 @@ public class ImpendingDoom extends AbstractEasyCard {
                     effect += 2;
                     AbstractDungeon.player.getRelic(ChemicalX.ID).flash();
                 }
-                this.addToTop(new ApplyPowerAction(p, p, new ImpendingDoomPower(p, effect), effect));
+                if(effect > 0) {
+                    this.addToTop(new ApplyPowerAction(p, p, new ImpendingDoomPower(p, effect), effect));
+                }
                 if (!freeToPlayOnce) {
                     p.energy.use(EnergyPanel.totalCount);
                 }

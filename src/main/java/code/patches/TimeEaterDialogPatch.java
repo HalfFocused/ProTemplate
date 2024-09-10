@@ -1,9 +1,11 @@
 package code.patches;
 
 import code.ModFile;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.monsters.beyond.TimeEater;
@@ -42,6 +44,16 @@ public class TimeEaterDialogPatch {
     }
 
     public static String getTimeEaterDialog(){
-        return "~A...~ NL ~shallow...~ NL @imitation.@";
+        switch (MathUtils.random(4)){
+            case 1:
+                return "~A~ NL ~shallow~ NL @imitation...@";
+            case 2:
+                return "~Reckless.~";
+            case 3:
+                return "~You~ ~can't~ NL ~save~ ~her...~";
+            case 4:
+                return "~Not~ NL ~this~ ~time~";
+        }
+        return "~Not~ NL ~this~ ~time~";
     }
 }

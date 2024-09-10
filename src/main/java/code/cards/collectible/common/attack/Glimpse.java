@@ -18,14 +18,18 @@ public class Glimpse extends AbstractEasyCard {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = damage = 8;
         this.cardsToPreview = new Vision();
+        if(upgraded){
+            cardsToPreview.upgrade();
+        }
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        this.addToBot(new MakeTempCardInDiscardAction(new Vision(), 1));
+        this.addToBot(new MakeTempCardInDiscardAction(cardsToPreview, 1));
     }
 
     public void upp() {
         upgradeDamage(3);
+        cardsToPreview.upgrade();
     }
 }

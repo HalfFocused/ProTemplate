@@ -80,7 +80,7 @@ public class PredictAction extends AbstractGameAction {
                     }
                     totalChecked++;
                 }
-                if(totalChecked == miniFound){
+                /*if(totalChecked == miniFound){
                     foundCards = 0;
                     resultingCards = new ArrayList<>(cardsAcceptedSoFar);
                     if(followUpAction != null){
@@ -89,7 +89,7 @@ public class PredictAction extends AbstractGameAction {
                     }
                     cardsAcceptedSoFar.clear();
                     this.addToTop(new DrawCardAction(num));
-                }else{
+                }else{*/
                     for(AbstractCard c : toAddToLimbo){
                         c.beginGlowing();
                         c.glowColor = quality.test(c) ? Color.GREEN.cpy() : Color.RED.cpy();
@@ -103,42 +103,48 @@ public class PredictAction extends AbstractGameAction {
                     }
                     this.addToTop(new DrawCardAction(1, new PredictAction(num, quality, followUpAction, false)));
                     this.addToTop(new ForceWaitAction(0.5f));
-                }
+                //}
             }
             isDone = true;
             return;
         }
-        AbstractCard c = DrawCardAction.drawnCards.get(0);
-        boolean keep = quality.test(c);
-        if (keep) {
-            foundCards++;
-            resultingCards.add(c);
-        }
-        if (foundCards < num && !AbstractDungeon.player.drawPile.isEmpty() && AbstractDungeon.player.hand.size() + (keep ? 0 : -1) < BaseMod.MAX_HAND_SIZE) {
-            addToTop(new DrawCardAction(1, new PredictAction(num, quality, followUpAction, false)));
-        } else {
-            foundCards = 0;
-            cardsAcceptedSoFar.clear();
-            if(followUpAction != null && !resultingCards.isEmpty()){
-                this.addToTop(followUpAction);
+        if(!DrawCardAction.drawnCards.isEmpty()) {
+            AbstractCard c = DrawCardAction.drawnCards.get(0);
+            boolean keep = quality.test(c);
+            if (keep) {
+                foundCards++;
+                resultingCards.add(c);
             }
-        }
-        if (!keep) {
-            addToTop(new FasterDiscardSpecificCardAction(c));
-        }
-        c.glowColor = new Color(0.2F, 0.9F, 1.0F, 0.25F);
-        addToTop(new AbstractGameAction() {
-            @Override
-            public void update() {
-                AbstractDungeon.player.limbo.removeTopCard();
-                for (AbstractCard limboCard : AbstractDungeon.player.limbo.group) {
-                    limboCard.target_x += (240 * Settings.xScale);
-                    limboCard.target_y = (float)Settings.HEIGHT / 2.0F;
-                    limboCard.glowColor = quality.test(limboCard) ? Color.GREEN.cpy() : Color.RED.cpy();
+            if (foundCards < num && !AbstractDungeon.player.drawPile.isEmpty() && AbstractDungeon.player.hand.size() + (keep ? 0 : -1) < BaseMod.MAX_HAND_SIZE) {
+                addToTop(new DrawCardAction(1, new PredictAction(num, quality, followUpAction, false)));
+            } else {
+                foundCards = 0;
+                cardsAcceptedSoFar.clear();
+                if (followUpAction != null && !resultingCards.isEmpty()) {
+                    this.addToTop(followUpAction);
                 }
-                isDone = true;
             }
-        });
+            if (!keep) {
+                addToTop(new FasterDiscardSpecificCardAction(c));
+            }
+            c.glowColor = new Color(0.2F, 0.9F, 1.0F, 0.25F);
+
+            addToTop(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    AbstractDungeon.player.limbo.removeTopCard();
+                    for (AbstractCard limboCard : AbstractDungeon.player.limbo.group) {
+                        limboCard.target_x += (240 * Settings.xScale);
+                        limboCard.target_y = (float)Settings.HEIGHT / 2.0F;
+                        limboCard.glowColor = quality.test(limboCard) ? Color.GREEN.cpy() : Color.RED.cpy();
+                    }
+                    isDone = true;
+                }
+            });
+        }else{
+            AbstractDungeon.player.limbo.clear();
+        }
+
         isDone = true;
     }
 

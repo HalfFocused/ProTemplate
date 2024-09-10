@@ -17,7 +17,7 @@
     "NAMES": [
       "wither"
     ],
-    "DESCRIPTION": "At the start of its turn and after a #yWarp, loses HP and #b1 #yWither."
+    "DESCRIPTION": "At the start of its turn and after a #yWarp, loses HP."
   },
   {
     "NAMES": [
@@ -36,5 +36,12 @@
       "predict"
     ],
     "DESCRIPTION": "Draw a card, then discard it unless it meets the condition. Repeat until you find the right amount or empty your draw pile."
+  },
+  {
+    "NAMES": [
+      "vision",
+      "vision+"
+    ],
+    "DESCRIPTION": "A 0 cost #yAttack that lasts 3 turns before #yExhausting."
   }
 ]

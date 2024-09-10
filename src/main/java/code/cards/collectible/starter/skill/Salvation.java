@@ -6,6 +6,7 @@ import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
 import com.megacrit.cardcrawl.actions.common.PutOnDeckAction;
+import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -14,15 +15,15 @@ public class Salvation extends AbstractEasyCard {
 
     public Salvation() {
         super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        baseBlock = block = 8;
+        baseBlock = block = 7;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        addToBot(new PutOnDeckAction(p,p,1,false));
+        addToBot(new DiscardPileToTopOfDeckAction(p));
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeBlock(2);
     }
 }

@@ -3,7 +3,7 @@
     "NAME": "Wither",
     "DESCRIPTIONS": [
       "At the start of it's turn and after a #yWarp, loses #b",
-      " HP and #b1 #yWither."
+      " HP."
     ]
   },
   "${ModID}:EmptinessPower": {
@@ -144,7 +144,7 @@
     ]
   },
   "${ModID}:ExtraTurnPower": {
-    "NAME": "Resonance",
+    "NAME": "Extra Turn",
     "DESCRIPTIONS": [
       "Take an extra turn after this one.",
       "Take an extra turn after your next #b",

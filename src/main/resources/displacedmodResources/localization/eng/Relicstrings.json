@@ -59,14 +59,14 @@
     "NAME": "Pair of Gears",
     "FLAVOR": "The gears spin around each other slowly. Despite your efforts, you cannot stop them, nor speed them up.",
     "DESCRIPTIONS": [
-      "At the start of your turn, if there is a #yPower in your draw pile, #yPredict #b1 #yPower."
+      "At the start of each combat, if there is a #yPower in your draw pile, #yPredict #b1 #yPower."
     ]
   },
   "${ModID}:TheClockworkUniverse": {
     "NAME": "The Clockwork Universe",
     "FLAVOR": "The timelines are clear to you now. You fear you will look into this device and see your own death.",
     "DESCRIPTIONS": [
-      "Replaces #yAstronomical #yClock. At the start of your first 3 turns, draw #b2 cards and gain [E] ."
+      "Replaces #yAstronomical #yClock. At the start of your first 3 turns, draw #b1 card and gain [E] ."
     ]
   },
   "${ModID}:ShatteredGlass": {

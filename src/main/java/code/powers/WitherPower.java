@@ -47,7 +47,7 @@ public class WitherPower extends AbstractEasyPower implements WarpHook, HealthBa
             DamageAction action = new DamageAction(this.owner, new DamageInfo(AbstractDungeon.player, this.amount, DamageInfo.DamageType.HP_LOSS));
             ColoredDamagePatch.DamageActionColorField.damageColor.set(action, Color.BLACK.cpy());
             this.addToBot(action);
-            this.addToBot(new ReducePowerAction(owner, owner, this, 1));
+            //this.addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
     }
 

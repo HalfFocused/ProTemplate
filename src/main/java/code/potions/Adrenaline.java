@@ -15,7 +15,7 @@ public class Adrenaline extends AbstractEasyPotion {
     public static String ID = makeID("Adrenaline");
 
     public Adrenaline() {
-        super(ID, PotionRarity.UNCOMMON, PotionSize.BOTTLE, new Color(0.7f, 0.4f, 0.65f, 1f), new Color(0.3f, 0.6f, 0.15f, 1f), new Color(0.8f, 0.35f, 0.8f, 1f), TheDisplaced.Enums.THE_DISPLACED, ModFile.characterColor);
+        super(ID, PotionRarity.UNCOMMON, PotionSize.BOLT, new Color(0.7f, 0.3f, 0.2f, 1f), new Color(0.3f, 0.6f, 0.15f, 1f), new Color(0.8f, 0.35f, 0.8f, 1f), TheDisplaced.Enums.THE_DISPLACED, ModFile.characterColor);
     }
 
     public int getPotency(int ascensionlevel) {

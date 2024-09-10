@@ -25,7 +25,7 @@ public class TheClockworkUniverse extends AbstractEasyRelic {
         if(this.counter <= 3){
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(new DrawCardAction(2));
+            this.addToBot(new DrawCardAction(1));
             this.addToBot(new GainEnergyAction(1));
             if(this.counter == 3){
                 this.grayscale = true;

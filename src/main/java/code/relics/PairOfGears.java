@@ -20,22 +20,31 @@ import static code.ModFile.makeID;
 
 public class PairOfGears extends AbstractEasyRelic  {
     public static final String ID = makeID("PairOfGears");
+    private boolean activated = false;
 
     public PairOfGears() {
         super(ID, RelicTier.UNCOMMON, LandingSound.FLAT, TheDisplaced.Enums.DISPLACED_COLOR);
     }
 
+    public void atBattleStartPreDraw() {
+        this.activated = false;
+    }
+
     @Override
     public void atTurnStartPostDraw() {
-        this.addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                if(AbstractDungeon.player.drawPile.group.stream().anyMatch(card -> card.type == AbstractCard.CardType.POWER)){
-                    flash();
-                    addToTop(new PredictAction(1, card -> card.type == AbstractCard.CardType.POWER));
+        if(!activated) {
+            activated = true;
+            this.addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    if (AbstractDungeon.player.drawPile.group.stream().anyMatch(card -> card.type == AbstractCard.CardType.POWER)) {
+                        flash();
+                        addToTop(new PredictAction(1, card -> card.type == AbstractCard.CardType.POWER));
+                        addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, PairOfGears.this));
+                    }
+                    isDone = true;
                 }
-                isDone = true;
-            }
-        });
+            });
+        }
     }
 }

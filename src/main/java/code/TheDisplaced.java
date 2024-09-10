@@ -78,10 +78,10 @@ public class TheDisplaced extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Strike.ID);
         }
-        retVal.add(Exposure.ID);
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
+        retVal.add(Exposure.ID);
         retVal.add(Salvation.ID);
         return retVal;
     }

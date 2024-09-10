@@ -12,5 +12,13 @@
             "#yWarp #b",
             " turns."
         ]
+    },
+    "${ModID}:GreenTea": {
+        "NAME": "Green Tea",
+        "DESCRIPTIONS": [
+            "Return #b",
+            " card from your #yExhaust pile to your hand. It costs 0 this turn.",
+            " cards from your #yExhaust pile to your hand. They cost 0 this turn."
+        ]
     }
 }
