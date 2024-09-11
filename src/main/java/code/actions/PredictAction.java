@@ -72,8 +72,8 @@ public class PredictAction extends AbstractGameAction {
                 int totalChecked = 0;
                 ArrayList<AbstractCard> toAddToLimbo = new ArrayList<>();
                 for(int i = 0; miniFound < num && i < AbstractDungeon.player.drawPile.size() && AbstractDungeon.player.hand.size() + miniFound < BaseMod.MAX_HAND_SIZE; i++){
-                    AbstractCard test = AbstractDungeon.player.drawPile.getNCardFromTop(i).makeSameInstanceOf();
-                    toAddToLimbo.add(test);
+                    AbstractCard test = AbstractDungeon.player.drawPile.getNCardFromTop(i);
+                    toAddToLimbo.add(test.makeSameInstanceOf());
                     if(quality.test(test)){
                         cardsAcceptedSoFar.add(AbstractDungeon.player.drawPile.getNCardFromTop(i));
                         miniFound++;
@@ -121,7 +121,7 @@ public class PredictAction extends AbstractGameAction {
                 foundCards = 0;
                 cardsAcceptedSoFar.clear();
                 if (followUpAction != null && !resultingCards.isEmpty()) {
-                    this.addToTop(followUpAction);
+                    this.addToBot(followUpAction);
                 }
             }
             if (!keep) {
