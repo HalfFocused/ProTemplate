@@ -9,9 +9,8 @@ import code.util.charUtil.CardUtil;
 import code.util.charUtil.ForgetCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Vector2;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -25,7 +24,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.TimeEater;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -34,12 +32,10 @@ import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.potions.AbstractEasyPotion;
 import code.relics.AbstractEasyRelic;
 import code.util.ProAudio;
-import org.lwjgl.Sys;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Properties;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -233,10 +229,31 @@ public class ModFile implements
 
     @Override
     public void receivePostDeath() {
-        if(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
+        if(AbstractDungeon.player instanceof TheDisplaced && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
             if(AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(mon -> mon instanceof TimeEater)){
-
+                SpireConfig record = getTimeEaterRecord();
+                record.setInt("losses",record.getInt("losses") + 1);
+                record.setBool("lastRunDied", true);
+                try {
+                    record.save();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
+    }
+
+    public static SpireConfig getTimeEaterRecord() {
+        Properties defaults = new Properties();
+        defaults.setProperty("wins", "0");
+        defaults.setProperty("losses", "0");
+        defaults.setProperty("lastRunDied", "false");
+        SpireConfig record;
+        try {
+            record = new SpireConfig(modID, "time-eater", defaults);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return record;
     }
 }

@@ -17,7 +17,7 @@ public class HollowGrasp extends AbstractEasyCard {
 
     public HollowGrasp() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 11;
+        baseMagicNumber = magicNumber = 13;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -26,6 +26,6 @@ public class HollowGrasp extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(5);
+        upgradeMagicNumber(4);
     }
 }
