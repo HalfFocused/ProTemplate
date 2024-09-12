@@ -25,8 +25,6 @@ public class ResonancePower extends AbstractEasyPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private int triggersThisTurn = 0;
-
     public ResonancePower(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.BUFF, false, owner, amount);
     }
@@ -37,44 +35,47 @@ public class ResonancePower extends AbstractEasyPower {
         description = (amount == 1) ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + DESCRIPTIONS[2];
     }
 
-    @Override
-    public void atStartOfTurn() {
-        triggersThisTurn = 0;
+    private int attacksPlayedThisTurn(){
+        int num = 0;
+        for(AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn){
+            if(c.type == AbstractCard.CardType.ATTACK){
+                num++;
+            }
+        }
+        return num;
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if(card.type == AbstractCard.CardType.ATTACK) {
-            triggersThisTurn++;
-            if (triggersThisTurn <= amount) {
+            if (attacksPlayedThisTurn() <= amount) {
                 flash();
                 addToBot(new PredictAction(1, card1 -> card1.type == AbstractCard.CardType.ATTACK, new AbstractGameAction() {
                     @Override
                     public void update() {
-                        for(AbstractCard c : PredictAction.resultingCards){
-                            System.out.println("name " + c.name);
-                            AbstractDungeon.player.hand.group.remove(c);
-                            AbstractDungeon.getCurrRoom().souls.remove(c);
-                            AbstractDungeon.player.limbo.group.add(c);
-                            c.current_y = -200.0F * Settings.scale;
-                            c.target_x = (float)Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
-                            c.target_y = (float)Settings.HEIGHT / 2.0F;
-                            c.targetAngle = 0.0F;
-                            c.lighten(false);
-                            c.drawScale = 0.12F;
-                            c.targetDrawScale = 0.75F;
-                            c.applyPowers();
-                            AbstractCreature target = action.target;
-                            System.out.println(target);
-                            if(action.target == null){
-                                target = AbstractDungeon.getRandomMonster();
-                            }
-                            System.out.println(target);
-                            if(target instanceof AbstractMonster) {
-                                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(c, ((AbstractMonster) target), EnergyPanel.getCurrentEnergy(), true, true), true);
-                            }
-                            this.addToTop(new UnlimboAction(c));
+                    for(AbstractCard c : PredictAction.resultingCards){
+                        AbstractDungeon.player.hand.group.remove(c);
+                        AbstractDungeon.getCurrRoom().souls.remove(c);
+                        AbstractDungeon.player.limbo.group.add(c);
+                        c.current_y = -200.0F * Settings.scale;
+                        c.target_x = (float)Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
+                        c.target_y = (float)Settings.HEIGHT / 2.0F;
+                        c.targetAngle = 0.0F;
+                        c.lighten(false);
+                        c.drawScale = 0.12F;
+                        c.targetDrawScale = 0.75F;
+                        c.applyPowers();
+                        AbstractCreature target = action.target;
+                        System.out.println(target);
+                        if(action.target == null){
+                            target = AbstractDungeon.getRandomMonster();
                         }
-                        isDone = true;
+                        System.out.println(target);
+                        if(target instanceof AbstractMonster) {
+                            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(c, ((AbstractMonster) target), EnergyPanel.getCurrentEnergy(), true, true), true);
+                        }
+                        this.addToTop(new UnlimboAction(c));
+                    }
+                    isDone = true;
                     }
                 }));
             }
