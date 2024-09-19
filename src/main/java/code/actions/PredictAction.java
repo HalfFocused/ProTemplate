@@ -80,30 +80,19 @@ public class PredictAction extends AbstractGameAction {
                     }
                     totalChecked++;
                 }
-                /*if(totalChecked == miniFound){
-                    foundCards = 0;
-                    resultingCards = new ArrayList<>(cardsAcceptedSoFar);
-                    if(followUpAction != null){
-                        this.addToTop(followUpAction);
-                        this.addToTop(new ForceWaitAction(0.35f));
-                    }
-                    cardsAcceptedSoFar.clear();
-                    this.addToTop(new DrawCardAction(num));
-                }else{*/
-                    for(AbstractCard c : toAddToLimbo){
-                        c.beginGlowing();
-                        c.glowColor = quality.test(c) ? Color.GREEN.cpy() : Color.RED.cpy();
-                        AbstractDungeon.player.limbo.addToBottom(c);
-                        c.target_x = ((float)Settings.WIDTH / 2.0F) - (AbstractDungeon.player.limbo.size() * (240 * Settings.xScale));
-                        c.target_y = (float)Settings.HEIGHT / 2.0F;
-                        c.targetAngle = 0.0F;
-                        c.drawScale = 0.25F;
-                        c.targetDrawScale = 0.75F;
-                        c.applyPowers();
-                    }
-                    this.addToTop(new DrawCardAction(1, new PredictAction(num, quality, followUpAction, false)));
-                    this.addToTop(new ForceWaitAction(0.5f));
-                //}
+                for(AbstractCard c : toAddToLimbo){
+                    c.beginGlowing();
+                    c.glowColor = quality.test(c) ? Color.GREEN.cpy() : Color.RED.cpy();
+                    AbstractDungeon.player.limbo.addToBottom(c);
+                    c.target_x = ((float)Settings.WIDTH / 2.0F) - (AbstractDungeon.player.limbo.size() * (240 * Settings.xScale));
+                    c.target_y = (float)Settings.HEIGHT / 2.0F;
+                    c.targetAngle = 0.0F;
+                    c.drawScale = 0.25F;
+                    c.targetDrawScale = 0.75F;
+                    c.applyPowers();
+                }
+                this.addToTop(new DrawCardAction(1, new PredictAction(num, quality, followUpAction, false)));
+                this.addToTop(new ForceWaitAction(0.5f));
             }
             isDone = true;
             return;

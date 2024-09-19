@@ -1,6 +1,8 @@
 package code.relics;
 
 import code.TheDisplaced;
+import code.powers.ExtraTurnPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -17,28 +19,14 @@ public class TheClockworkUniverse extends AbstractEasyRelic {
     }
 
     public void atBattleStart() {
-        this.counter = 0;
-    }
-
-    public void atTurnStart() {
-        ++this.counter;
-        if(this.counter <= 3){
-            this.flash();
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(new DrawCardAction(1));
-            this.addToBot(new GainEnergyAction(1));
-            if(this.counter == 3){
-                this.grayscale = true;
-            }
-        }
-    }
-
-    public void justEnteredRoom(AbstractRoom room) {
-        this.grayscale = false;
+        flash();
+        this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ExtraTurnPower(AbstractDungeon.player, 1, true)));
+        this.grayscale = true;
     }
 
     public void onVictory() {
-        this.counter = -1;
+        this.grayscale = false;
     }
 
     @Override

@@ -27,7 +27,9 @@ public class CardTrick extends AbstractEasyCard {
             @Override
             public void update() {
                 for(AbstractCard card : DrawCardAction.drawnCards){
-                    this.addToTop(new GainEnergyAction(card.cost));
+                    if(card.cost > 0) {
+                        this.addToTop(new GainEnergyAction(card.cost));
+                    }
                 }
                 isDone = true;
             }

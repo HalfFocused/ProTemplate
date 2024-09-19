@@ -21,6 +21,7 @@ public class TemporalStrike extends AbstractEasyCard {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = damage = 10;
         baseMagicNumber = magicNumber = 0;
+        baseSecondMagic = secondMagic = 3;
         tags.add(CardTags.STRIKE);
     }
 
@@ -31,13 +32,13 @@ public class TemporalStrike extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(4);
+        upgradeSecondMagic(1);
     }
 
     @Override
     public void applyPowers(){
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = GameActionManager.turn * 2;
+        this.baseMagicNumber = GameActionManager.turn * secondMagic;
         this.baseDamage += this.baseMagicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;
@@ -45,7 +46,7 @@ public class TemporalStrike extends AbstractEasyCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = GameActionManager.turn * 2;
+        this.baseMagicNumber = GameActionManager.turn * secondMagic;
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);

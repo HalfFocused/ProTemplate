@@ -65,11 +65,9 @@ public class ResonancePower extends AbstractEasyPower {
                         c.targetDrawScale = 0.75F;
                         c.applyPowers();
                         AbstractCreature target = action.target;
-                        System.out.println(target);
-                        if(action.target == null){
+                        if(action.target == null || action.target.isDeadOrEscaped()){
                             target = AbstractDungeon.getRandomMonster();
                         }
-                        System.out.println(target);
                         if(target instanceof AbstractMonster) {
                             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(c, ((AbstractMonster) target), EnergyPanel.getCurrentEnergy(), true, true), true);
                         }

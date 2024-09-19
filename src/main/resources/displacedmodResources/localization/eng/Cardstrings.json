@@ -93,7 +93,7 @@
   },
   "${ModID}:TemporalStrike": {
     "NAME": "Temporal Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Deals 2 additional damage for each turn this combat.",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !${ModID}:m2! additional damage for each turn this combat.",
     "FLAVOR": "It's about time."
   },
   "${ModID}:FalteringGuard": {
@@ -229,14 +229,15 @@
   },
   "${ModID}:Eternity": {
     "NAME": "Eternity",
-    "DESCRIPTION": "Play a copy of the last card you played this combat.",
+    "DESCRIPTION": "Play a copy of the last card you played this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Play a copy of the last card you played this combat.",
     "EXTENDED_DESCRIPTION": [
       " NL Plays: NL ",
       "I haven't played a card yet this combat.",
       "I ~will~ ~not~ have played a card by then...",
       "I ~hadn't~ played a card yet?"
     ],
-    "FLAVOR": "\"What is a few tragic moments in the face of eternity?\""
+    "FLAVOR": "What are a few tragic moments in the face of eternity?"
   },
   "${ModID}:EtchedInBlood": {
     "NAME": "Etched In Blood",
@@ -278,7 +279,7 @@
   },
   "${ModID}:Unburdened": {
     "NAME": "Unburdened",
-    "DESCRIPTION": "Ethereal. The first time a card is Exhausted each turn, gain !M! Strength.",
+    "DESCRIPTION": "Ethereal. NL The first time a card is Exhausted each turn, gain !M! Strength.",
     "UPGRADE_DESCRIPTION": "The first time a card is Exhausted each turn, gain !M! Strength."
   },
   "${ModID}:ImpendingDoom": {
@@ -331,7 +332,7 @@
   "${ModID}:Glimpse": {
     "NAME": "Glimpse",
     "DESCRIPTION": "Deal !D! damage. NL Add a ${ModID}:Vision to your discard pile.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add an ${ModID}:Vision+ to your discard pile."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a ${ModID}:Vision+ to your discard pile."
   },
   "${ModID}:Recall": {
     "NAME": "Recall",

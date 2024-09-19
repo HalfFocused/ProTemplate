@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.Iterator;
 
@@ -31,7 +32,8 @@ public class Eternity extends AbstractEasyCard {
     public final static String ID = makeID(Eternity.class.getSimpleName());
     // intellij stuff skill, self, rare, , , , , ,
     public Eternity() {
-        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -49,14 +51,15 @@ public class Eternity extends AbstractEasyCard {
                     tmp.calculateCardDamage(m);
                 }
                 tmp.purgeOnUse = true;
-                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, tmp.energyOnUse, true, true), true);
+                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, EnergyPanel.getCurrentEnergy(), true, true), true);
                 isDone = true;
             }
         });
     }
 
     public void upp() {
-        upgradeBaseCost(1);
+        //upgradeBaseCost(1);
+        exhaust = false;
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {

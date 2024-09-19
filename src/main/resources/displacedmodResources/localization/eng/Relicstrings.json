@@ -3,7 +3,7 @@
     "NAME": "Astronomical Clock",
     "FLAVOR": "Once remarkably precise, the clock's movements are erratic and confused.",
     "DESCRIPTIONS": [
-      "At the start of turn #b3, draw #b2 cards and gain [E] ."
+      "At the start of turn #b2, draw #b1 card and gain [E] ."
     ]
   },
   "${ModID}:ContinuityRune": {
@@ -64,9 +64,9 @@
   },
   "${ModID}:TheClockworkUniverse": {
     "NAME": "The Clockwork Universe",
-    "FLAVOR": "The timelines are clear to you now. You fear you will look into this device and see your own death.",
+    "FLAVOR": "The timeline is clear to you now. You fear you will look into this device and see your own death.",
     "DESCRIPTIONS": [
-      "Replaces #yAstronomical #yClock. At the start of your first 3 turns, draw #b1 card and gain [E] ."
+      "Replaces #yAstronomical #yClock. Take an additional turn after your first each combat."
     ]
   },
   "${ModID}:ShatteredGlass": {

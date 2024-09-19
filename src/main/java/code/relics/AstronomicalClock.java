@@ -22,10 +22,10 @@ public class AstronomicalClock extends AbstractEasyRelic {
 
     public void atTurnStart() {
         ++this.counter;
-        if(this.counter == 3){
+        if(this.counter == 2){
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(new DrawCardAction(2));
+            this.addToBot(new DrawCardAction(1));
             this.addToBot(new GainEnergyAction(1));
             this.grayscale = true;
         }
@@ -35,7 +35,4 @@ public class AstronomicalClock extends AbstractEasyRelic {
         this.grayscale = false;
     }
 
-    public void onVictory() {
-        this.counter = -1;
-    }
 }
