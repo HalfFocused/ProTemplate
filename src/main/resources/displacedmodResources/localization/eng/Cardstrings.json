@@ -129,7 +129,7 @@
   "${ModID}:Affliction": {
     "NAME": "Affliction",
     "DESCRIPTION": "Deal !D! damage. NL Apply ${ModID}:Wither equal to unblocked damage dealt. NL Exhaust.",
-    "FLAVOR": "You warned them to stay back. It's all you could have done."
+    "FLAVOR": "They never learn."
   },
   "${ModID}:Distort": {
     "NAME": "Distort",

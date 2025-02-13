@@ -43,5 +43,11 @@
       "vision+"
     ],
     "DESCRIPTION": "A 0 cost #yAttack that lasts 3 turns before #yExhausting."
+  },
+  {
+    "NAMES": [
+      "flashback"
+    ],
+    "DESCRIPTION": "When the condition is met, return this card from your discard pile to your hand."
   }
 ]

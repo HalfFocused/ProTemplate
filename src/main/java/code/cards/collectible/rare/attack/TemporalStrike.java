@@ -21,7 +21,7 @@ public class TemporalStrike extends AbstractEasyCard {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = damage = 10;
         baseMagicNumber = magicNumber = 0;
-        baseSecondMagic = secondMagic = 3;
+        baseSecondMagic = secondMagic = 2;
         tags.add(CardTags.STRIKE);
     }
 
