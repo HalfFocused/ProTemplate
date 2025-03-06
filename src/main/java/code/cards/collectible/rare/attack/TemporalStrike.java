@@ -20,37 +20,40 @@ public class TemporalStrike extends AbstractEasyCard {
     public TemporalStrike() {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = damage = 10;
-        baseMagicNumber = magicNumber = 0;
-        baseSecondMagic = secondMagic = 2;
+        baseMagicNumber = magicNumber = 2;
         tags.add(CardTags.STRIKE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.damage += this.magicNumber;
+        this.damage += temporalBonus();
         this.calculateCardDamage(m);
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, true));
     }
 
     public void upp() {
-        upgradeSecondMagic(1);
+        upgradeMagicNumber(1);
     }
 
     @Override
     public void applyPowers(){
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = GameActionManager.turn * secondMagic;
-        this.baseDamage += this.baseMagicNumber;
+        //this.baseMagicNumber = GameActionManager.turn * secondMagic;
+        this.baseDamage += temporalBonus();
         super.applyPowers();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = GameActionManager.turn * secondMagic;
+        //this.baseMagicNumber = GameActionManager.turn * secondMagic;
         int realBaseDamage = this.baseDamage;
-        this.baseDamage += this.baseMagicNumber;
+        this.baseDamage += temporalBonus();
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
+    }
+
+    private int temporalBonus(){
+        return GameActionManager.turn * magicNumber;
     }
 }

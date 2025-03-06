@@ -14,9 +14,8 @@ public class Unburdened extends AbstractEasyCard {
 
 
     public Unburdened() {
-        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
-        isEthereal = true;
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -24,6 +23,6 @@ public class Unburdened extends AbstractEasyCard {
     }
 
     public void upp() {
-        isEthereal = false;
+        upgradeMagicNumber(1);
     }
 }

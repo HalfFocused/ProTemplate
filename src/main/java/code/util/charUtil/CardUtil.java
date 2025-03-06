@@ -104,6 +104,10 @@ public class CardUtil {
         return false;
     }
 
+    public static boolean hasPlayedEtherealCardThisTurn(){
+        return AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().anyMatch(abstractCard -> abstractCard.isEthereal);
+    }
+
     public static CardGroup filteredRandomCard(Predicate<AbstractCard> filter) {
         CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         CardLibrary.getAllCards().stream().filter(filter).forEach(c -> retVal.addToTop(c.makeCopy()));
@@ -118,5 +122,13 @@ public class CardUtil {
             name = nameIn;
             streak = streakIn;
         }
+    }
+
+    public static int etherealCardsPlayedThisTurn(){
+        int played = 0;
+        for(AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn){
+            if(c.isEthereal) played++;
+        }
+        return played;
     }
 }

@@ -1,7 +1,6 @@
 package code.patches;
 
 import code.ModFile;
-import code.cards.collectible.rare.power.ChronoForm;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
@@ -45,7 +44,7 @@ public class TimeEaterDialogPatch {
         int playerWins = record.getInt("wins");
         int timeEaterWins = record.getInt("losses");
         boolean lastRunPlayerDied = record.getBool("lastRunDied");
-        boolean hasChronoForm = AbstractDungeon.player.masterDeck.group.stream().anyMatch(card -> card instanceof ChronoForm);
+        boolean hasChronoForm =  false;
 
         for(AbstractMonster mo : AbstractDungeon.getMonsters().monsters){
             if(mo instanceof TimeEater){

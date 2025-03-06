@@ -2,6 +2,7 @@ package code.powers;
 
 import code.ModFile;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -23,7 +24,7 @@ public class UnburdenedPower extends AbstractEasyPower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + (amount == 1 ? DESCRIPTIONS[1] : amount + DESCRIPTIONS[2]);
     }
 
     @Override
@@ -35,7 +36,7 @@ public class UnburdenedPower extends AbstractEasyPower {
     public void onExhaust(AbstractCard card) {
         if(!triggeredThisTurn){
             this.flash();
-            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
+            this.addToBot(new DrawCardAction(amount));
             triggeredThisTurn = true;
         }
     }

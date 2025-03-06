@@ -6,6 +6,7 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
+import code.util.DisplacedTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -13,8 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class PullForward extends AbstractEasyCard {
     public final static String ID = makeID(PullForward.class.getSimpleName());
 
+
     public PullForward() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        tags.add(DisplacedTags.CARDS_THAT_WARP);
         baseDamage = damage = 9;
         baseMagicNumber = magicNumber = 1;
     }

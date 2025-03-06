@@ -6,6 +6,7 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
+import code.util.DisplacedTags;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,6 +17,7 @@ public class LostInThought extends AbstractEasyCard {
 
     public LostInThought() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        tags.add(DisplacedTags.CARDS_THAT_WARP);
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 1;
     }

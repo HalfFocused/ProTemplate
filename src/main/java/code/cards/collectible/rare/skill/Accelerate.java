@@ -6,6 +6,7 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
+import code.util.DisplacedTags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -15,6 +16,7 @@ public class Accelerate extends AbstractEasyCard {
 
     public Accelerate() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        tags.add(DisplacedTags.CARDS_THAT_WARP);
         baseMagicNumber = magicNumber = 3;
         this.exhaust = true;
     }

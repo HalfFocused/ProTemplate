@@ -117,8 +117,9 @@
   "${ModID}:UnburdenedPower": {
     "NAME": "Unburdened",
     "DESCRIPTIONS": [
-      "The first time a card is #yExhausted each turn, gain #b",
-      " #yStrength."
+      "The first time a card is #yExhausted each turn, draw ",
+      "a card.",
+      "#b cards."
     ]
   },
   "${ModID}:ImpendingDoomPower": {

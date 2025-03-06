@@ -18,9 +18,6 @@ public class Glimpse extends AbstractEasyCard {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = damage = 8;
         this.cardsToPreview = new Vision();
-        if(upgraded){
-            cardsToPreview.upgrade();
-        }
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -30,6 +27,5 @@ public class Glimpse extends AbstractEasyCard {
 
     public void upp() {
         upgradeDamage(3);
-        cardsToPreview.upgrade();
     }
 }

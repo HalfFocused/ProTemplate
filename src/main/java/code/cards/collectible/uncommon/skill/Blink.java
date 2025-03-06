@@ -6,6 +6,7 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
+import code.util.DisplacedTags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -15,6 +16,7 @@ public class Blink extends AbstractEasyCard {
 
     public Blink() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        tags.add(DisplacedTags.CARDS_THAT_WARP);
         baseMagicNumber = magicNumber = 1;
         exhaust = true;
     }

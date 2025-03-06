@@ -13,9 +13,9 @@ public class TimeStop extends AbstractEasyCard {
     public final static String ID = makeID(TimeStop.class.getSimpleName());
 
     public TimeStop() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        isEthereal = true;
+        //isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -23,6 +23,6 @@ public class TimeStop extends AbstractEasyCard {
     }
 
     public void upp() {
-        isEthereal = false;
+        upgradeBaseCost(2);
     }
 }

@@ -18,16 +18,15 @@ public class Daydream extends AbstractEasyCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.cardsToPreview = new Vision();
         baseMagicNumber = magicNumber = 1;
+        baseBlock = block = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        blck();
         addToBot(new MakeTempCardInDrawPileAction(new Vision(), 1, false, true));
-        if(upgraded){
-            addToBot(new ApplyPowerAction(p,p, new DrawCardNextTurnPower(p, magicNumber), magicNumber));
-        }
     }
 
     public void upp() {
-        rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        upgradeBlock(3);
     }
 }

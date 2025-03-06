@@ -15,9 +15,9 @@
     "NAME": "Flash Step",
     "DESCRIPTION": "{@@}Gain !B! Block. NL ${ModID}:Warp !M! turn{!M!|>1=s}."
   },
-  "${ModID}:ClingOn": {
-    "NAME": "Cling On",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Ethereal cards don't Exhaust at the end of this turn."
+  "${ModID}:TimeSkip": {
+    "NAME": "Time Skip",
+    "DESCRIPTION": "Whenever this is the top card of your draw pile, put it into your hand. NL Gain !B! Block. NL Deal !D! damage."
   },
   "${ModID}:Emptiness": {
     "NAME": "Emptiness",
@@ -27,12 +27,8 @@
     "NAME": "Hollow Grasp",
     "DESCRIPTION": "Enemy loses !M! HP. NL Shuffle a Dazed into your draw pile."
   },
-  "${ModID}:Exposure": {
-    "NAME": "Exposure",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Wither."
-  },
-  "${ModID}:Salvation": {
-    "NAME": "Salvation",
+  "${ModID}:Backtrack": {
+    "NAME": "Backtrack",
     "DESCRIPTION": "Gain !B! Block. NL Put a card from your discard pile on top of your draw pile."
   },
   "${ModID}:Aggression": {
@@ -53,7 +49,7 @@
   },
   "${ModID}:TimeStop": {
     "NAME": "Time Stop",
-    "DESCRIPTION": "Ethereal. NL You cannot take damage, lose HP, or gain debuffs this turn.",
+    "DESCRIPTION": "You cannot take damage, lose HP, or gain debuffs this turn.",
     "UPGRADE_DESCRIPTION": "You cannot take damage, lose HP, or gain debuffs this turn.",
     "FLAVOR": "I wish this moment could last forever."
   },
@@ -75,7 +71,8 @@
   },
   "${ModID}:Entropy": {
     "NAME": "Entropy",
-    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile and Exhaust it. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
+    "DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile and Exhaust it.",
+    "UPGRADE_DESCRIPTION": "{@@}At the start of your turn, play the top card of your draw pile and Exhaust it. NL ${ModID}:Warp !${ModID}:m2! turn{!${ModID}:m2!|>1=s}.",
     "FLAVOR": "At the end of everything, there is nothing."
   },
   "${ModID}:HollowCognition": {
@@ -93,7 +90,7 @@
   },
   "${ModID}:TemporalStrike": {
     "NAME": "Temporal Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Deals !${ModID}:m2! additional damage for each turn this combat.",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each turn this combat.",
     "FLAVOR": "It's about time."
   },
   "${ModID}:FalteringGuard": {
@@ -121,15 +118,6 @@
     "DESCRIPTION": "At the start of your turn, draw a card, then shuffle a Dazed into your draw pile.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw a card, then shuffle a Dazed into your draw pile.",
     "FLAVOR": "Lean into your heart."
-  },
-  "${ModID}:DeadFlesh": {
-    "NAME": "Dead Flesh",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${ModID}:Wither to ALL enemies."
-  },
-  "${ModID}:Affliction": {
-    "NAME": "Affliction",
-    "DESCRIPTION": "Deal !D! damage. NL Apply ${ModID}:Wither equal to unblocked damage dealt. NL Exhaust.",
-    "FLAVOR": "They never learn."
   },
   "${ModID}:Distort": {
     "NAME": "Distort",
@@ -170,13 +158,12 @@
   },
   "${ModID}:Daydream": {
     "NAME": "Daydream",
-    "DESCRIPTION": "{@@}Put a ${ModID}:Vision on top of your draw pile.",
-    "UPGRADE_DESCRIPTION": "{@@}Put a ${ModID}:Vision on top of your draw pile. NL Draw !M! card{!M!|>1=s} next turn."
+    "DESCRIPTION": "Gain !B! Block. NL Put a ${ModID}:Vision on top of your draw pile."
   },
   "${ModID}:Vision": {
     "NAME": "Vision",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{@@}{!M!|>1=s}.",
-    "FLAVOR": "For a few brief moments, everything was as you foresaw."
+    "DESCRIPTION": "Deal !D! damage.",
+    "FLAVOR": "\"I've seen this before... somewhere...\""
   },
   "${ModID}:RecurringDream": {
     "NAME": "Recurring Dream",
@@ -219,8 +206,8 @@
     "NAME": "Time Spiral",
     "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Forget: Add a copy of this to your hand with 2 less Block."
   },
-  "${ModID}:Flashback": {
-    "NAME": "Flashback",
+  "${ModID}:SplitSecond": {
+    "NAME": "Split Second",
     "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Whenever you ${ModID}:Warp, return this from your discard pile to your hand."
   },
   "${ModID}:CatchUp": {
@@ -275,34 +262,20 @@
   },
   "${ModID}:Manifest": {
     "NAME": "Manifest",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL ${ModID}:Lapse the top {!M!|>1=!M! cards|@=card} of your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Lapse the top card{@@}{!M!|>1=s} of your draw pile."
   },
   "${ModID}:Unburdened": {
     "NAME": "Unburdened",
-    "DESCRIPTION": "Ethereal. NL The first time a card is Exhausted each turn, gain !M! Strength.",
-    "UPGRADE_DESCRIPTION": "The first time a card is Exhausted each turn, gain !M! Strength."
-  },
-  "${ModID}:ImpendingDoom": {
-    "NAME": "Impending Doom",
-    "DESCRIPTION": "At the start of your turn, apply X ${ModID}:Wither to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, apply X+1 ${ModID}:Wither to ALL enemies."
+    "DESCRIPTION": "The first time a card is Exhausted each turn, draw !M! card{@@}{!M!|>1=s}."
   },
   "${ModID}:Restraint": {
     "NAME": "Restraint",
     "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL ${ModID}:Forget: Add a ${ModID}:Vision to your hand."
   },
-  "${ModID}:SplitSecond": {
-    "NAME": "Split Second",
-    "DESCRIPTION": "Deal !D! damage. NL Shuffle a ${ModID}:Vision into your draw pile and discard pile."
-  },
   "${ModID}:Her": {
     "NAME": "Her",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL ${ModID}:Forget: Shuffle a Void into your draw pile.",
     "FLAVOR": "\"Don't go back for me.\""
-  },
-  "${ModID}:Erase": {
-    "NAME": "Erase",
-    "DESCRIPTION": "Apply !M! ${ModID}:Wither."
   },
   "${ModID}:Twist": {
     "NAME": "Twist",
@@ -326,7 +299,7 @@
   },
   "${ModID}:BeautyRains": {
     "NAME": "Beauty Rains",
-    "DESCRIPTION": "${ModID}:Predict !M! cards that do not share a type with a card in your hand.",
+    "DESCRIPTION": "${ModID}:Predict !M! card{@@}{!M!|>1=s} that you could play. NL If you play one of them this turn, ${ModID}:Flashback.",
     "FLAVOR": "I'm on my way, coming back home again."
   },
   "${ModID}:Glimpse": {
@@ -357,14 +330,33 @@
     "NAME": "Fathom",
     "DESCRIPTION": "Draw !M! card{@@}{!M!|>1=s}. NL They become Ethereal."
   },
-  "${ModID}:ChronoForm": {
-    "NAME": "Chrono Form",
-    "DESCRIPTION": "Ethereal. NL Whenever you Exhaust 12 cards, take an additional turn after this one.",
-    "UPGRADE_DESCRIPTION": "Whenever you Exhaust 12 cards, take an additional turn after this one.",
-    "FLAVOR": "In every moment, there is two moments. And in those two moments, four."
-  },
   "${ModID}:SlashDash": {
     "NAME": "Slash Dash",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Exhaust."
+  },
+  "${ModID}:NeverEnough": {
+    "NAME": "Never Enough",
+    "DESCRIPTION": "Gain !B! Block. NL When you take unblocked attack damage, ${ModID}:Flashback."
+  },
+  "${ModID}:Monsoon": {
+    "NAME": "Monsoon",
+    "DESCRIPTION": "Exhaust your hand. NL Draw that many cards. NL Exhaust.",
+    "FLAVOR": "It should've been me."
+  },
+  "${ModID}:TheSecondDream": {
+    "NAME": "The Second Dream",
+    "DESCRIPTION": "If you've played 3 or more Ethereal cards this turn, take an extra turn after this one. NL Exhaust.",
+    "FLAVOR": "Dream not of what you are, but what of what you want to be."
+  },
+  "${ModID}:LastLaugh": {
+    "NAME": "Last Laugh",
+    "DESCRIPTION": "Deal !D! damage. NL When you run out of [E] , ${ModID}:Flashback."
+  },
+  "${ModID}:Euphoria": {
+    "NAME": "Euphoria",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust a card. NL Shuffle !M! copies of it into your draw pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose a card to Exhaust:"
+    ]
   }
 }

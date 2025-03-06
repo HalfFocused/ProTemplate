@@ -28,7 +28,7 @@ public class RecurringDream extends AbstractEasyCard {
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
 
-        for(AbstractCard card : CardUtil.cardsPlayedLastTurn){
+        for(AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn){
             if(card instanceof RecurringDream){
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
             }
@@ -37,7 +37,7 @@ public class RecurringDream extends AbstractEasyCard {
 
     @Override
     public void applyPowers(){
-        for(AbstractCard card : CardUtil.cardsPlayedLastTurn){
+        for(AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn){
             if(card instanceof RecurringDream){
                 setCostForTurn(0);
             }
@@ -46,6 +46,5 @@ public class RecurringDream extends AbstractEasyCard {
     }
     public void upp() {
         upgradeDamage(6);
-
     }
 }

@@ -31,7 +31,7 @@ public class BranchTimeline extends AbstractEasyCard implements ForgetCard {
     }
 
     public void upp() {
-        upgradeDamage(2);
+        upgradeDamage(1);
     }
 
     @Override

@@ -2,6 +2,7 @@ package code.cards.collectible.common.skill;
 
 import code.actions.WarpAction;
 import code.cards.AbstractEasyCard;
+import code.util.DisplacedTags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -12,6 +13,7 @@ public class FlashStep extends AbstractEasyCard {
 
     public FlashStep() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        tags.add(DisplacedTags.CARDS_THAT_WARP);
         baseBlock = block = 6;
         baseMagicNumber = magicNumber = 1;
     }

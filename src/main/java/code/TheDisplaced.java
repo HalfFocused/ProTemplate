@@ -3,14 +3,12 @@ package code;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import code.cards.collectible.starter.attack.Exposure;
-import code.cards.collectible.starter.skill.Salvation;
+import code.cards.collectible.starter.skill.Backtrack;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
-import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -81,8 +79,7 @@ public class TheDisplaced extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
-        retVal.add(Exposure.ID);
-        retVal.add(Salvation.ID);
+        retVal.add(Backtrack.ID);
         return retVal;
     }
 
@@ -145,7 +142,7 @@ public class TheDisplaced extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Exposure();
+        return new Backtrack();
     }
 
     @Override

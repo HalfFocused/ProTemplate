@@ -5,6 +5,7 @@ import code.effects.WarpEffect;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.OnWarpCard;
 import code.util.charUtil.WarpHook;
+import code.util.charUtil.mods.FlashbackModifier;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -60,7 +61,7 @@ public class WarpAction extends AbstractGameAction {
                         callEndOfTurnActions will, well, queue up the stuff that happens at the end of turn for the player.
 
                         "Hey, why do you queue the start of turn stuff and then the end of turn stuff. isn't that backwards?"
-                        yeah! it should be! I don't know why it isn't! I knew when I wrote it though. probably.
+                        yeah! it should be! I don't know why it isn't! I knew when I wrote it though... probably!
                      */
                     ReflectionHacks.privateMethod(GameActionManager.class, "getNextAction").invoke(AbstractDungeon.actionManager);
                     ReflectionHacks.privateMethod(GameActionManager.class, "callEndOfTurnActions").invoke(AbstractDungeon.actionManager);
@@ -84,6 +85,7 @@ public class WarpAction extends AbstractGameAction {
                                     }
                                 }
                             }
+
                             for(AbstractCard card : AbstractDungeon.player.drawPile.group){
                                 if(card instanceof OnWarpCard){
                                     ((OnWarpCard) card).onWarp(AbstractDungeon.player.drawPile);
@@ -99,6 +101,9 @@ public class WarpAction extends AbstractGameAction {
                                     ((OnWarpCard) card).onWarp(AbstractDungeon.player.discardPile);
                                 }
                             }
+
+                            FlashbackModifier.flashback(FlashbackModifier.SPLIT_SECOND);
+
                             CardUtil.warpsThisCombat++;
                             this.isDone = true;
                         }
@@ -108,9 +113,14 @@ public class WarpAction extends AbstractGameAction {
                         skipMonsterTurn wasn't true.
                      */
                     AbstractDungeon.getCurrRoom().endTurn();
+
+                    for(AbstractPower p : AbstractDungeon.player.powers){
+                        p.atEndOfRound();
+                    }
+
                     this.isDone = true;
                     /*
-                    "Wow! That didn't seem that bad, Half!"
+                    "Wow! That didn't seem that bad!"
                     go to patches > warp. this is the least confusing part of this all.
                      */
                 }
@@ -131,9 +141,9 @@ public class WarpAction extends AbstractGameAction {
     }
 
     protected void tickDuration() {
-        this.duration -= Gdx.graphics.getDeltaTime();// 78
-        if (this.duration < 0.0F) {// 79
-            this.isDone = true;// 80
+        this.duration -= Gdx.graphics.getDeltaTime();
+        if (this.duration < 0.0F) {
+            this.isDone = true;
         }
     }
 

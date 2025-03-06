@@ -21,7 +21,7 @@ public class TheClockworkUniverse extends AbstractEasyRelic {
     public void atBattleStart() {
         flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ExtraTurnPower(AbstractDungeon.player, 1, true)));
+        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ExtraTurnPower(AbstractDungeon.player, 1)));
         this.grayscale = true;
     }
 

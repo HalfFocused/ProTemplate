@@ -27,6 +27,8 @@ public class PredictAction extends AbstractGameAction {
 
     private static ArrayList<AbstractCard> cardsAcceptedSoFar = new ArrayList<>();
 
+    private static ArrayList<AbstractCard> cardsAddedToLimbo = new ArrayList<>();
+
     public static ArrayList<AbstractCard> resultingCards = new ArrayList<>();
     private int num;
 
@@ -64,12 +66,12 @@ public class PredictAction extends AbstractGameAction {
             foundCards = 0;
             cardsAcceptedSoFar.clear();
             resultingCards.clear();
+            cardsAddedToLimbo.clear();
             if(AbstractDungeon.player.drawPile.isEmpty() && !AbstractDungeon.player.discardPile.isEmpty()) {
                 this.addToTop(new PredictAction(num, quality, followUpAction));
                 this.addToTop(new EmptyDeckShuffleAction());
             }else{
                 int miniFound = 0;
-                int totalChecked = 0;
                 ArrayList<AbstractCard> toAddToLimbo = new ArrayList<>();
                 for(int i = 0; miniFound < num && i < AbstractDungeon.player.drawPile.size() && AbstractDungeon.player.hand.size() + miniFound < BaseMod.MAX_HAND_SIZE; i++){
                     AbstractCard test = AbstractDungeon.player.drawPile.getNCardFromTop(i);
@@ -78,13 +80,13 @@ public class PredictAction extends AbstractGameAction {
                         cardsAcceptedSoFar.add(AbstractDungeon.player.drawPile.getNCardFromTop(i));
                         miniFound++;
                     }
-                    totalChecked++;
                 }
                 for(AbstractCard c : toAddToLimbo){
                     c.beginGlowing();
                     c.glowColor = quality.test(c) ? Color.GREEN.cpy() : Color.RED.cpy();
                     AbstractDungeon.player.limbo.addToBottom(c);
-                    c.target_x = ((float)Settings.WIDTH / 2.0F) - (AbstractDungeon.player.limbo.size() * (240 * Settings.xScale));
+                    cardsAddedToLimbo.add(c);
+                    c.target_x = ((float)Settings.WIDTH / 2.0F) - (cardsAddedToLimbo.size() * (240 * Settings.xScale));
                     c.target_y = (float)Settings.HEIGHT / 2.0F;
                     c.targetAngle = 0.0F;
                     c.drawScale = 0.25F;
@@ -92,7 +94,7 @@ public class PredictAction extends AbstractGameAction {
                     c.applyPowers();
                 }
                 this.addToTop(new DrawCardAction(1, new PredictAction(num, quality, followUpAction, false)));
-                this.addToTop(new ForceWaitAction(0.5f));
+                this.addToTop(new ForceWaitAction(0.2f));
             }
             isDone = true;
             return;
@@ -121,17 +123,25 @@ public class PredictAction extends AbstractGameAction {
             addToTop(new AbstractGameAction() {
                 @Override
                 public void update() {
-                    AbstractDungeon.player.limbo.removeTopCard();
-                    for (AbstractCard limboCard : AbstractDungeon.player.limbo.group) {
+                    //here?
+                    //AbstractDungeon.player.limbo.removeTopCard();
+
+                    //get the first card of limbo that was put there by this effect
+                    AbstractDungeon.player.limbo.removeCard(cardsAddedToLimbo.remove(0));
+
+                    for (AbstractCard limboCard : cardsAddedToLimbo) {
                         limboCard.target_x += (240 * Settings.xScale);
-                        limboCard.target_y = (float)Settings.HEIGHT / 2.0F;
+                        limboCard.target_y = (float) Settings.HEIGHT / 2.0F;
                         limboCard.glowColor = quality.test(limboCard) ? Color.GREEN.cpy() : Color.RED.cpy();
                     }
                     isDone = true;
                 }
             });
         }else{
-            AbstractDungeon.player.limbo.clear();
+            for(AbstractCard c : cardsAddedToLimbo){
+                AbstractDungeon.player.limbo.removeCard(c);
+            }
+            cardsAddedToLimbo.clear();
         }
 
         isDone = true;

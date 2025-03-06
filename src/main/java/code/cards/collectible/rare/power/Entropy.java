@@ -21,10 +21,12 @@ public class Entropy extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new EntropyPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new WarpAction(secondMagic));
+        if(upgraded){
+            this.addToBot(new WarpAction(secondMagic));
+        }
     }
 
     public void upp() {
-        upgradeSecondMagic(1);
+        rawDescription = cardStrings.UPGRADE_DESCRIPTION;
     }
 }

@@ -24,26 +24,14 @@ public class ExtraTurnPower extends AbstractEasyPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private boolean startOfTurnApplication = false;
 
     public ExtraTurnPower(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.BUFF, false, owner, amount);
     }
 
-    public ExtraTurnPower(AbstractCreature owner, int amount, boolean startOfTurnApplicationIn) {
-        super(POWER_ID, NAME, PowerType.BUFF, false, owner, amount);
-        startOfTurnApplication = true;
-    }
-
     @Override
     public void updateDescription() {
         description = (amount == 1) ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + DESCRIPTIONS[2];
-    }
-
-    public void onInitialApplication() {
-        if(AbstractDungeon.actionManager.monsterAttacksQueued && !startOfTurnApplication){
-            atEndOfTurn(true);
-        }
     }
 
     public void atEndOfTurn(boolean isPlayer) {
