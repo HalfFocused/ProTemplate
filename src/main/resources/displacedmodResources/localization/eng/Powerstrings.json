@@ -61,19 +61,19 @@
       " [E] ."
     ]
   },
-  "${ModID}:EntropyPower": {
-    "NAME": "Entropy",
+  "${ModID}:InevitableFormPower": {
+    "NAME": "Inevitable Form",
     "DESCRIPTIONS": [
       "At the start of your turn, play the top card of your draw pile and #yExhaust it.",
       "At the start of your turn, play the top #b",
       " cards of your draw pile and #yExhaust them."
     ]
   },
-  "${ModID}:ClingOnPower": {
-    "NAME": "Cling On",
+  "${ModID}:LongGoodbyePower": {
+    "NAME": "Long Goodbye",
     "DESCRIPTIONS": [
-      "#yEthereal cards don't #yExhaust at the end of this turn.",
-      "#yEthereal cards don't #yExhaust at the end of your next #b",
+      "#yForget cards trigger twice at the end of this turn.",
+      "#yForget cards trigger twice at the end of your next #b",
       " turns."
     ]
   },
@@ -158,6 +158,29 @@
       "Whenever you #yExhaust #b12 cards, take an additional turn after this one.",
       "Whenever you #yExhaust #b12 cards, take #b",
       " additional turns after this one."
+    ]
+  },
+  "${ModID}:PrecognitionPower": {
+    "NAME": "Precognition",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yVision, draw #b1 card.",
+      "Whenever you play a #yVision, draw #b",
+      " cards."
+    ]
+  },
+  "${ModID}:NextTurnSetEnergyPower": {
+    "NAME": "Next Turn Energy",
+    "DESCRIPTIONS": [
+      "Next turn, you have #b",
+      " [E] ."
+    ]
+  },
+  "${ModID}:EyesWideOpenPower": {
+    "NAME": "Eyes Wide Open",
+    "DESCRIPTIONS": [
+      "At the start of your turn, shuffle a #yVision into your draw pile.",
+      "At the start of your turn, shuffle #b",
+      " #yVisions into your draw pile."
     ]
   }
 }

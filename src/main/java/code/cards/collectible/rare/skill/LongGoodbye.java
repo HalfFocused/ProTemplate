@@ -3,29 +3,27 @@ package code.cards.collectible.rare.skill;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
-import code.powers.TempoPower;
+import code.powers.LongGoodbyePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.unique.MadnessAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BattleTempo extends AbstractEasyCard {
-    public final static String ID = makeID("BattleTempo");
+public class LongGoodbye extends AbstractEasyCard {
+    public final static String ID = makeID("LongGoodbye");
+    // intellij stuff skill, self, rare, , , 9, 3, , 
 
-    public BattleTempo() {
+    public LongGoodbye() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseBlock = block = 8;
-        baseMagicNumber = magicNumber = 2;
+        baseBlock = 9;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        this.addToBot(new ApplyPowerAction(p, p, new TempoPower(p,magicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new LongGoodbyePower(p, 1)));
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeBlock(3);
     }
 }

@@ -19,8 +19,8 @@ public class Manifest extends AbstractEasyCard {
     // intellij stuff attack, enemy, uncommon, 11, 2, , , 1, 1
 
     public Manifest() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 11;
+        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = 16;
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -29,18 +29,8 @@ public class Manifest extends AbstractEasyCard {
         this.addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if (p.drawPile.size() + p.discardPile.size() == 0) {// 26
-                    this.isDone = true;
-                    return;
-                }
-                if (p.drawPile.size() > magicNumber) {
-                    for(int i = 0; i < magicNumber; i++){
-                        this.addToTop(new LapseCardAction(p.drawPile.getNCardFromTop(i), p.drawPile));
-                    }
-                }else{
-                    for(AbstractCard card : p.drawPile.group){
-                        this.addToTop(new LapseCardAction(card, p.drawPile));
-                    }
+                if (!p.drawPile.isEmpty()) {
+                    this.addToTop(new LapseCardAction(p.drawPile.getTopCard(), p.drawPile));
                 }
                 this.isDone = true;
             }
@@ -48,6 +38,6 @@ public class Manifest extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeDamage(4);
     }
 }

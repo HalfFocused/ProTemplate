@@ -1,13 +1,16 @@
 package code.util.charUtil;
 
 import code.actions.DisplayCardAction;
+import code.powers.LongGoodbyePower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
@@ -19,6 +22,10 @@ public class CardUtil {
     public static ArrayList<AbstractCard> cardsDrawnWithForsakeThisTurn = new ArrayList<>();
 
     public static boolean cardExhaustedThisTurn = false;
+    public static boolean theSecondDreamActivatedThisTurn = false;
+    public static boolean theSecondDreamActivatedLastTurn = false;
+
+
     public static int warpsThisCombat = 0;
     public static ArrayList<CardStreak> cardStreaks = new ArrayList<>();
 
@@ -87,6 +94,9 @@ public class CardUtil {
         if(card instanceof AbstractCard) {
             ((AbstractCard) card).applyPowers();
             card.onForget();
+            if(AbstractDungeon.player.hasPower(LongGoodbyePower.POWER_ID)){
+                card.onForget();
+            }
             AbstractCard displayCard = ((AbstractCard) card).makeStatEquivalentCopy();
             displayCard.current_x = ((AbstractCard) card).current_x;
             displayCard.current_y = ((AbstractCard) card).current_y;
@@ -130,5 +140,17 @@ public class CardUtil {
             if(c.isEthereal) played++;
         }
         return played;
+    }
+
+    public static int etherealCardsInHand(){
+        int inHand = 0;
+        for(AbstractCard c : AbstractDungeon.player.hand.group){
+            if(c.isEthereal) inHand++;
+        }
+        return inHand;
+    }
+
+    public static boolean inTheSecondDream(){
+        return CardCrawlGame.isInARun() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && theSecondDreamActivatedLastTurn;
     }
 }

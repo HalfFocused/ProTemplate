@@ -24,7 +24,7 @@
     "NAME": "Raincoat",
     "FLAVOR": "I never believed in moral dilemmas- But I guess you're an exception.",
     "DESCRIPTIONS": [
-      "Every time you play 5 #yEthereal cards, gain [E] ."
+      "Whenever you play 5 #yEthereal cards, gain [E] ."
     ]
   },
   "${ModID}:Everything": {
@@ -45,12 +45,12 @@
     "NAME": "Locket",
     "FLAVOR": "The pictures in here hold no meaning, and yet, some significance.",
     "DESCRIPTIONS": [
-      "At the start of combat, add a random #yEthereal card to your hand."
+      "At the start of combat, add a random card to your hand. It is #yEthereal."
     ]
   },
   "${ModID}:GiantBow": {
     "NAME": "Giant Bow",
-    "FLAVOR": "The bow wraps around your waist, and feels a little ridiculous. However, it seems to slip through time effortlessly.",
+    "FLAVOR": "It's not yours. But it came back to you.",
     "DESCRIPTIONS": [
       "The first time you #yWarp each combat, #yWarp 1 additional turn."
     ]
@@ -66,7 +66,7 @@
     "NAME": "The Clockwork Universe",
     "FLAVOR": "The timeline is clear to you now. You fear you will look into this device and see your own death.",
     "DESCRIPTIONS": [
-      "Replaces #yAstronomical #yClock. Take an additional turn after your first each combat."
+      "Replaces #yAstronomical #yClock. Take an additional turn after your first each combat. You only have [E] [E] that turn."
     ]
   },
   "${ModID}:ShatteredGlass": {

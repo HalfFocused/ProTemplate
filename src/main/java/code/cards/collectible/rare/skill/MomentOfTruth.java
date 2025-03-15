@@ -19,7 +19,6 @@ public class MomentOfTruth extends AbstractEasyCard {
 
     public MomentOfTruth() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -39,7 +38,6 @@ public class MomentOfTruth extends AbstractEasyCard {
     }
 
     public void upp() {
-        isEthereal = false;
-        rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        upgradeBaseCost(0);
     }
 }

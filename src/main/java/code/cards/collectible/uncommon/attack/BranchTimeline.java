@@ -21,7 +21,7 @@ public class BranchTimeline extends AbstractEasyCard implements ForgetCard {
 
     public BranchTimeline() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 6;
+        baseDamage = damage = 5;
         isEthereal = true;
     }
 
@@ -36,7 +36,7 @@ public class BranchTimeline extends AbstractEasyCard implements ForgetCard {
 
     @Override
     public void onForget() {
-        this.addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK)));
-        this.addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.SKILL)));
+        this.addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeStatEquivalentCopy()));
+        this.addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.SKILL).makeStatEquivalentCopy()));
     }
 }

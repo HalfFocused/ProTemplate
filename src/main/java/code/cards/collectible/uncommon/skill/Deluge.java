@@ -3,7 +3,6 @@ package code.cards.collectible.uncommon.skill;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -11,10 +10,10 @@ import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HollowCognition extends AbstractEasyCard {
-    public final static String ID = makeID(HollowCognition.class.getSimpleName());
+public class Deluge extends AbstractEasyCard {
+    public final static String ID = makeID(Deluge.class.getSimpleName());
 
-    public HollowCognition() {
+    public Deluge() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 2;
     }

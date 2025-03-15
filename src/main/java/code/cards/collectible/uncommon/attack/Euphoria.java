@@ -41,6 +41,6 @@ public class Euphoria extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeDamage(3);
     }
 }

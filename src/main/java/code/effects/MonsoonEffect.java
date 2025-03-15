@@ -48,7 +48,7 @@ public class MonsoonEffect extends AbstractGameEffect {
     }
 
     public void render(SpriteBatch sb) {
-        sb.setColor(new Color(0.0F, 0.0F, 0.1F, this.color.a * 0.7F));
+        sb.setColor(new Color(0.0F, 0.0F, 0.0F, this.color.a * 0.7F));
         sb.draw(ImageMaster.WHITE_SQUARE_IMG, 0.0F, 0.0F, (float)Settings.WIDTH, (float)Settings.HEIGHT);
         sb.setColor(this.color);
         sb.draw(ImageMaster.BORDER_GLOW_2, 0.0F, 0.0F, (float)Settings.WIDTH, (float)Settings.HEIGHT);

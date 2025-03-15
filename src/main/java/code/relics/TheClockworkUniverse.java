@@ -2,12 +2,10 @@ package code.relics;
 
 import code.TheDisplaced;
 import code.powers.ExtraTurnPower;
+import code.powers.NextTurnSetEnergyPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static code.ModFile.makeID;
 
@@ -21,6 +19,7 @@ public class TheClockworkUniverse extends AbstractEasyRelic {
     public void atBattleStart() {
         flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NextTurnSetEnergyPower(AbstractDungeon.player, 2)));
         this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ExtraTurnPower(AbstractDungeon.player, 1)));
         this.grayscale = true;
     }

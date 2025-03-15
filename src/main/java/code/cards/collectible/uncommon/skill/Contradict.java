@@ -3,7 +3,6 @@ package code.cards.collectible.uncommon.skill;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -12,10 +11,10 @@ import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HollowGrasp extends AbstractEasyCard {
-    public final static String ID = makeID(HollowGrasp.class.getSimpleName());
+public class Contradict extends AbstractEasyCard {
+    public final static String ID = makeID(Contradict.class.getSimpleName());
 
-    public HollowGrasp() {
+    public Contradict() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 13;
     }

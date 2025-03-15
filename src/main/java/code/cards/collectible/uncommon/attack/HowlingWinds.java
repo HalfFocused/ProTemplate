@@ -1,47 +1,48 @@
-package code.cards.collectible.common.attack;
+package code.cards.collectible.uncommon.attack;
 
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 import static code.util.Wiz.*;
 
+import code.cards.collectible.uncommon.attack.RecurringDream;
 import code.util.charUtil.CardUtil;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class Twist extends AbstractEasyCard {
-    public final static String ID = makeID("Twist");
+public class HowlingWinds extends AbstractEasyCard {
+    public final static String ID = makeID("HowlingWinds");
+    // intellij stuff skill, enemy, uncommon, , , , , 2, 1
 
-    private static final int WHEN = 1;
-    public Twist() {
-        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 4;
+    public HowlingWinds() {
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = damage = 9;
         baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SMASH);
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         this.addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == WHEN){
-                    this.addToTop(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
+                if(CardUtil.hasPlayedEtherealCardThisTurn()){
+                    addToTop(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
                 }
                 isDone = true;
             }
         });
     }
 
+    @Override
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == WHEN - 1){
+
+        if(CardUtil.hasPlayedEtherealCardThisTurn()){
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }

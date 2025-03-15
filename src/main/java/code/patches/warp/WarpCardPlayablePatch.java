@@ -13,7 +13,7 @@ public class WarpCardPlayablePatch {
 
     /*
         Make sure cards can be played and queued during warps by replacing any attempt
-         to access turnHasEnded with false when a warp is queued. important for Entropy (rare power).
+         to access turnHasEnded with false when a warp is queued. important for Inevitable Form (rare power).
      */
     @SpireInstrumentPatch
     public static ExprEditor MonsterEndOfTurnOverride()

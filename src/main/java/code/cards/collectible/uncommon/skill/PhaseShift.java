@@ -1,26 +1,23 @@
 package code.cards.collectible.uncommon.skill;
 
-import code.actions.HollowFleshAction;
+import code.actions.PhaseShiftAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
-import com.megacrit.cardcrawl.actions.defect.ReinforcedBodyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HollowFlesh extends AbstractEasyCard {
-    public final static String ID = makeID("HollowFlesh");
+public class PhaseShift extends AbstractEasyCard {
+    public final static String ID = makeID(PhaseShift.class.getSimpleName());
 
-    public HollowFlesh() {
+    public PhaseShift() {
         super(ID, -1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = block = 10;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new HollowFleshAction(p, block, this.freeToPlayOnce, this.energyOnUse));
-
+        this.addToBot(new PhaseShiftAction(p, block, this.freeToPlayOnce, this.energyOnUse));
     }
 
     public void upp() {

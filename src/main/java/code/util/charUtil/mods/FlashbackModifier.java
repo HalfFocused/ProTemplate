@@ -26,6 +26,7 @@ public class FlashbackModifier extends AbstractCardModifier {
     public static final int NEVER_ENOUGH = 0;
     public static final int SPLIT_SECOND = 1;
     public static final int LAST_LAUGH = 2;
+    public static final int THE_STARS_ALIGNED = 3;
 
     static ArrayList<AbstractCard> previewCards = new ArrayList<>();
 
@@ -61,13 +62,7 @@ public class FlashbackModifier extends AbstractCardModifier {
                 AbstractCardModifier mod = CardModifierManager.getModifiers(card, ID).get(0);
                 if(mod instanceof FlashbackModifier){
                     if(((FlashbackModifier) mod).type == type){
-                        AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                            @Override
-                            public void update() {
-                                this.addToTop(new DiscardToHandAction(card));
-                                isDone = true;
-                            }
-                        });
+                        AbstractDungeon.actionManager.addToTop(new DiscardToHandAction(card));
                     }
                 }
             }

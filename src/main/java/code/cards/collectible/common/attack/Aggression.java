@@ -19,7 +19,7 @@ public class Aggression extends AbstractEasyCard implements ForgetCard {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         isEthereal = true;
         baseDamage = damage = 10;
-        baseBlock = block = 4;
+        baseBlock = block = 5;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -28,7 +28,7 @@ public class Aggression extends AbstractEasyCard implements ForgetCard {
 
     public void upp() {
         upgradeDamage(2);
-        upgradeBlock(2);
+        upgradeBlock(3);
     }
 
     @Override

@@ -13,13 +13,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-public class HollowFleshAction extends AbstractGameAction {
+public class PhaseShiftAction extends AbstractGameAction {
     public int[] multiDamage;
     private boolean freeToPlayOnce = false;
     private AbstractPlayer p;
     private int energyOnUse = -1;
 
-    public HollowFleshAction(AbstractPlayer p, int amount, boolean freeToPlayOnce, int energyOnUse) {
+    public PhaseShiftAction(AbstractPlayer p, int amount, boolean freeToPlayOnce, int energyOnUse) {
         this.amount = amount;
         this.p = p;
         this.freeToPlayOnce = freeToPlayOnce;

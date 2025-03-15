@@ -1,6 +1,8 @@
 package code.cards;
 
 import basemod.abstracts.CustomCard;
+import code.patches.CardStringsPatch;
+import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -20,6 +22,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.function.Consumer;
 import code.TheDisplaced;
 import code.util.CardArtRoller;
+import org.lwjgl.Sys;
 
 import static code.ModFile.makeImagePath;
 import static code.ModFile.modID;
@@ -241,6 +244,21 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     public void update() {
         super.update();
+
+        if(FlavorText.CardStringsFlavorField.flavor.get(cardStrings) != null){
+            if(CardStringsPatch.CardStringsFlavorField.enhancedFlavor.get(cardStrings) != null){
+                if(CardUtil.inTheSecondDream()){
+                    FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.GOLD.cpy());
+                    FlavorText.AbstractCardFlavorFields.flavor.set(this, CardStringsPatch.CardStringsFlavorField.enhancedFlavor.get(cardStrings));
+                }else{
+                    FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.WHITE.cpy());
+                    FlavorText.AbstractCardFlavorFields.flavor.set(this, FlavorText.CardStringsFlavorField.flavor.get(cardStrings));
+                }
+            }
+        }
+
+
+
         if (needsArtRefresh)
             CardArtRoller.computeCard(this);
     }

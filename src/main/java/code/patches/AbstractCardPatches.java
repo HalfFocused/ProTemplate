@@ -16,6 +16,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.RarePotionParticleEffect;
+import com.megacrit.cardcrawl.vfx.ShineSparkleEffect;
 import com.megacrit.cardcrawl.vfx.combat.LightFlareParticleEffect;
 
 
@@ -59,25 +62,23 @@ public class AbstractCardPatches {
     static class CardRenderPatch{
         public static void Postfix(AbstractCard __instance)
         {
-            /*
-            AbstractCard dragging = AbstractDungeon.player.isDraggingCard ? AbstractDungeon.player.hoveredCard : null;
-            if(dragging == null){
-                FlashbackModifier.endPreview();
-            }else {
-                if (__instance.equals(dragging)) {
-                    if (__instance.hasTag(DisplacedTags.CARDS_THAT_WARP)) {
-                        FlashbackModifier.preview(FlashbackModifier.SPLIT_SECOND);
-                    }
-                }
-            }
-             */
-
             if(CardModifierManager.hasModifier(__instance, SparkleModifier.ID)){
                 if(MathUtils.random(1,6) == 1) {
                     LightFlareParticleEffect effect = new LightFlareParticleEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height), Color.WHITE);
                     effect.renderBehind = false;
                     effect.duration *= 0.65f;
                     AbstractDungeon.topLevelEffects.add(effect);
+                }
+            }
+
+            if(CardUtil.inTheSecondDream()){
+                if(__instance.rarity == AbstractCard.CardRarity.RARE && __instance.color == TheDisplaced.Enums.DISPLACED_COLOR){
+                    if(MathUtils.random(1,6) == 1) {
+                        AbstractGameEffect effect = new ShineSparkleEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height));
+                        effect.renderBehind = false;
+                        effect.duration *= 0.65f;
+                        AbstractDungeon.topLevelEffects.add(effect);
+                    }
                 }
             }
         }

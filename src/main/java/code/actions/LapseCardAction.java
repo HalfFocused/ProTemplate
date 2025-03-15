@@ -27,7 +27,7 @@ public class LapseCardAction extends AbstractGameAction {
             card.target_y = (float) Settings.HEIGHT / 2.0F;
             card.targetDrawScale = 0.5f;
         }
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LapsePower(AbstractDungeon.player, card)));
+        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LapsePower(AbstractDungeon.player, card.makeCopy())));
         this.addToBot(new ExhaustSpecificCardAction(card, group));
         isDone = true;
     }

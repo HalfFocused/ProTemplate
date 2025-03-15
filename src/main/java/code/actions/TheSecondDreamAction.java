@@ -31,6 +31,13 @@ public class TheSecondDreamAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if(CardUtil.etherealCardsPlayedThisTurn() >= 3){
                 this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ExtraTurnPower(AbstractDungeon.player, 1)));
+                this.addToTop(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        CardUtil.theSecondDreamActivatedThisTurn = true;
+                        isDone = true;
+                    }
+                });
             }
         }
         this.tickDuration();
