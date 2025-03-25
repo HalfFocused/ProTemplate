@@ -34,11 +34,17 @@ public class RecklessAbandon extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i = 0; i < CardUtil.etherealCardsInHand() + 1; ++i) {
-            AbstractMonster target = AbstractDungeon.getRandomMonster();
-            this.addToBot(new SFXAction("ATTACK_HEAVY", MathUtils.random(0.2F, 0.5F)));
-            this.addToBot(new VFXAction(new RecklessAbandonEffect(target.hb.cX, target.hb.cY, Color.RED.cpy())));
-            calculateCardDamage(target);
-            dmg(target, randomSlash());
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    AbstractMonster hit = AbstractDungeon.getRandomMonster();
+                    calculateCardDamage(hit);
+                    dmgTop(hit, randomSlash());
+                    this.addToTop(new VFXAction(new RecklessAbandonEffect(hit.hb.cX, hit.hb.cY, Color.RED.cpy())));
+                    this.addToTop(new SFXAction("ATTACK_HEAVY", MathUtils.random(0.2F, 0.5F)));
+                    isDone = true;
+                }
+            });
         }
     }
     @Override

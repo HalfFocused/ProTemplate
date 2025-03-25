@@ -25,6 +25,7 @@ public class TheStarsAligned extends AbstractEasyCard {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = damage = 10;
         baseMagicNumber = magicNumber = 1;
+        this.cardsToPreview = new Vision();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -66,5 +67,11 @@ public class TheStarsAligned extends AbstractEasyCard {
 
     public void upp() {
         upgradeMagicNumber(1);
+    }
+
+    @Override
+    public void initializeDescription(){
+        super.initializeDescription();
+        this.keywords.add(makeID("dream")); //TODO: Account for localization files
     }
 }

@@ -18,11 +18,14 @@ public class OppressiveAura extends AbstractEasyCard {
         //turns
         baseMagicNumber = magicNumber = 4;
         //block per turn
+        baseSecondBlock = secondBlock = 3;
+
         baseBlock = block = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new AuraPower(p, magicNumber, block)));
+        blck();
+        addToBot(new ApplyPowerAction(p, p, new AuraPower(p, magicNumber, secondBlock)));
     }
 
     public void upp() {

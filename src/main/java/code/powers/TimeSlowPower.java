@@ -1,9 +1,6 @@
 package code.powers;
 
 import code.ModFile;
-import code.actions.AllEnemiesLoseHPAction;
-import code.util.charUtil.EtherealExhaustHook;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.BetterOnApplyPowerPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -13,15 +10,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class TimeStopPower extends AbstractEasyPower implements OnReceivePowerPower {
+public class TimeSlowPower extends AbstractEasyPower implements OnReceivePowerPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ModFile.makeID("TimeStopPower");
+    public static final String POWER_ID = ModFile.makeID("TimeSlowPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public TimeStopPower(AbstractCreature owner, int amount) {
+    public TimeSlowPower(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.BUFF, true, owner, amount);
     }
 

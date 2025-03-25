@@ -37,7 +37,6 @@ public class TemporalStrike extends AbstractEasyCard {
     @Override
     public void applyPowers(){
         int realBaseDamage = this.baseDamage;
-        //this.baseMagicNumber = GameActionManager.turn * secondMagic;
         this.baseDamage += temporalBonus();
         super.applyPowers();
         this.baseDamage = realBaseDamage;
@@ -45,7 +44,6 @@ public class TemporalStrike extends AbstractEasyCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        //this.baseMagicNumber = GameActionManager.turn * secondMagic;
         int realBaseDamage = this.baseDamage;
         this.baseDamage += temporalBonus();
         super.calculateCardDamage(mo);

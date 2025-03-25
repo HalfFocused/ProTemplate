@@ -2,7 +2,10 @@ package code.util.charUtil;
 
 import code.actions.DisplayCardAction;
 import code.powers.LongGoodbyePower;
+import code.powers.TimeSlowPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -10,6 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
@@ -93,10 +97,19 @@ public class CardUtil {
     public static void forgetCard(ForgetCard card){
         if(card instanceof AbstractCard) {
             ((AbstractCard) card).applyPowers();
-            card.onForget();
-            if(AbstractDungeon.player.hasPower(LongGoodbyePower.POWER_ID)){
-                card.onForget();
-            }
+            AbstractDungeon.actionManager.addToTop(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    card.onForget();
+                    AbstractPower longGoodbyePower = AbstractDungeon.player.getPower(LongGoodbyePower.POWER_ID);
+                    if(longGoodbyePower != null){
+                        longGoodbyePower.flash();
+                        AbstractDungeon.actionManager.addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, LongGoodbyePower.POWER_ID, 1));
+                        card.onForget();
+                    }
+                    isDone = true;
+                }
+            });
             AbstractCard displayCard = ((AbstractCard) card).makeStatEquivalentCopy();
             displayCard.current_x = ((AbstractCard) card).current_x;
             displayCard.current_y = ((AbstractCard) card).current_y;
@@ -152,5 +165,13 @@ public class CardUtil {
 
     public static boolean inTheSecondDream(){
         return CardCrawlGame.isInARun() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && theSecondDreamActivatedLastTurn;
+    }
+
+    public static boolean isTimeStopped(){
+        return CardCrawlGame.isInARun() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && (theSecondDreamActivatedThisTurn || (theSecondDreamActivatedLastTurn && !AbstractDungeon.actionManager.turnHasEnded));
+    }
+
+    public static boolean isTimeSlowed(){
+        return CardCrawlGame.isInARun() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && AbstractDungeon.player.hasPower(TimeSlowPower.POWER_ID);
     }
 }

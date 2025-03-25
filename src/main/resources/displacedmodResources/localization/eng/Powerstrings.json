@@ -13,8 +13,8 @@
       " HP."
     ]
   },
-  "${ModID}:TimeStopPower": {
-  "NAME": "Time Stop",
+  "${ModID}:TimeSlowPower": {
+  "NAME": "Time Slow",
   "DESCRIPTIONS": [
     "You cannot take damage, lose HP, or gain debuffs this turn.",
     "You cannot take damage, lose HP, or gain debuffs for the next #b",
@@ -72,9 +72,9 @@
   "${ModID}:LongGoodbyePower": {
     "NAME": "Long Goodbye",
     "DESCRIPTIONS": [
-      "#yForget cards trigger twice at the end of this turn.",
-      "#yForget cards trigger twice at the end of your next #b",
-      " turns."
+      "Your next ",
+      " #yForget effect triggers twice.",
+      " #yForget effects trigger twice."
     ]
   },
   "${ModID}:OverAndOverPower": {
@@ -117,9 +117,9 @@
   "${ModID}:UnburdenedPower": {
     "NAME": "Unburdened",
     "DESCRIPTIONS": [
-      "The first time a card is #yExhausted each turn, draw ",
-      "a card.",
-      "#b cards."
+      "The first time a card is #yExhausted each turn, gain #b",
+      " Strength.",
+      " Strength."
     ]
   },
   "${ModID}:ImpendingDoomPower": {

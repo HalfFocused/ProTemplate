@@ -21,13 +21,6 @@ public class LongGoodbyePower extends AbstractEasyPower {
 
     @Override
     public void updateDescription() {
-        description = (amount == 1) ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];;
-    }
-
-    @Override
-    public void atStartOfTurn() {
-        if(CardUtil.queuedWarps == 0) { //no ticking down while warping, plz!
-            this.addToBot(new ReducePowerAction(owner, owner, this, 1));
-        }
+        description = DESCRIPTIONS[0] + amount + ((amount == 1) ? DESCRIPTIONS[1] : DESCRIPTIONS[2]);
     }
 }

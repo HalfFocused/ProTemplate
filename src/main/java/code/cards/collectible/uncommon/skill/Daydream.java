@@ -29,4 +29,10 @@ public class Daydream extends AbstractEasyCard {
     public void upp() {
         upgradeBlock(3);
     }
+
+    @Override
+    public void initializeDescription(){
+        super.initializeDescription();
+        this.keywords.add(makeID("dream")); //TODO: Account for localization files
+    }
 }

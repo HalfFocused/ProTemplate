@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.integrations.steam.SRCallback;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class UnburdenedPower extends AbstractEasyPower {
@@ -36,7 +38,7 @@ public class UnburdenedPower extends AbstractEasyPower {
     public void onExhaust(AbstractCard card) {
         if(!triggeredThisTurn){
             this.flash();
-            this.addToBot(new DrawCardAction(amount));
+            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount), amount));
             triggeredThisTurn = true;
         }
     }

@@ -23,7 +23,7 @@
     "NAMES": [
       "dream"
     ],
-    "DESCRIPTION": "This card starts with Dream Counters. Counter is reduced by 1 at the end of turn, wherever it is. When the last counter is removed, #yExhaust."
+    "DESCRIPTION": "Counter is reduced by 1 at the end of turn, wherever it is. When the last counter is removed, #yExhaust."
   },
   {
     "NAMES": [
@@ -36,14 +36,6 @@
       "predict"
     ],
     "DESCRIPTION": "Draw a card, then discard it unless it meets the condition. Repeat until you find the right amount or empty your draw pile."
-  },
-  {
-    "NAMES": [
-      "vision",
-      "vision+",
-      "visions"
-    ],
-    "DESCRIPTION": "A 0 cost #yAttack that lasts 3 turns before #yExhausting."
   },
   {
     "NAMES": [

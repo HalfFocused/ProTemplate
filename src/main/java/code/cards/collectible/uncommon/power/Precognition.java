@@ -18,6 +18,7 @@ public class Precognition extends AbstractEasyCard {
     public Precognition() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
+        this.cardsToPreview = new Vision();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -27,5 +28,11 @@ public class Precognition extends AbstractEasyCard {
 
     public void upp() {
         upgradeBaseCost(1);
+    }
+
+    @Override
+    public void initializeDescription(){
+        super.initializeDescription();
+        this.keywords.add(makeID("dream")); //TODO: Account for localization files
     }
 }

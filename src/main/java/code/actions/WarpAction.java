@@ -130,7 +130,7 @@ public class WarpAction extends AbstractGameAction {
                 addToTop(new SFXAction("POWER_TIME_WARP", 0.05F));
                 //AbstractDungeon.actionManager.addToTop(new VFXAction(new WarpEffect(CardUtil.queuedWarps)));
             }
-            addToTop(new VFXAction(new WhirlwindEffect(), 0.0F));
+            addToTop(new VFXAction(new WhirlwindEffect(Color.YELLOW.cpy(), true), 0.0F));
 
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();

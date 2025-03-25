@@ -31,15 +31,32 @@ public class RecurringDream extends AbstractEasyCard {
         for(AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn){
             if(card instanceof RecurringDream){
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+                return;
+            }
+        }
+        for(AbstractCard card : CardUtil.cardsPlayedLastTurn){
+            if(card instanceof RecurringDream){
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+                return;
             }
         }
     }
 
     @Override
     public void applyPowers(){
+        boolean reduced = false;
         for(AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn){
             if(card instanceof RecurringDream){
+                reduced = true;
                 setCostForTurn(0);
+                break;
+            }
+        }
+        if(!reduced) {
+            for (AbstractCard card : CardUtil.cardsPlayedLastTurn) {
+                if (card instanceof RecurringDream) {
+                    setCostForTurn(0);
+                }
             }
         }
         super.applyPowers();

@@ -3,16 +3,11 @@ package code.cards.collectible.rare.power;
 import code.cards.AbstractEasyCard;
 import code.effects.BeforeYourEyesEffect;
 import code.powers.BeforeYourEyesPower;
-import code.powers.TimeStopPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
-import com.megacrit.cardcrawl.vfx.stance.DivinityParticleEffect;
 
 import static code.ModFile.makeID;
 

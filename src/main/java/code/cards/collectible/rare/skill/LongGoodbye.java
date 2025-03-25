@@ -15,15 +15,17 @@ public class LongGoodbye extends AbstractEasyCard {
 
     public LongGoodbye() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseBlock = 9;
+        baseBlock = block = 9;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        this.addToBot(new ApplyPowerAction(p, p, new LongGoodbyePower(p, 1)));
+        this.addToBot(new ApplyPowerAction(p, p, new LongGoodbyePower(p, magicNumber)));
     }
 
     public void upp() {
         upgradeBlock(3);
+        upgradeMagicNumber(1);
     }
 }
