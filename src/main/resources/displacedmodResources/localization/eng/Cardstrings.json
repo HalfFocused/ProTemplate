@@ -392,8 +392,8 @@
       " time.)",
       " times.)"
     ],
-    "FLAVOR": "",
-    "ENHANCED_FLAVOR": ""
+    "FLAVOR": "A blood-curdling scream.",
+    "ENHANCED_FLAVOR": "You charged forward, with hatred in your heart. But it was too late."
   },
   "${ModID}:PullFromBeyond": {
     "NAME": "Pull From Beyond",
