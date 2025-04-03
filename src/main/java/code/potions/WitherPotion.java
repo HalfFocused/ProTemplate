@@ -6,7 +6,6 @@ import code.powers.WitherPower;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static code.ModFile.makeID;
 import static code.util.Wiz.*;
@@ -15,7 +14,7 @@ public class WitherPotion extends AbstractEasyPotion {
     public static String ID = makeID("WitherPotion");
 
     public WitherPotion() {
-        super(ID, PotionRarity.COMMON, PotionSize.SPIKY, new Color(0.2f, 0.2f, 0.2f, 1f), new Color(0.4f, 0.4f, 0.4f, 1f), null, TheDisplaced.Enums.THE_DISPLACED, ModFile.characterColor);
+        super(ID, PotionRarity.COMMON, PotionSize.SPIKY, new Color(0.2f, 0.2f, 0.2f, 1f), new Color(0.4f, 0.4f, 0.4f, 1f), null, TheDisplaced.Enums.THE_DISPLACED, ModFile.displacedColor);
         this.isThrown = true;
         this.targetRequired = true;
     }

@@ -3,7 +3,6 @@ package code.cards.collectible.uncommon.power;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import code.cards.tokens.Vision;
 import code.powers.PrecognitionPower;

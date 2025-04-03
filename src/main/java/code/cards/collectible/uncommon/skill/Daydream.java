@@ -5,11 +5,9 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 
 import code.cards.tokens.Vision;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 public class Daydream extends AbstractEasyCard {
     public final static String ID = makeID(Daydream.class.getSimpleName());

@@ -1,14 +1,11 @@
 package code.cards.collectible.common.skill;
 
-import basemod.cardmods.EtherealMod;
 import code.actions.ApplyCardModAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
-import code.cards.tokens.Vision;
 import code.util.charUtil.mods.EtherealModifier;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,7 +13,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class FadeAway extends AbstractEasyCard {
     public final static String ID = makeID(FadeAway.class.getSimpleName());

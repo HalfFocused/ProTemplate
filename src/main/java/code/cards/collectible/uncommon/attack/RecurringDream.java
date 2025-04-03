@@ -3,7 +3,6 @@ package code.cards.collectible.uncommon.attack;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import code.util.charUtil.CardUtil;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

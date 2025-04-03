@@ -1,21 +1,15 @@
 package code.cards.collectible.rare.attack;
 
-import code.actions.LapseCardAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
 import code.util.charUtil.ForgetCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class Her extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID("Her");

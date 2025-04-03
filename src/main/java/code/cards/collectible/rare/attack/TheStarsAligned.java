@@ -5,7 +5,6 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 
 import code.cards.tokens.Vision;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;

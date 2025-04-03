@@ -4,7 +4,6 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
-import code.util.charUtil.CardUtil;
 import code.util.charUtil.ForgetCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;

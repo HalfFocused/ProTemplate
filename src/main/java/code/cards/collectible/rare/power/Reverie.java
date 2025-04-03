@@ -3,7 +3,6 @@ package code.cards.collectible.rare.power;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import code.powers.ReveriePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

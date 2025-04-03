@@ -3,7 +3,6 @@ package code.cards.collectible.uncommon.skill;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import code.powers.OverloadPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

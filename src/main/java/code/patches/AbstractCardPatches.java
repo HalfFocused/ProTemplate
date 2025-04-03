@@ -1,6 +1,7 @@
 package code.patches;
 
 import basemod.helpers.CardModifierManager;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.AlternateCardCosts;
 import code.TheDisplaced;
 import code.cards.collectible.uncommon.skill.Forsake;
 import code.powers.ForsakePower;
@@ -17,7 +18,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.RarePotionParticleEffect;
 import com.megacrit.cardcrawl.vfx.ShineSparkleEffect;
 import com.megacrit.cardcrawl.vfx.combat.LightFlareParticleEffect;
 
@@ -51,6 +51,7 @@ public class AbstractCardPatches {
                     return SpireReturn.Return(false);
                 }
             }
+
             return SpireReturn.Continue();
         }
     }

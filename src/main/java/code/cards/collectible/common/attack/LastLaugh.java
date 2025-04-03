@@ -4,7 +4,6 @@ import basemod.helpers.CardModifierManager;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import code.util.charUtil.mods.FlashbackModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

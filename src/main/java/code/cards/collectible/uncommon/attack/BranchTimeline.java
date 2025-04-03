@@ -1,20 +1,15 @@
 package code.cards.collectible.uncommon.attack;
 
-import code.TheDisplaced;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
-import code.util.charUtil.CardUtil;
 import code.util.charUtil.ForgetCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class BranchTimeline extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID(BranchTimeline.class.getSimpleName());

@@ -2,9 +2,7 @@ package code.cards.collectible.uncommon.power;
 
 import code.cards.AbstractEasyCard;
 import code.powers.DoubleTimePower;
-import code.powers.EmptinessPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

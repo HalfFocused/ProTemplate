@@ -3,7 +3,6 @@ package code.cards.collectible.rare.attack;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import code.effects.RecklessAbandonEffect;
 import code.util.charUtil.CardUtil;
@@ -11,16 +10,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.AnimatedSlashEffect;
-import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
-
-import javax.smartcardio.Card;
 
 public class RecklessAbandon extends AbstractEasyCard {
     public final static String ID = makeID("RecklessAbandon");

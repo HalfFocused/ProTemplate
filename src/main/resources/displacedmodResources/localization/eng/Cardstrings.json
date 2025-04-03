@@ -372,7 +372,8 @@
   },
   "${ModID}:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
-    "DESCRIPTION": "At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s} into your draw pile."
+    "DESCRIPTION": "At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s} into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s} into your draw pile."
   },
   "${ModID}:LowVisibility": {
     "NAME": "Low Visibility",

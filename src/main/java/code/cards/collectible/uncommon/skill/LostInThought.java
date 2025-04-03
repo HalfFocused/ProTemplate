@@ -4,7 +4,6 @@ import code.actions.WarpAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
-import static code.util.Wiz.*;
 
 import code.util.DisplacedTags;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;

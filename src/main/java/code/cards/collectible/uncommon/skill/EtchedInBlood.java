@@ -5,17 +5,11 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
-import code.powers.LapsePower;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.List;
-import java.util.function.Consumer;
 
 public class EtchedInBlood extends AbstractEasyCard {
     public final static String ID = makeID("EtchedInBlood");

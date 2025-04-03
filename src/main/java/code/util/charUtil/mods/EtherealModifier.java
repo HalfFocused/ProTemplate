@@ -4,6 +4,7 @@ import basemod.abstracts.AbstractCardModifier;
 import code.ModFile;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class EtherealModifier extends AbstractCardModifier {
     public static String ID = ModFile.makeID("Ethereal");
@@ -34,6 +35,7 @@ public class EtherealModifier extends AbstractCardModifier {
         return ID;
     }
 
+    @Override
     public Color getGlow(AbstractCard card) {
         return Color.LIGHT_GRAY;
     }

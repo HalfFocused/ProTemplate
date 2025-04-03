@@ -129,7 +129,7 @@ public class TheDisplaced extends CustomPlayer {
 
     @Override
     public Color getCardTrailColor() {
-        return characterColor.cpy();
+        return displacedColor.cpy();
     }
 
     @Override
@@ -159,12 +159,12 @@ public class TheDisplaced extends CustomPlayer {
 
     @Override
     public Color getCardRenderColor() {
-        return characterColor.cpy();
+        return displacedColor.cpy();
     }
 
     @Override
     public Color getSlashAttackColor() {
-        return characterColor.cpy();
+        return displacedColor.cpy();
     }
 
     @Override

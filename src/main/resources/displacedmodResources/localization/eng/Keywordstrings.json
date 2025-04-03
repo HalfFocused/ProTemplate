@@ -42,5 +42,11 @@
       "flashback"
     ],
     "DESCRIPTION": "Return this card from your discard pile to your hand."
+  },
+  {
+    "NAMES": [
+      "dire"
+    ],
+    "DESCRIPTION": "You can use HP to play this card if you don't have enough energy. If you do, it #yExhausts."
   }
 ]

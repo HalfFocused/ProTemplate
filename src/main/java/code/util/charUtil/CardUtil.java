@@ -1,5 +1,6 @@
 package code.util.charUtil;
 
+import basemod.helpers.CardModifierManager;
 import code.actions.DisplayCardAction;
 import code.powers.LongGoodbyePower;
 import code.powers.TimeSlowPower;

@@ -3,9 +3,7 @@ package code.cards.collectible.uncommon.power;
 import code.cards.AbstractEasyCard;
 import code.cards.tokens.Vision;
 import code.powers.EyesWideOpenPower;
-import code.powers.PrecognitionPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -26,6 +24,7 @@ public class EyesWideOpen extends AbstractEasyCard {
 
     public void upp() {
         upgradeBaseCost(1);
+        isInnate = true;
     }
 
     @Override
