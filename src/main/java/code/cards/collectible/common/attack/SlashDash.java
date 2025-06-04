@@ -4,6 +4,7 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
+import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -27,26 +28,12 @@ public class SlashDash extends AbstractEasyCard {
         for(int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++){
             AbstractMonster mon = AbstractDungeon.getMonsters().monsters.get(i);
             if(!mon.isDeadOrEscaped()){
-                addToBot(new DamageAction(mon, new DamageInfo(p, multiDamage[i], DamageInfo.DamageType.NORMAL), randomSlash()));
+                addToBot(new DamageAction(mon, new DamageInfo(p, multiDamage[i], DamageInfo.DamageType.NORMAL), CardUtil.randomSlash()));
             }
         }
     }
 
     public void upp() {
         upgradeDamage(3);
-    }
-
-    private AbstractGameAction.AttackEffect randomSlash(){
-        switch (MathUtils.random(4)){
-            case 1:
-                return AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
-            case 2:
-                return AbstractGameAction.AttackEffect.SLASH_HEAVY;
-            case 3:
-                return AbstractGameAction.AttackEffect.SLASH_HORIZONTAL;
-            case 4:
-                return AbstractGameAction.AttackEffect.SLASH_VERTICAL;
-        }
-        return AbstractGameAction.AttackEffect.SLASH_HEAVY;
     }
 }

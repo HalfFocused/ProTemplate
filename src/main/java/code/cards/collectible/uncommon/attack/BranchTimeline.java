@@ -15,7 +15,7 @@ public class BranchTimeline extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID(BranchTimeline.class.getSimpleName());
 
     public BranchTimeline() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = damage = 5;
         isEthereal = true;
     }

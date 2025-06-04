@@ -26,7 +26,7 @@ public class UnburdenedPower extends AbstractEasyPower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + (amount == 1 ? DESCRIPTIONS[1] : amount + DESCRIPTIONS[2]);
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

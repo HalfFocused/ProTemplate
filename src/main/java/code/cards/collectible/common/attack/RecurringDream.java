@@ -1,4 +1,4 @@
-package code.cards.collectible.uncommon.attack;
+package code.cards.collectible.common.attack;
 
 import code.cards.AbstractEasyCard;
 
@@ -16,8 +16,8 @@ public class RecurringDream extends AbstractEasyCard {
     // intellij stuff attack, enemy, uncommon, 18, 6, , , , 
 
     public RecurringDream() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 18;
+        super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseDamage = damage = 16;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -55,12 +55,13 @@ public class RecurringDream extends AbstractEasyCard {
             for (AbstractCard card : CardUtil.cardsPlayedLastTurn) {
                 if (card instanceof RecurringDream) {
                     setCostForTurn(0);
+                    break;
                 }
             }
         }
         super.applyPowers();
     }
     public void upp() {
-        upgradeDamage(6);
+        upgradeDamage(4);
     }
 }

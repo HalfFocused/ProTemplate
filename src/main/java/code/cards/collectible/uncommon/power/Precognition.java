@@ -26,7 +26,7 @@ public class Precognition extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(1);
+        upgradeMagicNumber(1);
     }
 
     @Override

@@ -4,6 +4,7 @@ import basemod.helpers.CardModifierManager;
 import code.actions.DisplayCardAction;
 import code.powers.LongGoodbyePower;
 import code.powers.TimeSlowPower;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -25,6 +26,8 @@ public class CardUtil {
     public static ArrayList<AbstractCard> cardsPlayedLastTurn = new ArrayList<>();
 
     public static ArrayList<AbstractCard> cardsDrawnWithForsakeThisTurn = new ArrayList<>();
+
+    private static AbstractGameAction.AttackEffect lastAttackEffect = null;
 
     public static boolean cardExhaustedThisTurn = false;
     public static boolean theSecondDreamActivatedThisTurn = false;
@@ -174,5 +177,75 @@ public class CardUtil {
 
     public static boolean isTimeSlowed(){
         return CardCrawlGame.isInARun() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && AbstractDungeon.player.hasPower(TimeSlowPower.POWER_ID);
+    }
+
+    public static AbstractGameAction.AttackEffect randomSlash(){
+
+        if(lastAttackEffect == AbstractGameAction.AttackEffect.SLASH_DIAGONAL){
+            switch (MathUtils.random(3)){
+                case 1:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_VERTICAL;
+                    return lastAttackEffect;
+                case 2:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HEAVY;
+                    return lastAttackEffect;
+                case 3:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HORIZONTAL;
+                    return lastAttackEffect;
+            }
+        }else if(lastAttackEffect == AbstractGameAction.AttackEffect.SLASH_VERTICAL){
+            switch (MathUtils.random(3)){
+                case 1:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
+                    return lastAttackEffect;
+                case 2:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HEAVY;
+                    return lastAttackEffect;
+                case 3:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HORIZONTAL;
+                    return lastAttackEffect;
+            }
+        }else if(lastAttackEffect == AbstractGameAction.AttackEffect.SLASH_HEAVY){
+            switch (MathUtils.random(3)){
+                case 1:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_VERTICAL;
+                    return lastAttackEffect;
+                case 2:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
+                    return lastAttackEffect;
+                case 3:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HORIZONTAL;
+                    return lastAttackEffect;
+            }
+        }else if(lastAttackEffect == AbstractGameAction.AttackEffect.SLASH_HORIZONTAL){
+            switch (MathUtils.random(3)){
+                case 1:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_VERTICAL;
+                    return lastAttackEffect;
+                case 2:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
+                    return lastAttackEffect;
+                case 3:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HEAVY;
+                    return lastAttackEffect;
+            }
+        }else{
+            switch (MathUtils.random(4)){
+                case 1:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
+                    return lastAttackEffect;
+                case 2:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HEAVY;
+                    return lastAttackEffect;
+                case 3:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HORIZONTAL;
+                    return lastAttackEffect;
+                case 4:
+                    lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_VERTICAL;
+                    return lastAttackEffect;
+            }
+        }
+        lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HEAVY;
+        return lastAttackEffect;
     }
 }

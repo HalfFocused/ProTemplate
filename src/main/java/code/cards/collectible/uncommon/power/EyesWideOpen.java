@@ -13,7 +13,7 @@ public class EyesWideOpen extends AbstractEasyCard {
     public final static String ID = makeID(EyesWideOpen.class.getSimpleName());
 
     public EyesWideOpen() {
-        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
         this.cardsToPreview = new Vision();
     }
@@ -23,7 +23,6 @@ public class EyesWideOpen extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(1);
         isInnate = true;
     }
 

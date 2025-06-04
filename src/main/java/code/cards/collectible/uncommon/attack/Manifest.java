@@ -6,6 +6,8 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -21,15 +23,15 @@ public class Manifest extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        this.addToBot(new AbstractGameAction() {
+        this.addToBot(new DrawCardAction(magicNumber, new AbstractGameAction() {
             @Override
             public void update() {
-                if (!p.drawPile.isEmpty()) {
-                    this.addToTop(new LapseCardAction(p.drawPile.getTopCard(), p.drawPile));
+                for(AbstractCard c : DrawCardAction.drawnCards){
+                    c.setCostForTurn(0);
                 }
-                this.isDone = true;
+                isDone = true;
             }
-        });
+        }));
     }
 
     public void upp() {

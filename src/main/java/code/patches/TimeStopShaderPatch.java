@@ -1,6 +1,5 @@
 package code.patches;
 
-import code.actions.FutureBorrowAction;
 import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -31,9 +30,6 @@ public class TimeStopShaderPatch {
         public static void addShader(AbstractDungeon instance, SpriteBatch sb) {
             if (rs == AbstractDungeon.RenderScene.NORMAL && CardUtil.isTimeStopped()) {
                 StartFbo(sb);
-            }
-            if(FutureBorrowAction.EMITTER != null) {
-                FutureBorrowAction.EMITTER.render(sb);
             }
         }
 

@@ -6,6 +6,7 @@ import code.effects.MonsoonEffect;
 import code.powers.ExtraTurnPower;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.mods.SparkleModifier;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 
 public class TheSecondDreamAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
@@ -38,6 +40,8 @@ public class TheSecondDreamAction extends AbstractGameAction {
                         isDone = true;
                     }
                 });
+                BorderLongFlashEffect effect = new BorderLongFlashEffect(Color.GOLD.cpy());
+                this.addToTop(new VFXAction(effect));
             }
         }
         this.tickDuration();

@@ -176,13 +176,9 @@
     "NAME": "Persist",
     "DESCRIPTION": "Gain !B! Block. NL Put the next card you play this turn on top of your draw pile."
   },
-  "${ModID}:Rewind": {
-    "NAME": "Rewind",
-    "DESCRIPTION": "Retain. NL ${ModID}:Lapse a card in your discard pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL ${ModID}:Lapse a card in your discard pile.",
-    "EXTENDED_DESCRIPTION": [
-      "Lapse"
-    ]
+  "${ModID}:Exchange": {
+    "NAME": "Exchange",
+    "DESCRIPTION": "Draw !M! card{@@}{!M!|>1=s}. NL Exhaust 1 card in your discard pile."
   },
   "${ModID}:MomentOfTruth": {
     "NAME": "Moment Of Truth",
@@ -227,9 +223,9 @@
   },
   "${ModID}:EtchedInBlood": {
     "NAME": "Etched In Blood",
-    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Lapse 1 card.",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust 1 card. NL Next turn, add that card to your hand.",
     "EXTENDED_DESCRIPTION": [
-      "Lapse"
+      "Exhaust."
     ]
   },
   "${ModID}:Forsake": {
@@ -256,13 +252,13 @@
     "NAME": "Branch Timeline",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage twice. NL ${ModID}:Forget: Add a random Attack and Skill to your hand."
   },
-  "${ModID}:Ruckus": {
-    "NAME": "Ruckus",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage to a random enemy 3 times. NL ${ModID}:Forget: Apply !M! Weak to ALL enemies."
+  "${ModID}:ClingingOn": {
+    "NAME": "Clinging On",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Exhaust unless you've played an Ethereal card this turn."
   },
   "${ModID}:Manifest": {
     "NAME": "Manifest",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Lapse the top card of your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{@@}{!M!|>1=s}. NL {!M!|>1=They cost|@=It costs} 0 this turn."
   },
   "${ModID}:Unburdened": {
     "NAME": "Unburdened",
@@ -360,7 +356,7 @@
     "NAME": "The Stars Aligned",
     "DESCRIPTION": "Deal !D! damage. NL Play {@@}{!M!|>1=up to !M!|@=a} random *Vision{!M!|>1=s} from your draw pile.",
     "FLAVOR": "A glimpse at the stars fills you with comfort.",
-    "ENHANCED_FLAVOR": "We counted the stars that day- it was nice. It was right."
+    "ENHANCED_FLAVOR": "Everytime I see a star, I think that after all, you're not that far."
   },
   "${ModID}:Elude": {
     "NAME": "Elude",
@@ -377,7 +373,10 @@
   },
   "${ModID}:LowVisibility": {
     "NAME": "Low Visibility",
-    "DESCRIPTION": "Gain !B! Block and !M! Weak. NL Apply !B! Block and !M! Weak to ALL enemies."
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Draw !M! cards. NL ${ModID}:Forget: ${ModID}:Flashback a card.",
+    "EXTENDED_DESCRIPTION": [
+      "Select card to Flashback:"
+    ]
   },
   "${ModID}:LongGoodbye": {
     "NAME": "Long Goodbye",
@@ -393,16 +392,28 @@
       " time.)",
       " times.)"
     ],
-    "FLAVOR": "A blood-curdling scream.",
-    "ENHANCED_FLAVOR": "You charged forward, with hatred in your heart. But it was too late."
+    "FLAVOR": "Too late. You're always too late.",
+    "ENHANCED_FLAVOR": "You can always try again."
   },
-  "${ModID}:PullFromBeyond": {
-    "NAME": "Pull From Beyond",
-    "DESCRIPTION": "Take 1 of !M! cards from the future.",
+  "${ModID}:Keepsake": {
+    "NAME": "Keepsake",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL ${ModID}:Flashback !M! card{@@}{!M!|>1=s}. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Borrow"
+      "Flashback"
+    ]
+  },
+  "${ModID}:PossibilityStorm": {
+    "NAME": "Possibility Storm",
+    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Predict !M! card{@@}{!M!|>1=s} you can play."
+  },
+  "${ModID}:OurLastDance": {
+    "NAME": "Our Last Dance",
+    "DESCRIPTION": "Choose !M! card{@@}{!M!|>1=s} in your discard pile. NL Play and Exhaust each one. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose ",
+      " cards to play."
     ],
-    "FLAVOR": "",
-    "ENHANCED_FLAVOR": ""
+    "FLAVOR": "We stopped, because it started to rain.",
+    "ENHANCED_FLAVOR": "You frowned, and she laughed. \"There's always next time.\""
   }
 }

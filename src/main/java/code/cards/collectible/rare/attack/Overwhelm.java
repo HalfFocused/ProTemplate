@@ -14,8 +14,8 @@ public class Overwhelm extends AbstractEasyCard {
     // intellij stuff attack, enemy, rare, 3, , , , , 
 
     public Overwhelm() {
-        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = damage = 6;
+        super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        baseDamage = damage = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
