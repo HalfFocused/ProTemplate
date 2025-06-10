@@ -2,9 +2,6 @@ package code.powers;
 
 import code.ModFile;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -27,7 +24,7 @@ public class ImpendingDoomPower extends AbstractEasyPower {
     public void atStartOfTurnPostDraw() {
         this.flash();
         for(AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters){
-            this.addToBot(new ApplyPowerAction(monster, owner, new WitherPower(monster, amount), amount));
+            this.addToBot(new ApplyPowerAction(monster, owner, new ForetellPower(monster, amount), amount));
         }
     }
 

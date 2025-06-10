@@ -2,7 +2,7 @@ package code.potions;
 
 import code.TheDisplaced;
 import code.ModFile;
-import code.powers.WitherPower;
+import code.powers.ForetellPower;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,7 +24,7 @@ public class WitherPotion extends AbstractEasyPotion {
     }
 
     public void use(AbstractCreature creature) {
-        applyToEnemy((AbstractMonster) creature, new WitherPower(creature, potency));
+        applyToEnemy((AbstractMonster) creature, new ForetellPower(creature, potency));
     }
 
     public String getDescription() {

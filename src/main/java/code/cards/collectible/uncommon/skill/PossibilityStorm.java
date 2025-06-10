@@ -15,12 +15,12 @@ public class PossibilityStorm extends AbstractEasyCard {
 
     public PossibilityStorm() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = block = 6;
+        baseBlock = block = 7;
         baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_HEAVY);
+        blck();
         addToBot(new PredictAction(magicNumber, card-> {
             for(AbstractMonster monster : AbstractDungeon.getMonsters().monsters){
                 if(card.canUse(p, m)){

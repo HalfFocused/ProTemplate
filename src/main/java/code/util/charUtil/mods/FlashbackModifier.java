@@ -62,7 +62,7 @@ public class FlashbackModifier extends AbstractCardModifier {
                 AbstractCardModifier mod = CardModifierManager.getModifiers(card, ID).get(0);
                 if(mod instanceof FlashbackModifier){
                     if(((FlashbackModifier) mod).type == type){
-                        AbstractDungeon.actionManager.addToTop(new DiscardToHandAction(card));
+                        AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(card));
                     }
                 }
             }

@@ -164,7 +164,7 @@
   },
   "${ModID}:Vision": {
     "NAME": "Vision",
-    "DESCRIPTION": "Deal !D! damage.",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage.",
     "FLAVOR": "\"I've seen this before... somewhere...\"",
     "ENHANCED_FLAVOR": "You've lived through this moment hundreds of times."
   },
@@ -198,7 +198,7 @@
   },
   "${ModID}:TimeSpiral": {
     "NAME": "Time Spiral",
-    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Forget: Add a copy of this to your hand with 2 less Block."
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust. NL ${ModID}:Forget: Add a copy of this to your hand with 2 less Block."
   },
   "${ModID}:SplitSecond": {
     "NAME": "Split Second",

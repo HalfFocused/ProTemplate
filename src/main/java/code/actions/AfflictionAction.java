@@ -1,6 +1,6 @@
 package code.actions;
 
-import code.powers.WitherPower;
+import code.powers.ForetellPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -32,7 +32,7 @@ public class AfflictionAction extends AbstractGameAction {
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.BLUNT_HEAVY, false));// 35
                 this.target.damage(this.info);// 37
                 if (this.target.lastDamageTaken > 0) {// 38
-                    this.addToBot(new ApplyPowerAction(this.target, AbstractDungeon.player, new WitherPower(this.target, target.lastDamageTaken), target.lastDamageTaken));
+                    this.addToBot(new ApplyPowerAction(this.target, AbstractDungeon.player, new ForetellPower(this.target, target.lastDamageTaken), target.lastDamageTaken));
                     if (this.target.hb != null) {// 40
                         this.addToTop(new VFXAction(new WallopEffect(this.target.lastDamageTaken, this.target.hb.cX, this.target.hb.cY)));// 41
                     }

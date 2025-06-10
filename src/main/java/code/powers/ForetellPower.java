@@ -3,10 +3,8 @@ package code.powers;
 import code.ModFile;
 import code.util.charUtil.WarpHook;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.patches.ColoredDamagePatch;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -14,15 +12,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
-public class WitherPower extends AbstractEasyPower implements WarpHook, HealthBarRenderPower {
+public class ForetellPower extends AbstractEasyPower implements WarpHook {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ModFile.makeID("WitherPower");
+    public static final String POWER_ID = ModFile.makeID("ForetellPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public WitherPower(AbstractCreature owner, int amount) {
+    public ForetellPower(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.DEBUFF, false, owner, amount);
     }
     @Override
@@ -32,7 +30,7 @@ public class WitherPower extends AbstractEasyPower implements WarpHook, HealthBa
         description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
-    public void atStartOfTurn() {
+    public void atEndOfTurn(boolean isPlayer) {
         tick();
     }
 
@@ -41,24 +39,14 @@ public class WitherPower extends AbstractEasyPower implements WarpHook, HealthBa
         tick();
     }
 
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        return type == DamageInfo.DamageType.NORMAL ? damage - (float)this.amount : damage;
+    }
+
     private void tick(){
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flash();
-            DamageAction action = new DamageAction(this.owner, new DamageInfo(AbstractDungeon.player, this.amount, DamageInfo.DamageType.HP_LOSS));
-            ColoredDamagePatch.DamageActionColorField.damageColor.set(action, Color.BLACK.cpy());
-            this.addToBot(action);
-            //this.addToBot(new ReducePowerAction(owner, owner, this, 1));
+            this.addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
-    }
-
-    @Override
-    public int getHealthBarAmount() {
-        return this.amount;
-    }
-
-    @Override
-    public Color getColor() {
-        return Color.DARK_GRAY.cpy();
     }
 
 }

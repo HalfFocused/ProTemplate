@@ -19,7 +19,8 @@ public class TimeSpiral extends AbstractEasyCard implements ForgetCard {
     public TimeSpiral() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = block = 12;
-        CardModifierManager.addModifier(this, new DreamModifier(true,3));
+        exhaust = true;
+        //CardModifierManager.addModifier(this, new DreamModifier(true,3));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -33,7 +34,11 @@ public class TimeSpiral extends AbstractEasyCard implements ForgetCard {
     @Override
     public void onForget() {
         AbstractCard copy = makeStatEquivalentCopy();
-        copy.baseBlock = baseBlock - 2;
+        if(baseBlock >= 2){
+            copy.baseBlock = baseBlock - 2;
+        }else{
+            copy.baseBlock = 0;
+        }
         addToBot(new MakeTempCardInHandAction(copy));
     }
 }
