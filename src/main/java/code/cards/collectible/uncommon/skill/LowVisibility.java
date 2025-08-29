@@ -1,6 +1,7 @@
 package code.cards.collectible.uncommon.skill;
 
 import basemod.devcommands.draw.Draw;
+import code.actions.FlashbackAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
@@ -24,7 +25,6 @@ import java.util.Iterator;
 
 public class LowVisibility extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID("LowVisibility");
-    // intellij stuff skill, ALL, uncommon, , , 10, 3, 1, 1
 
     public LowVisibility() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
@@ -44,18 +44,6 @@ public class LowVisibility extends AbstractEasyCard implements ForgetCard {
 
     @Override
     public void onForget() {
-        this.addToTop(new SelectCardsAction(
-            AbstractDungeon.player.discardPile.group,
-            1,
-            cardStrings.EXTENDED_DESCRIPTION[0],
-            false,
-            card->true,
-            cards -> {
-                for(AbstractCard card : cards){
-                    card.retain = true;
-                    addToBot(new DiscardToHandAction(card));
-                }
-            }
-        ));
+        this.addToTop(new FlashbackAction(1));
     }
 }

@@ -1,16 +1,16 @@
 {
-    "${ModID}:WitherPotion": {
-        "NAME": "Wither Potion",
+    "${ModID}:ForetoldPotion": {
+        "NAME": "Slowing Draught",
         "DESCRIPTIONS": [
             "Apply #b",
-            " #yWither."
+            " #yForetold."
         ]
     },
-    "${ModID}:Adrenaline": {
-        "NAME": "Adrenaline",
+    "${ModID}:HazePotion": {
+        "NAME": "Haze Potion",
         "DESCRIPTIONS": [
-            "#yWarp #b",
-            " turns."
+            "Draw #b",
+            " cards. Shuffle #b2 #yDazed into your draw pile."
         ]
     },
     "${ModID}:GreenTea": {

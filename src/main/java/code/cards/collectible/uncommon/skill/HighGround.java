@@ -1,5 +1,6 @@
-package code.cards.collectible.common.skill;
+package code.cards.collectible.uncommon.skill;
 
+import code.actions.FlashbackAction;
 import code.actions.PredictAction;
 import code.cards.AbstractEasyCard;
 
@@ -15,15 +16,14 @@ public class HighGround extends AbstractEasyCard {
     // intellij stuff skill, self, common, , , 4, 2, 1, 
 
     public HighGround() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 1;
-        baseSecondMagic = secondMagic = 1;
         exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(m,p,new VulnerablePower(m, magicNumber, false)));
-        addToBot(new PredictAction(secondMagic, card -> card.type == CardType.ATTACK));
+        addToBot(new FlashbackAction(1, card -> card.type == CardType.ATTACK));
     }
 
     public void upp() {

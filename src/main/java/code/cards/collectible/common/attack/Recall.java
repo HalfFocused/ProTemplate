@@ -1,5 +1,6 @@
 package code.cards.collectible.common.attack;
 
+import code.actions.FlashbackAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
@@ -21,7 +22,7 @@ public class Recall extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SMASH);
-        addToBot(new BetterDiscardPileToHandAction(magicNumber));
+        addToBot(new FlashbackAction(magicNumber));
     }
 
     public void upp() {

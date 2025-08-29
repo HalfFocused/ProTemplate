@@ -1,30 +1,31 @@
 package code.cards.collectible.uncommon.attack;
 
-import code.actions.FlashbackAction;
-import code.actions.PredictAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
+import code.powers.ForetoldPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class SawItComing extends AbstractEasyCard {
-    public final static String ID = makeID("SawItComing");
-    // intellij stuff skill, self, uncommon, , , 8, 3, 2, 1
+public class Expose extends AbstractEasyCard {
+    public final static String ID = makeID("Expose");
+    // intellij stuff skill, enemy, uncommon, , , , , 2, 1
 
-    public SawItComing() {
+    public Expose() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = damage = 9;
         baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.LIGHTNING);
-        addToBot(new FlashbackAction(magicNumber, card-> card.baseBlock >= 0));
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        addToBot(new ApplyPowerAction(m, p, new ForetoldPower(m, magicNumber), magicNumber));
     }
-
     public void upp() {
         upgradeDamage(2);
         upgradeMagicNumber(1);

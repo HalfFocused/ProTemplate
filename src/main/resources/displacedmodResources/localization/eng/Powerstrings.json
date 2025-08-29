@@ -1,8 +1,8 @@
 {
-  "${ModID}:ForetellPower": {
-    "NAME": "Foretell",
+  "${ModID}:ForetoldPower": {
+    "NAME": "Foretold",
     "DESCRIPTIONS": [
-      "Reduces attack damage. Foretell is reduced by 1 at the end of each turn."
+      "Takes double damage when attacked, once each turn. Decreases by #b1 at end of turn."
     ]
   },
   "${ModID}:EmptinessPower": {
@@ -134,12 +134,11 @@
       " #yBlock."
     ]
   },
-  "${ModID}:ResonancePower": {
-    "NAME": "Resonance",
+  "${ModID}:InternalBleedingPower": {
+    "NAME": "Internal Bleeding",
     "DESCRIPTIONS": [
-      "Whenever you play your first #yAttack each turn, #yPredict #b1 #yAttack and play it.",
-      "Whenever you play your first #b",
-      " #yAttacks each turn, #yPredict #b1 #yAttack and play it."
+      "Whenever you attack an enemy, it loses #b",
+      " HP if it is #yWeak. Repeat for #yVulnerable and #yForetold."
     ]
   },
   "${ModID}:ExtraTurnPower": {

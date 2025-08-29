@@ -38,7 +38,7 @@ public class PrecognitionPower extends AbstractEasyPower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if(card instanceof Vision) {
             flash();
-            addToBot(new DrawCardAction(1));
+            addToBot(new DrawCardAction(amount));
         }
     }
 }

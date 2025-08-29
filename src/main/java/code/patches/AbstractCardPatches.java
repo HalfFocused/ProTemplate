@@ -4,6 +4,7 @@ import basemod.helpers.CardModifierManager;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.AlternateCardCosts;
 import code.TheDisplaced;
 import code.cards.collectible.uncommon.skill.Forsake;
+import code.cards.tokens.Vision;
 import code.powers.ForsakePower;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.mods.SparkleModifier;
@@ -73,7 +74,7 @@ public class AbstractCardPatches {
             }
 
             if(CardUtil.inTheSecondDream()){
-                if(__instance.rarity == AbstractCard.CardRarity.RARE && __instance.color == TheDisplaced.Enums.DISPLACED_COLOR){
+                if((__instance.rarity == AbstractCard.CardRarity.RARE && __instance.color == TheDisplaced.Enums.DISPLACED_COLOR) || __instance instanceof Vision){
                     if(MathUtils.random(1,6) == 1) {
                         AbstractGameEffect effect = new ShineSparkleEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height));
                         effect.renderBehind = false;

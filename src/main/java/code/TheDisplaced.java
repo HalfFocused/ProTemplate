@@ -3,7 +3,7 @@ package code;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import code.cards.collectible.starter.attack.Elude;
+import code.cards.collectible.starter.attack.Gaze;
 import code.cards.collectible.starter.skill.Backtrack;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -77,7 +77,7 @@ public class TheDisplaced extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Strike.ID);
         }
-        retVal.add(Elude.ID);
+        retVal.add(Gaze.ID);
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }

@@ -1,5 +1,6 @@
 package code.cards.collectible.uncommon.skill;
 
+import code.actions.FlashbackAction;
 import code.actions.PredictAction;
 import code.cards.AbstractEasyCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -21,14 +22,7 @@ public class PossibilityStorm extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        addToBot(new PredictAction(magicNumber, card-> {
-            for(AbstractMonster monster : AbstractDungeon.getMonsters().monsters){
-                if(card.canUse(p, m)){
-                    return true;
-                }
-            }
-            return false;
-        }));
+        addToBot(new FlashbackAction(magicNumber));
     }
 
     public void upp() {

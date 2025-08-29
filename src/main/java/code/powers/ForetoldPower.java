@@ -1,0 +1,82 @@
+package code.powers;
+
+import code.ModFile;
+import code.util.TexLoader;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+
+public class ForetoldPower extends AbstractEasyPower {
+    public AbstractCreature source;
+
+    boolean usedThisTurn = false;
+
+    public static final String POWER_ID = ModFile.makeID("ForetoldPower");
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+
+    public ForetoldPower(AbstractCreature owner, int amount) {
+        super(POWER_ID, NAME, PowerType.DEBUFF, true, owner, amount);
+    }
+    @Override
+    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
+
+    public void updateDescription() {
+        description = DESCRIPTIONS[0];
+    }
+
+    public void atEndOfRound() {
+        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            this.addToBot(new ReducePowerAction(owner, owner, this, 1));
+            usedThisTurn = false;
+            setTexture(false);
+        }
+    }
+
+    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+        if (type == DamageInfo.DamageType.NORMAL && !usedThisTurn) {
+            return damage * 2.0f;
+        }
+        return damage;
+    }
+
+    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+        if(info.type == DamageInfo.DamageType.NORMAL && !usedThisTurn){
+            flash();
+            usedThisTurn = true;
+            setTexture(true);
+        }
+        return damageAmount;
+    }
+
+
+    private void setTexture(boolean used){
+        Texture normalTexture;
+        Texture hiDefImage;
+
+        if(used){
+            normalTexture = TexLoader.getTexture(ModFile.modID + "Resources/images/powers/Spent" + ID.replaceAll(ModFile.modID + ":", "") + "32.png");
+            hiDefImage = TexLoader.getTexture(ModFile.modID + "Resources/images/powers/Spent" + ID.replaceAll(ModFile.modID + ":", "") + "84.png");
+        }else{
+            normalTexture = TexLoader.getTexture(ModFile.modID + "Resources/images/powers/" + ID.replaceAll(ModFile.modID + ":", "") + "32.png");
+            hiDefImage = TexLoader.getTexture(ModFile.modID + "Resources/images/powers/" + ID.replaceAll(ModFile.modID + ":", "") + "84.png");
+        }
+        if (hiDefImage != null) {
+            region128 = new TextureAtlas.AtlasRegion(hiDefImage, 0, 0, hiDefImage.getWidth(), hiDefImage.getHeight());
+            if (normalTexture != null)
+                region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
+        } else if (normalTexture != null) {
+            this.img = normalTexture;
+            region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
+        }
+    }
+
+}

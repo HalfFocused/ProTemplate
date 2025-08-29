@@ -1,5 +1,8 @@
 package code.cards.collectible.rare.skill;
 
+import basemod.cardmods.ExhaustMod;
+import basemod.helpers.CardModifierManager;
+import code.actions.FlashbackAction;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
@@ -23,31 +26,12 @@ public class OurLastDance extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new SelectCardsAction(
-            AbstractDungeon.player.discardPile.group,
-            magicNumber,
-            cardStrings.EXTENDED_DESCRIPTION[0] + magicNumber + cardStrings.EXTENDED_DESCRIPTION[1],
-            true,
-            card->true,
-            selectedCards->{
-                for(AbstractCard card : selectedCards){
-                    AbstractDungeon.player.discardPile.group.remove(card);
-                    AbstractDungeon.getCurrRoom().souls.remove(card);
-                    AbstractDungeon.player.limbo.group.add(card);
-                    card.current_y = -200.0F * Settings.scale;
-                    card.target_x = (float) Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
-                    card.target_y = (float) Settings.HEIGHT / 2.0F;
-                    card.targetAngle = 0.0F;
-                    card.lighten(false);
-                    card.drawScale = 0.12F;
-                    card.targetDrawScale = 0.75F;
-                    card.applyPowers();
-                    card.exhaustOnUseOnce = true;
-                    this.addToTop(new NewQueueCardAction(card, true, true, true));
-                    this.addToTop(new UnlimboAction(card));
-                }
+        this.addToBot(new FlashbackAction(magicNumber, null, selectedCards -> {
+            for(AbstractCard choice : selectedCards){
+                choice.setCostForTurn(0);
+                CardModifierManager.addModifier(choice, new ExhaustMod());
             }
-        ));
+        }));
     }
 
     public void upp() {

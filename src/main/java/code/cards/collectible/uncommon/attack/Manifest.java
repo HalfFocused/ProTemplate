@@ -17,7 +17,7 @@ public class Manifest extends AbstractEasyCard {
 
     public Manifest() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 16;
+        baseDamage = 8;
         baseMagicNumber = magicNumber = 1;
     }
 

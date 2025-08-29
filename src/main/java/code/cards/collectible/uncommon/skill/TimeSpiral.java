@@ -7,6 +7,7 @@ import static code.ModFile.makeID;
 
 import code.util.charUtil.ForgetCard;
 import code.util.charUtil.mods.DreamModifier;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,9 +19,8 @@ public class TimeSpiral extends AbstractEasyCard implements ForgetCard {
 
     public TimeSpiral() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        isEthereal = true;
         baseBlock = block = 12;
-        exhaust = true;
-        //CardModifierManager.addModifier(this, new DreamModifier(true,3));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -39,6 +39,6 @@ public class TimeSpiral extends AbstractEasyCard implements ForgetCard {
         }else{
             copy.baseBlock = 0;
         }
-        addToBot(new MakeTempCardInHandAction(copy));
+        addToBot(new MakeTempCardInDrawPileAction(copy, 1, true, true));
     }
 }

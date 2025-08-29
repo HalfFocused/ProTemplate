@@ -1,5 +1,6 @@
 package code.util.charUtil;
 
+import basemod.ReflectionHacks;
 import basemod.helpers.CardModifierManager;
 import code.actions.DisplayCardAction;
 import code.powers.LongGoodbyePower;
@@ -247,5 +248,9 @@ public class CardUtil {
         }
         lastAttackEffect = AbstractGameAction.AttackEffect.SLASH_HEAVY;
         return lastAttackEffect;
+    }
+
+    public static boolean isPowerTurnBased(AbstractPower power){
+        return ReflectionHacks.getPrivate(power, AbstractPower.class, "isTurnBased");
     }
 }

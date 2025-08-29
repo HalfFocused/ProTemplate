@@ -19,8 +19,7 @@ public class Eternity extends AbstractEasyCard {
     public final static String ID = makeID(Eternity.class.getSimpleName());
     // intellij stuff skill, self, rare, , , , , ,
     public Eternity() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        exhaust = true;
+        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -45,8 +44,7 @@ public class Eternity extends AbstractEasyCard {
     }
 
     public void upp() {
-        //upgradeBaseCost(1);
-        exhaust = false;
+        upgradeBaseCost(1);
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
@@ -82,7 +80,7 @@ public class Eternity extends AbstractEasyCard {
 
 
         if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
-            this.rawDescription = cardStrings.DESCRIPTION;
+            this.rawDescription = upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION;
             this.rawDescription = this.rawDescription + cardStrings.EXTENDED_DESCRIPTION[0] + colorString(AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).name);
             this.initializeDescription();
         }

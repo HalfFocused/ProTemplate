@@ -15,9 +15,9 @@
   },
   {
     "NAMES": [
-      "wither"
+      "foretold"
     ],
-    "DESCRIPTION": "At the start of its turn and after a #yWarp, loses HP."
+    "DESCRIPTION": "Foretold enemies take double damage when attacked, once each turn."
   },
   {
     "NAMES": [
@@ -27,9 +27,9 @@
   },
   {
     "NAMES": [
-      "lapse"
+      "exploit"
     ],
-    "DESCRIPTION": "#yExhaust the card, and add a copy of the #yExhausted card to your hand at the start of your next turn."
+    "DESCRIPTION": "Consume duration of turn-based debuffs (leftmost first) on the enemy for an additional effect."
   },
   {
     "NAMES": [

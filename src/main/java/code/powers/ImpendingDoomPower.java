@@ -24,7 +24,7 @@ public class ImpendingDoomPower extends AbstractEasyPower {
     public void atStartOfTurnPostDraw() {
         this.flash();
         for(AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters){
-            this.addToBot(new ApplyPowerAction(monster, owner, new ForetellPower(monster, amount), amount));
+            this.addToBot(new ApplyPowerAction(monster, owner, new ForetoldPower(monster, amount), amount));
         }
     }
 
