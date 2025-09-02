@@ -28,6 +28,6 @@ public class Elude extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeBlock(3);
     }
 }

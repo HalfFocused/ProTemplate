@@ -1,27 +1,27 @@
 package code.cards.collectible.uncommon.power;
 
 import code.cards.AbstractEasyCard;
-import code.powers.EmptinessPower;
+import code.powers.CripplePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static code.ModFile.makeID;
 
-public class Emptiness extends AbstractEasyCard {
-    public final static String ID = makeID(Emptiness.class.getSimpleName());
+public class Cripple extends AbstractEasyCard {
+    public final static String ID = makeID(Cripple.class.getSimpleName());
 
-    public Emptiness() {
+    public Cripple() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new EmptinessPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new CripplePower(p, magicNumber)));
     }
 
     @Override
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(1);
     }
 }

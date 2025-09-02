@@ -32,15 +32,7 @@ public class FleetingFortitudePower extends AbstractEasyPower {
     public void onCardDraw(AbstractCard card) {
         if(card.isEthereal){
             this.flash();
-            this.addToBot(new GainBlockAction(owner,owner,amount));
-        }
-    }
-
-    @Override
-    public void onExhaust(AbstractCard card) {
-        if(card.isEthereal){
-            this.flash();
-            this.addToBot(new GainBlockAction(owner,owner,amount));
+            this.addToTop(new GainBlockAction(owner,owner,amount));
         }
     }
 }

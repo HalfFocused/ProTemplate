@@ -80,7 +80,7 @@ public class Eternity extends AbstractEasyCard {
 
 
         if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
-            this.rawDescription = upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION;
+            this.rawDescription = cardStrings.DESCRIPTION;
             this.rawDescription = this.rawDescription + cardStrings.EXTENDED_DESCRIPTION[0] + colorString(AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).name);
             this.initializeDescription();
         }

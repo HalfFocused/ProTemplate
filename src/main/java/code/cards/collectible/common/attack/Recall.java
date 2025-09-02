@@ -22,7 +22,7 @@ public class Recall extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SMASH);
-        addToBot(new FlashbackAction(magicNumber));
+        addToBot(new FlashbackAction(magicNumber, card -> card.costForTurn == 0 || card.costForTurn == 1));
     }
 
     public void upp() {

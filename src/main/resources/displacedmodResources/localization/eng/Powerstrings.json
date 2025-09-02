@@ -32,7 +32,7 @@
   "${ModID}:FleetingFortitudePower": {
     "NAME": "Fleeting Fortitude",
     "DESCRIPTIONS": [
-      "Whenever you an #yEthereal card is drawn or #yExhausted, gain #b",
+      "Whenever you draw an #yEthereal card, gain #b",
       " #yBlock."
     ]
   },
@@ -90,14 +90,11 @@
       "You've played #yMoment #yOf #yTruth once."
     ]
   },
-  "${ModID}:DoubleTimePower": {
-    "NAME": "Double Time",
+  "${ModID}:CripplePower": {
+    "NAME": "Cripple",
     "DESCRIPTIONS": [
-      "At the start of your next turn, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime into your hand.",
-      "At the start of your next turn, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime+ into your hand.",
-      "At the start of your next #b",
-      " turns, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime into your hand.",
-      " turns, gain [E] and draw #b1 card. When this effect expires, add a #yDouble #yTime+ into your hand."
+      "Whenever you apply a debuff to an enemy, gain #b",
+      " #yBlock."
     ]
   },
   "${ModID}:LapsePower": {

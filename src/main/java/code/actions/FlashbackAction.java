@@ -5,6 +5,7 @@
 
 package code.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -71,7 +72,7 @@ public class FlashbackAction extends AbstractGameAction {
                     ArrayList<AbstractCard> cardsToMove = new ArrayList<>(matchingCards);
 
                     for(AbstractCard c : cardsToMove){
-                        if (this.player.hand.size() < 10) {
+                        if (this.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                             this.player.hand.addToHand(c);
                             this.player.discardPile.removeCard(c);
                         }

@@ -7,6 +7,7 @@ package code.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -48,7 +49,7 @@ public class PhaseShiftAction extends AbstractGameAction {
                 this.p.energy.use(EnergyPanel.totalCount);
             }
         }
-        this.addToBot(new MakeTempCardInDrawPileAction(new Dazed(), 2, true, true));
+        this.addToBot(new MakeTempCardInDiscardAction(new Dazed(), 2));
 
 
         this.isDone = true;

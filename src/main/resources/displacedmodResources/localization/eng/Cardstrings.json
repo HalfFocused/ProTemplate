@@ -9,7 +9,7 @@
   },
   "${ModID}:ShootingStar": {
     "NAME": "Shooting Star",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Draw !M! card{!M!|>1=s} next turn."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s|0=s}. NL Draw !M! card{!M!|>1=s|0=s} next turn."
   },
   "${ModID}:FlashStep": {
     "NAME": "Flash Step",
@@ -19,9 +19,9 @@
     "NAME": "Emptiness",
     "DESCRIPTION": "Whenever a card is Exhausted, ALL enemies lose !M! HP."
   },
-  "${ModID}:Contradict": {
-    "NAME": "Contradict",
-    "DESCRIPTION": "Enemy loses !M! HP. NL Shuffle a Dazed into your draw pile."
+  "${ModID}:Augur": {
+    "NAME": "Augur",
+    "DESCRIPTION": "Apply !M! ${ModID}:Foretold. NL Exhaust."
   },
   "${ModID}:Backtrack": {
     "NAME": "Backtrack",
@@ -50,9 +50,9 @@
     "FLAVOR": "\"I wish this moment could last forever.\"",
     "ENHANCED_FLAVOR": "She smiled, and looked up at the stars. Things were so nice, then."
   },
-  "${ModID}:WideOpen": {
-    "NAME": "Wide Open",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Exploit 1: Draw !M! card{@@}{!M!|>1=s}."
+  "${ModID}:HazyStrike": {
+    "NAME": "Hazy Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Add a Dazed to your discard pile."
   },
   "${ModID}:Elude": {
     "NAME": "Elude",
@@ -68,7 +68,7 @@
   },
   "${ModID}:InevitableForm": {
     "NAME": "Inevitable Form",
-    "DESCRIPTION": "At the start of your turn, play the top !M! card{@@}{!M!|>1=s} of your draw pile and Exhaust {!M!|>1=them|@=it}.",
+    "DESCRIPTION": "At the start of your turn, play the top {@@}{!M!|>1=!M! cards|@=card} of your draw pile and Exhaust {!M!|>1=them|@=it}.",
     "FLAVOR": "Time moves ever onward.",
     "ENHANCED_FLAVOR": "You can always try again. You just need to keep wanting to."
   },
@@ -78,7 +78,7 @@
   },
   "${ModID}:FleetingFortitude": {
     "NAME": "Fleeting Fortitude",
-    "DESCRIPTION": "Whenever an Ethereal card is drawn or Exhausted, gain !M! Block."
+    "DESCRIPTION": "Whenever you draw an Ethereal card, gain !M! Block."
   },
   "${ModID}:BeforeYourEyes": {
     "NAME": "Before Your Eyes",
@@ -118,7 +118,7 @@
   },
   "${ModID}:Predict": {
     "NAME": "Predict",
-    "DESCRIPTION": "{@@}Apply !M! ${ModID}:Foretold. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s}."
+    "DESCRIPTION": "{@@}Apply !M! ${ModID}:Foretold. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s|0=s}."
   },
   "${ModID}:AheadOfTime": {
     "NAME": "Ahead Of Time",
@@ -130,10 +130,9 @@
     "FLAVOR": "You didn't want to admit it, but you knew it was too late.",
     "ENHANCED_FLAVOR": "She falls to the ground, clutching desperately at her wound. You didn't want to admit it, but you knew it was too late."
   },
-  "${ModID}:BorrowedTime": {
-    "NAME": "Borrowed Time",
-    "DESCRIPTION": "{@@}Gain {!M!|repeat=[E] }. NL At the start of your next turn, lose {!${ModID}:m2!|repeat=[E] }. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "{@@}Gain {!M!|repeat=[E] }. NL At the start of your next turn, lose {!${ModID}:m2!|repeat=[E] }."
+  "${ModID}:LetGo": {
+    "NAME": "Let Go",
+    "DESCRIPTION": "Exhaust the top card of your draw pile. NL {@@}Gain {!M!|repeat=[E] }."
   },
   "${ModID}:Accumulate": {
     "NAME": "Accumulate",
@@ -175,7 +174,7 @@
   },
   "${ModID}:Exchange": {
     "NAME": "Exchange",
-    "DESCRIPTION": "Draw !M! card{@@}{!M!|>1=s}. NL Exhaust 1 card in your discard pile."
+    "DESCRIPTION": "Draw !M! card{@@}{!M!|>1=s|0=s}. NL Exhaust 1 card in your discard pile."
   },
   "${ModID}:MomentOfTruth": {
     "NAME": "Moment Of Truth",
@@ -183,10 +182,9 @@
     "FLAVOR": "This time, things will be different.",
     "ENHANCED_FLAVOR": "The rain pelted your shoulders as the moment approached. This time, things will be different."
   },
-  "${ModID}:DoubleTime": {
-    "NAME": "Double Time",
-    "DESCRIPTION": "At the start of your next !M! turns, gain [E] and draw 1 card. NL When this effect expires, add a *Double *Time to your hand.",
-    "UPGRADE_DESCRIPTION": "At the start of your next !M! turns, gain [E] and draw 1 card. NL When this effect expires, add a *Double *Time+ to your hand."
+  "${ModID}:Cripple": {
+    "NAME": "Cripple",
+    "DESCRIPTION": "Whenever you apply a debuff to an enemy, gain !M! Block."
   },
   "${ModID}:UnfamiliarMemory": {
     "NAME": "Unfamiliar Memory",
@@ -198,7 +196,7 @@
   },
   "${ModID}:DoubleDown": {
     "NAME": "Double Down",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Exploit 1: Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage for each debuff on the enemy."
   },
   "${ModID}:CatchUp": {
     "NAME": "Catch Up",
@@ -252,7 +250,7 @@
   },
   "${ModID}:Manifest": {
     "NAME": "Manifest",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{@@}{!M!|>1=s}. NL {!M!|>1=They cost|@=It costs} 0 this turn."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{@@}{!M!|>1=s|0=s}. NL {!M!|>1=They cost|@=It costs} 0 this turn."
   },
   "${ModID}:Unburdened": {
     "NAME": "Unburdened",
@@ -270,7 +268,7 @@
   },
   "${ModID}:FutureSight": {
     "NAME": "Future Sight",
-    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: Draw !M! card{@@}{!M!|>1=s}."
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: Draw !M! card{@@}{!M!|>1=s|0=s}."
   },
   "${ModID}:HighGround": {
     "NAME": "High Ground",
@@ -286,7 +284,7 @@
   },
   "${ModID}:SawItComing": {
     "NAME": "Saw It Coming",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Flashback !M! card{@@}{!M!|>1=s} with Block."
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Flashback !M! card{@@}{!M!|>1=s|0=s} with Block."
   },
   "${ModID}:Glimpse": {
     "NAME": "Glimpse",
@@ -294,7 +292,7 @@
   },
   "${ModID}:Recall": {
     "NAME": "Recall",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Flashback !M! card{@@}{!M!|>1=s}."
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Flashback !M! card{@@}{!M!|>1=s|0=s}."
   },
   "${ModID}:InternalBleeding": {
     "NAME": "Internal Bleeding",
@@ -304,11 +302,11 @@
   },
   "${ModID}:LossAversion": {
     "NAME": "Loss Aversion",
-    "DESCRIPTION": "Gain {@@}{!M!|repeat=[E] }. NL If a card was Exhausted this turn, gain [E] . NL Exhaust."
+    "DESCRIPTION": "Gain {@@}{!M!|repeat=[E] }. NL If a card was Exhausted this turn, gain [E] ."
   },
   "${ModID}:Fathom": {
     "NAME": "Fathom",
-    "DESCRIPTION": "Draw !M! card{@@}{!M!|>1=s}. NL They become Ethereal."
+    "DESCRIPTION": "Draw !M! card{@@}{!M!|>1=s|0=s}. NL They become Ethereal."
   },
   "${ModID}:SlashDash": {
     "NAME": "Slash Dash",
@@ -343,11 +341,11 @@
   },
   "${ModID}:Precognition": {
     "NAME": "Precognition",
-    "DESCRIPTION": "Shuffle a *Vision into your draw pile. NL Whenever you play a *Vision, draw !M! card{@@}{!M!|>1=s}."
+    "DESCRIPTION": "Shuffle a *Vision into your draw pile. NL Whenever you play a *Vision, draw !M! card{@@}{!M!|>1=s|0=s}."
   },
   "${ModID}:TheStarsAligned": {
     "NAME": "The Stars Aligned",
-    "DESCRIPTION": "Deal !D! damage. NL Play {@@}{!M!|>1=up to !M!|@=a} random *Vision{!M!|>1=s} from your draw pile.",
+    "DESCRIPTION": "Deal !D! damage. NL Play {@@}{!M!|>1=up to !M!|@=a} random *Vision{!M!|>1=s|0=s} from your draw pile.",
     "FLAVOR": "A glimpse at the stars fills you with comfort.",
     "ENHANCED_FLAVOR": "Everytime I see a star, I think that after all, you're not that far."
   },
@@ -355,14 +353,14 @@
     "NAME": "Gaze",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Apply !M! ${ModID}:Foretold."
   },
-  "${ModID}:Paradox": {
-    "NAME": "Paradox",
+  "${ModID}:Expose": {
+    "NAME": "Expose",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${ModID}:Foretold."
   },
   "${ModID}:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
-    "DESCRIPTION": "At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s} into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s} into your draw pile."
+    "DESCRIPTION": "At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile."
   },
   "${ModID}:LowVisibility": {
     "NAME": "Low Visibility",
@@ -384,15 +382,15 @@
   },
   "${ModID}:Prescience": {
     "NAME": "Prescience",
-    "DESCRIPTION": "Innate. NL Deal !D! damage to ALL enemies. NL Draw !M! card{@@}{!M!|>1=s}. NL Exhaust."
+    "DESCRIPTION": "Innate. NL Deal !D! damage to ALL enemies. NL Draw !M! card{@@}{!M!|>1=s|0=s}. NL Exhaust."
   },
-  "${ModID}:PossibilityStorm": {
-    "NAME": "Possibility Storm",
-    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Flashback 1 card{@@}{!M!|>1=s}."
+  "${ModID}:CherishedMemory": {
+    "NAME": "Cherished Memory",
+    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Flashback 1 Uncommon or Rare card{@@}{!M!|>1=s|0=s}."
   },
-  "${ModID}:OurLastDance": {
-    "NAME": "Our Last Dance",
-    "DESCRIPTION": "${ModID}:Flashback !M! card{@@}{!M!|>1=s}. NL They cost 0 this turn and gain Exhaust. NL Exhaust.",
+  "${ModID}:Align": {
+    "NAME": "Align",
+    "DESCRIPTION": "Put !M! card{@@}{!M!|>1=s|0=s} from your draw pile into your hand. Add Dazed where {!M!|1=it was|@=they were}. NL Exhaust.",
     "FLAVOR": "We stopped, because it started to rain.",
     "ENHANCED_FLAVOR": "You frowned, and she laughed. \"There's always next time.\""
   }

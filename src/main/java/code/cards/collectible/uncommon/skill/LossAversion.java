@@ -18,7 +18,6 @@ public class LossAversion extends AbstractEasyCard {
     public LossAversion() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
-        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
