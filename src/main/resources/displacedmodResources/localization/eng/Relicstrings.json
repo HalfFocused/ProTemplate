@@ -59,7 +59,7 @@
     "NAME": "Pair of Gears",
     "FLAVOR": "The gears spin around each other slowly. Despite your efforts, you cannot stop them, nor speed them up.",
     "DESCRIPTIONS": [
-      "At the start of each combat, if there is a #yPower in your draw pile, #yPredict #b1 #yPower."
+      "At the start of each combat, add a random Power from your draw pile to your hand."
     ]
   },
   "${ModID}:TheClockworkUniverse": {

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
+import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -34,17 +35,7 @@ public class PairOfGears extends AbstractEasyRelic  {
     public void atTurnStartPostDraw() {
         if(!activated) {
             activated = true;
-            this.addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    if (AbstractDungeon.player.drawPile.group.stream().anyMatch(card -> card.type == AbstractCard.CardType.POWER)) {
-                        flash();
-                        addToTop(new PredictAction(1, card -> card.type == AbstractCard.CardType.POWER));
-                        addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, PairOfGears.this));
-                    }
-                    isDone = true;
-                }
-            });
+            this.addToBot(new DrawPileToHandAction(1, AbstractCard.CardType.POWER));
         }
     }
 }

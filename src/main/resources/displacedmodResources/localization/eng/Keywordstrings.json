@@ -1,12 +1,5 @@
 [
   {
-    "PROPER_NAME": "Warp",
-    "NAMES": [
-      "warp"
-    ],
-    "DESCRIPTION": "Skip forward a number of turns. Your powers and cards trigger, but block and enemies are unchanged. You do not replenish Energy or discard/draw cards."
-  },
-  {
     "NAMES": [
       "forget",
       "forgotten"
@@ -21,32 +14,14 @@
   },
   {
     "NAMES": [
-      "dream"
+      "temporary"
     ],
     "DESCRIPTION": "Counter is reduced by 1 at the end of turn, wherever it is. When the last counter is removed, #yExhaust."
-  },
-  {
-    "NAMES": [
-      "exploit"
-    ],
-    "DESCRIPTION": "Consume duration of turn-based debuffs (leftmost first) on the enemy for an additional effect."
-  },
-  {
-    "NAMES": [
-      "predict"
-    ],
-    "DESCRIPTION": "Draw a card, then discard it unless it meets the condition. Repeat until you find the right amount or empty your draw pile."
   },
   {
     "NAMES": [
       "flashback"
     ],
     "DESCRIPTION": "Return from your discard pile to your hand."
-  },
-  {
-    "NAMES": [
-      "dire"
-    ],
-    "DESCRIPTION": "You can use HP to play this card if you don't have enough energy. If you do, it #yExhausts."
   }
 ]

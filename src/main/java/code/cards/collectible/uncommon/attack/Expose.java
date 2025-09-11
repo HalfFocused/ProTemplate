@@ -13,12 +13,12 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class Expose extends AbstractEasyCard {
-    public final static String ID = makeID("Expose");
+    public final static String ID = makeID(Expose.class.getSimpleName());
     // intellij stuff skill, enemy, uncommon, , , , , 2, 1
 
     public Expose() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 9;
+        baseDamage = damage = 6;
         baseMagicNumber = magicNumber = 1;
     }
 

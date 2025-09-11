@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Daydream extends AbstractEasyCard {
-    public final static String ID = makeID(Daydream.class.getSimpleName());
+public class DejaVu extends AbstractEasyCard {
+    public final static String ID = makeID(DejaVu.class.getSimpleName());
 
-    public Daydream() {
+    public DejaVu() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.cardsToPreview = new Vision();
         baseMagicNumber = magicNumber = 1;
@@ -31,6 +31,6 @@ public class Daydream extends AbstractEasyCard {
     @Override
     public void initializeDescription(){
         super.initializeDescription();
-        //this.keywords.add(makeID("dream")); //TODO: Account for localization files
+        this.keywords.add(makeID("dream")); //TODO: Account for localization files
     }
 }

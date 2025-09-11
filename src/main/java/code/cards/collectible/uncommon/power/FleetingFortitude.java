@@ -13,7 +13,7 @@ public class FleetingFortitude extends AbstractEasyCard {
 
     public FleetingFortitude() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

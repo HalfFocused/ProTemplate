@@ -19,8 +19,8 @@
     "NAME": "Emptiness",
     "DESCRIPTION": "Whenever a card is Exhausted, ALL enemies lose !M! HP."
   },
-  "${ModID}:Augur": {
-    "NAME": "Augur",
+  "${ModID}:Remember": {
+    "NAME": "Remember",
     "DESCRIPTION": "Apply !M! ${ModID}:Foretold. NL Exhaust."
   },
   "${ModID}:Backtrack": {
@@ -41,12 +41,11 @@
   },
   "${ModID}:LongGoodbye": {
     "NAME": "Long Goodbye",
-    "DESCRIPTION": "Gain !B! Block. NL Discard each Ethereal card in your hand. NL Draw 2 cards."
+    "DESCRIPTION": "Deal !D! damage. NL Discard each Ethereal card in your hand. NL Draw !M! {@@}{!M!|>1=cards|@=card}."
   },
   "${ModID}:TimeSlow": {
     "NAME": "Time Slow",
     "DESCRIPTION": "You cannot take damage, lose HP, or gain debuffs this turn.",
-    "UPGRADE_DESCRIPTION": "You cannot take damage, lose HP, or gain debuffs this turn.",
     "FLAVOR": "\"I wish this moment could last forever.\"",
     "ENHANCED_FLAVOR": "She smiled, and looked up at the stars. Things were so nice, then."
   },
@@ -69,7 +68,7 @@
   "${ModID}:InevitableForm": {
     "NAME": "Inevitable Form",
     "DESCRIPTION": "At the start of your turn, play the top {@@}{!M!|>1=!M! cards|@=card} of your draw pile and Exhaust {!M!|>1=them|@=it}.",
-    "FLAVOR": "Time moves ever onward.",
+    "FLAVOR": "You're running out of time...",
     "ENHANCED_FLAVOR": "You can always try again. You just need to keep wanting to."
   },
   "${ModID}:Deluge": {
@@ -89,8 +88,8 @@
   "${ModID}:Demoralize": {
     "NAME": "Demoralize",
     "DESCRIPTION": "Apply !M! Weak, Vulnerable, and ${ModID}:Foretold. NL Exhaust.",
-    "FLAVOR": "Take them with you.",
-    "ENHANCED_FLAVOR": "After the horrible beating noise filled your ears, the next loop began in an unfamiliar environment."
+    "FLAVOR": "Haunted...",
+    "ENHANCED_FLAVOR": "I'm haunted- by the lives that I have loved, and actions I have hated."
   },
   "${ModID}:FadeAway": {
     "NAME": "Fade Away",
@@ -127,8 +126,8 @@
   "${ModID}:Lacerate": {
     "NAME": "Lacerate",
     "DESCRIPTION": "Deal !D! damage. NL Increase each of the enemy's turn-based debuffs by !M!.",
-    "FLAVOR": "You didn't want to admit it, but you knew it was too late.",
-    "ENHANCED_FLAVOR": "She falls to the ground, clutching desperately at her wound. You didn't want to admit it, but you knew it was too late."
+    "FLAVOR": "I wasn't born to fight.",
+    "ENHANCED_FLAVOR": "I wasn't born to fight. Maybe just a little bit. Enough to make me sick of it."
   },
   "${ModID}:LetGo": {
     "NAME": "Let Go",
@@ -152,15 +151,15 @@
   },
   "${ModID}:PhaseShift": {
     "NAME": "Phase Shift",
-    "DESCRIPTION": "Gain !B! Block X times. Shuffle 2 Dazed into your draw pile."
+    "DESCRIPTION": "Gain !B! Block X times. Shuffle 2 Dazed into your discard pile."
   },
-  "${ModID}:Daydream": {
-    "NAME": "Daydream",
+  "${ModID}:DejaVu": {
+    "NAME": "Deja Vu",
     "DESCRIPTION": "Gain !B! Block. NL Put a *Vision on top of your draw pile."
   },
   "${ModID}:Vision": {
     "NAME": "Vision",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage.",
+    "DESCRIPTION": "Deal !D! damage.",
     "FLAVOR": "\"I've seen this before... somewhere...\"",
     "ENHANCED_FLAVOR": "You've lived through this moment hundreds of times."
   },
@@ -188,28 +187,25 @@
   },
   "${ModID}:UnfamiliarMemory": {
     "NAME": "Unfamiliar Memory",
-    "DESCRIPTION": "If you played an *Unfamiliar *Memory last turn, gain !M! Strength."
+    "DESCRIPTION": "Every second time you play an *Unfamiliar *Memory, gain !M! Strength and Exhaust."
   },
   "${ModID}:TimeSpiral": {
     "NAME": "Time Spiral",
-    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: Shuffle a copy of into your draw pile with 2 less Block."
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: Shuffle a copy of this into your draw pile with 2 less Block."
   },
   "${ModID}:DoubleDown": {
     "NAME": "Double Down",
     "DESCRIPTION": "Deal !D! damage for each debuff on the enemy."
   },
-  "${ModID}:CatchUp": {
-    "NAME": "Catch Up",
-    "DESCRIPTION": "Costs 1 less [E] for each time you ${ModID}:Warp this combat. NL Deal !D! damage."
-  },
-  "${ModID}:Eternity": {
-    "NAME": "Eternity",
+  "${ModID}:TimeLoop": {
+    "NAME": "Time Loop",
     "DESCRIPTION": "Play a copy of the last card you played this combat.",
     "EXTENDED_DESCRIPTION": [
       " NL Plays: NL ",
       "I haven't played a card yet this combat.",
       "I ~will~ ~not~ have played a card by then...",
-      "I ~hadn't~ played a card yet?"
+      "I ~hadn't~ played a card yet?",
+      "It's ~calm...~"
     ],
     "FLAVOR": "Again?",
     "ENHANCED_FLAVOR": "Again? Of course you'd do it again."
@@ -237,28 +233,24 @@
   "${ModID}:Overwhelm": {
     "NAME": "Overwhelm",
     "DESCRIPTION": "Deal !D! damage. NL Double this card's damage this combat.",
-    "FLAVOR": "An unquenchable frustration. You just have to let it out.",
-    "ENHANCED_FLAVOR": "Every single loop you fell short. It was so, so, frustrating."
+    "FLAVOR": "Each time hurts more than the last.",
+    "ENHANCED_FLAVOR": "The hooded figure grabs their chest before falling to the ground. You weren't fast enough."
   },
   "${ModID}:MakeExample": {
     "NAME": "Make Example",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Apply !${ModID}:m2! Weak to ALL other enemies. NL Exhaust."
   },
-  "${ModID}:ClingingOn": {
-    "NAME": "Clinging On",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Exhaust unless you've played an Ethereal card this turn."
+  "${ModID}:Harrow": {
+    "NAME": "Harrow",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Gain !B! Block."
   },
   "${ModID}:Manifest": {
     "NAME": "Manifest",
     "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{@@}{!M!|>1=s|0=s}. NL {!M!|>1=They cost|@=It costs} 0 this turn."
   },
-  "${ModID}:Unburdened": {
-    "NAME": "Unburdened",
+  "${ModID}:ClingingOn": {
+    "NAME": "Clinging On",
     "DESCRIPTION": "The first time a card is Exhausted each turn, gain !M! Strength."
-  },
-  "${ModID}:Restraint": {
-    "NAME": "Restraint",
-    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL ${ModID}:Forget: Add a ${ModID}:Vision to your hand."
   },
   "${ModID}:Her": {
     "NAME": "Her",
@@ -274,17 +266,9 @@
     "NAME": "High Ground",
     "DESCRIPTION": "Apply !M! Vulnerable. NL ${ModID}:Flashback 1 Attack. NL Exhaust."
   },
-  "${ModID}:CardTrick": {
-    "NAME": "Card Trick",
-    "DESCRIPTION": "Draw 1 card. NL Gain [E]  equal to it's cost. NL Exhaust."
-  },
-  "${ModID}:RhythmicSteps": {
-    "NAME": "Rhythmic Steps",
-    "DESCRIPTION": "Deal !D! damage. NL Draw cards until you draw an Attack and a Skill. NL Exhaust."
-  },
   "${ModID}:SawItComing": {
     "NAME": "Saw It Coming",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Flashback !M! card{@@}{!M!|>1=s|0=s} with Block."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is ${ModID}:Foretold, gain !B! Block."
   },
   "${ModID}:Glimpse": {
     "NAME": "Glimpse",
@@ -300,9 +284,9 @@
     "FLAVOR": "\"Can you... hear me...?\"",
     "ENHANCED_FLAVOR": "\"Please! You can hear me! Right? Please...\""
   },
-  "${ModID}:LossAversion": {
-    "NAME": "Loss Aversion",
-    "DESCRIPTION": "Gain {@@}{!M!|repeat=[E] }. NL If a card was Exhausted this turn, gain [E] ."
+  "${ModID}:CarefulPlan": {
+    "NAME": "Careful Plan",
+    "DESCRIPTION": "Ethereal. NL Gain {@@}{!M!|repeat=[E] }. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s|0=s}."
   },
   "${ModID}:Fathom": {
     "NAME": "Fathom",
@@ -371,14 +355,14 @@
   },
   "${ModID}:RecklessAbandon": {
     "NAME": "Reckless Abandon",
-    "DESCRIPTION": "Deal !D! damage to a random enemy. NL Repeat for each Ethereal card in your hand. Exhaust.",
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL Repeat for each Ethereal card in your hand. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL (Attacks ",
       " time.)",
       " times.)"
     ],
-    "FLAVOR": "Too late. You're always too late.",
-    "ENHANCED_FLAVOR": "You can always try again."
+    "FLAVOR": "You come to your senses with blood on your clothes, and bodies behind you.",
+    "ENHANCED_FLAVOR": "As you came to your senses, you realized whoever you tore apart wasn't them."
   },
   "${ModID}:Prescience": {
     "NAME": "Prescience",
@@ -386,7 +370,7 @@
   },
   "${ModID}:CherishedMemory": {
     "NAME": "Cherished Memory",
-    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Flashback 1 Uncommon or Rare card{@@}{!M!|>1=s|0=s}."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL ${ModID}:Flashback !M! card{@@}{!M!|>1=s|0=s}. NL Exhaust."
   },
   "${ModID}:Align": {
     "NAME": "Align",

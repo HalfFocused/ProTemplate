@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Gaze extends AbstractEasyCard {
-    public final static String ID = makeID("Gaze");
+    public final static String ID = makeID(Gaze.class.getSimpleName());
 
     public Gaze() {
         super(ID, 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);

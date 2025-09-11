@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Glimpse extends AbstractEasyCard {
-    public final static String ID = makeID("Glimpse");
+    public final static String ID = makeID(Glimpse.class.getSimpleName());
     // intellij stuff attack, enemy, common, 12, 4, , , , 
 
     public Glimpse() {
@@ -32,6 +32,6 @@ public class Glimpse extends AbstractEasyCard {
     @Override
     public void initializeDescription(){
         super.initializeDescription();
-        //this.keywords.add(makeID("dream")); //TODO: Account for localization files
+        this.keywords.add(makeID("dream")); //TODO: Account for localization files
     }
 }

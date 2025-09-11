@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class Lacerate extends AbstractEasyCard {
-    public final static String ID = makeID("Lacerate");
+    public final static String ID = makeID(Lacerate.class.getSimpleName());
     // intellij stuff skill, self, rare, , , , , 3, 
 
     public Lacerate() {

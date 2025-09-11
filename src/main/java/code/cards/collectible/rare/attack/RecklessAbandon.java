@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RecklessAbandon extends AbstractEasyCard {
-    public final static String ID = makeID("RecklessAbandon");
+    public final static String ID = makeID(RecklessAbandon.class.getSimpleName());
     // intellij stuff attack, all_enemy, rare, 16, 4, , , , 
 
     public RecklessAbandon() {

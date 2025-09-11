@@ -5,9 +5,11 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 
 import code.powers.MomentOfTruthPower;
+import code.powers.UnfamiliarMemoryPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.ApplyBulletTimeAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -35,6 +37,16 @@ public class MomentOfTruth extends AbstractEasyCard {
                 isDone = true;
             }
         });
+    }
+
+    public void triggerOnGlowCheck(){
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        for(AbstractPower pow : AbstractDungeon.player.powers){
+            if(pow instanceof MomentOfTruthPower){
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+                break;
+            }
+        }
     }
 
     public void upp() {

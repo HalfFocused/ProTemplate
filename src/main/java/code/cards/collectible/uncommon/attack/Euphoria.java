@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Euphoria extends AbstractEasyCard {
-    public final static String ID = makeID("Euphoria");
+    public final static String ID = makeID(Euphoria.class.getSimpleName());
 
     public Euphoria() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);

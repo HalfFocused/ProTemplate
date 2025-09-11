@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Align extends AbstractEasyCard {
-    public final static String ID = makeID("Align");
+    public final static String ID = makeID(Align.class.getSimpleName());
 
     public Align() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);

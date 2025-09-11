@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Unburdened extends AbstractEasyCard {
-    public final static String ID = makeID(Unburdened.class.getSimpleName());
+public class ClingingOn extends AbstractEasyCard {
+    public final static String ID = makeID(ClingingOn.class.getSimpleName());
 
 
-    public Unburdened() {
+    public ClingingOn() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
     }

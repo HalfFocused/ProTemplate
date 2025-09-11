@@ -3,10 +3,7 @@ package code.cards.collectible.common.attack;
 import static code.ModFile.makeID;
 
 import code.cards.AbstractEasyCard;
-import code.cards.AbstractExploitCard;
-import code.cards.collectible.uncommon.skill.Daydream;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

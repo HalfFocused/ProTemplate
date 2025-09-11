@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class EtchedInBlood extends AbstractEasyCard {
-    public final static String ID = makeID("EtchedInBlood");
+    public final static String ID = makeID(EtchedInBlood.class.getSimpleName());
     // intellij stuff power, self, uncommon, , , , , 3, 1
 
     public EtchedInBlood() {

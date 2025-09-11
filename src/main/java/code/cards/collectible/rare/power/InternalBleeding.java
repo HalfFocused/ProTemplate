@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class InternalBleeding extends AbstractEasyCard {
-    public final static String ID = makeID("InternalBleeding");
+    public final static String ID = makeID(InternalBleeding.class.getSimpleName());
     // intellij stuff power, self, rare, , , , , 1, 
 
     public InternalBleeding() {

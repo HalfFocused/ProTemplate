@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Her extends AbstractEasyCard implements ForgetCard {
-    public final static String ID = makeID("Her");
+    public final static String ID = makeID(Her.class.getSimpleName());
     // intellij stuff attack, all_enemy, rare, 16, 6, , , 2, 
 
     public Her() {

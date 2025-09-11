@@ -24,6 +24,5 @@ public class Reverie extends AbstractEasyCard {
 
     public void upp() {
         isInnate = true;
-        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
     }
 }

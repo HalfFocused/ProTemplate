@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Fathom extends AbstractEasyCard {
-    public final static String ID = makeID("Fathom");
+    public final static String ID = makeID(Fathom.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , , , 3, 1
 
     public Fathom() {

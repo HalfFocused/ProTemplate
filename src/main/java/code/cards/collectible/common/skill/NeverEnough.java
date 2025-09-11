@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class NeverEnough extends AbstractEasyCard {
-    public final static String ID = makeID("NeverEnough");
+    public final static String ID = makeID(NeverEnough.class.getSimpleName());
 
     public NeverEnough() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);

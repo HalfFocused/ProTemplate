@@ -90,6 +90,12 @@
       "You've played #yMoment #yOf #yTruth once."
     ]
   },
+  "${ModID}:UnfamiliarMemory": {
+    "NAME": "Unfamiliar Memory",
+    "DESCRIPTIONS": [
+      "You've played #yUnfamiliar #yMemory once."
+    ]
+  },
   "${ModID}:CripplePower": {
     "NAME": "Cripple",
     "DESCRIPTIONS": [

@@ -1,44 +1,38 @@
 package code.util.charUtil.mods;
 
-import basemod.ReflectionHacks;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import code.ModFile;
 import code.util.TexLoader;
-import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.util.extraicons.ExtraIcons;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 
-import javax.smartcardio.Card;
+public class TemporaryModifier extends AbstractCardModifier {
 
-public class DreamModifier extends AbstractCardModifier {
-
-    public static final String ID = ModFile.makeID("Dream");
+    public static final String ID = ModFile.makeID("Temporary");
     private int counter;
     private boolean givenOnCreation;
-    private static final Texture tex = TexLoader.getTexture(ModFile.makeUIPath("DreamIcon.png"));
+    //private static final Texture tex = TexLoader.getTexture(ModFile.makeUIPath("DreamIcon.png"));
     private final int initialAmount;
 
 
-    public DreamModifier(boolean creation, int ephemeralCounterIn){
+    public TemporaryModifier(boolean creation, int ephemeralCounterIn){
         counter = ephemeralCounterIn;
         givenOnCreation = creation;
         initialAmount = ephemeralCounterIn;
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return ID + " " + initialAmount + ". NL " + rawDescription;
+        return ID + " " + counter + ". NL " + rawDescription;
     }
 
     @Override
     public AbstractCardModifier makeCopy() {
-        return new DreamModifier(givenOnCreation, counter);
+        return new TemporaryModifier(givenOnCreation, counter);
     }
 
     @Override
@@ -51,12 +45,10 @@ public class DreamModifier extends AbstractCardModifier {
     }
 
     public void atEndOfTurn(AbstractCard card, CardGroup group) {
-        if(CardUtil.queuedWarps == 0) {
-            counter--;
-            card.initializeDescription();
-            if (counter <= 0) {
-                this.addToTop(new ExhaustSpecificCardAction(card, group, false));
-            }
+        counter--;
+        card.initializeDescription();
+        if (counter <= 0) {
+            this.addToTop(new ExhaustSpecificCardAction(card, group, false));
         }
     }
 
@@ -64,7 +56,7 @@ public class DreamModifier extends AbstractCardModifier {
     @Override
     public void onInitialApplication(AbstractCard card){
         for(AbstractCardModifier mod : CardModifierManager.getModifiers(card, ID)){
-            if(((DreamModifier) mod).counter > this.counter){
+            if(((TemporaryModifier) mod).counter > this.counter){
                 CardModifierManager.removeSpecificModifier(card, mod, true);
             }
         }
@@ -73,13 +65,14 @@ public class DreamModifier extends AbstractCardModifier {
     @Override
     public boolean shouldApply(AbstractCard card){
         for(AbstractCardModifier mod : CardModifierManager.getModifiers(card, ID)){
-            if(((DreamModifier) mod).counter <= this.counter){
+            if(((TemporaryModifier) mod).counter <= this.counter){
                 return false;
             }
         }
         return true;
     }
 
+    /*
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
         ExtraIcons.icon(tex).text(String.valueOf(counter)).render(card);
@@ -89,4 +82,6 @@ public class DreamModifier extends AbstractCardModifier {
     public void onSingleCardViewRender(AbstractCard card, SpriteBatch sb) {
         ExtraIcons.icon(tex).text(String.valueOf(counter)).render(card);
     }
+
+     */
 }

@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Augur extends AbstractEasyCard {
-    public final static String ID = makeID(Augur.class.getSimpleName());
+public class Remember extends AbstractEasyCard {
+    public final static String ID = makeID(Remember.class.getSimpleName());
 
-    public Augur() {
+    public Remember() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 5;
         exhaust = true;

@@ -39,11 +39,15 @@ public class TheDisplaced extends CustomPlayer {
     static final String[] TEXT = characterStrings.TEXT;
 
     public static String getNeowGreeting(){
-        return characterStrings.TEXT[MathUtils.random(4,TEXT.length - 1)];
+        return characterStrings.TEXT[MathUtils.random(5,TEXT.length - 1)];
     }
 
     public static String getSensoryStone(){
         return characterStrings.TEXT[3];
+    }
+
+    public static String getGhostsDialog(){
+        return characterStrings.TEXT[4];
     }
 
     public TheDisplaced(String name, PlayerClass setClass) {
@@ -74,11 +78,11 @@ public class TheDisplaced extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             retVal.add(Strike.ID);
         }
         retVal.add(Gaze.ID);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             retVal.add(Defend.ID);
         }
         retVal.add(Backtrack.ID);

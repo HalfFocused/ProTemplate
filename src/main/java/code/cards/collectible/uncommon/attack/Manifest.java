@@ -12,12 +12,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Manifest extends AbstractEasyCard {
-    public final static String ID = makeID("Manifest");
+    public final static String ID = makeID(Manifest.class.getSimpleName());
     // intellij stuff attack, enemy, uncommon, 11, 2, , , 1, 1
 
     public Manifest() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 8;
+        baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 1;
     }
 

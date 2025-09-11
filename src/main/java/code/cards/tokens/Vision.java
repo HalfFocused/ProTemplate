@@ -6,10 +6,7 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 import static code.util.charUtil.CardUtil.randomSlash;
 
-import code.util.charUtil.mods.DreamModifier;
-import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import code.util.charUtil.mods.TemporaryModifier;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -21,7 +18,7 @@ public class Vision extends AbstractEasyCard {
         //isEthereal = true;
         baseDamage = damage = 16;
         //baseMagicNumber = magicNumber = 1;
-        CardModifierManager.addModifier(this, new DreamModifier(true,3));
+        CardModifierManager.addModifier(this, new TemporaryModifier(true,3));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

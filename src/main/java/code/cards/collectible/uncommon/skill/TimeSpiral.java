@@ -1,14 +1,11 @@
 package code.cards.collectible.uncommon.skill;
 
-import basemod.helpers.CardModifierManager;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
 import code.util.charUtil.ForgetCard;
-import code.util.charUtil.mods.DreamModifier;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

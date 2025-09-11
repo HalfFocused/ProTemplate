@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Monsoon extends AbstractEasyCard {
-    public final static String ID = makeID("Monsoon");
+    public final static String ID = makeID(Monsoon.class.getSimpleName());
     // intellij stuff skill, self, rare, , , , , 3, 2
 
     public Monsoon() {

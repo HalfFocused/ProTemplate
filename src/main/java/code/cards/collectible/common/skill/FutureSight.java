@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FutureSight extends AbstractEasyCard implements ForgetCard {
-    public final static String ID = makeID("FutureSight");
+    public final static String ID = makeID(FutureSight.class.getSimpleName());
 
     public FutureSight() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);

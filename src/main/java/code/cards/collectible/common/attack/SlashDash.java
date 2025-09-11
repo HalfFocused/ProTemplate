@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SlashDash extends AbstractEasyCard {
-    public final static String ID = makeID("SlashDash");
+    public final static String ID = makeID(SlashDash.class.getSimpleName());
     // intellij stuff attack, all_enemy, common, 7, 3, , , , 
 
     public SlashDash() {

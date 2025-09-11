@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RecurringDream extends AbstractEasyCard {
-    public final static String ID = makeID("RecurringDream");
+    public final static String ID = makeID(RecurringDream.class.getSimpleName());
     // intellij stuff attack, enemy, uncommon, 18, 6, , , , 
 
     public RecurringDream() {

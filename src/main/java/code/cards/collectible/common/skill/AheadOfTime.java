@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class AheadOfTime extends AbstractEasyCard {
-    public final static String ID = makeID("AheadOfTime");
+    public final static String ID = makeID(AheadOfTime.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , , , 2, 
 
     public AheadOfTime() {

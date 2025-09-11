@@ -15,10 +15,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-public class Eternity extends AbstractEasyCard {
-    public final static String ID = makeID(Eternity.class.getSimpleName());
+public class TimeLoop extends AbstractEasyCard {
+    public final static String ID = makeID(TimeLoop.class.getSimpleName());
     // intellij stuff skill, self, rare, , , , , ,
-    public Eternity() {
+    public TimeLoop() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
     }
 
@@ -68,7 +68,7 @@ public class Eternity extends AbstractEasyCard {
         if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()){
             AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1);
             this.target = lastCard.target;
-            if(!(lastCard instanceof Eternity)) { //Without this, you crash with multiple Eternities in hand.
+            if(!(lastCard instanceof TimeLoop)) { //Without this, you crash with multiple Eternities in hand.
                 this.cardsToPreview = lastCard.makeStatEquivalentCopy();
                 this.cardsToPreview.applyPowers();
             }else{

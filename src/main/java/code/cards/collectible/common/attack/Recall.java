@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Recall extends AbstractEasyCard {
-    public final static String ID = makeID("Recall");
+    public final static String ID = makeID(Recall.class.getSimpleName());
     // intellij stuff attack, enemy, common, 8, 2, , , 1, 
 
     public Recall() {

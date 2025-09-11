@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Prescience extends AbstractEasyCard {
-    public final static String ID = makeID("Prescience");
+    public final static String ID = makeID(Prescience.class.getSimpleName());
 
     public Prescience() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);

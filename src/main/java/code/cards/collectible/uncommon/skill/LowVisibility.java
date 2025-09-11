@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import java.util.Iterator;
 
 public class LowVisibility extends AbstractEasyCard implements ForgetCard {
-    public final static String ID = makeID("LowVisibility");
+    public final static String ID = makeID(LowVisibility.class.getSimpleName());
 
     public LowVisibility() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
@@ -44,6 +44,6 @@ public class LowVisibility extends AbstractEasyCard implements ForgetCard {
 
     @Override
     public void onForget() {
-        this.addToTop(new FlashbackAction(1));
+        this.addToBot(new FlashbackAction(1));
     }
 }
