@@ -1,6 +1,5 @@
 package code.patches;
 
-import code.powers.LongGoodbyePower;
 import code.util.charUtil.EtherealExhaustHook;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

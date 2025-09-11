@@ -3,6 +3,7 @@ package code.util.charUtil.mods;
 import basemod.abstracts.AbstractCardModifier;
 import code.ModFile;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 

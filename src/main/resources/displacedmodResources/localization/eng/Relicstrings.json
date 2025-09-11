@@ -6,9 +6,9 @@
       "At the start of turn #b2, draw #b1 card and gain [E] ."
     ]
   },
-  "${ModID}:ContinuityRune": {
-    "NAME": "Continuity Rune",
-    "FLAVOR": "A smooth gem with the glyph of Continuity engraved on it. There is no endings nor beginnings.",
+  "${ModID}:AmberGemstone": {
+    "NAME": "Amber Gemstone",
+    "FLAVOR": "A smooth gem with a familiar engraving. It fills you with a refreshing clarity.",
     "DESCRIPTIONS": [
       "Whenever a #yDazed would be created, create a random card instead. It becomes #yEthereal."
     ]

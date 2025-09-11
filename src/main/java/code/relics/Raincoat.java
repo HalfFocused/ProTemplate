@@ -12,9 +12,9 @@ import static code.ModFile.makeID;
 public class Raincoat extends AbstractEasyRelic  {
     public static final String ID = makeID("Raincoat");
 
-    private final int NUM_CARDS = 5;
+    private static final int NUM_CARDS = 5;
     public Raincoat() {
-        super(ID, RelicTier.RARE, LandingSound.FLAT, TheDisplaced.Enums.DISPLACED_COLOR);
+        super(ID, RelicTier.UNCOMMON, LandingSound.FLAT, TheDisplaced.Enums.DISPLACED_COLOR);
         this.counter = 0;
     }
 

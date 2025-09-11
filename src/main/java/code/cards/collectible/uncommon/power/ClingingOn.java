@@ -4,7 +4,7 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
-import code.powers.UnburdenedPower;
+import code.powers.ClingingOnPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,7 +19,7 @@ public class ClingingOn extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p,p, new UnburdenedPower(p, magicNumber)));
+        this.addToBot(new ApplyPowerAction(p,p, new ClingingOnPower(p, magicNumber)));
     }
 
     public void upp() {

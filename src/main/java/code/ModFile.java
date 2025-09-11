@@ -5,10 +5,8 @@ import basemod.BaseMod;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
-import code.cards.tokens.Vision;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.ForgetCard;
-import code.util.charUtil.mods.FlashbackModifier;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
@@ -51,8 +49,7 @@ public class ModFile implements
         OnPlayerTurnStartSubscriber,
         OnStartBattleSubscriber,
         PostExhaustSubscriber,
-        PostDeathSubscriber,
-        OnCardUseSubscriber{
+        PostDeathSubscriber{
 
     public static final String modID = "displacedmod";
 
@@ -218,18 +215,11 @@ public class ModFile implements
     @Override
     public void receiveOnPlayerTurnStart() {
         CardUtil.cardExhaustedThisTurn = false;
-        if(CardUtil.queuedWarps == 0) {
-            CardUtil.theSecondDreamActivatedLastTurn = CardUtil.theSecondDreamActivatedThisTurn;
-            CardUtil.theSecondDreamActivatedThisTurn = false;
-        }
     }
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        CardUtil.cardStreaks.clear();
         CardUtil.cardsPlayedLastTurn.clear(); //Even though Recurring Dream working across combats was cool
-        CardUtil.queuedWarps = 0; //In case the previous combat ends with warps queued (cursed)
-        CardUtil.warpsThisCombat = 0;
     }
 
     @Override
@@ -269,12 +259,5 @@ public class ModFile implements
             throw new RuntimeException(e);
         }
         return record;
-    }
-
-    @Override
-    public void receiveCardUsed(AbstractCard abstractCard) {
-        if(abstractCard instanceof Vision){
-            FlashbackModifier.flashback(FlashbackModifier.THE_STARS_ALIGNED);
-        }
     }
 }

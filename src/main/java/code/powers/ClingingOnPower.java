@@ -11,16 +11,16 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class UnburdenedPower extends AbstractEasyPower {
+public class ClingingOnPower extends AbstractEasyPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ModFile.makeID("UnburdenedPower");
+    public static final String POWER_ID = ModFile.makeID("ClingingOnPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private boolean triggeredThisTurn = false;
 
-    public UnburdenedPower(AbstractCreature owner, int amount) {
+    public ClingingOnPower(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.BUFF, false, owner, amount);
     }
 

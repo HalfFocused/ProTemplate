@@ -8,7 +8,9 @@ import static code.ModFile.makeID;
 
 import code.powers.ForetoldPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SawItComing extends AbstractEasyCard {
@@ -31,6 +33,17 @@ public class SawItComing extends AbstractEasyCard {
                 }
             }
         });
+    }
+
+    public void triggerOnGlowCheck(){
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+
+        for(AbstractMonster mo : AbstractDungeon.getMonsters().monsters){
+            if(mo.hasPower(ForetoldPower.POWER_ID)){
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+                return;
+            }
+        }
     }
 
     public void upp() {
