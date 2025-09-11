@@ -59,14 +59,14 @@
     "NAME": "Pair of Gears",
     "FLAVOR": "The gears spin around each other slowly. Despite your efforts, you cannot stop them, nor speed them up.",
     "DESCRIPTIONS": [
-      "At the start of each combat, add a random Power from your draw pile to your hand."
+      "After you draw your first hand each combat, add a random Power from your draw pile to your hand."
     ]
   },
   "${ModID}:TheClockworkUniverse": {
     "NAME": "The Clockwork Universe",
     "FLAVOR": "The timeline is clear to you now. You fear you will look into this device and see your own death.",
     "DESCRIPTIONS": [
-      "Replaces #yAstronomical #yClock. Take an additional turn after your first each combat. You only have [E] [E] that turn."
+      "Replaces #yAstronomical #yClock. Take an additional turn after your first each combat."
     ]
   },
   "${ModID}:ShatteredGlass": {
