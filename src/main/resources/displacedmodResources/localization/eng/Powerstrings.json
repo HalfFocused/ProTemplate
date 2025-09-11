@@ -20,15 +20,6 @@
     " turns."
     ]
   },
-  "${ModID}:AuraPower": {
-    "NAME": "Aura",
-    "DESCRIPTIONS": [
-      "At the end of your turn, gain #b",
-      " #yBlock.",
-      "At the end of your next #b",
-      " turns, gain #b"
-    ]
-  },
   "${ModID}:FleetingFortitudePower": {
     "NAME": "Fleeting Fortitude",
     "DESCRIPTIONS": [
@@ -53,27 +44,12 @@
       " #yDazed into your draw pile."
     ]
   },
-  "${ModID}:OverloadPower": {
-    "NAME": "Overload",
-    "DESCRIPTIONS": [
-      "At the start of your next turn, lose #b",
-      " [E] ."
-    ]
-  },
   "${ModID}:InevitableFormPower": {
     "NAME": "Inevitable Form",
     "DESCRIPTIONS": [
       "At the start of your turn, play the top card of your draw pile and #yExhaust it.",
       "At the start of your turn, play the top #b",
       " cards of your draw pile and #yExhaust them."
-    ]
-  },
-  "${ModID}:LongGoodbyePower": {
-    "NAME": "Long Goodbye",
-    "DESCRIPTIONS": [
-      "Your next ",
-      " #yForget effect triggers twice.",
-      " #yForget effects trigger twice."
     ]
   },
   "${ModID}:OverAndOverPower": {
@@ -103,8 +79,8 @@
       " #yBlock."
     ]
   },
-  "${ModID}:LapsePower": {
-    "NAME": "Lapse",
+  "${ModID}:EtchedInBloodPower": {
+    "NAME": "Etched In Blood",
     "DESCRIPTIONS": [
       "At the start of your next turn, add #b1 ",
       " to your hand."
@@ -116,25 +92,11 @@
       "You can only play cards that were drawn by #yForsake this turn."
     ]
   },
-  "${ModID}:UnburdenedPower": {
-    "NAME": "Unburdened",
+  "${ModID}:ClingingOnPower": {
+    "NAME": "Clinging On",
     "DESCRIPTIONS": [
       "The first time a card is #yExhausted each turn, gain #b",
       " Strength."
-    ]
-  },
-  "${ModID}:ImpendingDoomPower": {
-    "NAME": "Impending Doom",
-    "DESCRIPTIONS": [
-      "At the start of your turn, apply #b",
-      " #yWither to ALL enemies."
-    ]
-  },
-  "${ModID}:TempoPower": {
-    "NAME": "Tempo",
-    "DESCRIPTIONS": [
-      "Whenever you draw a card this turn, gain #b",
-      " #yBlock."
     ]
   },
   "${ModID}:InternalBleedingPower": {
@@ -150,14 +112,6 @@
       "Take an extra turn after this one.",
       "Take an extra turn after your next #b",
       " turns."
-    ]
-  },
-  "${ModID}:ChronoFormPower": {
-    "NAME": "Chrono Form",
-    "DESCRIPTIONS": [
-      "Whenever you #yExhaust #b12 cards, take an additional turn after this one.",
-      "Whenever you #yExhaust #b12 cards, take #b",
-      " additional turns after this one."
     ]
   },
   "${ModID}:PrecognitionPower": {

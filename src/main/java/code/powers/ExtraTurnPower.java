@@ -35,7 +35,7 @@ public class ExtraTurnPower extends AbstractEasyPower {
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        if (!AbstractDungeon.getCurrRoom().skipMonsterTurn && CardUtil.queuedWarps <= 0) {
+        if (!AbstractDungeon.getCurrRoom().skipMonsterTurn) {
             this.flash();
             this.addToTop(new SkipEnemiesTurnAction());
             this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));

@@ -4,10 +4,10 @@ import code.TheDisplaced;
 
 import static code.ModFile.makeID;
 
-public class ContinuityRune extends AbstractEasyRelic  {
-    public static final String ID = makeID("ContinuityRune");
+public class AmberGemstone extends AbstractEasyRelic  {
+    public static final String ID = makeID("AmberGemstone");
 
-    public ContinuityRune() {
+    public AmberGemstone() {
         super(ID, RelicTier.SHOP, LandingSound.FLAT, TheDisplaced.Enums.DISPLACED_COLOR);
     }
 }

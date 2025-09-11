@@ -1,8 +1,6 @@
 package code.actions;
 
-import basemod.abstracts.AbstractCardModifier;
-import basemod.helpers.CardModifierManager;
-import code.powers.LapsePower;
+import code.powers.EtchedInBloodPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -27,7 +25,7 @@ public class LapseCardAction extends AbstractGameAction {
             card.target_y = (float) Settings.HEIGHT / 2.0F;
             card.targetDrawScale = 0.5f;
         }
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LapsePower(AbstractDungeon.player, card.makeCopy())));
+        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EtchedInBloodPower(AbstractDungeon.player, card.makeCopy())));
         this.addToBot(new ExhaustSpecificCardAction(card, group));
         isDone = true;
     }

@@ -5,7 +5,6 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
-import code.util.charUtil.mods.FlashbackModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,8 +13,7 @@ public class LastLaugh extends AbstractEasyCard {
     public final static String ID = makeID(LastLaugh.class.getSimpleName());
     public LastLaugh() {
         super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        CardModifierManager.addModifier(this, new FlashbackModifier(FlashbackModifier.LAST_LAUGH));
-        baseDamage = 4;
+        baseDamage = damage = 4;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

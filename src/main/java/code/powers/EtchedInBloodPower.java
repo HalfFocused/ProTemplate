@@ -9,16 +9,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
-public class LapsePower extends AbstractEasyPower implements NonStackablePower {
+public class EtchedInBloodPower extends AbstractEasyPower implements NonStackablePower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ModFile.makeID("LapsePower");
+    public static final String POWER_ID = ModFile.makeID("EtchedInBloodPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private final AbstractCard card;
 
-    public LapsePower(AbstractCreature owner, AbstractCard cardIn) {
+    public EtchedInBloodPower(AbstractCreature owner, AbstractCard cardIn) {
         super(POWER_ID, NAME, PowerType.BUFF, true, owner, -1);
         card = cardIn.makeStatEquivalentCopy();
         updateDescription();

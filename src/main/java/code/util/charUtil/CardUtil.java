@@ -1,6 +1,7 @@
 package code.util.charUtil;
 
 import basemod.ReflectionHacks;
+import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import code.actions.DisplayCardAction;
 import code.powers.LongGoodbyePower;
@@ -9,6 +10,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -34,71 +36,6 @@ public class CardUtil {
     public static boolean theSecondDreamActivatedThisTurn = false;
     public static boolean theSecondDreamActivatedLastTurn = false;
 
-
-    public static int warpsThisCombat = 0;
-    public static ArrayList<CardStreak> cardStreaks = new ArrayList<>();
-
-    public static int queuedWarps  = 0;
-    @SpireEnum
-    public static AbstractCard.CardRarity MYTHIC;
-
-    @SpireEnum
-    public static AbstractCard.CardRarity DEBILITATED;
-
-    public static boolean isMythic(AbstractCard card){
-        return card.rarity == MYTHIC;
-    }
-
-    public static boolean isDebilitated(AbstractCard card){
-        return card.rarity == DEBILITATED;
-    }
-
-    public static boolean isCommon(AbstractCard card){
-        return card.rarity == AbstractCard.CardRarity.COMMON || card.rarity == AbstractCard.CardRarity.SPECIAL || card.rarity == AbstractCard.CardRarity.BASIC || card.rarity == AbstractCard.CardRarity.CURSE;
-    }
-
-    public static boolean isUncommon(AbstractCard card){
-        return card.rarity == AbstractCard.CardRarity.UNCOMMON;
-    }
-
-    public static boolean isRare(AbstractCard card){
-        return card.rarity == AbstractCard.CardRarity.RARE;
-    }
-
-    public static ArrayList<AbstractCard.CardRarity> uniqueRaritiesInHand() {
-        ArrayList<AbstractCard.CardRarity> rarities = new ArrayList<>();
-        for (AbstractCard card : AbstractDungeon.player.hand.group) {
-            if (!rarities.contains(getAdjustedRarity(card))) {
-                rarities.add(getAdjustedRarity(card));
-            }
-        }
-        return rarities;
-    }
-
-    public static AbstractCard.CardRarity getAdjustedRarity(AbstractCard card){
-        if(isCommon(card)){
-            return AbstractCard.CardRarity.COMMON;
-        }else{
-            return card.rarity;
-        }
-    }
-
-    public static int getRarityNumber(AbstractCard card){
-        if(isDebilitated(card)){
-            return 0;
-        }else if(isCommon(card)){
-            return 1;
-        }else if(isUncommon(card)){
-            return 2;
-        }else if(isRare(card)){
-            return 3;
-        }else if(isMythic(card)){
-            return 4;
-        }
-        System.out.println("Something is wrong! -> CardUtil#getRarityNumber");
-        return -1;
-    }
-
     public static void forgetCard(ForgetCard card){
         if(card instanceof AbstractCard) {
             ((AbstractCard) card).applyPowers();
@@ -106,12 +43,6 @@ public class CardUtil {
                 @Override
                 public void update() {
                     card.onForget();
-                    AbstractPower longGoodbyePower = AbstractDungeon.player.getPower(LongGoodbyePower.POWER_ID);
-                    if(longGoodbyePower != null){
-                        longGoodbyePower.flash();
-                        AbstractDungeon.actionManager.addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, LongGoodbyePower.POWER_ID, 1));
-                        card.onForget();
-                    }
                     isDone = true;
                 }
             });
@@ -130,26 +61,6 @@ public class CardUtil {
             }
         }
         return false;
-    }
-
-    public static boolean hasPlayedEtherealCardThisTurn(){
-        return AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().anyMatch(abstractCard -> abstractCard.isEthereal);
-    }
-
-    public static CardGroup filteredRandomCard(Predicate<AbstractCard> filter) {
-        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        CardLibrary.getAllCards().stream().filter(filter).forEach(c -> retVal.addToTop(c.makeCopy()));
-        return retVal;
-    }
-
-
-    public static class CardStreak{
-        public String name;
-        public int streak;
-        public CardStreak(String nameIn, int streakIn){
-            name = nameIn;
-            streak = streakIn;
-        }
     }
 
     public static int etherealCardsPlayedThisTurn(){
@@ -252,5 +163,13 @@ public class CardUtil {
 
     public static boolean isPowerTurnBased(AbstractPower power){
         return ReflectionHacks.getPrivate(power, AbstractPower.class, "isTurnBased");
+    }
+
+    public static void flashback(String cardID){
+        for(AbstractCard card : AbstractDungeon.player.discardPile.group){
+            if(card.cardID.equals(cardID)){
+                AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(card));
+            }
+        }
     }
 }

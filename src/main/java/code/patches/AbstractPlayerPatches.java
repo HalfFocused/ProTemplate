@@ -1,6 +1,7 @@
 package code.patches;
 
-import code.util.charUtil.mods.FlashbackModifier;
+import code.cards.collectible.common.skill.NeverEnough;
+import code.util.charUtil.CardUtil;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -20,7 +21,7 @@ public class AbstractPlayerPatches {
         )
         public static void Insert(AbstractPlayer __instance, DamageInfo info, int damageAmount) {
             if (info.owner != null && info.owner != __instance && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
-                FlashbackModifier.flashback(FlashbackModifier.NEVER_ENOUGH);
+                CardUtil.flashback(NeverEnough.ID);
             }
         }
     }

@@ -28,7 +28,6 @@ public class CarefulPlan extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainEnergyAction(magicNumber));
         addToBot(new DrawCardAction(secondMagic));
-        //addToBot(new MakeTempCardInDiscardAction(new Dazed(), 1));
     }
 
 
