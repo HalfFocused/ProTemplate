@@ -53,7 +53,7 @@ public class TheStarsAligned extends AbstractEasyCard {
                         card.drawScale = 0.12F;
                         card.targetDrawScale = 0.75F;
                         card.applyPowers();
-                        this.addToTop(new NewQueueCardAction(card, m, false, true));
+                        this.addToTop(new NewQueueCardAction(card, true, false, true));
                         this.addToTop(new UnlimboAction(card));
                     }else{
                         break;
@@ -71,6 +71,6 @@ public class TheStarsAligned extends AbstractEasyCard {
     @Override
     public void initializeDescription(){
         super.initializeDescription();
-        this.keywords.add(makeID("dream")); //TODO: Account for localization files
+        this.keywords.add(makeID("temporary")); //TODO: Account for localization files
     }
 }

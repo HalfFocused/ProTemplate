@@ -1,6 +1,6 @@
 package code.patches;
 
-import code.cards.collectible.common.attack.LastLaugh;
+import code.cards.collectible.common.attack.Clobber;
 import code.util.charUtil.CardUtil;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
@@ -15,7 +15,7 @@ public class EnergyPanelPatch {
         {
             int energySpent = (int) __args[0];
             if(energySpent > 0 && EnergyPanel.totalCount == 0){
-                CardUtil.flashback(LastLaugh.ID);
+                CardUtil.flashback(Clobber.ID);
             }
         }
     }

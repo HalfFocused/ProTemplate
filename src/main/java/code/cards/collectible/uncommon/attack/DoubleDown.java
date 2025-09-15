@@ -28,6 +28,7 @@ public class DoubleDown extends AbstractEasyCard {
                         dmgTop(m, CardUtil.randomSlash());
                     }
                 }
+                isDone = true;
             }
         });
     }

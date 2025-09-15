@@ -14,8 +14,8 @@ public class Persist extends AbstractEasyCard {
     // intellij stuff skill, self, common, , , 7, 4, , 
 
     public Persist() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 8;
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        baseBlock = block = 4;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -24,6 +24,6 @@ public class Persist extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeBlock(2);
     }
 }

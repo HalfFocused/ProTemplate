@@ -29,6 +29,6 @@ public class EyesWideOpen extends AbstractEasyCard {
     @Override
     public void initializeDescription(){
         super.initializeDescription();
-        this.keywords.add(makeID("dream")); //TODO: Account for localization files
+        this.keywords.add(makeID("temporary")); //TODO: Account for localization files
     }
 }

@@ -312,9 +312,9 @@
     "FLAVOR": "During the dream, you remembered everything clearly.",
     "ENHANCED_FLAVOR": "Every loop numbed your memory further. So many experiences. But during the dream, you were back home."
   },
-  "${ModID}:LastLaugh": {
-    "NAME": "Last Laugh",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you run out of [E] , ${ModID}:Flashback."
+  "${ModID}:Clobber": {
+    "NAME": "Clobber",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Apply !M! Vulnerable."
   },
   "${ModID}:Euphoria": {
     "NAME": "Euphoria",
