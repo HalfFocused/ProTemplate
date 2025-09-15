@@ -31,6 +31,7 @@ public class SawItComing extends AbstractEasyCard {
                 if(!m.isDeadOrEscaped() && m.hasPower(ForetoldPower.POWER_ID)){
                     blckTop();
                 }
+                isDone = true;
             }
         });
     }
