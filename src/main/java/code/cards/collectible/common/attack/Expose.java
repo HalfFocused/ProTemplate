@@ -1,4 +1,4 @@
-package code.cards.collectible.uncommon.attack;
+package code.cards.collectible.common.attack;
 
 import code.cards.AbstractEasyCard;
 
@@ -9,15 +9,13 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class Expose extends AbstractEasyCard {
     public final static String ID = makeID(Expose.class.getSimpleName());
     // intellij stuff skill, enemy, uncommon, , , , , 2, 1
 
     public Expose() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = damage = 6;
         baseMagicNumber = magicNumber = 1;
     }

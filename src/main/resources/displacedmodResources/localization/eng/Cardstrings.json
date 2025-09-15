@@ -11,9 +11,12 @@
     "NAME": "Shooting Star",
     "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s|0=s}. NL Draw !M! card{!M!|>1=s|0=s} next turn."
   },
-  "${ModID}:FlashStep": {
-    "NAME": "Flash Step",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${ModID}:Foretold."
+  "${ModID}:Impulse": {
+    "NAME": "Impulse",
+    "DESCRIPTION": "Draw !M! {@@}card{!M!|>1=s|0=s}. NL Exhaust one of them.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust"
+    ]
   },
   "${ModID}:Emptiness": {
     "NAME": "Emptiness",
@@ -284,8 +287,8 @@
     "FLAVOR": "\"Can you... hear me...?\"",
     "ENHANCED_FLAVOR": "\"Please! You can hear me! Right? Please...\""
   },
-  "${ModID}:CarefulPlan": {
-    "NAME": "Careful Plan",
+  "${ModID}:CarefulScheme": {
+    "NAME": "Careful Scheme",
     "DESCRIPTION": "Ethereal. NL Gain {@@}{!M!|repeat=[E] }. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s|0=s}."
   },
   "${ModID}:Fathom": {
@@ -312,16 +315,13 @@
     "FLAVOR": "During the dream, you remembered everything clearly.",
     "ENHANCED_FLAVOR": "Every loop numbed your memory further. So many experiences. But during the dream, you were back home."
   },
-  "${ModID}:Clobber": {
-    "NAME": "Clobber",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Apply !M! Vulnerable."
+  "${ModID}:Lucidity": {
+    "NAME": "Lucidity",
+    "DESCRIPTION": "Apply !M! ${ModID}:Foretold to ALL enemies. NL Exhaust."
   },
-  "${ModID}:Euphoria": {
-    "NAME": "Euphoria",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust a card. NL Shuffle !M! copies of it into your draw pile.",
-    "EXTENDED_DESCRIPTION": [
-      "Choose a card to Exhaust:"
-    ]
+  "${ModID}:BackupPlan": {
+    "NAME": "Backup Plan",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL ${ModID}:Forget: ALL enemies lose !M! Strength this turn."
   },
   "${ModID}:Precognition": {
     "NAME": "Precognition",

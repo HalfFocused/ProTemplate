@@ -4,21 +4,16 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
-import code.util.charUtil.CardUtil;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CarefulPlan extends AbstractEasyCard {
-    public final static String ID = makeID(CarefulPlan.class.getSimpleName());
+public class CarefulScheme extends AbstractEasyCard {
+    public final static String ID = makeID(CarefulScheme.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , , , 1, 1
 
-    public CarefulPlan() {
+    public CarefulScheme() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
         baseSecondMagic = secondMagic = 4;

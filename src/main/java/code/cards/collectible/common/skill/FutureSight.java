@@ -13,9 +13,9 @@ public class FutureSight extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID(FutureSight.class.getSimpleName());
 
     public FutureSight() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         isEthereal = true;
-        baseBlock = block = 4;
+        baseBlock = block = 7;
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -24,7 +24,7 @@ public class FutureSight extends AbstractEasyCard implements ForgetCard {
     }
 
     public void upp() {
-        upgradeBlock(2);
+        upgradeMagicNumber(1);
     }
 
     @Override
