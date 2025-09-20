@@ -12,26 +12,20 @@ import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
 import static code.ModFile.makeID;
 
-public class Decimate extends AbstractEasyCard {
-    public final static String ID = makeID(Decimate.class.getSimpleName());
+public class ViciousCycle extends AbstractEasyCard {
+    public final static String ID = makeID(ViciousCycle.class.getSimpleName());
     // intellij stuff attack, enemy, rare, 10, 4, , , ,
 
-    public Decimate() {
-        super(ID, 3, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        isEthereal = true;
-        baseDamage = damage = 40;
+    public ViciousCycle() {
+        super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        baseDamage = damage = 6;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m != null) {
-            this.addToBot(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY)));// 37
-        }
-
-        this.addToBot(new WaitAction(0.8F));
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
     }
 
     public void upp() {
-        upgradeDamage(12);
+        upgradeDamage(3);
     }
 }

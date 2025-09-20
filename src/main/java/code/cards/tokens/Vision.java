@@ -15,15 +15,12 @@ public class Vision extends AbstractEasyCard {
 
     public Vision() {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
-        //isEthereal = true;
         baseDamage = damage = 16;
-        //baseMagicNumber = magicNumber = 1;
         CardModifierManager.addModifier(this, new TemporaryModifier(true,3));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, randomSlash());
-        //this.addToBot(new DrawCardAction(magicNumber));
     }
 
     public void upp() {

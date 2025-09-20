@@ -4,12 +4,13 @@ import code.ModFile;
 import code.actions.AllEnemiesLoseHPAction;
 import code.util.charUtil.EtherealExhaustHook;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
-public class BeforeYourEyesPower extends AbstractEasyPower implements EtherealExhaustHook {
+public class BeforeYourEyesPower extends AbstractEasyPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = ModFile.makeID("BeforeYourEyesPower");
@@ -28,10 +29,12 @@ public class BeforeYourEyesPower extends AbstractEasyPower implements EtherealEx
 
 
     @Override
-    public void onEtherealCardExhaust() {
+    public void onExhaust(AbstractCard c) {
         flash();
-        for(int i = 0; i < amount; i++){
-            this.addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy(), false));
+        if(c.isEthereal) {
+            for (int i = 0; i < amount; i++) {
+                this.addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy(), false));
+            }
         }
     }
 }

@@ -20,6 +20,7 @@ public class DoubleDown extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        dmg(m, CardUtil.randomSlash());
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {

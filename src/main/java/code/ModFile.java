@@ -5,6 +5,7 @@ import basemod.BaseMod;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import code.cards.collectible.rare.attack.ViciousCycle;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.ForgetCard;
 import com.badlogic.gdx.Gdx;
@@ -215,6 +216,9 @@ public class ModFile implements
     @Override
     public void receiveOnPlayerTurnStart() {
         CardUtil.cardExhaustedThisTurn = false;
+
+        CardUtil.theSecondDreamActivatedLastTurn = CardUtil.theSecondDreamActivatedThisTurn;
+        CardUtil.theSecondDreamActivatedThisTurn = false;
     }
 
     @Override
@@ -228,6 +232,7 @@ public class ModFile implements
         if(abstractCard instanceof ForgetCard){
             CardUtil.forgetCard((ForgetCard) abstractCard);
         }
+        CardUtil.flashback(ViciousCycle.ID);
     }
     public static final String RECORD_FILE = modID + "/saveable/displacedSavable.txt";
 

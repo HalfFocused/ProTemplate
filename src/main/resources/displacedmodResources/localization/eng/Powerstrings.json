@@ -30,8 +30,8 @@
   "${ModID}:BeforeYourEyesPower": {
     "NAME": "Before Your Eyes",
     "DESCRIPTIONS": [
-      "Whenever a card is #yExhausted due to being #yEthereal, add a random card to your hand.",
-      "Whenever a card is #yExhausted due to being #yEthereal, add #b",
+      "Whenever an #yEthereal card is #yExhausted, add a random card to your hand.",
+      "Whenever an #yEthereal card is #yExhausted, add #b",
       " random cards to your hand."
     ]
   },
@@ -66,7 +66,7 @@
       "You've played #yMoment #yOf #yTruth once."
     ]
   },
-  "${ModID}:UnfamiliarMemory": {
+  "${ModID}:UnfamiliarMemoryPower": {
     "NAME": "Unfamiliar Memory",
     "DESCRIPTIONS": [
       "You've played #yUnfamiliar #yMemory once."
@@ -135,6 +135,14 @@
       "At the start of your turn, shuffle a #yVision into your draw pile.",
       "At the start of your turn, shuffle #b",
       " #yVisions into your draw pile."
+    ]
+  },
+  "${ModID}:FreeEtherealPower": {
+    "NAME": "Free Ethereal Power",
+    "DESCRIPTIONS": [
+      "The next #yEthereal card you play costs #b0.",
+      "The next #b",
+      " #yEthereal cards you play cost #b0."
     ]
   }
 }

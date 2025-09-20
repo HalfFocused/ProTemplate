@@ -84,7 +84,7 @@
   },
   "${ModID}:BeforeYourEyes": {
     "NAME": "Before Your Eyes",
-    "DESCRIPTION": "Whenever a card is Exhausted due to being Ethereal, add a random card to your hand.",
+    "DESCRIPTION": "Whenever an Ethereal card is Exhausted, add a random card to your hand.",
     "FLAVOR": "Countless possibilities appear before you.",
     "ENHANCED_FLAVOR": "None of them could have saved her. Not that time."
   },
@@ -146,9 +146,9 @@
     "FLAVOR": "To cosmic forms from tangent planes- We end as we began.",
     "ENHANCED_FLAVOR": "As you lost consciousness, you found yourself not caring. The loop will restart anyway."
   },
-  "${ModID}:Decimate": {
-    "NAME": "Decimate",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage.",
+  "${ModID}:ViciousCycle": {
+    "NAME": "Vicious Cycle",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever a card is Exhausted, ${ModID}:Flashback.",
     "FLAVOR": "With their final breath they look to the moon, and are gone.",
     "ENHANCED_FLAVOR": "She always liked the moon. You're glad she took it with her."
   },
@@ -198,7 +198,7 @@
   },
   "${ModID}:DoubleDown": {
     "NAME": "Double Down",
-    "DESCRIPTION": "Deal !D! damage for each debuff on the enemy."
+    "DESCRIPTION": "Deal !D! damage. NL Repeat for each debuff on the enemy."
   },
   "${ModID}:TimeLoop": {
     "NAME": "Time Loop",
@@ -249,7 +249,7 @@
   },
   "${ModID}:Manifest": {
     "NAME": "Manifest",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{@@}{!M!|>1=s|0=s}. NL {!M!|>1=They cost|@=It costs} 0 this turn."
+    "DESCRIPTION": "Deal !D! damage. NL The next Ethereal card you play costs 0."
   },
   "${ModID}:ClingingOn": {
     "NAME": "Clinging On",

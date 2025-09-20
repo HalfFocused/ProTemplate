@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class CripplePower extends AbstractEasyPower implements NonStackablePower {
+public class CripplePower extends AbstractEasyPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = ModFile.makeID("CripplePower");
@@ -22,7 +22,7 @@ public class CripplePower extends AbstractEasyPower implements NonStackablePower
     boolean createUpgraded;
 
     public CripplePower(AbstractCreature owner, int amount) {
-        super(POWER_ID, NAME, PowerType.BUFF, true, owner, amount);
+        super(POWER_ID, NAME, PowerType.BUFF, false, owner, amount);
         updateDescription();
     }
 

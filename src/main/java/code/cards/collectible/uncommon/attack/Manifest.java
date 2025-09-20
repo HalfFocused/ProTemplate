@@ -5,7 +5,9 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
+import code.powers.FreeEtherealPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,24 +19,15 @@ public class Manifest extends AbstractEasyCard {
 
     public Manifest() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 1;
+        baseDamage = damage = 9;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        this.addToBot(new DrawCardAction(magicNumber, new AbstractGameAction() {
-            @Override
-            public void update() {
-                for(AbstractCard c : DrawCardAction.drawnCards){
-                    c.setCostForTurn(0);
-                }
-                isDone = true;
-            }
-        }));
+        addToBot(new ApplyPowerAction(p, p, new FreeEtherealPower(p, 1)));
     }
 
     public void upp() {
-        upgradeDamage(4);
+        upgradeDamage(3);
     }
 }
