@@ -223,6 +223,8 @@ public class ModFile implements
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        CardUtil.theSecondDreamActivatedThisTurn = false;
+        CardUtil.theSecondDreamActivatedLastTurn = false;
         CardUtil.cardsPlayedLastTurn.clear(); //Even though Recurring Dream working across combats was cool
     }
 
