@@ -21,7 +21,7 @@ public class Impulse extends AbstractEasyCard {
 
     public Impulse() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
         exhaust = true;
     }
 

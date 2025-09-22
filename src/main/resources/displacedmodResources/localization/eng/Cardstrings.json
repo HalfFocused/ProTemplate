@@ -50,7 +50,7 @@
     "NAME": "Time Slow",
     "DESCRIPTION": "You cannot take damage, lose HP, or gain debuffs this turn.",
     "FLAVOR": "\"I wish this moment could last forever.\"",
-    "ENHANCED_FLAVOR": "She smiled, and looked up at the stars. Things were so nice, then."
+    "ENHANCED_FLAVOR": "III. She smiled, and looked up at the stars. \"I wish this moment could last forever.\""
   },
   "${ModID}:HazyStrike": {
     "NAME": "Hazy Strike",
@@ -71,12 +71,12 @@
   "${ModID}:InevitableForm": {
     "NAME": "Inevitable Form",
     "DESCRIPTION": "At the start of your turn, play the top {@@}{!M!|>1=!M! cards|@=card} of your draw pile and Exhaust {!M!|>1=them|@=it}.",
-    "FLAVOR": "You're running out of time...",
-    "ENHANCED_FLAVOR": "You can always try again. You just need to keep wanting to."
+    "FLAVOR": "You were always just out of reach, or mere moments late.",
+    "ENHANCED_FLAVOR": "XIV. You looped over and over. Yet you could never stop it. You were always just out of reach, or mere moments late."
   },
-  "${ModID}:Deluge": {
-    "NAME": "Deluge",
-    "DESCRIPTION": "Draw !M! cards. NL Shuffle 2 Dazed into your draw pile."
+  "${ModID}:SuddenClarity": {
+    "NAME": "Sudden Clarity",
+    "DESCRIPTION": "Draw !M! cards. NL Ethereal cards drawn cost 0 this turn."
   },
   "${ModID}:FleetingFortitude": {
     "NAME": "Fleeting Fortitude",
@@ -85,8 +85,8 @@
   "${ModID}:BeforeYourEyes": {
     "NAME": "Before Your Eyes",
     "DESCRIPTION": "Whenever an Ethereal card is Exhausted, add a random card to your hand.",
-    "FLAVOR": "Countless possibilities appear before you.",
-    "ENHANCED_FLAVOR": "None of them could have saved her. Not that time."
+    "FLAVOR": "But again, you were too late.",
+    "ENHANCED_FLAVOR": "XII. But again, you were too late. She fell to the ground right before your eyes."
   },
   "${ModID}:Demoralize": {
     "NAME": "Demoralize",
@@ -115,8 +115,8 @@
     "NAME": "Reverie",
     "DESCRIPTION": "At the start of your turn, draw a card, then shuffle a Dazed into your draw pile.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw a card, then shuffle a Dazed into your draw pile.",
-    "FLAVOR": "Her eyes were two half-moons.",
-    "ENHANCED_FLAVOR": "The moon was the last thing she saw, its bright form penetrating the rain."
+    "FLAVOR": "Two half-moons. It was beautiful.",
+    "ENHANCED_FLAVOR": "VII. Her eyes were two half-moons. It was the last thing she saw, it's bright form penetrating the rain."
   },
   "${ModID}:Predict": {
     "NAME": "Predict",
@@ -129,8 +129,8 @@
   "${ModID}:Lacerate": {
     "NAME": "Lacerate",
     "DESCRIPTION": "Deal !D! damage. NL Increase each of the enemy's turn-based debuffs by !M!.",
-    "FLAVOR": "I wasn't born to fight.",
-    "ENHANCED_FLAVOR": "I wasn't born to fight. Maybe just a little bit. Enough to make me sick of it."
+    "FLAVOR": "You see someone sprawled out across the ground.",
+    "ENHANCED_FLAVOR": "V. As you returned, you saw her sprawled out upon the ground, her assailants face obscured by a hood."
   },
   "${ModID}:LetGo": {
     "NAME": "Let Go",
@@ -143,14 +143,14 @@
   "${ModID}:Apathy": {
     "NAME": "Apathy",
     "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: ALL enemies lose !M! Strength.",
-    "FLAVOR": "To cosmic forms from tangent planes- We end as we began.",
-    "ENHANCED_FLAVOR": "As you lost consciousness, you found yourself not caring. The loop will restart anyway."
+    "FLAVOR": "You can just try again, right?",
+    "ENHANCED_FLAVOR": "XV. You were filled with a creeping feeling of apathy. You can just try again, right?"
   },
   "${ModID}:ViciousCycle": {
     "NAME": "Vicious Cycle",
     "DESCRIPTION": "Deal !D! damage. NL Whenever a card is Exhausted, ${ModID}:Flashback.",
-    "FLAVOR": "With their final breath they look to the moon, and are gone.",
-    "ENHANCED_FLAVOR": "She always liked the moon. You're glad she took it with her."
+    "FLAVOR": "You knew it was wrong, dangerous.",
+    "ENHANCED_FLAVOR": "IX. You can fix this. You can go back. You knew it was wrong, dangerous. You were messing with forces beyond your means."
   },
   "${ModID}:PhaseShift": {
     "NAME": "Phase Shift",
@@ -182,7 +182,7 @@
     "NAME": "Moment Of Truth",
     "DESCRIPTION": "Every second time you play a *Moment *Of *Truth, reduce the cost of all cards in your hand to 0 this turn.",
     "FLAVOR": "This time, things will be different.",
-    "ENHANCED_FLAVOR": "The rain pelted your shoulders as the moment approached. This time, things will be different."
+    "ENHANCED_FLAVOR": "You arrived at your destination, and glanced at your astronomical clock. It hadn't happened yet. This time, things will be different."
   },
   "${ModID}:Cripple": {
     "NAME": "Cripple",
@@ -211,7 +211,7 @@
       "It's ~calm...~"
     ],
     "FLAVOR": "Again?",
-    "ENHANCED_FLAVOR": "Again? Of course you'd do it again."
+    "ENHANCED_FLAVOR": "XVIII. Again? The memories of each loop weigh on you like an impossible burden. Of course you'd do it again."
   },
   "${ModID}:EtchedInBlood": {
     "NAME": "Etched In Blood",
@@ -237,7 +237,7 @@
     "NAME": "Overwhelm",
     "DESCRIPTION": "Deal !D! damage. NL Double this card's damage this combat.",
     "FLAVOR": "Each time hurts more than the last.",
-    "ENHANCED_FLAVOR": "The hooded figure grabs their chest before falling to the ground. You weren't fast enough."
+    "ENHANCED_FLAVOR": "XVII. You wake up in an unfamiliar place. Your transgressions on time had not gone unnoticed."
   },
   "${ModID}:MakeExample": {
     "NAME": "Make Example",
@@ -258,8 +258,8 @@
   "${ModID}:Her": {
     "NAME": "Her",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL ${ModID}:Forget: Shuffle a Void into your draw pile.",
-    "FLAVOR": "What are you fighting for? Why won't you let yourself stop?",
-    "ENHANCED_FLAVOR": "\"Don't go back for me.\" You've never been a good listener."
+    "FLAVOR": "How could you ever forget?",
+    "ENHANCED_FLAVOR": "II. You danced together, in union under the stars. How could you ever forget?"
   },
   "${ModID}:FutureSight": {
     "NAME": "Future Sight",
@@ -285,7 +285,7 @@
     "NAME": "Internal Bleeding",
     "DESCRIPTION": "Whenever you attack an enemy, it loses !M! HP if it is Weak. Repeat for Vulnerable and ${ModID}:Foretold.",
     "FLAVOR": "\"Can you... hear me...?\"",
-    "ENHANCED_FLAVOR": "\"Please! You can hear me! Right? Please...\""
+    "ENHANCED_FLAVOR": "VI. \"Please! You can hear me! Right? Please...\""
   },
   "${ModID}:CarefulScheme": {
     "NAME": "Careful Scheme",
@@ -307,13 +307,13 @@
     "NAME": "Monsoon",
     "DESCRIPTION": "Exhaust your hand. NL Draw that many cards. NL Exhaust.",
     "FLAVOR": "It should've been me.",
-    "ENHANCED_FLAVOR": "As the rain washed her blood away, a single thought filled your head: \"It should've been me.\""
+    "ENHANCED_FLAVOR": "VIII. As the rain washed her blood away, a single thought filled your head: \"It should've been me.\""
   },
   "${ModID}:TheSecondDream": {
     "NAME": "The Second Dream",
     "DESCRIPTION": "If you've played 3 or more Ethereal cards this turn, take an extra turn after this one. NL Exhaust.",
     "FLAVOR": "During the dream, you remembered everything clearly.",
-    "ENHANCED_FLAVOR": "Every loop numbed your memory further. So many experiences. But during the dream, you were back home."
+    "ENHANCED_FLAVOR": "I. Every loop numbed your memory further. So many experiences. But during the dream, you remembered everything clearly."
   },
   "${ModID}:Lucidity": {
     "NAME": "Lucidity",
@@ -330,8 +330,8 @@
   "${ModID}:TheStarsAligned": {
     "NAME": "The Stars Aligned",
     "DESCRIPTION": "Deal !D! damage. NL Play {@@}{!M!|>1=up to !M!|@=a} random *Vision{!M!|>1=s|0=s} from your draw pile.",
-    "FLAVOR": "A glimpse at the stars fills you with comfort.",
-    "ENHANCED_FLAVOR": "Everytime I see a star, I think that after all, you're not that far."
+    "FLAVOR": "\"Don't come back for me...\"",
+    "ENHANCED_FLAVOR": "XIII. She looks at you knowingly, and sputters: \"Don't come back for me...\""
   },
   "${ModID}:Gaze": {
     "NAME": "Gaze",
@@ -361,8 +361,8 @@
       " time.)",
       " times.)"
     ],
-    "FLAVOR": "You come to your senses with blood on your clothes, and bodies behind you.",
-    "ENHANCED_FLAVOR": "As you came to your senses, you realized whoever you tore apart wasn't them."
+    "FLAVOR": "Red.",
+    "ENHANCED_FLAVOR": "XI. It was red. When you came back to, the figure was ravaged. "
   },
   "${ModID}:Prescience": {
     "NAME": "Prescience",
@@ -375,7 +375,7 @@
   "${ModID}:Align": {
     "NAME": "Align",
     "DESCRIPTION": "Put !M! card{@@}{!M!|>1=s|0=s} from your draw pile into your hand. Add Dazed where {!M!|1=it was|@=they were}. NL Exhaust.",
-    "FLAVOR": "We stopped, because it started to rain.",
-    "ENHANCED_FLAVOR": "You frowned, and she laughed. \"There's always next time.\""
+    "FLAVOR": "An interruption. Something needed your attention?",
+    "ENHANCED_FLAVOR": "IV. An interruption. Something needed your attention. Your expertise. You promised to be right back."
   }
 }

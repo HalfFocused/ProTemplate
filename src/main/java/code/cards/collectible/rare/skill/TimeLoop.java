@@ -5,6 +5,7 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
+import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -52,7 +53,7 @@ public class TimeLoop extends AbstractEasyCard {
             return false;
         } else {
             if(AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
-                if(AbstractDungeon.player instanceof TheDisplaced){
+                if(AbstractDungeon.player instanceof TheDisplaced && !CardUtil.inTheSecondDream()){
                     this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[MathUtils.random(1, cardStrings.EXTENDED_DESCRIPTION.length - 1)];
                 }else{
                     this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[1];
