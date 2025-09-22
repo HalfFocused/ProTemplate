@@ -47,7 +47,7 @@ public class AbstractCardPatches {
                     }
                 }
                 if(!hasUUID) {
-                    if (AbstractDungeon.player instanceof TheDisplaced) {
+                    if (AbstractDungeon.player instanceof TheDisplaced && !CardUtil.inTheSecondDream()) {
                         __instance.cantUseMessage = forsakeCardStrings.EXTENDED_DESCRIPTION[MathUtils.random(0, forsakeCardStrings.EXTENDED_DESCRIPTION.length - 1)];
                     } else {
                         __instance.cantUseMessage = forsakeCardStrings.EXTENDED_DESCRIPTION[0];
