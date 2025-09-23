@@ -12,10 +12,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ForetoldPower extends AbstractEasyPower {
     public AbstractCreature source;
 
+    boolean hitDuringAttackUse = false;
     boolean usedThisTurn = false;
 
     public static final String POWER_ID = ModFile.makeID("ForetoldPower");
@@ -41,6 +43,9 @@ public class ForetoldPower extends AbstractEasyPower {
         }
     }
 
+    /*
+    Double the incoming damage if Foretold hasn't been used this turn.
+     */
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL && !usedThisTurn) {
             return damage * 2.0f;
@@ -48,13 +53,47 @@ public class ForetoldPower extends AbstractEasyPower {
         return damage;
     }
 
-    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+    /*
+    Some attacks calculate their damage more than once, which results in more than one onAttacked() call.
+    So, we don't disable Foretold in this step, just mark it to be disabled later.
+     */
+    public int onAttacked(DamageInfo info, int damageAmount) {
         if(info.type == DamageInfo.DamageType.NORMAL && !usedThisTurn){
+            hitDuringAttackUse = true;
+        }
+        return damageAmount;
+    }
+
+    /*
+    After a card is finished resolving, if we've marked Foretold to be disabled, disable it!
+     */
+    public void onAfterUseCard(AbstractCard card, UseCardAction action){
+        if(hitDuringAttackUse){
+            hitDuringAttackUse = false;
             flash();
             usedThisTurn = true;
             setTexture(true);
         }
-        return damageAmount;
+    }
+
+    /*
+    Sometimes one attack queues up another card play (cough cough The Stars Aligned).
+    In this case, The Stars Aligned will use Foretold, but the vision it plays will use it
+    as well, since The Stars Aligned doesn't finish resolving. So, when we queue up a card, if we haven't
+    finished resolving an attack that used foretold, spend the Foretold immediately.
+
+    Hypothetically this would not work on some horribly designed attack that is some twisted fusion of
+    Reckless Abandon and The Stars Aligned that plays an attack between random hits... but nobody would ever
+    make such a thing, right? :P
+     */
+
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+        if(hitDuringAttackUse){
+            hitDuringAttackUse = false;
+            flash();
+            usedThisTurn = true;
+            setTexture(true);
+        }
     }
 
 

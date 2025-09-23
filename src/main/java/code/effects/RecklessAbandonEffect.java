@@ -5,6 +5,7 @@
 
 package code.effects;
 
+import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -26,12 +27,12 @@ public class RecklessAbandonEffect extends AbstractGameEffect {
     private int count = 5;
 
     public RecklessAbandonEffect(float x, float y, Color setColor) {
-        this.x = x;// 20
-        this.y = y;// 21
-        this.duration = 0.0F;// 22
-        this.color = setColor;// 23
-        CardCrawlGame.screenShake.shake(ShakeIntensity.MED, ShakeDur.SHORT, false);// 24
-    }// 25
+        this.x = x;
+        this.y = y;
+        this.duration = 0.0F;
+        this.color = setColor;
+        CardCrawlGame.screenShake.shake(ShakeIntensity.MED, ShakeDur.MED, false);
+    }
 
     public void update() {
         this.duration -= Gdx.graphics.getDeltaTime();
@@ -40,7 +41,7 @@ public class RecklessAbandonEffect extends AbstractGameEffect {
                 AbstractDungeon.effectsQueue.add(new AnimatedSlashEffect(this.x + MathUtils.random(-100.0F, 100.0F) * Settings.scale, this.y + MathUtils.random(-100.0F, 100.0F) * Settings.scale, 0.0F, 0.0F, MathUtils.random(360.0F), MathUtils.random(2.5F, 4.0F), this.color, this.color));
             }
             if (MathUtils.randomBoolean()) {
-                AbstractDungeon.effectsQueue.add(new FlashAtkImgEffect(this.x + MathUtils.random(-150.0F, 150.0F) * Settings.scale, this.y + MathUtils.random(-150.0F, 150.0F) * Settings.scale, randomSlash(), true));
+                AbstractDungeon.effectsQueue.add(new FlashAtkImgEffect(this.x + MathUtils.random(-150.0F, 150.0F) * Settings.scale, this.y + MathUtils.random(-150.0F, 150.0F) * Settings.scale, CardUtil.randomSlash(), true));
             }
 
             this.duration = MathUtils.random(0.1F, 0.15F);
@@ -57,17 +58,5 @@ public class RecklessAbandonEffect extends AbstractGameEffect {
     }
 
     public void dispose() {
-    }
-
-    private AbstractGameAction.AttackEffect randomSlash(){
-        switch (MathUtils.random(3)){
-            case 1:
-                return AbstractGameAction.AttackEffect.SLASH_HEAVY;
-            case 2:
-                return AbstractGameAction.AttackEffect.BLUNT_HEAVY;
-            case 3:
-                return AbstractGameAction.AttackEffect.SMASH;
-        }
-        return AbstractGameAction.AttackEffect.SLASH_HEAVY;
     }
 }

@@ -5,7 +5,6 @@ import basemod.helpers.CardModifierManager;
 import code.effects.MonsoonEffect;
 import code.powers.ExtraTurnPower;
 import code.util.charUtil.CardUtil;
-import code.util.charUtil.mods.SparkleModifier;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

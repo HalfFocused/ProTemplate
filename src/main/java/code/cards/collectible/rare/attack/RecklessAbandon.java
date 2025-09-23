@@ -32,7 +32,7 @@ public class RecklessAbandon extends AbstractEasyCard {
                 public void update() {
                     AbstractMonster hit = AbstractDungeon.getRandomMonster();
                     calculateCardDamage(hit);
-                    dmgTop(hit, randomSlash());
+                    dmgTop(hit, CardUtil.randomSlash());
                     this.addToTop(new VFXAction(new RecklessAbandonEffect(hit.hb.cX, hit.hb.cY, Color.RED.cpy())));
                     this.addToTop(new SFXAction("ATTACK_HEAVY", MathUtils.random(0.2F, 0.5F)));
                     isDone = true;
@@ -62,17 +62,5 @@ public class RecklessAbandon extends AbstractEasyCard {
             this.rawDescription = this.rawDescription + cardStrings.EXTENDED_DESCRIPTION[2];
         }
         this.initializeDescription();
-    }
-
-    private AbstractGameAction.AttackEffect randomSlash(){
-        switch (MathUtils.random(3)){
-            case 1:
-                return AbstractGameAction.AttackEffect.SLASH_HEAVY;
-            case 2:
-                return AbstractGameAction.AttackEffect.BLUNT_HEAVY;
-            case 3:
-                return AbstractGameAction.AttackEffect.SMASH;
-        }
-        return AbstractGameAction.AttackEffect.SLASH_HEAVY;
     }
 }

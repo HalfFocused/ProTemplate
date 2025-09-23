@@ -1,15 +1,11 @@
 package code.patches;
 
-import basemod.helpers.CardModifierManager;
-import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.AlternateCardCosts;
 import code.TheDisplaced;
 import code.cards.collectible.uncommon.skill.Forsake;
 import code.cards.tokens.Vision;
 import code.powers.ForsakePower;
 import code.powers.FreeEtherealPower;
 import code.util.charUtil.CardUtil;
-import code.util.charUtil.mods.SparkleModifier;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -23,12 +19,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.ShineSparkleEffect;
-import com.megacrit.cardcrawl.vfx.combat.LightFlareParticleEffect;
 
 
 public class AbstractCardPatches {
 
-    private static CardStrings forsakeCardStrings = CardCrawlGame.languagePack.getCardStrings(Forsake.ID);
+    private static final CardStrings forsakeCardStrings = CardCrawlGame.languagePack.getCardStrings(Forsake.ID);
 
 
     @SpirePatch(
@@ -84,15 +79,6 @@ public class AbstractCardPatches {
     static class CardRenderPatch{
         public static void Postfix(AbstractCard __instance)
         {
-            if(CardModifierManager.hasModifier(__instance, SparkleModifier.ID)){
-                if(MathUtils.random(1,6) == 1) {
-                    LightFlareParticleEffect effect = new LightFlareParticleEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height), Color.WHITE);
-                    effect.renderBehind = false;
-                    effect.duration *= 0.65f;
-                    AbstractDungeon.topLevelEffects.add(effect);
-                }
-            }
-
             if(CardUtil.inTheSecondDream()){
                 if((__instance.rarity == AbstractCard.CardRarity.RARE && __instance.color == TheDisplaced.Enums.DISPLACED_COLOR) || __instance instanceof Vision){
                     if(MathUtils.random(1,6) == 1) {
