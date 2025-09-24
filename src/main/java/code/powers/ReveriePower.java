@@ -1,7 +1,11 @@
 package code.powers;
 
+import basemod.helpers.CardModifierManager;
 import code.ModFile;
+import code.util.charUtil.mods.EtherealModifier;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -23,13 +27,20 @@ public class ReveriePower extends AbstractEasyPower {
     @Override
     public void atStartOfTurnPostDraw() {
         this.flash();
-        this.addToBot(new DrawCardAction(this.owner, this.amount));
-        this.addToBot(new MakeTempCardInDrawPileAction(new Dazed(), amount, true, true));
+        this.addToBot(new DrawCardAction(this.amount, new AbstractGameAction() {
+            @Override
+            public void update() {
+                for(AbstractCard c : DrawCardAction.drawnCards){
+                    CardModifierManager.addModifier(c, new EtherealModifier());
+                }
+                isDone = true;
+            }
+        }));
     }
 
     @Override
     public void updateDescription() {
-        description = (amount == 1) ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + amount + DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
+        description = (amount == 1) ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
 

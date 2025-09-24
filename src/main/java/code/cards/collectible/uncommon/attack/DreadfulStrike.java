@@ -14,13 +14,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 
-public class Dread extends AbstractEasyCard {
-    public final static String ID = makeID(Dread.class.getSimpleName());
+public class DreadfulStrike extends AbstractEasyCard {
+    public final static String ID = makeID(DreadfulStrike.class.getSimpleName());
     // intellij stuff attack, enemy, common, 14, 4, , , , 
 
-    public Dread() {
+    public DreadfulStrike() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = damage = 14;
+        tags.add(CardTags.STRIKE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

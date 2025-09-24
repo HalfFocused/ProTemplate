@@ -10,13 +10,14 @@ import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import static code.ModFile.makeID;
 
-public class ShootingStar extends AbstractEasyCard {
-    public final static String ID = makeID(ShootingStar.class.getSimpleName());
+public class SlidingStrike extends AbstractEasyCard {
+    public final static String ID = makeID(SlidingStrike.class.getSimpleName());
 
-    public ShootingStar() {
+    public SlidingStrike() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 1;
+        tags.add(CardTags.STRIKE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -1,23 +1,23 @@
 package code.powers;
 
 import code.ModFile;
-import code.actions.AllEnemiesLoseHPAction;
-import code.util.charUtil.EtherealExhaustHook;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
-public class FleetingFortitudePower extends AbstractEasyPower {
+public class ResentPower extends AbstractEasyPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ModFile.makeID("FleetingFortitudePower");
+    public static final String POWER_ID = ModFile.makeID("ResentPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public FleetingFortitudePower(AbstractCreature owner, int amount) {
+    public ResentPower(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.BUFF, false, owner, amount);
     }
 
@@ -29,10 +29,8 @@ public class FleetingFortitudePower extends AbstractEasyPower {
 
 
     @Override
-    public void onCardDraw(AbstractCard card) {
-        if(card.isEthereal){
-            this.flash();
-            this.addToTop(new GainBlockAction(owner,owner,amount));
-        }
+    public void onExhaust(AbstractCard card) {
+        this.flash();
+        this.addToTop(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
     }
 }

@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DejaVu extends AbstractEasyCard {
-    public final static String ID = makeID(DejaVu.class.getSimpleName());
+public class Discern extends AbstractEasyCard {
+    public final static String ID = makeID(Discern.class.getSimpleName());
 
-    public DejaVu() {
+    public Discern() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.cardsToPreview = new Vision();
         baseMagicNumber = magicNumber = 1;

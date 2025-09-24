@@ -11,11 +11,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class Accumulate extends AbstractEasyCard {
-    public final static String ID = makeID(Accumulate.class.getSimpleName());
+public class WideOpen extends AbstractEasyCard {
+    public final static String ID = makeID(WideOpen.class.getSimpleName());
     // intellij stuff attack, enemy, common, 8, , , , 2, 1
 
-    public Accumulate() {
+    public WideOpen() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 2;

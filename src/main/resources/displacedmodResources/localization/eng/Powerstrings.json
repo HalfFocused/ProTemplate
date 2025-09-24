@@ -5,11 +5,11 @@
       "Takes double damage when attacked, once each turn. Decreases by #b1 at end of turn."
     ]
   },
-  "${ModID}:EmptinessPower": {
-    "NAME": "Emptiness",
+  "${ModID}:ResentPower": {
+    "NAME": "Resent",
     "DESCRIPTIONS": [
-      "Whenever a card is #yExhausted, ALL enemies lose #b",
-      " HP."
+      "Whenever a card is #yExhausted, deal #b",
+      " damage to ALL enemies."
     ]
   },
   "${ModID}:TimeSlowPower": {
@@ -20,8 +20,8 @@
     " turns."
     ]
   },
-  "${ModID}:FleetingFortitudePower": {
-    "NAME": "Fleeting Fortitude",
+  "${ModID}:MotivationPower": {
+    "NAME": "Motivation",
     "DESCRIPTIONS": [
       "Whenever you draw an #yEthereal card, gain #b",
       " #yBlock."
@@ -38,10 +38,9 @@
   "${ModID}:ReveriePower": {
     "NAME": "Reverie",
     "DESCRIPTIONS": [
-      "At the start of your turn, draw a card, then shuffle a #yDazed into your draw pile.",
+      "At the start of your turn, draw #b1 card. It becomes #yEthereal.",
       "At the start of your turn, draw #b",
-      " cards, then shuffle #b",
-      " #yDazed into your draw pile."
+      " cards. They become #yEthereal."
     ]
   },
   "${ModID}:InevitableFormPower": {
@@ -72,8 +71,8 @@
       "You've played #yUnfamiliar #yMemory once."
     ]
   },
-  "${ModID}:CripplePower": {
-    "NAME": "Cripple",
+  "${ModID}:LanguishPower": {
+    "NAME": "Languish",
     "DESCRIPTIONS": [
       "Whenever you apply a debuff to an enemy, gain #b",
       " #yBlock."
