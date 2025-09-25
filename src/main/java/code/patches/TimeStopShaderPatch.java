@@ -9,58 +9,91 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import javassist.CannotCompileException;
+import javassist.CtBehavior;
+
+import java.lang.reflect.Field;
 
 import static basemod.BaseMod.logger;
 import static code.ModFile.makeShaderPath;
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.rs;
 
+/*
+Shoutout to the Gravewood Biome from spiomes for making a desaturation shader
+cause i don't know what 75% of this does
+ */
 public class TimeStopShaderPatch {
-    public static ShaderProgram desaturationShader;
+    public static ShaderProgram timestopShader;
     private static final FrameBuffer fbo;
-
+    private static boolean skipPlayerRender = false;
     @SpirePatch(clz = AbstractDungeon.class, method = "render")
     public static class RenderDesaturationInCombat {
-        @SpirePrefixPatch
-        public static void addShader(AbstractDungeon instance, SpriteBatch sb) {
+        private static Field animationTimerField;
+
+        static {
+            try {
+                animationTimerField = AbstractCreature.class.getDeclaredField("animationTimer");
+                animationTimerField.setAccessible(true);
+            } catch (NoSuchFieldException e) {
+
+            }
+        }
+
+        @SpireInsertPatch(locator = BeforeBackgroundRender.class)
+        public static void startShader(AbstractDungeon instance, SpriteBatch sb) {
             if (rs == AbstractDungeon.RenderScene.NORMAL && CardUtil.isTimeStopped()) {
+                skipPlayerRender = true;
                 StartFbo(sb);
             }
         }
 
-        @SpireInsertPatch(rloc = 26)
-        public static void removeShader(AbstractDungeon instance, SpriteBatch sb) {
+        @SpireInsertPatch(locator = AfterRoomRender.class)
+        public static void applyShaderButKeepPlayer(AbstractDungeon instance, SpriteBatch sb) {
             if (rs == AbstractDungeon.RenderScene.NORMAL && CardUtil.isTimeStopped()) {
+                skipPlayerRender = false;
                 StopFbo(sb);
+                if (player != null) {
+                    player.render(sb);
+                }
+            }
+        }
+        private static class BeforeBackgroundRender extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+                Matcher finalMatcher = new Matcher.FieldAccessMatcher("com.megacrit.cardcrawl.dungeons.AbstractDungeon", "rs");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+        private static class BeforeRoomRender extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher("com.megacrit.cardcrawl.rooms.AbstractRoom", "render");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+        private static class AfterRoomRender extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher("com.megacrit.cardcrawl.rooms.AbstractRoom", "render");
+                int[] lines = LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+                return new int[]{lines[0] + 1};
             }
         }
     }
-    /*
-
 
     @SpirePatch(clz = AbstractPlayer.class, method = "render")
-    public static class AvoidShadingPlayer {
+    public static class SkipPlayerDuringShaderPass {
         @SpirePrefixPatch
-        public static void removeShader(AbstractPlayer instance, SpriteBatch sb) {
-            if (rs == AbstractDungeon.RenderScene.NORMAL && CardUtil.isTimeStopped()) {
-                StopFbo(sb);
+        public static SpireReturn<Void> skipRender(AbstractPlayer instance, SpriteBatch sb) {
+            if (skipPlayerRender) {
+                return SpireReturn.Return();
             }
-        }
-
-        @SpirePostfixPatch
-        public static void addShader(AbstractPlayer instance, SpriteBatch sb) {
-            if (rs == AbstractDungeon.RenderScene.NORMAL && CardUtil.isTimeStopped()) {
-                StartFbo(sb);
-            }
+            return SpireReturn.Continue();
         }
     }
-
-     */
 
     public static void StartFbo(SpriteBatch sb) {
         sb.flush();
@@ -68,13 +101,12 @@ public class TimeStopShaderPatch {
         Gdx.gl.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
     }
-
     public static void StopFbo(SpriteBatch sb) {
         sb.flush();
         fbo.end();
         TextureRegion region = new TextureRegion(fbo.getColorBufferTexture());
         region.flip(false, true);
-        sb.setShader(desaturationShader);
+        sb.setShader(timestopShader);
         sb.setColor(Color.WHITE);
         sb.setBlendFunction(GL20.GL_ONE, GL20.GL_ZERO);
         sb.draw(region, 0f, 0f);
@@ -82,14 +114,13 @@ public class TimeStopShaderPatch {
         sb.setShader(null);
         sb.flush();
     }
-
     static {
-        desaturationShader = new ShaderProgram(
+        timestopShader = new ShaderProgram(
                 Gdx.files.internal(makeShaderPath("vertex.vs")).readString(),
                 Gdx.files.internal(makeShaderPath("fragment.fs")).readString()
         );
-        if (!desaturationShader.isCompiled()) {
-            logger.warn("Desaturation shader: " + desaturationShader.getLog());
+        if (!timestopShader.isCompiled()) {
+            logger.warn("Timestop shader not compiled: " + timestopShader.getLog());
         }
         fbo = new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false, false);
     }

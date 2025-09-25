@@ -247,7 +247,7 @@ public abstract class AbstractEasyCard extends CustomCard {
 
         if(FlavorText.CardStringsFlavorField.flavor.get(cardStrings) != null){
             if(CardStringsPatch.CardStringsFlavorField.enhancedFlavor.get(cardStrings) != null){
-                if(CardUtil.inTheSecondDream()){
+                if(CardUtil.isTimeStopped()){
                     FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.GOLD.cpy());
                     FlavorText.AbstractCardFlavorFields.flavor.set(this, CardStringsPatch.CardStringsFlavorField.enhancedFlavor.get(cardStrings));
                 }else{

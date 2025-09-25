@@ -78,10 +78,6 @@ public class CardUtil {
         return inHand;
     }
 
-    public static boolean inTheSecondDream(){
-        return CardCrawlGame.isInARun() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && theSecondDreamActivatedLastTurn;
-    }
-
     public static boolean isTimeStopped(){
         return CardCrawlGame.isInARun() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && (theSecondDreamActivatedThisTurn || (theSecondDreamActivatedLastTurn && !AbstractDungeon.actionManager.turnHasEnded));
     }

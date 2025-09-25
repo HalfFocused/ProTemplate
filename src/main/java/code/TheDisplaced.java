@@ -81,10 +81,10 @@ public class TheDisplaced extends CustomPlayer {
         for (int i = 0; i < 5; i++) {
             retVal.add(Strike.ID);
         }
-        retVal.add(Gaze.ID);
         for (int i = 0; i < 5; i++) {
             retVal.add(Defend.ID);
         }
+        retVal.add(Gaze.ID);
         retVal.add(Backtrack.ID);
         return retVal;
     }
@@ -97,7 +97,7 @@ public class TheDisplaced extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("UNLOCK_PING", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.playA("POWER_TIME_WARP", MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false);
     }

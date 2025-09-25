@@ -37,7 +37,7 @@ public class DreadfulStrike extends AbstractEasyCard {
             return false;
         } else {
             if(!CardUtil.hasEtherealCardInHand(p)) {
-                if(AbstractDungeon.player instanceof TheDisplaced && !CardUtil.inTheSecondDream()){
+                if(AbstractDungeon.player instanceof TheDisplaced && !CardUtil.isTimeStopped()){
                     this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[MathUtils.random(0, cardStrings.EXTENDED_DESCRIPTION.length - 1)];
                 }else{
                     this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];

@@ -42,7 +42,7 @@ public class AbstractCardPatches {
                     }
                 }
                 if(!hasUUID) {
-                    if (AbstractDungeon.player instanceof TheDisplaced && !CardUtil.inTheSecondDream()) {
+                    if (AbstractDungeon.player instanceof TheDisplaced && !CardUtil.isTimeStopped()) {
                         __instance.cantUseMessage = forsakeCardStrings.EXTENDED_DESCRIPTION[MathUtils.random(0, forsakeCardStrings.EXTENDED_DESCRIPTION.length - 1)];
                     } else {
                         __instance.cantUseMessage = forsakeCardStrings.EXTENDED_DESCRIPTION[0];
@@ -79,7 +79,7 @@ public class AbstractCardPatches {
     static class CardRenderPatch{
         public static void Postfix(AbstractCard __instance)
         {
-            if(CardUtil.inTheSecondDream()){
+            if(CardUtil.isTimeStopped()){
                 if((__instance.rarity == AbstractCard.CardRarity.RARE && __instance.color == TheDisplaced.Enums.DISPLACED_COLOR) || __instance instanceof Vision){
                     if(MathUtils.random(1,6) == 1) {
                         AbstractGameEffect effect = new ShineSparkleEffect(__instance.hb.x + MathUtils.random(0, __instance.hb.width), __instance.hb.y + MathUtils.random(0, __instance.hb.height));

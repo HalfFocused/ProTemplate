@@ -6,6 +6,7 @@ import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import code.cards.collectible.rare.attack.ViciousCycle;
+import code.powers.ForetoldPower;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.ForgetCard;
 import com.badlogic.gdx.Gdx;
@@ -25,6 +26,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.TimeEater;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -219,6 +221,17 @@ public class ModFile implements
 
         CardUtil.theSecondDreamActivatedLastTurn = CardUtil.theSecondDreamActivatedThisTurn;
         CardUtil.theSecondDreamActivatedThisTurn = false;
+
+        /*
+        Need to do this here so Foretold works with extra turns!
+        My players deserve big damage, damn it.
+         */
+        for(AbstractMonster m : AbstractDungeon.getMonsters().monsters){
+            if(m.hasPower(ForetoldPower.POWER_ID)){
+                ForetoldPower foretoldPower = (ForetoldPower) m.getPower(ForetoldPower.POWER_ID);
+                foretoldPower.reset();
+            }
+        }
     }
 
     @Override

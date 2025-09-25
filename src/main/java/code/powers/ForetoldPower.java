@@ -18,7 +18,7 @@ public class ForetoldPower extends AbstractEasyPower {
     public AbstractCreature source;
 
     boolean hitDuringAttackUse = false;
-    boolean usedThisTurn = false;
+    public boolean usedThisTurn = false;
 
     public static final String POWER_ID = ModFile.makeID("ForetoldPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -38,9 +38,12 @@ public class ForetoldPower extends AbstractEasyPower {
     public void atEndOfRound() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.addToBot(new ReducePowerAction(owner, owner, this, 1));
-            usedThisTurn = false;
-            setTexture(false);
         }
+    }
+
+    public void reset(){
+        usedThisTurn = false;
+        setTexture(false);
     }
 
     /*
