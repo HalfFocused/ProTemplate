@@ -22,7 +22,7 @@ public class Prescience extends AbstractEasyCard {
         isInnate = true;
         isMultiDamage = true;
         baseDamage = damage = 10;
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 1;
         exhaust = true;
     }
 

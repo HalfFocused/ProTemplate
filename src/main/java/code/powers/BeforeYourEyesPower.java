@@ -1,8 +1,6 @@
 package code.powers;
 
 import code.ModFile;
-import code.actions.AllEnemiesLoseHPAction;
-import code.util.charUtil.EtherealExhaustHook;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;

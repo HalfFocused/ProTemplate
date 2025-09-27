@@ -25,8 +25,8 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.rs;
 
 /*
-Shoutout to the Gravewood Biome from spiomes for making a desaturation shader
-cause i don't know what 75% of this does
+Huge thanks to the one and only @Cany0udance for both the original shader design and an improvement made
+specifically for me that excludes the player model. This is wizardry to me but super awesome.
  */
 public class TimeStopShaderPatch {
     public static ShaderProgram timestopShader;

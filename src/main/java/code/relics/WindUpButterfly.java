@@ -19,10 +19,6 @@ public class WindUpButterfly extends AbstractEasyRelic {
     }
     private boolean drawCardNext = false;
 
-    public void atPreBattle() {
-        drawCardNext = false;
-    }
-
     public void atTurnStart() {
         if (this.drawCardNext) {
             this.flash();
@@ -39,9 +35,5 @@ public class WindUpButterfly extends AbstractEasyRelic {
             this.beginPulse();
             this.pulse = true;
         }
-    }
-
-    public void onVictory() {
-        this.pulse = false;
     }
 }

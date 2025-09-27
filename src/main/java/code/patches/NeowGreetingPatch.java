@@ -10,7 +10,7 @@ import javassist.expr.MethodCall;
 @SpirePatch2(clz= NeowEvent.class,
         method = SpirePatch.CONSTRUCTOR,
         paramtypez={
-                boolean.class
+            boolean.class
         })
 
 public class NeowGreetingPatch {

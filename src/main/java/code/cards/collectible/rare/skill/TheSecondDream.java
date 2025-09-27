@@ -20,7 +20,6 @@ public class TheSecondDream extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
         this.addToBot(new TheSecondDreamAction());
     }
 
