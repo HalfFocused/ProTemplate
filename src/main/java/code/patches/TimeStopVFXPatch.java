@@ -4,14 +4,22 @@ import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
+import com.megacrit.cardcrawl.monsters.city.TheCollector;
+import com.megacrit.cardcrawl.monsters.city.TorchHead;
+import com.megacrit.cardcrawl.monsters.exordium.HexaghostBody;
+import com.megacrit.cardcrawl.monsters.exordium.HexaghostOrb;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
+import com.megacrit.cardcrawl.scenes.TheBeyondScene;
 import com.megacrit.cardcrawl.vfx.*;
 import com.megacrit.cardcrawl.vfx.combat.BuffParticleEffect;
+import com.megacrit.cardcrawl.vfx.combat.GhostIgniteEffect;
 import com.megacrit.cardcrawl.vfx.combat.StunStarEffect;
 import com.megacrit.cardcrawl.vfx.combat.UnknownParticleEffect;
 import com.megacrit.cardcrawl.vfx.scene.*;
@@ -29,7 +37,6 @@ public class TimeStopVFXPatch {
         @SpireInstrumentPatch
         public static ExprEditor deltaTimeInstrument()
         {
-
             return new ExprEditor() {
                 public void edit(MethodCall m)
                         throws CannotCompileException
@@ -69,6 +76,43 @@ public class TimeStopVFXPatch {
                         throws CannotCompileException {
                     if (m.getClassName().equals(Graphics.class.getName()) && m.getMethodName().equals("getDeltaTime")) {
                         m.replace("{$_=((code.util.charUtil.CardUtil.isTimeStopped()) ? 0 : $proceed($$));}");
+                    }
+                }
+            };
+
+        }
+    }
+
+    @SpirePatch2(clz= AbstractMonster.class, method = "renderIntent")
+    private static class MonsterIntentRenderPatch {
+        @SpireInstrumentPatch
+        public static ExprEditor deltaTimeInstrument() {
+
+            return new ExprEditor() {
+                public void edit(MethodCall m)
+                        throws CannotCompileException {
+                    if (m.getClassName().equals(Graphics.class.getName()) && m.getMethodName().equals("getDeltaTime")) {
+                        m.replace("{$_=((code.util.charUtil.CardUtil.isTimeStopped()) ? 0 : $proceed($$));}");
+                    }
+                }
+            };
+
+        }
+    }
+
+    @SpirePatch2(clz= TheCollector.class, method = "update")
+    @SpirePatch2(clz= TorchHead.class, method = "update")
+    @SpirePatch2(clz= HexaghostOrb.class, method = "update")
+    @SpirePatch2(clz= HexaghostBody.class, method = "update")
+    @SpirePatch2(clz= AwakenedOne.class, method = "update")
+    private static class EmitterMonsterUpdatePatch {
+        @SpireInstrumentPatch
+        public static ExprEditor deltaTimeInstrument() {
+            return new ExprEditor() {
+                public void edit(MethodCall m)
+                        throws CannotCompileException {
+                    if (m.getClassName().equals(Graphics.class.getName()) && m.getMethodName().equals("getDeltaTime")) {
+                        m.replace("{$_=((code.util.charUtil.CardUtil.isTimeStopped()) ? 0 : (code.util.charUtil.CardUtil.isTimeSlowed() ? $proceed($$) / 5.0f : $proceed($$)));}");
                     }
                 }
             };
@@ -138,8 +182,88 @@ public class TimeStopVFXPatch {
                         throws CannotCompileException {
                     if (m.getClassName().equals(AbstractScene.class.getName()) && m.getMethodName().equals("update")) {
                         m.replace("{$_=((code.util.charUtil.CardUtil.isTimeStopped()) ? \"\" : $proceed($$));}");
-                    }else if(m.getClassName().equals(AbstractGameEffect.class.getName()) && m.getMethodName().equals("update")){
-                        m.replace("{$_=((code.util.charUtil.CardUtil.isTimeStopped() && code.patches.TimeStopVFXPatch.shouldFreeze(e)) ? \"\" : $proceed($$));}");
+                    }
+                }
+            };
+        }
+    }
+
+    /*
+    Some particles that need to be frozen during the time stop.
+     */
+    @SpirePatch2(clz= TorchParticleSEffect.class, method = "update")
+    @SpirePatch2(clz= TorchParticleMEffect.class, method = "update")
+    @SpirePatch2(clz= TorchParticleLEffect.class, method = "update")
+    @SpirePatch2(clz= TorchParticleXLEffect.class, method = "update")
+    @SpirePatch2(clz= LightFlareSEffect.class, method = "update")
+    @SpirePatch2(clz= LightFlareMEffect.class, method = "update")
+    @SpirePatch2(clz= LightFlareLEffect.class, method = "update")
+    @SpirePatch2(clz= BuffParticleEffect.class, method = "update")
+    @SpirePatch2(clz= DebuffParticleEffect.class, method = "update")
+    @SpirePatch2(clz= StunStarEffect.class, method = "update")
+    @SpirePatch2(clz= GlowyFireEyesEffect.class, method = "update")
+    @SpirePatch2(clz= StaffFireEffect.class, method = "update")
+    @SpirePatch2(clz= TorchHeadFireEffect.class, method = "update")
+    @SpirePatch2(clz= GhostIgniteEffect.class, method = "update")
+    @SpirePatch2(clz= GhostlyFireEffect.class, method = "update")
+    @SpirePatch2(clz= GhostlyWeakFireEffect.class, method = "update")
+    @SpirePatch2(clz= ShieldParticleEffect.class, method = "update")
+    @SpirePatch2(clz= AwakenedEyeParticle.class, method = "update")
+    @SpirePatch2(clz= AwakenedWingParticle.class, method = "update")
+    private static class ParticleFreezePatch {
+        @SpireInstrumentPatch
+        public static ExprEditor particleFreezeInstrumentPatch() {
+            return new ExprEditor() {
+                public void edit(MethodCall m)
+                        throws CannotCompileException {
+                    if (m.getClassName().equals(Graphics.class.getName()) && m.getMethodName().equals("getDeltaTime")) {
+                        m.replace("{$_=((code.util.charUtil.CardUtil.isTimeStopped()) ? 0 : (code.util.charUtil.CardUtil.isTimeSlowed() ? $proceed($$) / 5.0f : $proceed($$)));}");
+                    }
+                }
+            };
+        }
+    }
+
+    /*
+    Some particles unfortunately use random generation in their render code.
+    To keep them still we instrument patch in a replacement with the max value of the random range
+    instead, when needed.
+     */
+    @SpirePatch2(clz= TorchParticleSEffect.class, method = "render")
+    @SpirePatch2(clz= TorchParticleMEffect.class, method = "render")
+    @SpirePatch2(clz= TorchParticleLEffect.class, method = "render")
+    @SpirePatch2(clz= TorchParticleXLEffect.class, method = "render")
+    @SpirePatch2(clz= GhostlyFireEffect.class, method = "render")
+    @SpirePatch2(clz= GhostlyWeakFireEffect.class, method = "render")
+    @SpirePatch2(clz= AwakenedWingParticle.class, method = "render",
+            paramtypez = {SpriteBatch.class, float.class, float.class})
+    @SpirePatch2(clz= AwakenedEyeParticle.class, method = "render")
+    private static class NoJitteringPatch {
+        @SpireInstrumentPatch
+        public static ExprEditor particleFreezeInstrumentPatch() {
+            return new ExprEditor() {
+                public void edit(MethodCall m)
+                        throws CannotCompileException {
+                    if (m.getClassName().equals(MathUtils.class.getName()) && m.getMethodName().equals("random")) {
+                        m.replace("{$_=((code.util.charUtil.CardUtil.isTimeStopped()) ? $2 : $proceed($$));}");
+                    }
+                }
+            };
+        }
+    }
+
+    /*
+    Did you know the floaters in The Beyond background use system time? i sure didn't!
+    */
+    @SpirePatch2(clz= TheBeyondScene.class, method = "renderCombatRoomBg")
+    private static class SystemTimeFreezePatch {
+        @SpireInstrumentPatch
+        public static ExprEditor particleFreezeInstrumentPatch() {
+            return new ExprEditor() {
+                public void edit(MethodCall m)
+                        throws CannotCompileException {
+                    if (m.getClassName().equals(System.class.getName()) && m.getMethodName().equals("currentTimeMillis")) {
+                        m.replace("{$_=((code.util.charUtil.CardUtil.isTimeStopped()) ? code.actions.TheSecondDreamAction.lastActivatedSystemTime : $proceed($$));}");
                     }
                 }
             };
@@ -158,6 +282,12 @@ public class TimeStopVFXPatch {
             effect instanceof DebuffParticleEffect ||
             effect instanceof StunStarEffect ||
             effect instanceof UnknownParticleEffect ||
+            effect instanceof GlowyFireEyesEffect ||
+            effect instanceof StaffFireEffect ||
+            effect instanceof TorchHeadFireEffect ||
+            effect instanceof GhostIgniteEffect ||
+            effect instanceof GhostlyFireEffect ||
+            effect instanceof GhostlyWeakFireEffect ||
             effect instanceof ShieldParticleEffect);
     }
 }

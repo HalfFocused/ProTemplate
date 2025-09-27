@@ -309,7 +309,13 @@
     "NAME": "The Second Dream",
     "DESCRIPTION": "If you've played 3 or more Ethereal cards this turn, take an extra turn after this one. NL Exhaust.",
     "FLAVOR": "During the dream, you remembered everything clearly.",
-    "ENHANCED_FLAVOR": "I. Every loop numbed your memory further. So many experiences. But during the dream, you remembered everything clearly."
+    "ENHANCED_FLAVOR": "I. Every loop numbed your memory further. So many experiences. But during the dream, you remembered everything clearly.",
+    "EXTENDED_DESCRIPTION": [
+      "~Sorry...~",
+      "~No...~ ~wait...~",
+      "~What~ ~happened...?~",
+      "~Where...~ ~am~ ~I?~"
+    ]
   },
   "${ModID}:Lucidity": {
     "NAME": "Lucidity",
