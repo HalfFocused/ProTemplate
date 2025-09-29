@@ -44,7 +44,7 @@
   },
   "${ModID}:LongGoodbye": {
     "NAME": "Long Goodbye",
-    "DESCRIPTION": "Deal !D! damage. NL Discard each Ethereal card in your hand. NL Draw !M! {@@}{!M!|>1=cards|@=card}."
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL If it's Ethereal, draw !M! more {@@}{!M!|>1=cards|@=card}."
   },
   "${ModID}:TimeSlow": {
     "NAME": "Time Slow",
@@ -216,13 +216,11 @@
       "Exhaust."
     ]
   },
-  "${ModID}:Forsake": {
-    "NAME": "Forsake",
-    "DESCRIPTION": "Draw !M! cards. NL You can only play cards drawn by *Forsake this turn.",
+  "${ModID}:Ponder": {
+    "NAME": "Consider",
+    "DESCRIPTION": "Choose a card from your draw pile to put on top. NL Gain {!M!|repeat=[E] }. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "I did not draw that card with Forsake.",
-      "I ~will~ ~not~ draw that card with Forsake...",
-      "I ~hadn't~ drawn that card with Forsake?"
+      "Choose a card to put on top of your draw pile:"
     ]
   },
   "${ModID}:OverAndOver": {

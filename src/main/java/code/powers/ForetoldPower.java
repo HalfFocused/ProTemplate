@@ -62,6 +62,7 @@ public class ForetoldPower extends AbstractEasyPower {
      */
     public int onAttacked(DamageInfo info, int damageAmount) {
         if(info.type == DamageInfo.DamageType.NORMAL && !usedThisTurn){
+            flash();
             hitDuringAttackUse = true;
         }
         return damageAmount;
@@ -73,7 +74,6 @@ public class ForetoldPower extends AbstractEasyPower {
     public void onAfterUseCard(AbstractCard card, UseCardAction action){
         if(hitDuringAttackUse){
             hitDuringAttackUse = false;
-            flash();
             usedThisTurn = true;
             setTexture(true);
         }

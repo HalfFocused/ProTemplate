@@ -1,10 +1,7 @@
 package code.actions;
 
 
-import basemod.helpers.CardModifierManager;
 import code.cards.collectible.rare.skill.TheSecondDream;
-import code.cards.collectible.uncommon.skill.Forsake;
-import code.effects.MonsoonEffect;
 import code.powers.ExtraTurnPower;
 import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.graphics.Color;
@@ -12,16 +9,11 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 

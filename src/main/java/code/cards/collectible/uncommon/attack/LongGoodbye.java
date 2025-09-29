@@ -15,28 +15,26 @@ public class LongGoodbye extends AbstractEasyCard {
     public final static String ID = makeID(LongGoodbye.class.getSimpleName());
 
     public LongGoodbye() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 14;
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        addToBot(new AbstractGameAction() {
+        addToBot(new DrawCardAction(1, new AbstractGameAction() {
             @Override
             public void update() {
-                for(AbstractCard c : p.hand.group){
-                    if(c.isEthereal) {
-                        addToTop(new DiscardSpecificCardAction(c));
-                    }
+                if(DrawCardAction.drawnCards.get(0).isEthereal){
+                    addToTop(new DrawCardAction(magicNumber));
                 }
                 isDone = true;
             }
-        });
-        addToBot(new DrawCardAction(magicNumber));
+        }));
     }
 
     public void upp() {
-        upgradeDamage(4);
+        upgradeDamage(2);
+        upgradeMagicNumber(1);
     }
 }

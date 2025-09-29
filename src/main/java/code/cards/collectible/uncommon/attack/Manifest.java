@@ -19,7 +19,7 @@ public class Manifest extends AbstractEasyCard {
 
     public Manifest() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 9;
+        baseDamage = damage = 10;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
