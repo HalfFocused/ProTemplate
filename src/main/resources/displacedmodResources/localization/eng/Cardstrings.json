@@ -218,7 +218,7 @@
   },
   "${ModID}:Ponder": {
     "NAME": "Consider",
-    "DESCRIPTION": "Choose a card from your draw pile to put on top. NL Gain {!M!|repeat=[E] }. NL Exhaust.",
+    "DESCRIPTION": "Choose a card from your draw pile to put on top. NL Gain {@@}{!M!|repeat=[E] }. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Choose a card to put on top of your draw pile:"
     ]
