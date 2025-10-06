@@ -42,24 +42,20 @@ public class RecurringDream extends AbstractEasyCard {
     }
 
     @Override
-    public void applyPowers(){
-        boolean reduced = false;
+    public void update(){
+        super.update();
         for(AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn){
             if(card instanceof RecurringDream){
-                reduced = true;
                 setCostForTurn(0);
-                break;
+                return;
             }
         }
-        if(!reduced) {
-            for (AbstractCard card : CardUtil.cardsPlayedLastTurn) {
-                if (card instanceof RecurringDream) {
-                    setCostForTurn(0);
-                    break;
-                }
+        for (AbstractCard card : CardUtil.cardsPlayedLastTurn) {
+            if (card instanceof RecurringDream) {
+                setCostForTurn(0);
+                return;
             }
         }
-        super.applyPowers();
     }
     public void upp() {
         upgradeDamage(4);

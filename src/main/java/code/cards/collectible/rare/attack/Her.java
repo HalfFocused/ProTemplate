@@ -5,11 +5,14 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 
 import code.util.charUtil.ForgetCard;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 public class Her extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID(Her.class.getSimpleName());
@@ -35,5 +38,7 @@ public class Her extends AbstractEasyCard implements ForgetCard {
     @Override
     public void onForget() {
         this.addToTop(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true));
+        AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, cardStrings.EXTENDED_DESCRIPTION[MathUtils.random(0, cardStrings.EXTENDED_DESCRIPTION.length - 1)], true));
+
     }
 }

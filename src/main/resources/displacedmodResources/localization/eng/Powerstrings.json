@@ -65,10 +65,12 @@
       "You've played #yMoment #yOf #yTruth once."
     ]
   },
-  "${ModID}:UnfamiliarMemoryPower": {
-    "NAME": "Unfamiliar Memory",
+  "${ModID}:LongGoodbyePower": {
+    "NAME": "Long Goodbye",
     "DESCRIPTIONS": [
-      "You've played #yUnfamiliar #yMemory once."
+      "The next Attack you play this turn deals double damage and #yExhausts.",
+      "The next #b",
+      " Attacks you play this turn deal double damage and #yExhaust."
     ]
   },
   "${ModID}:LanguishPower": {
@@ -113,12 +115,10 @@
       " turns."
     ]
   },
-  "${ModID}:PrecognitionPower": {
-    "NAME": "Precognition",
+  "${ModID}:TheStarsAlignedPower": {
+    "NAME": "The Stars Aligned",
     "DESCRIPTIONS": [
-      "Whenever you play a #yVision, draw #b1 card.",
-      "Whenever you play a #yVision, draw #b",
-      " cards."
+      "#yVisions cost #b0 until played."
     ]
   },
   "${ModID}:NextTurnSetEnergyPower": {

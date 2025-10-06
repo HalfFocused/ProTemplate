@@ -42,8 +42,8 @@
     "NAME": "Rush Past",
     "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies. NL Next turn, gain {!M!|repeat=[E] }."
   },
-  "${ModID}:LongGoodbye": {
-    "NAME": "Long Goodbye",
+  "${ModID}:Euphoria": {
+    "NAME": "Euphoria",
     "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL If it's Ethereal, draw !M! more {@@}{!M!|>1=cards|@=card}."
   },
   "${ModID}:TimeSlow": {
@@ -120,7 +120,7 @@
   },
   "${ModID}:Predict": {
     "NAME": "Predict",
-    "DESCRIPTION": "{@@}Apply !M! ${ModID}:Foretold. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s|0=s}."
+    "DESCRIPTION": "{@@}Apply !M! ${ModID}:Foretold. NL Shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile."
   },
   "${ModID}:AheadOfTime": {
     "NAME": "Ahead Of Time",
@@ -162,7 +162,7 @@
   },
   "${ModID}:Vision": {
     "NAME": "Vision",
-    "DESCRIPTION": "Deal !D! damage.",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{@@}{!M!|>1=s|0=s}.",
     "FLAVOR": "\"I've seen this before... somewhere...\"",
     "ENHANCED_FLAVOR": "You've lived through this moment hundreds of times."
   },
@@ -184,16 +184,16 @@
     "NAME": "Languish",
     "DESCRIPTION": "Whenever you apply a debuff to an enemy, gain !M! Block."
   },
-  "${ModID}:UnfamiliarMemory": {
-    "NAME": "Unfamiliar Memory",
-    "DESCRIPTION": "Every second time you play an *Unfamiliar *Memory, gain !M! Strength and Exhaust."
+  "${ModID}:DeadWeight": {
+    "NAME": "Dead Weight",
+    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Forget: Gain !M! Strength."
   },
   "${ModID}:FleetingFortitude": {
     "NAME": "Fleeting Fortitude",
     "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: Shuffle a copy of this into your draw pile with 2 less Block."
   },
-  "${ModID}:DoubleDown": {
-    "NAME": "Double Down",
+  "${ModID}:Exploit": {
+    "NAME": "Exploit",
     "DESCRIPTION": "Deal !D! damage. NL Repeat for each debuff on the enemy."
   },
   "${ModID}:TimeLoop": {
@@ -203,8 +203,7 @@
       " NL Plays: NL ",
       "I haven't played a card yet this combat.",
       "I ~will~ ~not~ have played a card by then...",
-      "I ~hadn't~ played a card yet?",
-      "It's ~calm...~"
+      "I ~hadn't~ played a card yet?"
     ],
     "FLAVOR": "Again?",
     "ENHANCED_FLAVOR": "XVIII. Again? The memories of each loop weigh on you like an impossible burden. Of course you'd do it again."
@@ -216,9 +215,9 @@
       "Exhaust."
     ]
   },
-  "${ModID}:Ponder": {
-    "NAME": "Consider",
-    "DESCRIPTION": "Choose a card from your draw pile to put on top. NL Gain {@@}{!M!|repeat=[E] }. NL Exhaust.",
+  "${ModID}:LineUp": {
+    "NAME": "LineUp",
+    "DESCRIPTION": "Apply !M! Weak. NL Choose a card from your draw pile to put on top.",
     "EXTENDED_DESCRIPTION": [
       "Choose a card to put on top of your draw pile:"
     ]
@@ -253,7 +252,13 @@
     "NAME": "Her",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL ${ModID}:Forget: Shuffle a Void into your draw pile.",
     "FLAVOR": "How could you ever forget?",
-    "ENHANCED_FLAVOR": "II. You danced together, in union under the stars. How could you ever forget?"
+    "ENHANCED_FLAVOR": "II. You danced together, in union under the stars. How could you ever forget?",
+    "EXTENDED_DESCRIPTION": [
+      "~No...~",
+      "~Sorry...~",
+      "~Huh...?~",
+      "~Why~ ~am~ ~I~ ~here..?~"
+    ]
   },
   "${ModID}:FutureSight": {
     "NAME": "Future Sight",
@@ -323,13 +328,14 @@
     "NAME": "Backup Plan",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL ${ModID}:Forget: ALL enemies lose !M! Strength this turn."
   },
-  "${ModID}:Precognition": {
-    "NAME": "Precognition",
-    "DESCRIPTION": "Shuffle a *Vision into your draw pile. NL Whenever you play a *Vision, draw !M! card{@@}{!M!|>1=s|0=s}."
+  "${ModID}:LongGoodbye": {
+    "NAME": "Long Goodbye",
+    "DESCRIPTION": "The next Attack you play this turn deals double damage and Exhausts. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "The next Attack you play this turn deals double damage and Exhausts."
   },
   "${ModID}:TheStarsAligned": {
     "NAME": "The Stars Aligned",
-    "DESCRIPTION": "Deal !D! damage. NL Play {@@}{!M!|>1=up to !M!|@=a} random *Vision{!M!|>1=s|0=s} from your draw pile.",
+    "DESCRIPTION": "Shuffle a *Vision into your draw pile. NL *Visions cost 0 until played.",
     "FLAVOR": "\"Don't come back for me...\"",
     "ENHANCED_FLAVOR": "XIII. She looks at you knowingly, and sputters: \"Don't come back for me...\""
   },
@@ -343,15 +349,11 @@
   },
   "${ModID}:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
-    "DESCRIPTION": "At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile."
+    "DESCRIPTION": "At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile."
   },
   "${ModID}:LowVisibility": {
     "NAME": "Low Visibility",
-    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Draw !M! cards. NL ${ModID}:Forget: ${ModID}:Flashback a card.",
-    "EXTENDED_DESCRIPTION": [
-      "Select card to Flashback:"
-    ]
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{@@}{@@}{!M!|>1=s|0=s}. NL Exhaust 1 card at random."
   },
   "${ModID}:RecklessAbandon": {
     "NAME": "Reckless Abandon",
@@ -372,9 +374,9 @@
     "NAME": "Cherished Memory",
     "DESCRIPTION": "Retain. NL Gain !B! Block. NL ${ModID}:Flashback !M! card{@@}{!M!|>1=s|0=s}. NL Exhaust."
   },
-  "${ModID}:Align": {
-    "NAME": "Align",
-    "DESCRIPTION": "Put !M! card{@@}{!M!|>1=s|0=s} from your draw pile into your hand. Add Dazed where {!M!|1=it was|@=they were}. NL Exhaust.",
+  "${ModID}:Invoke": {
+    "NAME": "Invoke",
+    "DESCRIPTION": "Put !M! card{@@}{!M!|>1=s|0=s} from your draw pile into your hand. Add{!M!|1= a} Dazed where {!M!|1=it was|@=they were}. NL Exhaust.",
     "FLAVOR": "An interruption. Something needed your attention?",
     "ENHANCED_FLAVOR": "IV. An interruption. Something needed your attention. Your expertise. You promised to be right back."
   }

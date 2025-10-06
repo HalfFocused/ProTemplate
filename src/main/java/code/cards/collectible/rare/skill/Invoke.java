@@ -9,10 +9,10 @@ import static code.ModFile.makeID;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Align extends AbstractEasyCard {
-    public final static String ID = makeID(Align.class.getSimpleName());
+public class Invoke extends AbstractEasyCard {
+    public final static String ID = makeID(Invoke.class.getSimpleName());
 
-    public Align() {
+    public Invoke() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 2;
         exhaust = true;

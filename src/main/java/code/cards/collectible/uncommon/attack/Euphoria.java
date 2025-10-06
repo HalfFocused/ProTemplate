@@ -5,16 +5,14 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class LongGoodbye extends AbstractEasyCard {
-    public final static String ID = makeID(LongGoodbye.class.getSimpleName());
+public class Euphoria extends AbstractEasyCard {
+    public final static String ID = makeID(Euphoria.class.getSimpleName());
 
-    public LongGoodbye() {
+    public Euphoria() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 2;

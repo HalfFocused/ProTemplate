@@ -16,7 +16,7 @@
     "NAMES": [
       "temporary"
     ],
-    "DESCRIPTION": "Counter is reduced by 1 at the end of turn, wherever it is. When the last counter is removed, #yExhaust."
+    "DESCRIPTION": "Counter is reduced by 1 at the end of turn, wherever it is. When it reaches 0, #yExhaust."
   },
   {
     "NAMES": [

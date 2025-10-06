@@ -58,7 +58,7 @@ public class ForetoldPower extends AbstractEasyPower {
 
     /*
     Some attacks calculate their damage more than once, which results in more than one onAttacked() call.
-    So, we don't disable Foretold in this step, just mark it to be disabled later.
+    So, we don't disable Foretold in this step, just mark it to be disabled later (after the card is done)
      */
     public int onAttacked(DamageInfo info, int damageAmount) {
         if(info.type == DamageInfo.DamageType.NORMAL && !usedThisTurn){

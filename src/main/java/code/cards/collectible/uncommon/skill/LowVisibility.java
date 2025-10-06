@@ -27,19 +27,19 @@ public class LowVisibility extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID(LowVisibility.class.getSimpleName());
 
     public LowVisibility() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        isEthereal = true;
-        baseBlock = block = 12;
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseBlock = block = 8;
         baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         this.addToBot(new DrawCardAction(magicNumber));
+        this.addToBot(new ExhaustAction(1, true, false, false));
     }
 
     public void upp() {
-        upgradeBlock(4);
+        upgradeBlock(3);
     }
 
     @Override

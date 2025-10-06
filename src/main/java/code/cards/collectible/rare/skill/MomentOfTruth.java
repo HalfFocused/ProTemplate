@@ -5,7 +5,6 @@ import code.cards.AbstractEasyCard;
 import static code.ModFile.makeID;
 
 import code.powers.MomentOfTruthPower;
-import code.powers.UnfamiliarMemoryPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.ApplyBulletTimeAction;
