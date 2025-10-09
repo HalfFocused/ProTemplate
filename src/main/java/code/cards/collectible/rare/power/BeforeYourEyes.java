@@ -15,7 +15,7 @@ public class BeforeYourEyes extends AbstractEasyCard {
     public final static String ID = makeID(BeforeYourEyes.class.getSimpleName());
 
     public BeforeYourEyes() {
-        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -34,6 +34,6 @@ public class BeforeYourEyes extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(0);
+        upgradeBaseCost(1);
     }
 }

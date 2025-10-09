@@ -1,4 +1,4 @@
-package code.cards.collectible.common.skill;
+package code.cards.collectible.uncommon.skill;
 
 import code.cards.AbstractEasyCard;
 
@@ -9,12 +9,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class Lucidity extends AbstractEasyCard {
     public final static String ID = makeID(Lucidity.class.getSimpleName());
     public Lucidity() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         baseMagicNumber = magicNumber = 1;
         exhaust = true;
     }

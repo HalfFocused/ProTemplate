@@ -1,12 +1,14 @@
-package code.cards.collectible.common.skill;
+package code.cards.collectible.uncommon.skill;
 
+import basemod.helpers.CardModifierManager;
 import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
-import code.util.DisplacedTags;
+import code.util.charUtil.mods.EtherealModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -15,8 +17,8 @@ public class AheadOfTime extends AbstractEasyCard {
     // intellij stuff skill, self, uncommon, , , , , 2, 
 
     public AheadOfTime() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 7;
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseBlock = block = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -25,7 +27,9 @@ public class AheadOfTime extends AbstractEasyCard {
             @Override
             public void update() {
                 if(!p.drawPile.isEmpty()){
-                    addToTop(new MakeTempCardInHandAction(p.drawPile.getTopCard().makeStatEquivalentCopy()));
+                    AbstractCard c = p.drawPile.getTopCard().makeStatEquivalentCopy();
+                    CardModifierManager.addModifier(c, new EtherealModifier());
+                    addToTop(new MakeTempCardInHandAction(c));
                 }
                 isDone = true;
             }
@@ -33,6 +37,6 @@ public class AheadOfTime extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeBlock(2);
     }
 }

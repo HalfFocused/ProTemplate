@@ -16,7 +16,7 @@ public class Discern extends AbstractEasyCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.cardsToPreview = new Vision();
         baseMagicNumber = magicNumber = 1;
-        baseBlock = block = 8;
+        baseBlock = block = 7;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -20,6 +20,7 @@ public class TimeSlowPower extends AbstractEasyPower implements OnReceivePowerPo
 
     public TimeSlowPower(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.BUFF, true, owner, amount);
+        this.priority = 100;
     }
 
     @Override

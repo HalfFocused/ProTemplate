@@ -28,8 +28,8 @@ public class BeforeYourEyesPower extends AbstractEasyPower {
 
     @Override
     public void onExhaust(AbstractCard c) {
-        flash();
         if(c.isEthereal) {
+            flash();
             for (int i = 0; i < amount; i++) {
                 this.addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy(), false));
             }

@@ -14,7 +14,7 @@ public class LongGoodbye extends AbstractEasyCard {
     public final static String ID = makeID(LongGoodbye.class.getSimpleName());
 
     public LongGoodbye() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

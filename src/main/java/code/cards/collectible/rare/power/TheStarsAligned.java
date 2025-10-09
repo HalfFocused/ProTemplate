@@ -15,7 +15,7 @@ public class TheStarsAligned extends AbstractEasyCard {
     public final static String ID = makeID(TheStarsAligned.class.getSimpleName());
 
     public TheStarsAligned() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         this.cardsToPreview = new Vision();
     }
 
@@ -25,7 +25,7 @@ public class TheStarsAligned extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(1);
+        upgradeBaseCost(2);
     }
 
     @Override

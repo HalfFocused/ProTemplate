@@ -90,7 +90,7 @@
   },
   "${ModID}:Demoralize": {
     "NAME": "Demoralize",
-    "DESCRIPTION": "Apply !M! Weak, Vulnerable, and ${ModID}:Foretold. NL Exhaust.",
+    "DESCRIPTION": "Ethereal. NL Apply !M! Weak, Vulnerable, and ${ModID}:Foretold. NL Exhaust.",
     "FLAVOR": "You wake up in an unfamiliar place...",
     "ENHANCED_FLAVOR": "XVII. You wake up in an unfamiliar place. Your transgressions on time had not gone unnoticed."
   },
@@ -120,11 +120,11 @@
   },
   "${ModID}:Predict": {
     "NAME": "Predict",
-    "DESCRIPTION": "{@@}Apply !M! ${ModID}:Foretold. NL Shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile."
+    "DESCRIPTION": "{@@}Apply !M! ${ModID}:Foretold. NL Shuffle {@@}{!${ModID}:m2!|>1=!${ModID}:m2!|@=a} *Vision{!${ModID}:m2!|>1=s|0=s} into your draw pile."
   },
   "${ModID}:AheadOfTime": {
     "NAME": "Ahead Of Time",
-    "DESCRIPTION": "Gain !B! Block. NL Add a copy of the top card of your draw pile to your hand."
+    "DESCRIPTION": "Gain !B! Block. NL Add an Ethereal copy of the top card of your draw pile to your hand."
   },
   "${ModID}:Lacerate": {
     "NAME": "Lacerate",
@@ -154,7 +154,7 @@
   },
   "${ModID}:PhaseShift": {
     "NAME": "Phase Shift",
-    "DESCRIPTION": "Gain !B! Block X times. Shuffle 2 Dazed into your discard pile."
+    "DESCRIPTION": "Gain !B! Block X times. Add 2 Dazed into your discard pile."
   },
   "${ModID}:Discern": {
     "NAME": "Discern",
@@ -184,9 +184,12 @@
     "NAME": "Languish",
     "DESCRIPTION": "Whenever you apply a debuff to an enemy, gain !M! Block."
   },
-  "${ModID}:DeadWeight": {
-    "NAME": "Dead Weight",
-    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Forget: Gain !M! Strength."
+  "${ModID}:Burden": {
+    "NAME": "Burden",
+    "DESCRIPTION": "Unplayable. NL ${ModID}:Forget: Gain !M! Strength.",
+    "EXTENDED_DESCRIPTION": [
+      "~Useless...~"
+    ]
   },
   "${ModID}:FleetingFortitude": {
     "NAME": "Fleeting Fortitude",
@@ -216,7 +219,7 @@
     ]
   },
   "${ModID}:LineUp": {
-    "NAME": "LineUp",
+    "NAME": "Line Up",
     "DESCRIPTION": "Apply !M! Weak. NL Choose a card from your draw pile to put on top.",
     "EXTENDED_DESCRIPTION": [
       "Choose a card to put on top of your draw pile:"

@@ -14,11 +14,11 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class Demoralize extends AbstractEasyCard {
     public final static String ID = makeID(Demoralize.class.getSimpleName());
-    // intellij stuff attack, enemy, rare, 10, 4, , , , 
 
     public Demoralize() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 3;
+        isEthereal = true;
+        baseMagicNumber = magicNumber = 2;
         exhaust = true;
     }
 
@@ -29,6 +29,6 @@ public class Demoralize extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeBaseCost(1);
     }
 }

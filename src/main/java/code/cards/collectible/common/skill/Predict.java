@@ -25,7 +25,7 @@ public class Predict extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(m, p, new ForetoldPower(m, this.magicNumber), magicNumber));
-        this.addToBot(new MakeTempCardInDrawPileAction(new Vision(), magicNumber, true, true));
+        this.addToBot(new MakeTempCardInDrawPileAction(new Vision(), secondMagic, true, true));
     }
 
     public void upp() {

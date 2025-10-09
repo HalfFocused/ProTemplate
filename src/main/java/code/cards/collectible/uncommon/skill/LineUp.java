@@ -16,7 +16,7 @@ public class LineUp extends AbstractEasyCard {
     public final static String ID = makeID(LineUp.class.getSimpleName());
 
     public LineUp() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 1;
     }
 

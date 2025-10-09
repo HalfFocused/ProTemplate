@@ -24,7 +24,7 @@ public class BackupPlan extends AbstractEasyCard implements ForgetCard {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         isEthereal = true;
         baseDamage = damage = 10;
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -17,23 +17,21 @@ public class WindUpButterfly extends AbstractEasyRelic {
     public WindUpButterfly() {
         super(ID, RelicTier.RARE, LandingSound.FLAT, TheDisplaced.Enums.DISPLACED_COLOR);
     }
-    private boolean drawCardNext = false;
 
     public void atTurnStart() {
-        if (this.drawCardNext) {
+        if (this.counter == -2) {
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             this.addToBot(new DrawCardAction(1));
         }
-        this.pulse = false;
-        this.drawCardNext = false;
+        this.stopPulse();
+        this.counter = -1;
     }
 
     public void onExhaust(AbstractCard card) {
-        this.drawCardNext = true;
+        this.counter = -2;
         if (!this.pulse) {
-            this.beginPulse();
-            this.pulse = true;
+            beginLongPulse();
         }
     }
 }
