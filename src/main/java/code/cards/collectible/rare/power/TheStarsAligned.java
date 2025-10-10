@@ -21,7 +21,7 @@ public class TheStarsAligned extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new MakeTempCardInDrawPileAction(new Vision(), 1, true, true));
-        this.addToBot(new ApplyPowerAction(p,p,new TheStarsAlignedPower(p)));
+        this.addToBot(new ApplyPowerAction(p, p, new TheStarsAlignedPower(p)));
     }
 
     public void upp() {

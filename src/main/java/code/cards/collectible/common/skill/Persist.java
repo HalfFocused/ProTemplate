@@ -1,9 +1,7 @@
 package code.cards.collectible.common.skill;
 
 import code.cards.AbstractEasyCard;
-
 import static code.ModFile.makeID;
-
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -11,7 +9,7 @@ import com.megacrit.cardcrawl.powers.ReboundPower;
 
 public class Persist extends AbstractEasyCard {
     public final static String ID = makeID(Persist.class.getSimpleName());
-    // intellij stuff skill, self, common, , , 7, 4, , 
+    // intellij stuff skill, self, common, , , 7, 4, ,
 
     public Persist() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
