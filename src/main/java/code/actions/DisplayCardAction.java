@@ -7,25 +7,20 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class DisplayCardAction extends AbstractGameAction {
     private AbstractCard card;
-    boolean toTheSide = false;
     public DisplayCardAction(AbstractCard cardIn) {
         this.duration = 0.6f;
         card = cardIn;
         this.actionType = ActionType.SPECIAL;
-        toTheSide = false;
-    }
-
-    public DisplayCardAction(AbstractCard cardIn, boolean toTheSideIn) {
-        this.duration = 0.6f;
-        card = cardIn;
-        this.actionType = ActionType.SPECIAL;
-        toTheSide = toTheSideIn;
     }
 
     public void update() {
         if (this.duration == 0.6f) {
             AbstractDungeon.player.limbo.group.add(card);
-            card.target_x = ((float)Settings.WIDTH / 2.0F) + (toTheSide ? (150 * Settings.xScale) : 0);
+            if(card.current_x >= Settings.WIDTH / 2.0f){
+                card.target_x = ((float)Settings.WIDTH / 2.0F) + (300 * Settings.scale);
+            }else{
+                card.target_x = ((float)Settings.WIDTH / 2.0F) - (300 * Settings.scale);
+            }
             card.target_y = (float)Settings.HEIGHT / 2.0F;
             card.targetAngle = 0.0F;
             card.drawScale = 0.25F;

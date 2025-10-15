@@ -16,7 +16,7 @@ public class Gaze extends AbstractEasyCard {
     public Gaze() {
         super(ID, 2, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
         isEthereal = true;
-        baseDamage = damage = 10;
+        baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 2;
     }
 
@@ -26,7 +26,6 @@ public class Gaze extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(2);
         upgradeMagicNumber(1);
     }
 }

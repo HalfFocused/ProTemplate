@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class RiotEndOfTurnPatch {
     public static void Prefix(GameActionManager __instance) {
         CardUtil.cardsPlayedLastTurn.clear();
-        CardUtil.cardsDrawnWithForsakeThisTurn.clear();
         CardUtil.cardsPlayedLastTurn.addAll(__instance.cardsPlayedThisTurn);
     }
 }

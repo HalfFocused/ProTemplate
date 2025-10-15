@@ -52,7 +52,8 @@ public class ModFile implements
         OnPlayerTurnStartSubscriber,
         OnStartBattleSubscriber,
         PostExhaustSubscriber,
-        PostDeathSubscriber{
+        PostDeathSubscriber,
+        PostBattleSubscriber{
 
     public static final String modID = "displacedmod";
 
@@ -279,5 +280,10 @@ public class ModFile implements
             throw new RuntimeException(e);
         }
         return record;
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        CardUtil.cardsPlayedLastTurn.clear();
     }
 }

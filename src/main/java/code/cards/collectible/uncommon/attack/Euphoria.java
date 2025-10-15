@@ -23,7 +23,7 @@ public class Euphoria extends AbstractEasyCard {
         addToBot(new DrawCardAction(1, new AbstractGameAction() {
             @Override
             public void update() {
-                if(DrawCardAction.drawnCards.get(0).isEthereal){
+                if(!DrawCardAction.drawnCards.isEmpty() && DrawCardAction.drawnCards.get(0).isEthereal){
                     addToTop(new DrawCardAction(magicNumber));
                 }
                 isDone = true;

@@ -18,6 +18,11 @@ public class Raincoat extends AbstractEasyRelic  {
         this.counter = 0;
     }
 
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0] + NUM_CARDS + DESCRIPTIONS[1];
+    }
+
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if(c.isEthereal){
             counter++;

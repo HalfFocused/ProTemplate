@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import java.util.Map;
 
 public class CardStringsPatch {
-
     @SpirePatch(
             clz = CardStrings.class,
             method = "<class>"

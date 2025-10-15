@@ -4,49 +4,50 @@ import code.ModFile;
 import code.TheDisplaced;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
+import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+
+import java.util.*;
 
 import static code.ModFile.makeID;
 
 public class Everything extends AbstractEasyRelic {
     public static final String ID = makeID("Everything");
 
-    private boolean choosing = false;
+    private static final int UPGRADES = 5;
     public Everything() {
         super(ID, RelicTier.BOSS, LandingSound.FLAT, TheDisplaced.Enums.DISPLACED_COLOR);
     }
 
     @Override
     public void onEquip() {
-        CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        for (AbstractCard card : CardLibrary.getAllCards()) {
-            if (card.color == TheDisplaced.Enums.DISPLACED_COLOR) {
-                AbstractCard option = card.makeCopy();
-                for (AbstractRelic relic : AbstractDungeon.player.relics) {
-                    relic.onPreviewObtainCard(option);
-                    UnlockTracker.markCardAsSeen(option.cardID);
-                }
-                group.addToBottom(option);
+        AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));// 99
+        ArrayList<AbstractCard> upgradableCards = new ArrayList<>();
+
+        for(AbstractCard c : AbstractDungeon.player.masterDeck.group){
+            if (c.canUpgrade()) {
+                upgradableCards.add(c);
             }
-            choosing = true;
-            AbstractDungeon.gridSelectScreen.open(group, 1, "Choose a card to obtain.", false);
+        }
+
+        Collections.shuffle(upgradableCards, new Random(AbstractDungeon.miscRng.randomLong()));
+        for(int i = 0; i < UPGRADES && i < upgradableCards.size(); i++){
+            AbstractCard upgradedCard = upgradableCards.get(i);
+            upgradedCard.upgrade();
+            AbstractDungeon.player.bottledCardUpgradeCheck(upgradedCard);
+            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(upgradedCard.makeStatEquivalentCopy()));
         }
     }
 
     @Override
-    public void update()
-    {
-        super.update();
-        if (choosing && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()){
-            choosing = false;
-            AbstractCard selected = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            UnlockTracker.markCardAsSeen(selected.cardID);
-            AbstractDungeon.effectsQueue.add(new FastCardObtainEffect(selected, selected.current_x, selected.current_y));
-        }
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0] + UPGRADES + DESCRIPTIONS[1];
     }
 }

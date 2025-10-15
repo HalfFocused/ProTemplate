@@ -2,13 +2,15 @@
   "${ModID}:AstronomicalClock": {
     "NAME": "Astronomical Clock",
     "FLAVOR": "Once remarkably precise, the clock's movements are erratic and confused.",
+    "ENHANCED_FLAVOR": "The clock's internal mechanisms haven't survived the continuous looping.",
     "DESCRIPTIONS": [
       "At the start of turn #b2, draw #b1 card and gain [E] ."
     ]
   },
   "${ModID}:AmberGemstone": {
     "NAME": "Amber Gemstone",
-    "FLAVOR": "A smooth gem with a familiar engraving. It fills you with a refreshing clarity.",
+    "FLAVOR": "A strangely comforting gem. It fills you with a refreshing clarity.",
+    "ENHANCED_FLAVOR": "Her necklace looked like this. How did it get here?",
     "DESCRIPTIONS": [
       "Whenever a #yDazed would be created, create a random card instead. It becomes #yEthereal."
     ]
@@ -16,6 +18,7 @@
   "${ModID}:WindUpButterfly": {
     "NAME": "Wind-Up Butterfly",
     "FLAVOR": "Trying not to cry- It's the first time I say goodbye.",
+    "ENHANCED_FLAVOR": "When am I going to lose you?",
     "DESCRIPTIONS": [
       "At the start of your turn, if a card was #yExhausted last turn, draw an additional card."
     ]
@@ -23,20 +26,25 @@
   "${ModID}:Raincoat": {
     "NAME": "Raincoat",
     "FLAVOR": "I never believed in moral dilemmas- But I guess you're an exception.",
+    "ENHANCED_FLAVOR": "This would have been helpful. We could have danced forever.",
     "DESCRIPTIONS": [
-      "Whenever you play #b5 #yEthereal cards, gain [E] ."
+      "Whenever you play #b",
+      " #yEthereal cards, gain [E] ."
     ]
   },
   "${ModID}:Everything": {
     "NAME": "Everything",
     "FLAVOR": "You slammed the book shut mere moments after opening it, the information contained inside overwhelming.",
+    "ENHANCED_FLAVOR": "You want to know if you'll ever see her again, but you're not strong enough to look.",
     "DESCRIPTIONS": [
-      "Upon pickup, choose a card to obtain."
+      "Upon pickup, upgrade #b",
+      " random cards."
     ]
   },
   "${ModID}:InvertedHourglass": {
     "NAME": "Inverted Hourglass",
     "FLAVOR": "The sand in this hourglass trickles backwards through time, appearing to travel against gravity. What has the sand seen?",
+    "ENHANCED_FLAVOR": "A trinket like this resided in the center of the Great Hall.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. At the start of combat, shuffle #b3 #yDazed into your draw pile."
     ]
@@ -44,13 +52,15 @@
   "${ModID}:Locket": {
     "NAME": "Locket",
     "FLAVOR": "The pictures in here hold no meaning, and yet, some significance.",
+    "ENHANCED_FLAVOR": "You need to stop looking. Or else you'll never continue fighting.",
     "DESCRIPTIONS": [
       "At the start of combat, add a random card to your hand. It is #yEthereal."
     ]
   },
-  "${ModID}:GiantBow": {
-    "NAME": "Giant Bow",
+  "${ModID}:PurpleBow": {
+    "NAME": "Purple Bow",
     "FLAVOR": "It's not yours. But it came back to you.",
+    "ENHANCED_FLAVOR": "Tears fill your eyes as your time together comes back to you.",
     "DESCRIPTIONS": [
       "At the start of each combat, apply #b1 #y${ModID}:Foretold to ALL enemies."
     ]
@@ -58,13 +68,15 @@
   "${ModID}:PairOfGears": {
     "NAME": "Pair of Gears",
     "FLAVOR": "The gears spin around each other slowly. Despite your efforts, you cannot stop them, nor speed them up.",
+    "ENHANCED_FLAVOR": "You sympathize these gears. Just like them, you cannot stop.",
     "DESCRIPTIONS": [
       "After you draw your first hand each combat, add a random Power from your draw pile to your hand."
     ]
   },
   "${ModID}:TheClockworkUniverse": {
     "NAME": "The Clockwork Universe",
-    "FLAVOR": "The timeline is clear to you now. You fear you will look into this device and see your own death.",
+    "FLAVOR": "Disregarded as useless by the Spire denizens, you know this is something much greater.",
+    "ENHANCED_FLAVOR": "A small fraction of your old influence. But you'll take what you can get.",
     "DESCRIPTIONS": [
       "Replaces #yAstronomical #yClock. Take an additional turn after your first each combat."
     ]
@@ -72,8 +84,9 @@
   "${ModID}:ShatteredGlass": {
     "NAME": "Shattered Glass",
     "FLAVOR": "In the reflections of the glass, you see slightly different versions of yourself.",
+    "ENHANCED_FLAVOR": "I remember that. That hurt. Never again.",
     "DESCRIPTIONS": [
-      "Relic and potion rewards have two choices of equal rarity."
+      "Relic and potion rewards have #b2 choices of equal rarity."
     ]
   }
 }

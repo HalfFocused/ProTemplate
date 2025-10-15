@@ -186,7 +186,7 @@
   },
   "${ModID}:Burden": {
     "NAME": "Burden",
-    "DESCRIPTION": "Unplayable. NL ${ModID}:Forget: Gain !M! Strength.",
+    "DESCRIPTION": "Exhaust. NL ${ModID}:Forget: Gain !M! Strength.",
     "EXTENDED_DESCRIPTION": [
       "~Useless...~"
     ]
@@ -269,7 +269,8 @@
   },
   "${ModID}:HighGround": {
     "NAME": "High Ground",
-    "DESCRIPTION": "Apply !M! Vulnerable. NL ${ModID}:Flashback 1 Attack. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Vulnerable. NL ${ModID}:Flashback 1 Attack. NL Exhaust.",
+    "ARTIST_CREDIT": "Artist Credit: LUNA!!!!! <3"
   },
   "${ModID}:SawItComing": {
     "NAME": "Saw It Coming",

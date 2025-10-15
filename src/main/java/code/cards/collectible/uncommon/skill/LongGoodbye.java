@@ -15,6 +15,7 @@ public class LongGoodbye extends AbstractEasyCard {
 
     public LongGoodbye() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

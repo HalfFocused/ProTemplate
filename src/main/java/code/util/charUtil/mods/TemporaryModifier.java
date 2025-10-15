@@ -51,13 +51,17 @@ public class TemporaryModifier extends AbstractCardModifier {
         card.initializeDescription();
         if (counter <= 0) {
             if(group.type != CardGroup.CardGroupType.HAND) {
+                card.drawScale = 0.75f;
                 if (group.type == CardGroup.CardGroupType.DRAW_PILE) {
+                    card.current_x = CardGroup.DRAW_PILE_X;
+                    card.current_y = CardGroup.DRAW_PILE_Y;
                     card.target_x = MathUtils.random((float) Settings.WIDTH * 0.1F, (float) Settings.WIDTH * 0.4F);
                 } else if (group.type == CardGroup.CardGroupType.DISCARD_PILE) {
+                    card.current_x = CardGroup.DISCARD_PILE_X;
+                    card.current_y = CardGroup.DISCARD_PILE_Y;
                     card.target_x = MathUtils.random((float) Settings.WIDTH * 0.6F, (float) Settings.WIDTH * 0.9F);
                 }
                 card.target_y = MathUtils.random((float)Settings.HEIGHT * 0.8F, (float)Settings.HEIGHT * 0.35F);
-
             }
             this.addToTop(new ExhaustSpecificCardAction(card, group, false));
         }

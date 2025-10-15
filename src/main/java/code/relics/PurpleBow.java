@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static code.ModFile.makeID;
 
-public class GiantBow extends AbstractEasyRelic {
-    public static final String ID = makeID("GiantBow");
+public class PurpleBow extends AbstractEasyRelic {
+    public static final String ID = makeID("PurpleBow");
 
-    public GiantBow() {
+    public PurpleBow() {
         super(ID, RelicTier.COMMON, LandingSound.FLAT, TheDisplaced.Enums.DISPLACED_COLOR);
     }
 

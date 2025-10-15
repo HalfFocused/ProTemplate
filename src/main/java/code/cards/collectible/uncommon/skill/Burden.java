@@ -15,20 +15,23 @@ public class Burden extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID(Burden.class.getSimpleName());
 
     public Burden() {
-        super(ID, -2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 4;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
     }
 
+    /*
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
         return false;
     }
 
+     */
+
     public void upp() {
-        upgradeBlock(2);
         upgradeMagicNumber(2);
     }
 

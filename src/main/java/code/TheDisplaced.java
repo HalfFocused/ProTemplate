@@ -39,7 +39,7 @@ public class TheDisplaced extends CustomPlayer {
     static final String[] TEXT = characterStrings.TEXT;
 
     public static String getNeowGreeting(){
-        return characterStrings.TEXT[MathUtils.random(5,TEXT.length - 1)];
+        return characterStrings.TEXT[MathUtils.random(6,TEXT.length - 1)];
     }
 
     public static String getSensoryStone(){
@@ -48,6 +48,10 @@ public class TheDisplaced extends CustomPlayer {
 
     public static String getGhostsDialog(){
         return characterStrings.TEXT[4];
+    }
+
+    public static String getHeartFailureText(){
+        return characterStrings.TEXT[5];
     }
 
     public TheDisplaced(String name, PlayerClass setClass) {

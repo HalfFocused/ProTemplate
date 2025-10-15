@@ -4,7 +4,7 @@
       "forget",
       "forgotten"
     ],
-    "DESCRIPTION": "Triggers when this card is #yExhausted."
+    "DESCRIPTION": "An effect when this card is #yExhausted."
   },
   {
     "NAMES": [
