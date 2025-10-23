@@ -1,4 +1,4 @@
-package code.cards.collectible.uncommon.skill;
+package code.cards.collectible.common.skill;
 
 import code.actions.LapseCardAction;
 import code.cards.AbstractEasyCard;
@@ -16,8 +16,8 @@ public class EtchedInBlood extends AbstractEasyCard {
     // intellij stuff power, self, uncommon, , , , , 3, 1
 
     public EtchedInBlood() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = block = 8;
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        baseBlock = block = 6;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -17,31 +17,37 @@ public class MonsoonRainEffect extends AbstractGameEffect {
     private float vX;
     private float vY;
 
-    public MonsoonRainEffect(Color setColor, float alpha) {
+    float initialOpacity;
+
+    public MonsoonRainEffect(Color setColor, boolean background) {
         this.x = MathUtils.random(-0.2F, 0.95f) * Settings.WIDTH - 128.0F;
         this.vX = MathUtils.random(300.0F, 300.0F) * Settings.scale;
         this.rotation = 95f;
         this.y = MathUtils.random(1.1F, 1.25F) * (float)Settings.HEIGHT - 128.0F;
         this.vY = MathUtils.random(-1350.0F, -1350.0F) * Settings.scale;
         this.duration = 2.0F;
-        this.scale = MathUtils.random(1.5F, 1.9F);
-        this.vX *= this.scale;
-        this.scale *= Settings.scale;
-        this.scaleY = MathUtils.random(0.5F, 2.0F) * Settings.scale;
         this.color = setColor.cpy();
-        this.color.a = MathUtils.random(0.75F, 0.95F);
-        /*
-        if (this.scaleY < 1.0F * Settings.scale) {
-            this.renderBehind = true;
+
+
+        if(background){
+            this.scale = MathUtils.random(0.75F, 0.95F) * Settings.scale;
+            this.scaleY = MathUtils.random(0.5F, 2.0F) * Settings.scale;
+            initialOpacity = MathUtils.random(0.35F, 0.65F);
+            renderBehind = true;
+        }else{
+            this.scale = MathUtils.random(1.5F, 1.9F) * Settings.scale;
+            this.scaleY = MathUtils.random(0.25F, 1.0F) * Settings.scale;
+            initialOpacity = MathUtils.random(0.75F, 0.95F);
+            renderBehind = false;
         }
-         */
+        this.color.a = initialOpacity;
 
     }
 
     public void update() {
         this.x += this.vX * Gdx.graphics.getDeltaTime();
         this.y += this.vY * Gdx.graphics.getDeltaTime();
-        this.color.a = MathUtils.random(0.75F, 0.95F) * monsoonOpacity;
+        this.color.a = initialOpacity * monsoonOpacity;
         this.duration -= Gdx.graphics.getDeltaTime();
         if (this.duration < 0.0F) {
             this.isDone = true;

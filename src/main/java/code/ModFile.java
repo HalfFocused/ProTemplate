@@ -6,6 +6,7 @@ import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import code.cards.collectible.rare.attack.ViciousCycle;
+import code.effects.MonsoonEffect;
 import code.powers.ForetoldPower;
 import code.util.charUtil.CardUtil;
 import code.util.charUtil.ForgetCard;
@@ -285,5 +286,6 @@ public class ModFile implements
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         CardUtil.cardsPlayedLastTurn.clear();
+        MonsoonEffect.monsoonHappening = false;
     }
 }

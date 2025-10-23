@@ -34,4 +34,9 @@ public class WindUpButterfly extends AbstractEasyRelic {
             beginLongPulse();
         }
     }
+
+    public void onVictory() {
+        this.stopPulse();
+        this.counter = -1;
+    }
 }

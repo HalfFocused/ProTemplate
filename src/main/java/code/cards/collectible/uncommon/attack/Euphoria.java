@@ -14,7 +14,7 @@ public class Euphoria extends AbstractEasyCard {
 
     public Euphoria() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 8;
+        baseDamage = damage = 10;
         baseMagicNumber = magicNumber = 2;
     }
 
@@ -32,7 +32,6 @@ public class Euphoria extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(2);
         upgradeMagicNumber(1);
     }
 }

@@ -31,7 +31,6 @@ public class FreeEtherealPower extends AbstractEasyPower {
                 this.addToTop(new RemoveSpecificPowerAction(owner, owner, this));
             }
         }
-
     }
 
     @Override

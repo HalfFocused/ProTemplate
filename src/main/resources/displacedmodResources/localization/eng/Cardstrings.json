@@ -18,8 +18,8 @@
       "Exhaust"
     ]
   },
-  "${ModID}:Resent": {
-    "NAME": "Resent",
+  "${ModID}:TerribleThought": {
+    "NAME": "Terrible Thought",
     "DESCRIPTION": "Whenever a card is Exhausted, deal !M! damage to ALL enemies."
   },
   "${ModID}:Remember": {
@@ -50,7 +50,7 @@
     "NAME": "Time Slow",
     "DESCRIPTION": "You cannot take damage, lose HP, or gain debuffs this turn.",
     "FLAVOR": "\"I wish this moment could last forever.\"",
-    "ENHANCED_FLAVOR": "III. She smiled, and looked up at the stars. \"I wish this moment could last forever.\""
+    "ENHANCED_FLAVOR": "III. You smile while looking up at the stars. \"I wish this moment could last forever.\""
   },
   "${ModID}:HazyStrike": {
     "NAME": "Hazy Strike",
@@ -58,7 +58,7 @@
   },
   "${ModID}:Elude": {
     "NAME": "Elude",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to each enemy that intends to attack."
+    "DESCRIPTION": "Apply !M! Weak to each enemy that intends to attack."
   },
   "${ModID}:Unsettle": {
     "NAME": "Unsettle",
@@ -70,7 +70,7 @@
   },
   "${ModID}:InevitableForm": {
     "NAME": "Inevitable Form",
-    "DESCRIPTION": "At the start of your turn, play the top {@@}{!M!|>1=!M! cards|@=card} of your draw pile and Exhaust {!M!|>1=them|@=it}.",
+    "DESCRIPTION": "Ethereal. NL The first {@@}{!M!|>1=!M! cards|@=card} you play each turn costs 0 and Exhaust{!M!|1=s}.",
     "FLAVOR": "You were always just out of reach, or mere moments late.",
     "ENHANCED_FLAVOR": "XIV. You looped over and over. Yet you could never stop it. You were always just out of reach, or mere moments late."
   },
@@ -90,7 +90,7 @@
   },
   "${ModID}:Demoralize": {
     "NAME": "Demoralize",
-    "DESCRIPTION": "Ethereal. NL Apply !M! Weak, Vulnerable, and ${ModID}:Foretold. NL Exhaust.",
+    "DESCRIPTION": "Apply !M! Weak, Vulnerable, and ${ModID}:Foretold. NL Exhaust.",
     "FLAVOR": "You wake up in an unfamiliar place...",
     "ENHANCED_FLAVOR": "XVII. You wake up in an unfamiliar place. Your transgressions on time had not gone unnoticed."
   },
@@ -235,9 +235,9 @@
     "FLAVOR": "Each time hurts more than the last.",
     "ENHANCED_FLAVOR": "XVI. Each time hurts more than the last. As you prepared to loop again, a horrible beating noise fills your ears..."
   },
-  "${ModID}:MakeExample": {
-    "NAME": "Make Example",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Apply !${ModID}:m2! Weak to ALL other enemies. NL Exhaust."
+  "${ModID}:Haunt": {
+    "NAME": "Haunt",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you play an Ethereal card, this enemy loses !M! HP."
   },
   "${ModID}:Harrow": {
     "NAME": "Harrow",
@@ -278,7 +278,7 @@
   },
   "${ModID}:Glimpse": {
     "NAME": "Glimpse",
-    "DESCRIPTION": "Deal !D! damage. NL Add a *Vision to your discard pile."
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle a *Vision into your draw pile."
   },
   "${ModID}:Recall": {
     "NAME": "Recall",
@@ -324,18 +324,20 @@
       "~Where...~ ~am~ ~I?~"
     ]
   },
-  "${ModID}:Lucidity": {
-    "NAME": "Lucidity",
-    "DESCRIPTION": "Apply !M! ${ModID}:Foretold to ALL enemies. NL Exhaust."
+  "${ModID}:PierceTheVeil": {
+    "NAME": "Pierce The Veil",
+    "DESCRIPTION": "Gain !M! Block for each card in your Exhaust pile.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gain !B! Block.)"
+    ]
   },
   "${ModID}:BackupPlan": {
     "NAME": "Backup Plan",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL ${ModID}:Forget: ALL enemies lose !M! Strength this turn."
   },
-  "${ModID}:LongGoodbye": {
-    "NAME": "Long Goodbye",
-    "DESCRIPTION": "The next Attack you play this turn deals double damage and Exhausts. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "The next Attack you play this turn deals double damage and Exhausts."
+  "${ModID}:TrueSight": {
+    "NAME": "True Sight",
+    "DESCRIPTION": "*Visions deal !M! additional damage."
   },
   "${ModID}:TheStarsAligned": {
     "NAME": "The Stars Aligned",
@@ -357,7 +359,7 @@
   },
   "${ModID}:LowVisibility": {
     "NAME": "Low Visibility",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{@@}{@@}{!M!|>1=s|0=s}. NL Exhaust 1 card at random."
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{@@}{!M!|>1=s|0=s}. NL Exhaust 1 card at random."
   },
   "${ModID}:RecklessAbandon": {
     "NAME": "Reckless Abandon",
@@ -376,7 +378,7 @@
   },
   "${ModID}:CherishedMemory": {
     "NAME": "Cherished Memory",
-    "DESCRIPTION": "Retain. NL Gain !B! Block. NL ${ModID}:Flashback !M! card{@@}{!M!|>1=s|0=s}. NL Exhaust."
+    "DESCRIPTION": "${ModID}:Flashback !M! card{@@}{!M!|>1=s|0=s}. NL Exhaust."
   },
   "${ModID}:Invoke": {
     "NAME": "Invoke",

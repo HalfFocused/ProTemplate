@@ -17,8 +17,7 @@ public class Demoralize extends AbstractEasyCard {
 
     public Demoralize() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
-        isEthereal = true;
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
         exhaust = true;
     }
 

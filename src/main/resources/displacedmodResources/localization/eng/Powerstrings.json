@@ -2,11 +2,11 @@
   "${ModID}:ForetoldPower": {
     "NAME": "Foretold",
     "DESCRIPTIONS": [
-      "Takes double damage when attacked, once each turn. Decreases by #b1 at end of turn."
+      "Takes double damage from the first attack that hits it each turn. Decreases by #b1 at end of turn."
     ]
   },
-  "${ModID}:ResentPower": {
-    "NAME": "Resent",
+  "${ModID}:TerribleThoughtPower": {
+    "NAME": "Terrible Thought",
     "DESCRIPTIONS": [
       "Whenever a card is #yExhausted, deal #b",
       " damage to ALL enemies."
@@ -46,9 +46,9 @@
   "${ModID}:InevitableFormPower": {
     "NAME": "Inevitable Form",
     "DESCRIPTIONS": [
-      "At the start of your turn, play the top card of your draw pile and #yExhaust it.",
-      "At the start of your turn, play the top #b",
-      " cards of your draw pile and #yExhaust them."
+      "The first card you play each turn costs #b0 and #yExhausts.",
+      "The first #b",
+      " cards you play each turn cost #b0 and #yExhaust."
     ]
   },
   "${ModID}:OverAndOverPower": {
@@ -65,12 +65,11 @@
       "You've played #yMoment #yOf #yTruth once."
     ]
   },
-  "${ModID}:LongGoodbyePower": {
-    "NAME": "Long Goodbye",
+  "${ModID}:TrueSightPower": {
+    "NAME": "True Sight",
     "DESCRIPTIONS": [
-      "The next Attack you play this turn deals double damage and #yExhausts.",
-      "The next #b",
-      " Attacks you play this turn deal double damage and #yExhaust."
+      "#yVisions deal #b",
+      " additional damage."
     ]
   },
   "${ModID}:LanguishPower": {
@@ -142,6 +141,13 @@
       "The next #yEthereal card you play costs #b0.",
       "The next #b",
       " #yEthereal cards you play cost #b0."
+    ]
+  },
+  "${ModID}:HauntedPower": {
+    "NAME": "Haunted",
+    "DESCRIPTIONS": [
+      "Whenever you play an #yEthereal card, loses #b",
+      " HP."
     ]
   }
 }

@@ -15,6 +15,7 @@ public class InevitableForm extends AbstractEasyCard {
     public InevitableForm() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
+        isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

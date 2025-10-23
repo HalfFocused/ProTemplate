@@ -73,7 +73,7 @@ public class TimeEaterDialogPatch {
                         dialogSequence[0] = "~You~ ~shouldn't~ NL NL @have@ @that...@";
                     }else {
                         dialogSequence[0] = randomStringFrom(
-                                "~Insolent~ NL NL ~Ridiculous...~",
+                                "~Insolent...~ NL NL ~Ridiculous...~",
                                 "~You~ ~can't...~ NL NL ~save~ ~her.~",
                                 "~Welcome...~ NL NL ~back...~",
                                 "~We've~ ~fought~ NL NL ~" + (playerWins + timeEaterWins) + "~ ~times...~"
@@ -84,7 +84,7 @@ public class TimeEaterDialogPatch {
                             dialogSequence[1] = "~You'll~ ~die...~ NL NL @again...@";
                         }else{
                             dialogSequence[1] = randomStringFrom(
-                                "~Killed~ ~you... NL NL ~" + timeEaterWins + "~ ~times.~",
+                                "~Killed~ ~you...~ NL NL ~" + timeEaterWins + "~ ~times.~",
                                     "~This~ ~will~ NL NL ~be~ @fun...@",
                                     "~Last~ ~time...~ NL NL @I@ @KILLED@ @you...@"
                             );

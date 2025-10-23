@@ -17,7 +17,7 @@ public class RecurringDream extends AbstractEasyCard {
 
     public RecurringDream() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 12;
+        baseDamage = damage = 13;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

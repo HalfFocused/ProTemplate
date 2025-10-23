@@ -10,7 +10,7 @@
   "${ModID}:AmberGemstone": {
     "NAME": "Amber Gemstone",
     "FLAVOR": "A strangely comforting gem. It fills you with a refreshing clarity.",
-    "ENHANCED_FLAVOR": "Her necklace looked like this. How did it get here?",
+    "ENHANCED_FLAVOR": "Her necklace looked just like this. How did it get here?",
     "DESCRIPTIONS": [
       "Whenever a #yDazed would be created, create a random card instead. It becomes #yEthereal."
     ]
@@ -20,7 +20,7 @@
     "FLAVOR": "Trying not to cry- It's the first time I say goodbye.",
     "ENHANCED_FLAVOR": "When am I going to lose you?",
     "DESCRIPTIONS": [
-      "At the start of your turn, if a card was #yExhausted last turn, draw an additional card."
+      "If you Exhaust a card during your turn, draw 1 additional card at the start of your next turn."
     ]
   },
   "${ModID}:Raincoat": {
@@ -37,7 +37,7 @@
     "FLAVOR": "You slammed the book shut mere moments after opening it, the information contained inside overwhelming.",
     "ENHANCED_FLAVOR": "You want to know if you'll ever see her again, but you're not strong enough to look.",
     "DESCRIPTIONS": [
-      "Upon pickup, upgrade #b",
+      "Upon pickup, #yUpgrade #b",
       " random cards."
     ]
   },
@@ -70,7 +70,7 @@
     "FLAVOR": "The gears spin around each other slowly. Despite your efforts, you cannot stop them, nor speed them up.",
     "ENHANCED_FLAVOR": "You sympathize these gears. Just like them, you cannot stop.",
     "DESCRIPTIONS": [
-      "After you draw your first hand each combat, add a random Power from your draw pile to your hand."
+      "After you draw your first hand each combat, add a random #yPower from your draw pile to your hand."
     ]
   },
   "${ModID}:TheClockworkUniverse": {

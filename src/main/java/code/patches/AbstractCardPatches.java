@@ -3,6 +3,7 @@ package code.patches;
 import code.TheDisplaced;
 import code.cards.tokens.Vision;
 import code.powers.FreeEtherealPower;
+import code.powers.InevitableFormPower;
 import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
@@ -27,8 +28,18 @@ public class AbstractCardPatches {
         )
         public static SpireReturn<Boolean> FreeToPlayOverride(AbstractCard __instance)
         {
-            if(AbstractDungeon.player != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && AbstractDungeon.player.hasPower(FreeEtherealPower.POWER_ID) && __instance.isEthereal){
-                return SpireReturn.Return(true);
+            if(AbstractDungeon.player != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
+
+                //Highest Priority: Inevitable Form
+                InevitableFormPower inevitableFormPower = (InevitableFormPower) AbstractDungeon.player.getPower(InevitableFormPower.POWER_ID);
+                if(inevitableFormPower != null && inevitableFormPower.shouldCardCostZero()){
+                    return SpireReturn.Return(true);
+                }
+
+                //Next Priority: FreeEtherealPower
+                if(AbstractDungeon.player.hasPower(FreeEtherealPower.POWER_ID) && __instance.isEthereal){
+                    return SpireReturn.Return(true);
+                }
             }
             return SpireReturn.Continue();
         }

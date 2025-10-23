@@ -19,7 +19,7 @@ public class Predict extends AbstractEasyCard {
     public Predict() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
         this.cardsToPreview = new Vision();
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 1;
     }
 

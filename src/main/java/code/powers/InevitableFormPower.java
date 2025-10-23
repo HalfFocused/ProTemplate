@@ -3,6 +3,10 @@ package code.powers;
 import code.ModFile;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,23 +25,20 @@ public class InevitableFormPower extends AbstractEasyPower {
         super(POWER_ID, NAME, PowerType.BUFF, false, owner, amount);
     }
 
-    @Override
-    public void atStartOfTurn() {
-        this.flash();
-        for(int i = 0; i < this.amount; ++i) {
-            this.addToBot(new AbstractGameAction() {
-                public void update() {
-                    this.addToBot(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), true));
-                    this.isDone = true;
-                }
-            });
+
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (!card.purgeOnUse && AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1 < amount) {
+            this.flash();
+            action.exhaustCard = true;
         }
+    }
+
+    public boolean shouldCardCostZero(){
+        return AbstractDungeon.actionManager.cardsPlayedThisTurn.size() < amount;
     }
 
     @Override
     public void updateDescription() {
         description = (amount == 1) ? DESCRIPTIONS[0] : DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
-
-
 }

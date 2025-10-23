@@ -34,6 +34,13 @@ public class MonsoonAction extends AbstractGameAction {
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             int handSize = AbstractDungeon.player.hand.size();
+            this.addToTop(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    MonsoonEffect.monsoonHappening = false;
+                    isDone = true;
+                }
+            });
             this.addToTop(new DrawCardAction(handSize));
             for(int i = handSize - 1; i >= 0; i--){
                 AbstractCard c = AbstractDungeon.player.hand.group.get(i);
@@ -48,11 +55,7 @@ public class MonsoonAction extends AbstractGameAction {
                     }
                 });
             }
-            float monsoonDuration = 1.5f;
-            if(AbstractDungeon.player.drawPile.size() < handSize && !AbstractDungeon.player.discardPile.isEmpty()){
-                monsoonDuration += 0.5f;
-            }
-            AbstractDungeon.actionManager.addToTop(new VFXAction(new MonsoonEffect(monsoonDuration)));
+            AbstractDungeon.actionManager.addToTop(new VFXAction(new MonsoonEffect()));
         }
         this.tickDuration();
     }

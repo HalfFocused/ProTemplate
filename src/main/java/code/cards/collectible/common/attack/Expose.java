@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Expose extends AbstractEasyCard {
     public final static String ID = makeID(Expose.class.getSimpleName());
-    // intellij stuff skill, enemy, uncommon, , , , , 2, 1
 
     public Expose() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);

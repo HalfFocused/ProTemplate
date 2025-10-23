@@ -69,7 +69,7 @@ public class TimeLoop extends AbstractEasyCard {
         if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()){
             AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1);
             this.target = lastCard.target;
-            if(!(lastCard instanceof TimeLoop)) { //Without this, you crash with multiple Eternities in hand.
+            if(!(lastCard instanceof TimeLoop)) { //Without this, you crash with multiple Time Loops in hand.
                 this.cardsToPreview = lastCard.makeStatEquivalentCopy();
                 this.cardsToPreview.applyPowers();
             }else{
