@@ -17,7 +17,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RecklessAbandon extends AbstractEasyCard {
     public final static String ID = makeID(RecklessAbandon.class.getSimpleName());
-    // intellij stuff attack, all_enemy, rare, 16, 4, , , , 
 
     public RecklessAbandon() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY);
@@ -31,11 +30,13 @@ public class RecklessAbandon extends AbstractEasyCard {
                 @Override
                 public void update() {
                     AbstractMonster hit = AbstractDungeon.getRandomMonster();
-                    calculateCardDamage(hit);
-                    dmgTop(hit, CardUtil.randomSlash());
-                    this.addToTop(new VFXAction(new RecklessAbandonEffect(hit.hb.cX, hit.hb.cY, Color.RED.cpy())));
-                    this.addToTop(new SFXAction("ATTACK_HEAVY", MathUtils.random(0.2F, 0.5F)));
-                    isDone = true;
+                    if(hit != null) {
+                        calculateCardDamage(hit);
+                        dmgTop(hit, CardUtil.randomSlash());
+                        this.addToTop(new VFXAction(new RecklessAbandonEffect(hit.hb.cX, hit.hb.cY, Color.RED.cpy())));
+                        this.addToTop(new SFXAction("ATTACK_HEAVY", 0.35f));
+                        isDone = true;
+                    }
                 }
             });
         }

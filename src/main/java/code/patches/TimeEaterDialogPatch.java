@@ -1,6 +1,7 @@
 package code.patches;
 
 import code.ModFile;
+import code.relics.TheClockworkUniverse;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
@@ -44,7 +45,7 @@ public class TimeEaterDialogPatch {
         int playerWins = record.getInt("wins");
         int timeEaterWins = record.getInt("losses");
         boolean lastRunPlayerDied = record.getBool("lastRunDied");
-        boolean hasChronoForm =  false;
+        boolean enhanced = AbstractDungeon.player.hasRelic(TheClockworkUniverse.ID);
 
         for(AbstractMonster mo : AbstractDungeon.getMonsters().monsters){
             if(mo instanceof TimeEater){
@@ -53,29 +54,29 @@ public class TimeEaterDialogPatch {
         }
 
         if(playerWins + timeEaterWins == 0){
-            dialogSequence[0] = "~You're~ NL NL ~interesting.~";
-            if(hasChronoForm){
-                dialogSequence[1] = "~...and~ NL NL @foolish.@";
+            dialogSequence[0] = "~You're~ NL NL ~interesting.~"; //FirstMeeting1
+            if(enhanced){
+                dialogSequence[1] = "~...and~ NL NL @foolish.@"; //FirstMeeting2A
             }else{
-                dialogSequence[1] = "~this~ ~is~ NL NL ~a~ ~shame...~";
+                dialogSequence[1] = "~this~ ~is~ NL NL ~a~ ~shame...~"; //FirstMeeting2B
             }
         }else{
             if(playerWins > timeEaterWins){
                 if(playerWins == 1){
-                    dialogSequence[0] = "~You're~ ~back...~";
-                    if(hasChronoForm){
-                        dialogSequence[1] = "~last~ ~time~ NL NL ~was~ ~a~ @fluke.@";
+                    dialogSequence[0] = "~You're~ ~back...~"; //SecondEncounter1
+                    if(enhanced){
+                        dialogSequence[1] = "~last~ ~time~ NL NL ~was~ ~a~ @fluke.@"; //SecondEncounter2A
                     }else{
-                        dialogSequence[1] = "~You've~ ~won~ ~once...~ NL NL @never@ @again...@";
+                        dialogSequence[1] = "~You've~ ~won~ ~once...~ NL NL @never@ @again...@"; //SecondEncounter2B
                     }
                 }else{
-                    if(hasChronoForm){
-                        dialogSequence[0] = "~You~ ~shouldn't~ NL NL @have@ @that...@";
+                    if(enhanced){
+                        dialogSequence[0] = "~You~ ~shouldn't~ NL NL @have@ @that...@"; //PlayerWinning1A
                     }else {
                         dialogSequence[0] = randomStringFrom(
-                                "~Insolent...~ NL NL ~Ridiculous...~",
-                                "~You~ ~can't...~ NL NL ~save~ ~her.~",
-                                "~Welcome...~ NL NL ~back...~",
+                                "~Insolent...~ NL NL ~Ridiculous...~", //PlayerWinning 2B-1
+                                "~You~ ~can't...~ NL NL ~save~ ~her.~", //PlayerWinning 2B-2
+                                "~Welcome...~ NL NL ~back...~", //PlayerWinning 2B-3
                                 "~We've~ ~fought~ NL NL ~" + (playerWins + timeEaterWins) + "~ ~times...~"
                         );
                     }
@@ -101,13 +102,13 @@ public class TimeEaterDialogPatch {
                 }
             }else if(playerWins == timeEaterWins){
                 dialogSequence[0] = "~Evenly~ NL NL ~matched...~";
-                if(hasChronoForm){
+                if(enhanced){
                     dialogSequence[1] = "~My~ ~power~ NL NL ~is~ @greater...@";
                 }else{
                     dialogSequence[1] = "~Let~ ~me...~ NL NL @correct@ ~that...~";
                 }
             }else{
-                if(hasChronoForm){
+                if(enhanced){
                     dialogSequence[0] = "~Without~ @that...@ NL NL ~YOU~ ~ARE~ ~NOTHING~";
                 }else{
                     dialogSequence[0] = randomStringFrom(

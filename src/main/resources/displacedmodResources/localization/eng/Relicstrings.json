@@ -20,7 +20,7 @@
     "FLAVOR": "Trying not to cry- It's the first time I say goodbye.",
     "ENHANCED_FLAVOR": "When am I going to lose you?",
     "DESCRIPTIONS": [
-      "If you Exhaust a card during your turn, draw 1 additional card at the start of your next turn."
+      "If you #yExhaust a card during your turn, draw #b1 additional card at the start of your next turn."
     ]
   },
   "${ModID}:Raincoat": {

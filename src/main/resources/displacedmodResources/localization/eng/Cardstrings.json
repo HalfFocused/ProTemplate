@@ -191,8 +191,8 @@
       "~Useless...~"
     ]
   },
-  "${ModID}:FleetingFortitude": {
-    "NAME": "Fleeting Fortitude",
+  "${ModID}:Endurance": {
+    "NAME": "Endurance",
     "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL ${ModID}:Forget: Shuffle a copy of this into your draw pile with 2 less Block."
   },
   "${ModID}:Exploit": {

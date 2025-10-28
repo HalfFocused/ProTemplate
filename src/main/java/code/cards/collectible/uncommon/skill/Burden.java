@@ -16,7 +16,7 @@ public class Burden extends AbstractEasyCard implements ForgetCard {
 
     public Burden() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = 3;
         exhaust = true;
     }
 
@@ -28,11 +28,10 @@ public class Burden extends AbstractEasyCard implements ForgetCard {
         this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
         return false;
     }
-
      */
 
     public void upp() {
-        upgradeMagicNumber(2);
+        upgradeMagicNumber(1);
     }
 
     @Override

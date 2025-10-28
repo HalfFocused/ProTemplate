@@ -1,0 +1,14 @@
+{
+  "${ModID}:TimeEaterDialog": {
+    "FirstMeeting1": "~You're~ NL NL ~interesting.~",
+    "FirstMeeting2A": "~...and~ NL NL @foolish.@",
+    "FirstMeeting2B": "~this~ ~is~ NL NL ~a~ ~shame...~",
+    "SecondEncounter1": "~You're~ ~back...~",
+    "SecondEncounter2A": "~last~ ~time~ NL NL ~was~ ~a~ @fluke.@",
+    "SecondEncounter2B": "~You've~ ~won~ ~once...~ NL NL @never@ @again...@",
+    "PlayerWinning1A": "~You~ ~shouldn't~ NL NL @have@ @that...@",
+    "PlayerWinning2B-1": "~Insolent...~ NL NL ~Ridiculous...~",
+    "PlayerWinning2B-2": "~You~ ~can't...~ NL NL ~save~ ~her.~",
+    "PlayerWinning2B-3": "~Welcome...~ NL NL ~back...~"
+  }
+}

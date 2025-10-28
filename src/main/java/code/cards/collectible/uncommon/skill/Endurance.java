@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class FleetingFortitude extends AbstractEasyCard implements ForgetCard {
-    public final static String ID = makeID(FleetingFortitude.class.getSimpleName());
+public class Endurance extends AbstractEasyCard implements ForgetCard {
+    public final static String ID = makeID(Endurance.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , 10, 4, , 
 
-    public FleetingFortitude() {
+    public Endurance() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         isEthereal = true;
         baseBlock = block = 12;
