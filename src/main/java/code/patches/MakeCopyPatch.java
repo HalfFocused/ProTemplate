@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 )
 public class MakeCopyPatch {
     public static SpireReturn<AbstractCard> Prefix(AbstractCard __instance) {
-        if(__instance.cardID.equals(Dazed.ID) && AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(AmberGemstone.ID) && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
+        if((__instance.cardID.equals(Dazed.ID) || __instance.cardID.equals(VoidCard.ID)) && AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(AmberGemstone.ID) && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
             AbstractCard newCard = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
             if(!newCard.isEthereal){
                 CardModifierManager.addModifier(newCard, new EtherealModifier());

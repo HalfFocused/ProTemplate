@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -26,7 +27,10 @@ public class LapseCardAction extends AbstractGameAction {
             card.targetDrawScale = 0.5f;
         }
         this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EtchedInBloodPower(AbstractDungeon.player, card.makeStatEquivalentCopy())));
-        this.addToBot(new ExhaustSpecificCardAction(card, group));
+        this.group.moveToExhaustPile(this.card);
+        CardCrawlGame.dungeon.checkForPactAchievement();
+        this.card.exhaustOnUseOnce = false;
+        this.card.freeToPlayOnce = false;
         isDone = true;
     }
 }

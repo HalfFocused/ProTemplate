@@ -44,7 +44,7 @@
   },
   "${ModID}:Euphoria": {
     "NAME": "Euphoria",
-    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL If it's Ethereal, draw !M! more {@@}{!M!|>1=cards|@=card}."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Exhaust 1 card at random."
   },
   "${ModID}:TimeSlow": {
     "NAME": "Time Slow",
@@ -88,9 +88,9 @@
     "FLAVOR": "But again, you were too late.",
     "ENHANCED_FLAVOR": "XII. But again, you were too late. She fell to the ground right before your eyes."
   },
-  "${ModID}:Demoralize": {
-    "NAME": "Demoralize",
-    "DESCRIPTION": "Apply !M! Weak, Vulnerable, and ${ModID}:Foretold. NL Exhaust.",
+  "${ModID}:Hope": {
+    "NAME": "Hope",
+    "DESCRIPTION": "{@@}Gain {!M!|repeat=[E] } . NL ${ModID}:Flashback !${ModID}:m2! card{@@}{!${ModID}:m2!|>1=s|0=s}. NL Exhaust.",
     "FLAVOR": "You wake up in an unfamiliar place...",
     "ENHANCED_FLAVOR": "XVII. You wake up in an unfamiliar place. Your transgressions on time had not gone unnoticed."
   },
@@ -128,7 +128,7 @@
   },
   "${ModID}:Lacerate": {
     "NAME": "Lacerate",
-    "DESCRIPTION": "Deal !D! damage. NL Increase each of the enemy's turn-based debuffs by !M!.",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak, Vulnerable, and ${ModID}:Foretold.",
     "FLAVOR": "You see someone sprawled out across the ground.",
     "ENHANCED_FLAVOR": "V. As you returned, you saw her sprawled out upon the ground, her assailants face obscured by a hood."
   },
@@ -136,9 +136,12 @@
     "NAME": "Let Go",
     "DESCRIPTION": "Exhaust the top card of your draw pile. NL {@@}Gain {!M!|repeat=[E] }."
   },
-  "${ModID}:WideOpen": {
-    "NAME": "Wide Open",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Strength. NL At the end of this turn, lose !M! Strength."
+  "${ModID}:Rationalize": {
+    "NAME": "Rationalize",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust !M! {@@}{!M!|>1=cards|@=card} in your discard pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose a card to Exhaust:"
+    ]
   },
   "${ModID}:Apathy": {
     "NAME": "Apathy",
@@ -235,13 +238,13 @@
     "FLAVOR": "Each time hurts more than the last.",
     "ENHANCED_FLAVOR": "XVI. Each time hurts more than the last. As you prepared to loop again, a horrible beating noise fills your ears..."
   },
-  "${ModID}:Haunt": {
-    "NAME": "Haunt",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you play an Ethereal card, this enemy loses !M! HP."
+  "${ModID}:LeadingStrike": {
+    "NAME": "Leading Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Gain {@@}{!M!|repeat=[E] }."
   },
   "${ModID}:Harrow": {
     "NAME": "Harrow",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Gain !B! Block."
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage."
   },
   "${ModID}:Manifest": {
     "NAME": "Manifest",
@@ -278,7 +281,7 @@
   },
   "${ModID}:Glimpse": {
     "NAME": "Glimpse",
-    "DESCRIPTION": "Deal !D! damage. NL Shuffle a *Vision into your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL Put a *Vision into your discard pile."
   },
   "${ModID}:Recall": {
     "NAME": "Recall",

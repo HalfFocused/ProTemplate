@@ -1,6 +1,9 @@
 package code.powers;
 
 import code.ModFile;
+import code.TheDisplaced;
+import code.effects.ForetoldEyeGlint;
+import code.relics.Everything;
 import code.util.TexLoader;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -8,11 +11,15 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.AwakenedEyeParticle;
 
 public class ForetoldPower extends AbstractEasyPower {
     public AbstractCreature source;
@@ -32,7 +39,7 @@ public class ForetoldPower extends AbstractEasyPower {
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
 
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = AbstractDungeon.player.hasRelic(Everything.ID) ? DESCRIPTIONS[1] : DESCRIPTIONS[0];
     }
 
     public void atEndOfRound() {
@@ -48,9 +55,13 @@ public class ForetoldPower extends AbstractEasyPower {
 
     /*
     Double the incoming damage if Foretold hasn't been used this turn.
+    Triple it instead if the player has Everything.
      */
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL && !usedThisTurn) {
+            if(AbstractDungeon.player.hasRelic(Everything.ID)){
+                return damage * 3.0f;
+            }
             return damage * 2.0f;
         }
         return damage;
@@ -63,6 +74,15 @@ public class ForetoldPower extends AbstractEasyPower {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if(info.type == DamageInfo.DamageType.NORMAL && !usedThisTurn){
             flash();
+            AbstractPlayer p = AbstractDungeon.player;
+            if(p instanceof TheDisplaced){
+                AbstractGameEffect eyeGlint = new ForetoldEyeGlint(((TheDisplaced) p).getEyeX(), ((TheDisplaced) p).getEyeY());
+                AbstractDungeon.topLevelEffectsQueue.add(eyeGlint);
+            }
+            AbstractRelic everything = p.getRelic(Everything.ID);
+            if(everything != null){
+                everything.flash();
+            }
             hitDuringAttackUse = true;
         }
         return damageAmount;
@@ -120,5 +140,4 @@ public class ForetoldPower extends AbstractEasyPower {
             region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
         }
     }
-
 }

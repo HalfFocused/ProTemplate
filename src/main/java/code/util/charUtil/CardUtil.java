@@ -4,6 +4,7 @@ import basemod.ReflectionHacks;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import code.actions.DisplayCardAction;
+import code.cards.collectible.rare.attack.ViciousCycle;
 import code.powers.TimeSlowPower;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;

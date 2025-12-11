@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.Bone;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,6 +38,7 @@ public class TheDisplaced extends CustomPlayer {
     static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
+    private Bone eye;
 
     public static String getNeowGreeting(){
         return characterStrings.TEXT[MathUtils.random(6,TEXT.length - 1)];
@@ -70,6 +72,7 @@ public class TheDisplaced extends CustomPlayer {
 
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 240.0F * Settings.scale);
+        this.eye = this.skeleton.findBone("Eye");
     }
 
     @Override
@@ -209,5 +212,13 @@ public class TheDisplaced extends CustomPlayer {
         flipHorizontal = !flipHorizontal;
         super.render(sb);
         flipHorizontal = !flipHorizontal;
+    }
+
+    public float getEyeX(){
+        return this.skeleton.getX() + eye.getWorldX();
+    }
+
+    public float getEyeY(){
+        return this.skeleton.getY() + eye.getWorldY();
     }
 }

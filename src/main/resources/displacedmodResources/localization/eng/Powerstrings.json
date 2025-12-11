@@ -2,7 +2,8 @@
   "${ModID}:ForetoldPower": {
     "NAME": "Foretold",
     "DESCRIPTIONS": [
-      "Takes double damage from the first attack that hits it each turn. Decreases by #b1 at end of turn."
+      "Takes double damage from an attack once each turn. Decreases by #b1 at end of turn.",
+      "Takes triple damage from an attack once each turn. Decreases by #b1 at end of turn."
     ]
   },
   "${ModID}:TerribleThoughtPower": {

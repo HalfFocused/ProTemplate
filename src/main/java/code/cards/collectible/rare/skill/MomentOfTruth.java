@@ -4,8 +4,11 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
+import code.effects.MomentOfTruthEffect;
 import code.powers.MomentOfTruthPower;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.ApplyBulletTimeAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,6 +16,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.HeartMegaDebuffEffect;
 
 public class MomentOfTruth extends AbstractEasyCard {
     public final static String ID = makeID(MomentOfTruth.class.getSimpleName());
@@ -29,9 +34,17 @@ public class MomentOfTruth extends AbstractEasyCard {
                 AbstractPower power = AbstractDungeon.player.getPower(MomentOfTruthPower.POWER_ID);
                 if(power == null){
                     addToTop(new ApplyPowerAction(p,p, new MomentOfTruthPower(p,1),1));
+                    addToTop(new AbstractGameAction() {
+                        @Override
+                        public void update() {
+                            AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(Color.GOLD.cpy()));
+                            isDone = true;
+                        }
+                    });
                 }else{
                     addToTop(new ApplyBulletTimeAction());
                     addToTop(new RemoveSpecificPowerAction(p,p, power));
+                    addToTop(new VFXAction(new MomentOfTruthEffect()));
                 }
                 isDone = true;
             }

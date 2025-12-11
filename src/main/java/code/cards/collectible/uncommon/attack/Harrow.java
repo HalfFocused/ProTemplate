@@ -21,8 +21,8 @@ public class Harrow extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
         blck();
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
     }
 
     public void upp() {

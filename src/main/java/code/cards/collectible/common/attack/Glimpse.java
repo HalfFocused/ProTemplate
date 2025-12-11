@@ -16,14 +16,14 @@ public class Glimpse extends AbstractEasyCard {
     // intellij stuff attack, enemy, common, 12, 4, , , , 
 
     public Glimpse() {
-        super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 12;
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        baseDamage = damage = 9;
         this.cardsToPreview = new Vision();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        this.addToBot(new MakeTempCardInDrawPileAction(cardsToPreview, 1, true, true));
+        this.addToBot(new MakeTempCardInDiscardAction(cardsToPreview, 1));
     }
 
     public void upp() {

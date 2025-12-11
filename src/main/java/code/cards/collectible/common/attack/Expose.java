@@ -15,8 +15,8 @@ public class Expose extends AbstractEasyCard {
 
     public Expose() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 6;
-        baseMagicNumber = magicNumber = 1;
+        baseDamage = damage = 8;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -24,7 +24,6 @@ public class Expose extends AbstractEasyCard {
         addToBot(new ApplyPowerAction(m, p, new ForetoldPower(m, magicNumber), magicNumber));
     }
     public void upp() {
-        upgradeDamage(2);
-        upgradeMagicNumber(1);
+        upgradeDamage(3);
     }
 }

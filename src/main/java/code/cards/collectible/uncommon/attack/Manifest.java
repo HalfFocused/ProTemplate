@@ -18,7 +18,7 @@ public class Manifest extends AbstractEasyCard {
     // intellij stuff attack, enemy, uncommon, 11, 2, , , 1, 1
 
     public Manifest() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = damage = 10;
     }
 

@@ -12,7 +12,7 @@
     "FLAVOR": "A strangely comforting gem. It fills you with a refreshing clarity.",
     "ENHANCED_FLAVOR": "Her necklace looked just like this. How did it get here?",
     "DESCRIPTIONS": [
-      "Whenever a #yDazed would be created, create a random card instead. It becomes #yEthereal."
+      "Whenever a #yDazed or #yVoid would be created, create a random card instead. It becomes #yEthereal."
     ]
   },
   "${ModID}:WindUpButterfly": {
@@ -37,8 +37,7 @@
     "FLAVOR": "You slammed the book shut mere moments after opening it, the information contained inside overwhelming.",
     "ENHANCED_FLAVOR": "You want to know if you'll ever see her again, but you're not strong enough to look.",
     "DESCRIPTIONS": [
-      "Upon pickup, #yUpgrade #b",
-      " random cards."
+      "#y${ModID}:Foretold triples attack damage instead of doubling it."
     ]
   },
   "${ModID}:InvertedHourglass": {

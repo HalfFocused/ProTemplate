@@ -17,8 +17,8 @@ public class AheadOfTime extends AbstractEasyCard {
     // intellij stuff skill, self, uncommon, , , , , 2, 
 
     public AheadOfTime() {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = block = 3;
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseBlock = block = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -37,6 +37,6 @@ public class AheadOfTime extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBlock(2);
+        upgradeBlock(3);
     }
 }
