@@ -66,7 +66,7 @@
   },
   "${ModID}:Savagery": {
     "NAME": "Savagery",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage twice."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage twice. NL ${ModID}:Forget: Add a random Attack to your hand."
   },
   "${ModID}:InevitableForm": {
     "NAME": "Inevitable Form",
@@ -115,7 +115,7 @@
     "NAME": "Reverie",
     "DESCRIPTION": "At the start of your turn, draw a card. NL It becomes Ethereal.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, draw a card. NL It becomes Ethereal.",
-    "FLAVOR": "Two half-moons. It was beautiful.",
+    "FLAVOR": "The moon's bright form penetrated the rain.",
     "ENHANCED_FLAVOR": "VII. Her eyes were two half-moons. It was the last thing she saw, it's bright form penetrating the rain."
   },
   "${ModID}:Predict": {
@@ -228,9 +228,9 @@
       "Choose a card to put on top of your draw pile:"
     ]
   },
-  "${ModID}:OverAndOver": {
-    "NAME": "Over And Over",
-    "DESCRIPTION": "Put the first card you play each turn on top of your draw pile."
+  "${ModID}:AsExpected": {
+    "NAME": "As Expected",
+    "DESCRIPTION": "After you attack an enemy, if it isn't ${ModID}:Foretold, apply !M! ${ModID}:Foretold."
   },
   "${ModID}:Overwhelm": {
     "NAME": "Overwhelm",
@@ -258,7 +258,7 @@
     "NAME": "Her",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL ${ModID}:Forget: Shuffle a Void into your draw pile.",
     "FLAVOR": "How could you ever forget?",
-    "ENHANCED_FLAVOR": "II. You danced together, in union under the stars. How could you ever forget?",
+    "ENHANCED_FLAVOR": "II. You danced together under the stars. How could you ever forget?",
     "EXTENDED_DESCRIPTION": [
       "~No...~",
       "~Sorry...~",
@@ -281,7 +281,7 @@
   },
   "${ModID}:Glimpse": {
     "NAME": "Glimpse",
-    "DESCRIPTION": "Deal !D! damage. NL Put a *Vision into your discard pile."
+    "DESCRIPTION": "Deal !D! damage. NL Add a *Vision into your discard pile."
   },
   "${ModID}:Recall": {
     "NAME": "Recall",
@@ -289,9 +289,9 @@
   },
   "${ModID}:InternalBleeding": {
     "NAME": "Internal Bleeding",
-    "DESCRIPTION": "Whenever you attack an enemy, it loses !M! HP if it is Weak. Repeat for Vulnerable and ${ModID}:Foretold.",
-    "FLAVOR": "\"Can you... hear me...?\"",
-    "ENHANCED_FLAVOR": "VI. \"Please! You can hear me! Right? Please...\""
+    "DESCRIPTION": "Your attacks deal !M! additional damage for each debuff on the enemy.",
+    "FLAVOR": "\"Please! You can hear me! Right? Please...\"",
+    "ENHANCED_FLAVOR": "VI. You grabbed her body in desperation. \"Please! You can hear me! Right? Please...\""
   },
   "${ModID}:CarefulScheme": {
     "NAME": "Careful Scheme",

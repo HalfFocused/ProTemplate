@@ -52,12 +52,11 @@
       " cards you play each turn cost #b0 and #yExhaust."
     ]
   },
-  "${ModID}:OverAndOverPower": {
-    "NAME": "Over and Over",
+  "${ModID}:AsExpectedPower": {
+    "NAME": "As Expected",
     "DESCRIPTIONS": [
-      "Put the first card you play each turn on top of your draw pile.",
-      "Put the first #b",
-      " cards you play each turn on top of your draw pile."
+      "After you attack an enemy, if it isn't #yForetold, apply #b",
+      " #yForetold."
     ]
   },
   "${ModID}:MomentOfTruthPower": {
@@ -103,8 +102,8 @@
   "${ModID}:InternalBleedingPower": {
     "NAME": "Internal Bleeding",
     "DESCRIPTIONS": [
-      "Whenever you attack an enemy, it loses #b",
-      " HP if it is #yWeak. Repeat for #yVulnerable and #yForetold."
+      "Your attacks deal #b",
+      " additional damage for each debuff on the enemy."
     ]
   },
   "${ModID}:ExtraTurnPower": {

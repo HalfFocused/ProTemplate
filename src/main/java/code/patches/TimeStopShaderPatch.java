@@ -32,6 +32,7 @@ public class TimeStopShaderPatch {
     public static ShaderProgram timestopShader;
     private static final FrameBuffer fbo;
     private static boolean skipPlayerRender = false;
+
     @SpirePatch(clz = AbstractDungeon.class, method = "render")
     public static class RenderDesaturationInCombat {
         private static Field animationTimerField;

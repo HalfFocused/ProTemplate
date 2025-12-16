@@ -4,6 +4,7 @@ import code.ModFile;
 import code.actions.PredictAction;
 import code.effects.InternalBleedingSlashEffect;
 import code.effects.RecklessAbandonEffect;
+import code.util.charUtil.AtDamageGiveToPower;
 import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -31,7 +32,7 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static code.util.charUtil.CardUtil.randomSlash;
 
-public class InternalBleedingPower extends AbstractEasyPower {
+public class InternalBleedingPower extends AbstractEasyPower implements AtDamageGiveToPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = ModFile.makeID("InternalBleedingPower");
@@ -51,39 +52,22 @@ public class InternalBleedingPower extends AbstractEasyPower {
 
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature attackedEnemy) {
         if(info.type == DamageInfo.DamageType.NORMAL) {
-            boolean mute = false;
-            if (attackedEnemy.hasPower(VulnerablePower.POWER_ID)) {
-                this.addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        attackedEnemy.damage(new DamageInfo(this.source, InternalBleedingPower.this.amount, DamageInfo.DamageType.HP_LOSS));
-                        isDone = true;
-                    }
-                });
-                this.addToBot(new VFXAction(new InternalBleedingSlashEffect(attackedEnemy.hb.cX + MathUtils.random(-attackedEnemy.hb.width * 0.35f, attackedEnemy.hb.width * 0.35f) * Settings.scale, attackedEnemy.hb.cY + MathUtils.random(-attackedEnemy.hb.height * 0.35f, attackedEnemy.hb.height * 0.35f) * Settings.scale, AbstractGameAction.AttackEffect.POISON, mute), 0.1f));
-                mute = true;
-            }
-            if (attackedEnemy.hasPower(WeakPower.POWER_ID)) {
-                this.addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        attackedEnemy.damage(new DamageInfo(this.source, InternalBleedingPower.this.amount, DamageInfo.DamageType.HP_LOSS));
-                        isDone = true;
-                    }
-                });
-                this.addToBot(new VFXAction(new InternalBleedingSlashEffect(attackedEnemy.hb.cX + MathUtils.random(-attackedEnemy.hb.width * 0.35f, attackedEnemy.hb.width * 0.35f) * Settings.scale, attackedEnemy.hb.cY + MathUtils.random(-attackedEnemy.hb.height * 0.35f, attackedEnemy.hb.height * 0.35f) * Settings.scale, AbstractGameAction.AttackEffect.POISON, mute), 0.1f));
-                mute = true;
-            }
-            if (attackedEnemy.hasPower(ForetoldPower.POWER_ID)) {
-                this.addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        attackedEnemy.damage(new DamageInfo(this.source, InternalBleedingPower.this.amount, DamageInfo.DamageType.HP_LOSS));
-                        isDone = true;
-                    }
-                });
-                this.addToBot(new VFXAction(new InternalBleedingSlashEffect(attackedEnemy.hb.cX + MathUtils.random(-attackedEnemy.hb.width * 0.35f, attackedEnemy.hb.width * 0.35f) * Settings.scale, attackedEnemy.hb.cY + MathUtils.random(-attackedEnemy.hb.height * 0.35f, attackedEnemy.hb.height * 0.35f) * Settings.scale, AbstractGameAction.AttackEffect.POISON, mute), 0.1f));
+            for (AbstractPower p : attackedEnemy.powers) {
+                if (p.type == PowerType.DEBUFF) {
+                    this.addToTop(new VFXAction(new InternalBleedingSlashEffect(attackedEnemy.hb.cX + MathUtils.random(-attackedEnemy.hb.width * 0.35f, attackedEnemy.hb.width * 0.35f) * Settings.scale, attackedEnemy.hb.cY + MathUtils.random(-attackedEnemy.hb.height * 0.35f, attackedEnemy.hb.height * 0.35f) * Settings.scale, AbstractGameAction.AttackEffect.POISON, false), 0.1f));
+                }
             }
         }
+    }
+
+    @Override
+    public float atDamageGiveTo(AbstractCreature target, float damage, DamageInfo.DamageType type, AbstractCard sourceCard) {
+        float newDamage = damage;
+        for(AbstractPower p : target.powers){
+            if(p.type == PowerType.DEBUFF){
+                newDamage += amount;
+            }
+        }
+        return newDamage;
     }
 }

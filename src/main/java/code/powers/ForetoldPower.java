@@ -72,7 +72,7 @@ public class ForetoldPower extends AbstractEasyPower {
     So, we don't disable Foretold in this step, just mark it to be disabled later (after the card is done)
      */
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if(info.type == DamageInfo.DamageType.NORMAL && !usedThisTurn){
+        if(info.type == DamageInfo.DamageType.NORMAL && !usedThisTurn && !hitDuringAttackUse){
             flash();
             AbstractPlayer p = AbstractDungeon.player;
             if(p instanceof TheDisplaced){
@@ -113,7 +113,6 @@ public class ForetoldPower extends AbstractEasyPower {
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if(hitDuringAttackUse){
             hitDuringAttackUse = false;
-            flash();
             usedThisTurn = true;
             setTexture(true);
         }

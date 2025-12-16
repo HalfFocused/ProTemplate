@@ -287,5 +287,7 @@ public class ModFile implements
     public void receivePostBattle(AbstractRoom abstractRoom) {
         CardUtil.cardsPlayedLastTurn.clear();
         MonsoonEffect.monsoonHappening = false;
+        CardUtil.theSecondDreamActivatedLastTurn = false;
+        CardUtil.theSecondDreamActivatedThisTurn = false;
     }
 }

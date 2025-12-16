@@ -4,16 +4,19 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
+import code.util.charUtil.ForgetCard;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 
-public class Savagery extends AbstractEasyCard {
+public class Savagery extends AbstractEasyCard implements ForgetCard {
     public final static String ID = makeID(Savagery.class.getSimpleName());
 
     public Savagery() {
@@ -44,5 +47,10 @@ public class Savagery extends AbstractEasyCard {
 
     public void upp() {
         upgradeDamage(4);
+    }
+
+    @Override
+    public void onForget() {
+        addToBot(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy()));
     }
 }

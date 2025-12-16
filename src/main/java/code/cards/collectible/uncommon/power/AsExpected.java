@@ -4,24 +4,25 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
-import code.powers.OverAndOverPower;
+import code.powers.AsExpectedPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class OverAndOver extends AbstractEasyCard {
-    public final static String ID = makeID(OverAndOver.class.getSimpleName());
+public class AsExpected extends AbstractEasyCard {
+    public final static String ID = makeID(AsExpected.class.getSimpleName());
     // intellij stuff power, self, uncommon, , , , , , 
 
-    public OverAndOver() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+    public AsExpected() {
+        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p,p, new OverAndOverPower(p, 1)));
+        this.addToBot(new ApplyPowerAction(p,p, new AsExpectedPower(p, 1)));
     }
 
     public void upp() {
-        upgradeBaseCost(0);
+        upgradeMagicNumber(1);
     }
 }
