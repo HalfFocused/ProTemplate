@@ -6,10 +6,10 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.vfx.AwakenedEyeParticle;
 
-public class ForetoldEyeGlint extends AwakenedEyeParticle {
-    public ForetoldEyeGlint(float x, float y) {
+public class EyeGlintEffect extends AwakenedEyeParticle {
+    public EyeGlintEffect(float x, float y) {
         super(x, y);
-        this.scale = Settings.scale * MathUtils.random(0.25F, 0.5F);
+        this.scale = Settings.scale * MathUtils.random(0.75F, 1F);
     }
 
     @Override

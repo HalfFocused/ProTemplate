@@ -19,7 +19,7 @@ public class AsExpected extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p,p, new AsExpectedPower(p, 1)));
+        this.addToBot(new ApplyPowerAction(p,p, new AsExpectedPower(p, magicNumber)));
     }
 
     public void upp() {

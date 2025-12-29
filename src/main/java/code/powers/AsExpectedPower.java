@@ -31,7 +31,7 @@ public class AsExpectedPower extends AbstractEasyPower {
     }
 
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature targetCreature) {
-        if (damageAmount > 0 && targetCreature != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
+        if (targetCreature != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {

@@ -21,8 +21,8 @@ public class LowVisibility extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        this.addToBot(new DrawCardAction(magicNumber));
         this.addToBot(new ExhaustAction(1, true, false, false));
+        this.addToBot(new DrawCardAction(magicNumber));
     }
 
     public void upp() {

@@ -17,7 +17,7 @@ public class RecurringDream extends AbstractEasyCard {
 
     public RecurringDream() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = damage = 13;
+        baseDamage = damage = 16;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -45,16 +45,18 @@ public class RecurringDream extends AbstractEasyCard {
     public void applyPowers() {
         super.applyPowers();
 
-        for (AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (card instanceof RecurringDream) {
-                setCostForTurn(0);
-                return;
+        if(this.costForTurn != 0) {
+            for (AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
+                if (card instanceof RecurringDream) {
+                    setCostForTurn(0);
+                    return;
+                }
             }
-        }
-        for (AbstractCard card : CardUtil.cardsPlayedLastTurn) {
-            if (card instanceof RecurringDream) {
-                setCostForTurn(0);
-                return;
+            for (AbstractCard card : CardUtil.cardsPlayedLastTurn) {
+                if (card instanceof RecurringDream) {
+                    setCostForTurn(0);
+                    return;
+                }
             }
         }
     }

@@ -2,7 +2,7 @@ package code.powers;
 
 import code.ModFile;
 import code.TheDisplaced;
-import code.effects.ForetoldEyeGlint;
+import code.effects.EyeGlintEffect;
 import code.relics.Everything;
 import code.util.TexLoader;
 import com.badlogic.gdx.graphics.Texture;
@@ -19,7 +19,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.AwakenedEyeParticle;
 
 public class ForetoldPower extends AbstractEasyPower {
     public AbstractCreature source;
@@ -76,7 +75,7 @@ public class ForetoldPower extends AbstractEasyPower {
             flash();
             AbstractPlayer p = AbstractDungeon.player;
             if(p instanceof TheDisplaced){
-                AbstractGameEffect eyeGlint = new ForetoldEyeGlint(((TheDisplaced) p).getEyeX(), ((TheDisplaced) p).getEyeY());
+                AbstractGameEffect eyeGlint = new EyeGlintEffect(((TheDisplaced) p).getEyeX(), ((TheDisplaced) p).getEyeY());
                 AbstractDungeon.topLevelEffectsQueue.add(eyeGlint);
             }
             AbstractRelic everything = p.getRelic(Everything.ID);

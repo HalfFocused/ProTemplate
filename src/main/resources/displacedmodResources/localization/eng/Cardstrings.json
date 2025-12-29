@@ -62,7 +62,7 @@
   },
   "${ModID}:Unsettle": {
     "NAME": "Unsettle",
-    "DESCRIPTION": "Ethereal. NL Apply !M! Weak and ${ModID}:Foretold. NL Shuffle this card into your draw pile."
+    "DESCRIPTION": "Ethereal. NL Apply !M! Weak and ${ModID}:Foretold. NL Add a copy of this card into your discard pile."
   },
   "${ModID}:Savagery": {
     "NAME": "Savagery",
@@ -362,7 +362,7 @@
   },
   "${ModID}:LowVisibility": {
     "NAME": "Low Visibility",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{@@}{!M!|>1=s|0=s}. NL Exhaust 1 card at random."
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust 1 card at random. NL Draw !M! card{@@}{!M!|>1=s|0=s}."
   },
   "${ModID}:RecklessAbandon": {
     "NAME": "Reckless Abandon",
