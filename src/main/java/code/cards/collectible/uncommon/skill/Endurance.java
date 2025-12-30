@@ -17,7 +17,7 @@ public class Endurance extends AbstractEasyCard implements ForgetCard {
     public Endurance() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         isEthereal = true;
-        baseBlock = block = 12;
+        baseBlock = block = 10;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

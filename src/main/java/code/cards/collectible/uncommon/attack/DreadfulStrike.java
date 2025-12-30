@@ -20,7 +20,7 @@ public class DreadfulStrike extends AbstractEasyCard {
 
     public DreadfulStrike() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 14;
+        baseDamage = damage = 12;
         tags.add(CardTags.STRIKE);
     }
 
@@ -48,6 +48,6 @@ public class DreadfulStrike extends AbstractEasyCard {
         return true;
     }
     public void upp() {
-        upgradeDamage(4);
+        upgradeDamage(3);
     }
 }

@@ -4,6 +4,7 @@ import code.cards.AbstractEasyCard;
 
 import static code.ModFile.makeID;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,15 +15,12 @@ public class CarefulScheme extends AbstractEasyCard {
     // intellij stuff skill, self, uncommon, , , , , 1, 1
 
     public CarefulScheme() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 1;
-        baseSecondMagic = secondMagic = 4;
-        isEthereal = true;
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainEnergyAction(magicNumber));
-        addToBot(new DrawCardAction(secondMagic));
+        addToBot(new DrawCardAction(magicNumber));
     }
 
 

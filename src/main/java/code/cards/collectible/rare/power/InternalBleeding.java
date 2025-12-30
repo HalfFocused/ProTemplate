@@ -14,7 +14,7 @@ public class InternalBleeding extends AbstractEasyCard {
     // intellij stuff power, self, rare, , , , , 1, 
 
     public InternalBleeding() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 3;
     }
 
@@ -23,6 +23,6 @@ public class InternalBleeding extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeBaseCost(2);
     }
 }

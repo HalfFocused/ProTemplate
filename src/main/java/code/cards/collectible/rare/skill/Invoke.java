@@ -13,8 +13,8 @@ public class Invoke extends AbstractEasyCard {
     public final static String ID = makeID(Invoke.class.getSimpleName());
 
     public Invoke() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
+        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 1;
         exhaust = true;
     }
 

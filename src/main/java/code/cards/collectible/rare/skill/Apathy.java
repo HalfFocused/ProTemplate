@@ -18,7 +18,7 @@ public class Apathy extends AbstractEasyCard implements ForgetCard {
 
     public Apathy() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseBlock = block = 16;
+        baseBlock = block = 14;
         baseMagicNumber = magicNumber = 2;
         isEthereal = true;
     }

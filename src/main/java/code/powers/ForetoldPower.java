@@ -2,9 +2,11 @@ package code.powers;
 
 import code.ModFile;
 import code.TheDisplaced;
+import code.cards.collectible.uncommon.skill.CarefulScheme;
 import code.effects.EyeGlintEffect;
 import code.relics.Everything;
 import code.util.TexLoader;
+import code.util.charUtil.CardUtil;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -95,6 +97,7 @@ public class ForetoldPower extends AbstractEasyPower {
             hitDuringAttackUse = false;
             usedThisTurn = true;
             setTexture(true);
+            CardUtil.flashback(CarefulScheme.ID);
         }
     }
 

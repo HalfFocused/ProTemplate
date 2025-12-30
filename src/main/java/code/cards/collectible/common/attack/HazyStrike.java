@@ -25,6 +25,6 @@ public class HazyStrike extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(4);
+        upgradeDamage(3);
     }
 }

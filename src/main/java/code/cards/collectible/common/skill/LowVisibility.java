@@ -15,7 +15,7 @@ public class LowVisibility extends AbstractEasyCard {
 
     public LowVisibility() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 7;
+        baseBlock = block = 6;
         baseMagicNumber = magicNumber = 2;
     }
 
@@ -26,7 +26,6 @@ public class LowVisibility extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBlock(2);
-        upgradeMagicNumber(1);
+        upgradeBlock(3);
     }
 }

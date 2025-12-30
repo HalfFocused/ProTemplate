@@ -23,7 +23,7 @@ public class EyesWideOpen extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(1);
+        isInnate = true;
     }
 
     @Override

@@ -12,7 +12,7 @@ public class NeverEnough extends AbstractEasyCard {
 
     public NeverEnough() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 9;
+        baseBlock = block = 7;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

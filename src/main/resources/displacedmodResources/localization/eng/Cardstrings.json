@@ -295,7 +295,7 @@
   },
   "${ModID}:CarefulScheme": {
     "NAME": "Careful Scheme",
-    "DESCRIPTION": "Ethereal. NL Gain {@@}{!M!|repeat=[E] }. NL Draw !${ModID}:m2! card{!${ModID}:m2!|>1=s|0=s}."
+    "DESCRIPTION": "Draw !M! card{@@}{!M!|>1=s|0=s}. Whenever you use ${ModID}:Foretold on an enemy, ${ModID}:Flashback."
   },
   "${ModID}:Fathom": {
     "NAME": "Fathom",
@@ -358,7 +358,8 @@
   },
   "${ModID}:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
-    "DESCRIPTION": "At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile."
+    "DESCRIPTION": "At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile."
   },
   "${ModID}:LowVisibility": {
     "NAME": "Low Visibility",

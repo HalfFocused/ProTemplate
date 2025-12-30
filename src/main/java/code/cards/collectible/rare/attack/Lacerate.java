@@ -20,7 +20,7 @@ public class Lacerate extends AbstractEasyCard {
 
     public Lacerate() {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = damage = 10;
+        baseDamage = damage = 6;
         baseMagicNumber = magicNumber = 1;
     }
 

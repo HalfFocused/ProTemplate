@@ -14,7 +14,7 @@ public class LeadingStrike extends AbstractEasyCard {
 
     public LeadingStrike() {
         super(ID, 3, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 24;
+        baseDamage = damage = 20;
         baseMagicNumber = magicNumber = 1;
         tags.add(CardTags.STRIKE);
     }
@@ -25,6 +25,6 @@ public class LeadingStrike extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(6);
+        upgradeDamage(5);
     }
 }

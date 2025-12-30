@@ -20,7 +20,7 @@ public class FadeAway extends AbstractEasyCard {
 
     public FadeAway() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = block = 10;
+        baseBlock = block = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

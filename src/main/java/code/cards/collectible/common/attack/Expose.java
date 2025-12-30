@@ -16,7 +16,7 @@ public class Expose extends AbstractEasyCard {
     public Expose() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -23,7 +23,7 @@ public class Euphoria extends AbstractEasyCard {
 
     public Euphoria() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseDamage = damage = 12;
+        baseDamage = damage = 10;
         isMultiDamage = true;
     }
 
