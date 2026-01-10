@@ -25,6 +25,6 @@ public class CarefulScheme extends AbstractEasyCard {
 
 
     public void upp() {
-        upgradeSecondMagic(1);
+        upgradeMagicNumber(1);
     }
 }

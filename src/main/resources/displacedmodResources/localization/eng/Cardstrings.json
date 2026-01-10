@@ -13,7 +13,7 @@
   },
   "${ModID}:Impulse": {
     "NAME": "Impulse",
-    "DESCRIPTION": "Draw !M! {@@}card{!M!|>1=s|0=s}. NL Exhaust one of them. NL Exhaust.",
+    "DESCRIPTION": "Draw !M! {@@}card{!M!|>1=s|0=s}. NL Exhaust 1 of them. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust"
     ]
