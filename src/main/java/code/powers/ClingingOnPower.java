@@ -39,7 +39,7 @@ public class ClingingOnPower extends AbstractEasyPower {
     public void onExhaust(AbstractCard card) {
         if(!triggeredThisTurn){
             this.flash();
-            this.addToBot(new GainEnergyAction(amount));
+            this.addToBot(new DrawCardAction(amount));
             triggeredThisTurn = true;
         }
     }
