@@ -62,7 +62,7 @@
   },
   "${ModID}:Unsettle": {
     "NAME": "Unsettle",
-    "DESCRIPTION": "Ethereal. NL Apply !M! Weak and ${ModID}:Foretold. NL Add a copy of this card into your discard pile."
+    "DESCRIPTION": "Apply !M! Weak and ${ModID}:Foretold. NL If a card was Exhausted this turn, draw 1 card."
   },
   "${ModID}:Savagery": {
     "NAME": "Savagery",
@@ -70,7 +70,7 @@
   },
   "${ModID}:InevitableForm": {
     "NAME": "Inevitable Form",
-    "DESCRIPTION": "Ethereal. NL The first {@@}{!M!|>1=!M! cards|@=card} you play each turn costs 0 and Exhaust{!M!|1=s}.",
+    "DESCRIPTION": "Ethereal. NL The first {@@}{!M!|>1=!M! cards|@=card} you play each turn cost{!M!|1=s} 0 and Exhaust{!M!|1=s}.",
     "FLAVOR": "You were always just out of reach, or mere moments late.",
     "ENHANCED_FLAVOR": "XIV. You looped over and over. Yet you could never stop it. You were always just out of reach, or mere moments late."
   },
@@ -204,7 +204,7 @@
   },
   "${ModID}:TimeLoop": {
     "NAME": "Time Loop",
-    "DESCRIPTION": "Play a copy of the last card you played this combat.",
+    "DESCRIPTION": "Play a copy of the last card you played this combat. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL Plays: NL ",
       "I haven't played a card yet this combat.",
@@ -252,7 +252,7 @@
   },
   "${ModID}:ClingingOn": {
     "NAME": "Clinging On",
-    "DESCRIPTION": "The first time a card is Exhausted each turn, gain !M! Strength."
+    "DESCRIPTION": "The first time a card is Exhausted each turn, draw !M! card{@@}{!M!|>1=s|0=s}."
   },
   "${ModID}:Her": {
     "NAME": "Her",
@@ -358,8 +358,8 @@
   },
   "${ModID}:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
-    "DESCRIPTION": "At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, shuffle {@@}{!M!|>1=!M!|@=a} *Vision{!M!|>1=s|0=s} into your draw pile."
+    "DESCRIPTION": "Shuffle a *Vision{!M!|>1=s|0=s} into your draw pile. NL Draw !M! card{@@}{!M!|>1=s|0=s}.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Shuffle a *Vision{!M!|>1=s|0=s} into your draw pile. NL Draw !M! card{@@}{!M!|>1=s|0=s}."
   },
   "${ModID}:LowVisibility": {
     "NAME": "Low Visibility",

@@ -3,6 +3,7 @@ package code.powers;
 import code.ModFile;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,7 +39,7 @@ public class ClingingOnPower extends AbstractEasyPower {
     public void onExhaust(AbstractCard card) {
         if(!triggeredThisTurn){
             this.flash();
-            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount), amount));
+            this.addToBot(new GainEnergyAction(amount));
             triggeredThisTurn = true;
         }
     }

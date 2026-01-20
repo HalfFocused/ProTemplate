@@ -15,7 +15,7 @@ public class ClingingOn extends AbstractEasyCard {
 
     public ClingingOn() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

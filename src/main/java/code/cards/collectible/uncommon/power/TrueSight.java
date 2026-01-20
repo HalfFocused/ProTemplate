@@ -15,7 +15,7 @@ public class TrueSight extends AbstractEasyCard {
 
     public TrueSight() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 8;
+        baseMagicNumber = magicNumber = 6;
         this.cardsToPreview = new Vision();
     }
 

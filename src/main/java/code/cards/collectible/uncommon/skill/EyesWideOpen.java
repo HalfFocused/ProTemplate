@@ -1,9 +1,9 @@
-package code.cards.collectible.uncommon.power;
+package code.cards.collectible.uncommon.skill;
 
 import code.cards.AbstractEasyCard;
 import code.cards.tokens.Vision;
-import code.powers.EyesWideOpenPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -13,13 +13,16 @@ public class EyesWideOpen extends AbstractEasyCard {
     public final static String ID = makeID(EyesWideOpen.class.getSimpleName());
 
     public EyesWideOpen() {
-        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
         this.cardsToPreview = new Vision();
+        //shuffleBackIntoDrawPile = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new EyesWideOpenPower(p, magicNumber)));
+        //this.addToBot(new ApplyPowerAction(p, p, new EyesWideOpenPower(p, magicNumber)));
+        addToBot(new MakeTempCardInDrawPileAction(new Vision(), 1, true, true));
+        addToBot(new DrawCardAction(magicNumber));
     }
 
     public void upp() {

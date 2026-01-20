@@ -95,8 +95,8 @@
   "${ModID}:ClingingOnPower": {
     "NAME": "Clinging On",
     "DESCRIPTIONS": [
-      "The first time a card is #yExhausted each turn, gain #b",
-      " Strength."
+      "The first time a card is #yExhausted each turn, draw #b",
+      " cards."
     ]
   },
   "${ModID}:InternalBleedingPower": {
@@ -110,8 +110,8 @@
     "NAME": "Extra Turn",
     "DESCRIPTIONS": [
       "Take an extra turn after this one.",
-      "Take an extra turn after your next #b",
-      " turns."
+      "Take #b",
+      " extra turns after this one."
     ]
   },
   "${ModID}:TheStarsAlignedPower": {

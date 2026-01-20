@@ -20,7 +20,8 @@ public class TimeLoop extends AbstractEasyCard {
     public final static String ID = makeID(TimeLoop.class.getSimpleName());
     // intellij stuff skill, self, rare, , , , , ,
     public TimeLoop() {
-        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -30,6 +31,7 @@ public class TimeLoop extends AbstractEasyCard {
                 AbstractCard card = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2);
                 AbstractCard tmp = card.makeSameInstanceOf();
                 AbstractDungeon.player.limbo.addToBottom(tmp);
+                tmp.glowColor = GOLD_BORDER_GLOW_COLOR.cpy();
                 tmp.current_x = current_x;
                 tmp.current_y = current_y;
                 tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
@@ -45,7 +47,7 @@ public class TimeLoop extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(1);
+        upgradeBaseCost(0);
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
