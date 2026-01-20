@@ -31,7 +31,6 @@ public class TimeLoop extends AbstractEasyCard {
                 AbstractCard card = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2);
                 AbstractCard tmp = card.makeSameInstanceOf();
                 AbstractDungeon.player.limbo.addToBottom(tmp);
-                tmp.glowColor = GOLD_BORDER_GLOW_COLOR.cpy();
                 tmp.current_x = current_x;
                 tmp.current_y = current_y;
                 tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
