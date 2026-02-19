@@ -21,7 +21,7 @@ public class Savagery extends AbstractEasyCard implements ForgetCard {
 
     public Savagery() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = damage = 9;
+        baseDamage = damage = 8;
         isEthereal = true;
     }
 
@@ -46,7 +46,7 @@ public class Savagery extends AbstractEasyCard implements ForgetCard {
     }
 
     public void upp() {
-        upgradeDamage(4);
+        upgradeDamage(3);
     }
 
     @Override

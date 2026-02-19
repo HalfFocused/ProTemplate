@@ -120,7 +120,8 @@
   },
   "${ModID}:Predict": {
     "NAME": "Predict",
-    "DESCRIPTION": "{@@}Apply !M! ${ModID}:Foretold. NL Shuffle {@@}{!${ModID}:m2!|>1=!${ModID}:m2!|@=a} *Vision{!${ModID}:m2!|>1=s|0=s} into your draw pile."
+    "DESCRIPTION": "{@@}Apply !M! ${ModID}:Foretold. NL Shuffle {@@}{!${ModID}:m2!|>1=!${ModID}:m2!|@=a} *Vision{!${ModID}:m2!|>1=s|0=s} into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "{@@}Apply !M! ${ModID}:Foretold. NL Shuffle {@@}{!${ModID}:m2!|>1=!${ModID}:m2!|@=a} *Vision{!${ModID}:m2!|>1=s|0=s} into your draw pile."
   },
   "${ModID}:AheadOfTime": {
     "NAME": "Ahead Of Time",
@@ -128,7 +129,7 @@
   },
   "${ModID}:Lacerate": {
     "NAME": "Lacerate",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak, Vulnerable, and ${ModID}:Foretold.",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak and Vulnerable",
     "FLAVOR": "You see someone sprawled out across the ground.",
     "ENHANCED_FLAVOR": "V. As you returned, you saw her sprawled out upon the ground, her assailants face obscured by a hood."
   },

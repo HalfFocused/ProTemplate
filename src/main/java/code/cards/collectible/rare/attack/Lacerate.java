@@ -20,7 +20,7 @@ public class Lacerate extends AbstractEasyCard {
 
     public Lacerate() {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = damage = 6;
+        baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -28,7 +28,7 @@ public class Lacerate extends AbstractEasyCard {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-        this.addToBot(new ApplyPowerAction(m, p, new ForetoldPower(m, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        //this.addToBot(new ApplyPowerAction(m, p, new ForetoldPower(m, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     public void upp() {

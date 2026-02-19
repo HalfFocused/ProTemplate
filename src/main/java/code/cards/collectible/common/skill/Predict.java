@@ -21,6 +21,7 @@ public class Predict extends AbstractEasyCard {
         this.cardsToPreview = new Vision();
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 1;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -29,7 +30,7 @@ public class Predict extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        exhaust = false;
     }
 
     @Override

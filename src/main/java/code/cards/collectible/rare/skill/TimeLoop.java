@@ -18,7 +18,6 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class TimeLoop extends AbstractEasyCard {
     public final static String ID = makeID(TimeLoop.class.getSimpleName());
-    // intellij stuff skill, self, rare, , , , , ,
     public TimeLoop() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         exhaust = true;

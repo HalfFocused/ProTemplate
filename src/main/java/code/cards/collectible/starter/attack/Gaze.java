@@ -26,6 +26,6 @@ public class Gaze extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeDamage(4);
     }
 }
